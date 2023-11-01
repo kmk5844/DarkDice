@@ -123,6 +123,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1787510427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787510429}
+  - component: {fileID: 1787510428}
+  m_Layer: 0
+  m_Name: Zombie Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1787510428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787510427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e08c0769beba6f42962a9ca7630becc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieDatas:
+  - {fileID: 11400000, guid: 474911ae1edfafa478d4714bea285446, type: 2}
+  - {fileID: 11400000, guid: 1f48f7a0100b0294384f9d651f165853, type: 2}
+  - {fileID: 11400000, guid: d18d63531876b1d49bb03b1251fc96b7, type: 2}
+  - {fileID: 11400000, guid: 96b8630799fccd941b222cb9b51ea418, type: 2}
+  - {fileID: 11400000, guid: 4df3cc8ff9027ef4fb15c351a800aa6d, type: 2}
+  zombiePrefab: {fileID: 6884534499957052661, guid: 034a73050a994524695144ef6082ba9b, type: 3}
+--- !u!4 &1787510429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787510427}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 846.8365, y: 500.27396, z: -5.9437604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063146191
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,3 +271,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2063146194}
+  - {fileID: 1787510429}

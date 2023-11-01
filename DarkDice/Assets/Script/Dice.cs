@@ -7,59 +7,104 @@ using UnityEngine.UI;
 public class Dice : MonoBehaviour
 {
     [SerializeField]
-    float delay = 0.1f;
+    float delay = 0.01f;
 
-    public Sprite[] Poket;
+    public Sprite[] Pocket;
     public Image Dice1;
     public Image Dice2;
-    public Button button;
+    public Image PocketDice1;
+    public Image PocketDice2;
+    public Button Play_Button;
+    public Button Dice_Button;
+    public Button Attack_Button;
     bool rollingFlag = false;
     TextMeshProUGUI ButtonText;
 
     private void Start()
     {
-        ButtonText = button.GetComponentInChildren<TextMeshProUGUI>();
+        ButtonText = Dice_Button.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     IEnumerator coroutine;
 
-    IEnumerator DiceRolling(Image image1, Image image2)
+    IEnumerator DiceRolling(Image image1, Image image2, Image Pocket1, Image Pocket2)
     {
-        yield return new WaitForSeconds(delay);
         int rand1 = Random.Range(0, 6);
-        int rand2= Random.Range(0, 6);
-        image1.sprite = Poket[rand1];
-        image2.sprite = Poket[rand2];
+        int rand2 = Random.Range(0, 6);
+        if (rollingFlag == false)
+        {
+            delay += 0.05f;
+            if (delay > 0.56f)
+            {
+                StopCoroutine(coroutine);
+                Attack_Button.interactable = true;
+                Pocket1.sprite = Pocket[rand1];
+                Pocket2.sprite = Pocket[rand2];
+            }
+        }
+        image1.sprite = Pocket[rand1];
+        image2.sprite = Pocket[rand2];
+        yield return new WaitForSeconds(delay);
         StartMethod();
     }
 
     void StartMethod()
     {
-        coroutine = DiceRolling(Dice1, Dice2);
+        coroutine = DiceRolling(Dice1, Dice2, PocketDice1, PocketDice2);
         StartCoroutine(coroutine);
     }
-
-    void StopMethod()
+    public void OnPlayButton()
     {
-        StopCoroutine(coroutine);
+        Attack_Button.interactable = false;
+        Dice_Button.interactable = true;
+        Play_Button.gameObject.SetActive(false);
     }
-
-    public void OnRollingDice()
+    public void OnDiceButton()
     {
         if (!rollingFlag)
         {
+            rollingFlag = true;
+            delay = 0.01f;
             StartMethod();
             ButtonText.text = "¸ØÃß±â";
-            rollingFlag = true;
         }
         else
         {
-            StopMethod();
-            ButtonText.text = "±¼¸®±â";
             rollingFlag = false;
-            Debug.Log(Dice1.sprite.name);
-            Debug.Log(Dice2.sprite.name);
+            ButtonText.text = "±¼¸®±â";
+            Dice_Button.interactable = false;
         }
     }
 
+    public void OnAttackButton()
+    {
+        Play_Button.gameObject.SetActive(true);
+        int attackSum = PlusAttack(Dice1, Dice2);
+        Debug.Log(attackSum+ "¸¸Å­ °ø°Ý!");
+        Dice_Button.interactable = true;
+    }
+
+    private int PlusAttack(Image image1, Image image2)
+    {
+        return DiceToInt(image1) + DiceToInt(image2);
+    }
+
+    private int DiceToInt(Image image)
+    {
+        switch (image.sprite.name) {
+            case "Dice1":
+                return 1;
+            case "Dice2":
+                return 2;
+            case "Dice3":
+                return 3;
+            case "Dice4":
+                return 4;
+            case "Dice5":
+                return 5;
+            case "Dice6":
+                return 6;
+        }
+        return 0;
+    }
 }

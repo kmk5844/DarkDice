@@ -61,6 +61,9 @@
     <Compile Include="Assets\Script\FixedUI.cs" />
     <Compile Include="Assets\Script\Dice.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scritable_Test\ZombieSpawner.cs" />
+    <Compile Include="Assets\Scritable_Test\Zombie.cs" />
+    <Compile Include="Assets\Scritable_Test\ZombieData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
