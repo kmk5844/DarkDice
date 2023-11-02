@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb00f2cf2ff30a949ad6be7537c95fbb, type: 3}
-  m_Name: Speed Zombie
+  m_Script: {fileID: 11500000, guid: aba7f10d6f7985948a8712db44a430ec, type: 3}
+  m_Name: Test_Monster
   m_EditorClassIdentifier: 
-  zombieName: Speed Zombie
-  hp: 5
-  damage: 6
-  sightRange: 7
-  moveSpeed: 8
+  monsterName: Test_Monster
+  hp: 3
+  atk: 15
+  def: 15

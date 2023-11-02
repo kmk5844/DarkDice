@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb00f2cf2ff30a949ad6be7537c95fbb, type: 3}
-  m_Name: Tanker Zombie
+  m_Name: Test_Player
   m_EditorClassIdentifier: 
-  zombieName: Tanker Zombie
-  hp: 9
-  damage: 8
-  sightRange: 7
-  moveSpeed: 6
+  playerName: Test_Player
+  hp: 3
+  atk: 10
+  def: 10

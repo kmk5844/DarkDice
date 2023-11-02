@@ -14,6 +14,7 @@ public class Dice : MonoBehaviour
     public Image Dice2;
     public Image PocketDice1;
     public Image PocketDice2;
+    public int attackSum = 0;
     public Button Play_Button;
     public Button Dice_Button;
     public Button Attack_Button;
@@ -79,8 +80,7 @@ public class Dice : MonoBehaviour
     public void OnAttackButton()
     {
         Play_Button.gameObject.SetActive(true);
-        int attackSum = PlusAttack(Dice1, Dice2);
-        Debug.Log(attackSum+ "만큼 공격!");
+        attackSum = PlusAttack(Dice1, Dice2);
         Dice_Button.interactable = true;
     }
 
