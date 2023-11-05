@@ -1170,6 +1170,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1962942270}
+        m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
+        m_MethodName: ChanceToggleOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &779411692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,6 +2055,7 @@ MonoBehaviour:
   Play_Button: {fileID: 662331744}
   Dice_Button: {fileID: 779411691}
   Attack_Button: {fileID: 1215196247}
+  rollingFlag: 0
 --- !u!1 &1469283591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,12 +2729,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster_Atk_Delay: 5
-  ItemNum: 0
   ItemName: 
   ItemFlag: 0
   Item1: {fileID: 1587446257}
   Item2: {fileID: 1692357440}
   Item3: {fileID: 405974485}
+  DiceButton: {fileID: 779411691}
 --- !u!1 &2039736041
 GameObject:
   m_ObjectHideFlags: 0

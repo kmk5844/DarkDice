@@ -18,7 +18,7 @@ public class Dice : MonoBehaviour
     public Button Play_Button;
     public Button Dice_Button;
     public Button Attack_Button;
-    bool rollingFlag = false;
+    public bool rollingFlag = false;
     TextMeshProUGUI ButtonText;
 
     private void Start()

@@ -9,10 +9,14 @@ public class GameDirector : MonoBehaviour
     private float monster_Atk_Delay = 2.0f;
     [SerializeField]
     public string ItemName = "";
+
+    int DiceNum = 0;
     public bool ItemFlag = false;
     public Toggle Item1;
     public Toggle Item2;
     public Toggle Item3;
+
+    public Button DiceButton;
 
     Player playerData;
     Monster monsterData;
@@ -46,12 +50,52 @@ public class GameDirector : MonoBehaviour
             ItemFlag = false;
             ItemName = "";
         }
+        
+        if(DiceNum == 2)
+        {
+            if(ItemName == "Dice3")
+            {
+                DiceButton.interactable = true;
+            }
+            else
+            {
+                DiceButton.interactable = false;
+            }
+        }
+        
+    }
 
+    public void CountDice()
+    {
+        DiceNum += 1;
+    }
+
+    public void ChanceToggleOff()
+    {
+        DiceNum++;
+        if (DiceNum == 3 && ItemName == "Dice3")
+        {
+            if (Item1.isOn)
+            {
+                Item1.isOn = false;
+                Item1.interactable = false;
+            }
+            else if (Item2.isOn)
+            {
+                Item2.isOn = false;
+                Item2.interactable = false;
+            }
+            else if (Item3.isOn)
+            {
+                Item3.isOn = false;
+                Item3.interactable = false;
+            }
+        }
     }
 
     public void OnFightButton()
     {
-
+        DiceNum = 0;
         int sum;
         sum = playerData.atk + GameObject.Find("DiceDirector").GetComponent<Dice>().attackSum;
         if (ItemFlag == true)
