@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Monster Data", menuName = "MonsterData", order = int.MinValue)]
+[CreateAssetMenu(fileName = "Monster Data", menuName = "MonsterData", order = 2)]
 
 public class MonsterData : ScriptableObject
 {

@@ -28,7 +28,7 @@ public class StatusDirector : MonoBehaviour
     public Button Plus_DEF_Button;
     public Button Minus_DEF_Button;
 
-
+    public GameObject playerObject;
     Player player;
     int Rest_Status = 0;
     int Sum_hp = 0;
@@ -38,23 +38,21 @@ public class StatusDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = playerObject.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Stat_Hp.text = "" + player.hp;
-        Stat_Atk.text = "" + player.atk;
-        Stat_Def.text = "" + player.def;
+        Stat_Hp.text = player.hp.ToString();
+        Stat_Atk.text =  player.atk.ToString();
+        Stat_Def.text = player.def.ToString();
         Amout_Hp.text = "+" + Sum_hp;
         Amout_Atk.text = "+" + Sum_atk;
         Amout_Def.text = "+" + Sum_def;
         Rest_Status_Num.text = "" + Rest_Status;
 
-        
-
-        if(Rest_Status == 0)
+        if (Rest_Status == 0)
         {
             Plus_HP_Button.interactable = false;
             Plus_ATK_Button.interactable = false;
@@ -78,7 +76,7 @@ public class StatusDirector : MonoBehaviour
                 Minus_ATK_Button.interactable = true;
             }
 
-            if ( Sum_def == 0)
+            if (Sum_def == 0)
             {
                 Minus_DEF_Button.interactable = false;
             }
