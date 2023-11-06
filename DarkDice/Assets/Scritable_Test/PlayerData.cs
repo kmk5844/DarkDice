@@ -18,4 +18,19 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private int def;
     public int Def { get {  return def; } }
+
+    public void PlusHP(int C_hp)
+    {
+        hp += (float)C_hp;
+    }
+
+    public void PlusATK(int C_atk)
+    {
+        atk += C_atk;
+    }
+
+    public void PlusDEF(int C_def)
+    {
+        def += C_def;
+    }
 }

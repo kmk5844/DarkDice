@@ -16,4 +16,18 @@ public class Player : MonoBehaviour
         atk = playerData.Atk;
         def = playerData.Def;
     }
+
+    private void Update()
+    {
+        hp = playerData.Hp;
+        atk = playerData.Atk;
+        def = playerData.Def;
+    }
+
+    public void ChangePlayerData(int C_hp, int C_atk, int C_def)
+    {
+        playerData.PlusHP(C_hp);
+        playerData.PlusATK(C_atk);
+        playerData.PlusDEF(C_def);
+    }
 }
