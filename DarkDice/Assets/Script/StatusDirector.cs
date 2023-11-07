@@ -29,7 +29,7 @@ public class StatusDirector : MonoBehaviour
     public Button Minus_DEF_Button;
 
     public GameObject playerObject;
-    Player player;
+    Player_Scritable player;
     int Rest_Status = 0;
     int Sum_hp = 0;
     int Sum_atk = 0;
@@ -38,7 +38,7 @@ public class StatusDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = playerObject.GetComponent<Player>();
+        player = playerObject.GetComponent<Player_Scritable>();
     }
 
     // Update is called once per frame

@@ -7,5 +7,28 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     [SerializeField]
-    private string monsterName;
+    private string itemName;
+    public string ItemName { get { return ItemName; } }
+
+    [SerializeField]
+    private int pride;
+    public int Pride { get { return pride; } }
+
+    /*[SerializeField]
+    private Sprite spriteImage;
+    public Sprite SpriteImage { get { return spriteImage; } }*/
+
+    [SerializeField]
+    private int itemCount;
+    public int ItemCount { get { return itemCount;} }
+
+    public void Buy()
+    {
+        itemCount++;
+    }
+
+    public void Use()
+    {
+        itemCount--;
+    }
 }

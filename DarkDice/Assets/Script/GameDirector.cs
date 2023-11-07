@@ -18,13 +18,13 @@ public class GameDirector : MonoBehaviour
 
     public Button DiceButton;
 
-    Player playerData;
-    Monster monsterData;
+    Player_Scritable playerData;
+    Monster_Scritable monsterData;
    
     void Start()
     {
-        playerData = GameObject.Find("Player").GetComponent<Player>();
-        monsterData = GameObject.Find("Monster").GetComponent<Monster>();
+        playerData = GameObject.Find("Player").GetComponent<Player_Scritable>();
+        monsterData = GameObject.Find("Monster").GetComponent<Monster_Scritable>();
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class GameDirector : MonoBehaviour
         
         if(DiceNum == 2)
         {
-            if(ItemName == "Dice3")
+            if(ItemName == "Chance")
             {
                 DiceButton.interactable = true;
             }
@@ -73,7 +73,7 @@ public class GameDirector : MonoBehaviour
     public void ChanceToggleOff()
     {
         DiceNum++;
-        if (DiceNum == 3 && ItemName == "Dice3")
+        if (DiceNum == 3 && ItemName == "Chance")
         {
             if (Item1.isOn)
             {
@@ -97,15 +97,15 @@ public class GameDirector : MonoBehaviour
     {
         DiceNum = 0;
         int sum;
-        sum = playerData.atk + GameObject.Find("DiceDirector").GetComponent<Dice>().attackSum;
+        sum = playerData.atk + playerData.waepon.weapon_atk +GameObject.Find("DiceDirector").GetComponent<Dice>().attackSum;
         if (ItemFlag == true)
         {
-            if(ItemName == "Dice1")
+            if(ItemName == "Double")
             {
                 Debug.Log("2배 적용!");
-                sum = sum * 2 - playerData.atk;
+                sum = sum * 2 - playerData.atk - playerData.waepon.weapon_atk;
             }
-            else if(ItemName == "Dice2")
+            else if(ItemName == "Heal")
             {
                 Debug.Log("회복 성공!");
                 playerData.hp += 1;

@@ -16,3 +16,4 @@ MonoBehaviour:
   hp: 3
   atk: 10
   def: 10
+  coin: 540
