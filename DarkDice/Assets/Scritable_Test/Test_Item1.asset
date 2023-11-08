@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3554ae0fd6d3343875aea0ad483d75, type: 3}
   m_Name: Test_Item1
   m_EditorClassIdentifier: 
-  itemName: Test_Item1
+  itemName: Double
   pride: 35
-  itemCount: 3
+  itemCount: 2

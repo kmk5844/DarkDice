@@ -15,5 +15,6 @@ MonoBehaviour:
   playerName: Test_Player
   hp: 3
   atk: 10
+  weapon: {fileID: 11400000, guid: a688a841fc3ca2c4db1b6415a4e1a875, type: 2}
   def: 10
-  coin: 540
+  coin: 20

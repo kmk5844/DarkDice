@@ -14,28 +14,26 @@ public class WeaponDirector : MonoBehaviour
     public TextMeshProUGUI Status_Weapon_Atk_Text;
 
     Player_Scritable playerData;
-    Weapon_Scritable defaultWeapon;
-    Weapon_Scritable Weapon1;
-    Weapon_Scritable Weapon2;
-    Weapon_Scritable Weapon3;
-    Weapon_Scritable equipWeapon;
-
+    Weapon_Scritable[] Weapon;
+    WeaponData equipWeapon;
 
     private void Start()
     {
+        Weapon = new Weapon_Scritable[WeaponObject_Data.Length];
         playerData = PlayerObject.GetComponent<Player_Scritable>();
-        defaultWeapon = WeaponObject_Data[0].GetComponent<Weapon_Scritable>();
-        Weapon1 = WeaponObject_Data[1].GetComponent<Weapon_Scritable>();
-        Weapon2 = WeaponObject_Data[2].GetComponent<Weapon_Scritable>();
-        Weapon3 = WeaponObject_Data[3].GetComponent<Weapon_Scritable>();
-        equipWeapon = playerData.waepon;
-        if(equipWeapon == Weapon1)
+        for(int i = 0; i < WeaponObject_Data.Length; i++)
+        {
+            Weapon[i] = WeaponObject_Data[i].GetComponent<Weapon_Scritable>();
+        }
+        equipWeapon = playerData.weapon;
+
+        if (equipWeapon == Weapon[1].weaponData)
         {
             Toggle_Weapon[0].isOn = true;
-        }else if(equipWeapon == Weapon2)
+        }else if(equipWeapon == Weapon[2].weaponData)
         {
             Toggle_Weapon[1].isOn = true;
-        }else if (equipWeapon == Weapon3)
+        }else if (equipWeapon == Weapon[3].weaponData)
         {
             Toggle_Weapon[2].isOn = true;
         }
@@ -49,41 +47,34 @@ public class WeaponDirector : MonoBehaviour
 
     private void Update()
     { 
-        if (Weapon1.storeflag)
+        for(int i = 1; i < Weapon.Length; i++)
         {
-            Toggle_Weapon[0].gameObject.SetActive(true);
-        }
-
-        if (Weapon2.storeflag)
-        {
-            Toggle_Weapon[1].gameObject.SetActive(true);
-        }
-
-        if (Weapon3.storeflag)
-        {
-            Toggle_Weapon[2].gameObject.SetActive(true);
+            if (Weapon[i].storeflag)
+            {
+                Toggle_Weapon[i-1].gameObject.SetActive(true);
+            }
         }
 
         if (Toggle_Weapon[0].isOn)
         {
-            equipWeapon = Weapon1;
+            equipWeapon = Weapon[1].weaponData;
         }
         else if (Toggle_Weapon[1].isOn)
         {
-            equipWeapon = Weapon2;
+            equipWeapon = Weapon[2].weaponData;
         }
         else if (Toggle_Weapon[2].isOn)
         {
-            equipWeapon = Weapon3;
+            equipWeapon = Weapon[3].weaponData;
         }
         else
         {
-            equipWeapon = defaultWeapon;
+            equipWeapon = Weapon[0].weaponData;
         }
 
         playerData.ChangeWeapon(equipWeapon);
-        equipWeaponImage.sprite = equipWeapon.weaponimage;
-        Status_Weapon_Atk_Text.text = "+ 무기 공격력 : " + equipWeapon.weapon_atk.ToString();
+        equipWeaponImage.sprite = equipWeapon.WeaponImage;
+        Status_Weapon_Atk_Text.text = "+ 무기 공격력 : " + equipWeapon.WeaponAtk.ToString();
     }
 
 }

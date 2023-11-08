@@ -8,15 +8,11 @@ public class ItemData : ScriptableObject
 {
     [SerializeField]
     private string itemName;
-    public string ItemName { get { return ItemName; } }
+    public string ItemName { get { return itemName; } }
 
     [SerializeField]
     private int pride;
     public int Pride { get { return pride; } }
-
-    /*[SerializeField]
-    private Sprite spriteImage;
-    public Sprite SpriteImage { get { return spriteImage; } }*/
 
     [SerializeField]
     private int itemCount;

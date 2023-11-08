@@ -15,5 +15,5 @@ MonoBehaviour:
   weaponName: Test_Weapon1
   weaponAtk: 4
   weaponPride: 50
-  storeFlag: 1
+  storeFlag: 0
   weaponImage: {fileID: 21300000, guid: 9da34cef01d850744a683707637e6729, type: 3}

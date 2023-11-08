@@ -22,10 +22,10 @@ public class StatusDirector : MonoBehaviour
     private TextMeshProUGUI Rest_Status_Num;
 
     public Button Plus_HP_Button;
-    public Button Minus_HP_Button;
     public Button Plus_ATK_Button;
-    public Button Minus_ATK_Button;
     public Button Plus_DEF_Button;
+    public Button Minus_HP_Button;
+    public Button Minus_ATK_Button;
     public Button Minus_DEF_Button;
 
     public GameObject playerObject;

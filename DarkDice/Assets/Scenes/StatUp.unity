@@ -2034,8 +2034,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1651238655}
         m_TargetAssemblyTypeName: StoreDirector, Assembly-CSharp
-        m_MethodName: OnWeapon1Buy
-        m_Mode: 1
+        m_MethodName: OnWeaponBuy
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2864,7 +2864,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 802693b460b34854880d789814179eb9, type: 2}
   hp: 0
   atk: 0
-  w_atk: 0
+  weapon: {fileID: 0}
   def: 0
   coin: 0
 --- !u!4 &369615971
@@ -3029,10 +3029,10 @@ MonoBehaviour:
   Amout_Def: {fileID: 271560165}
   Rest_Status_Num: {fileID: 1882205758}
   Plus_HP_Button: {fileID: 569353570}
-  Minus_HP_Button: {fileID: 1421505371}
   Plus_ATK_Button: {fileID: 350022400}
-  Minus_ATK_Button: {fileID: 693674420}
   Plus_DEF_Button: {fileID: 2077928922}
+  Minus_HP_Button: {fileID: 1421505371}
+  Minus_ATK_Button: {fileID: 693674420}
   Minus_DEF_Button: {fileID: 1511610640}
   playerObject: {fileID: 369615969}
 --- !u!4 &546571148
@@ -4322,7 +4322,6 @@ MonoBehaviour:
   weapon_atk: 0
   weapon_pride: 0
   storeflag: 0
-  equipweaponflag: 0
   weaponimage: {fileID: 0}
 --- !u!1 &717854791
 GameObject:
@@ -4409,12 +4408,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1651238655}
         m_TargetAssemblyTypeName: StoreDirector, Assembly-CSharp
-        m_MethodName: OnWeapon3Buy
-        m_Mode: 1
+        m_MethodName: OnWeaponBuy
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5325,7 +5324,7 @@ GameObject:
   - component: {fileID: 848315014}
   - component: {fileID: 848315013}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Item1_Pride_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5370,10 +5369,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35G
+  m_text: '#G'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
+  m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6262,7 +6261,7 @@ GameObject:
   - component: {fileID: 998026009}
   - component: {fileID: 998026008}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Weapon1_Pride_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6307,7 +6306,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50G
+  m_text: '#G
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
@@ -8047,7 +8048,6 @@ MonoBehaviour:
   weapon_atk: 0
   weapon_pride: 0
   storeflag: 0
-  equipweaponflag: 0
   weaponimage: {fileID: 0}
 --- !u!1 &1223503758
 GameObject:
@@ -8249,9 +8249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2961f77f3a77c3949b4670dc29d88722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item1_Count: {fileID: 166373899}
-  Item2_Count: {fileID: 685515126}
-  Item3_Count: {fileID: 282682692}
+  Item_Count:
+  - {fileID: 166373899}
+  - {fileID: 685515126}
+  - {fileID: 282682692}
   ItemObject_Data:
   - {fileID: 1027483894}
   - {fileID: 929272608}
@@ -8626,7 +8627,7 @@ GameObject:
   - component: {fileID: 1399923513}
   - component: {fileID: 1399923512}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Item3_Pride_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8671,10 +8672,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35G
+  m_text: '#G'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
+  m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8835,7 +8836,7 @@ GameObject:
   - component: {fileID: 1405711590}
   - component: {fileID: 1405711589}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Weapon2_Pride_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8880,7 +8881,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 70G
+  m_text: '#G
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
@@ -9326,12 +9329,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1651238655}
         m_TargetAssemblyTypeName: StoreDirector, Assembly-CSharp
-        m_MethodName: OnWeapon2Buy
-        m_Mode: 1
+        m_MethodName: OnWeaponBuy
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9459,12 +9462,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1651238655}
         m_TargetAssemblyTypeName: StoreDirector, Assembly-CSharp
-        m_MethodName: OnItem2Buy
-        m_Mode: 1
+        m_MethodName: OnItemBuy
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10078,12 +10081,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1651238655}
         m_TargetAssemblyTypeName: StoreDirector, Assembly-CSharp
-        m_MethodName: OnItem3Buy
-        m_Mode: 1
+        m_MethodName: OnItemBuy
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10138,7 +10141,7 @@ GameObject:
   - component: {fileID: 1609241472}
   - component: {fileID: 1609241471}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Weapon3_Pride_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10183,7 +10186,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100G
+  m_text: '#G
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
@@ -10365,15 +10370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinCount: {fileID: 36663204}
-  Item1_Count: {fileID: 1852158439}
-  Item2_Count: {fileID: 1067786887}
-  Item3_Count: {fileID: 1399284774}
-  Item1_Button: {fileID: 2124785089}
-  Item2_Button: {fileID: 1496015343}
-  Item3_Button: {fileID: 1604968615}
-  Weapon1_Button: {fileID: 295683863}
-  Weapon2_Button: {fileID: 1484987656}
-  Weapon3_Button: {fileID: 717854793}
+  playerObject: {fileID: 369615969}
   ItemObject_Data:
   - {fileID: 1027483894}
   - {fileID: 929272608}
@@ -10382,7 +10379,26 @@ MonoBehaviour:
   - {fileID: 706917331}
   - {fileID: 1186295158}
   - {fileID: 2081011778}
-  playerObject: {fileID: 369615969}
+  Item_Count:
+  - {fileID: 1852158439}
+  - {fileID: 1067786887}
+  - {fileID: 1399284774}
+  Item_Pride:
+  - {fileID: 848315013}
+  - {fileID: 1928988163}
+  - {fileID: 1399923512}
+  Weapon_Pride:
+  - {fileID: 998026008}
+  - {fileID: 1405711589}
+  - {fileID: 1609241471}
+  Item_Button:
+  - {fileID: 2124785089}
+  - {fileID: 1496015343}
+  - {fileID: 1604968615}
+  Weapon_Button:
+  - {fileID: 295683863}
+  - {fileID: 1484987656}
+  - {fileID: 717854793}
 --- !u!4 &1651238656
 Transform:
   m_ObjectHideFlags: 0
@@ -10607,6 +10623,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658029459}
   m_CullTransparentMesh: 1
+--- !u!1 &1662044481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662044482}
+  - component: {fileID: 1662044483}
+  m_Layer: 0
+  m_Name: equipWeapon_Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662044482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662044481}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -259.38043, y: -282.26373, z: 5.8632927}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1981533251}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662044483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662044481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40be8500e5571b943adacd252d682706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: c37ce02a9fefa55419069e4e10ba0369, type: 2}
+  weapon_atk: 0
+  weapon_pride: 0
+  storeflag: 0
+  weaponimage: {fileID: 0}
 --- !u!1 &1671560364
 GameObject:
   m_ObjectHideFlags: 0
@@ -12245,7 +12310,7 @@ GameObject:
   - component: {fileID: 1928988164}
   - component: {fileID: 1928988163}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Item2_Pride_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12290,10 +12355,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 40G
+  m_text: '#G'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
+  m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12501,6 +12566,7 @@ Transform:
   - {fileID: 706917332}
   - {fileID: 1186295159}
   - {fileID: 2081011779}
+  - {fileID: 1662044482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983821941
@@ -12758,7 +12824,6 @@ MonoBehaviour:
   weapon_atk: 0
   weapon_pride: 0
   storeflag: 0
-  equipweaponflag: 0
   weaponimage: {fileID: 0}
 --- !u!1 &2093693635
 GameObject:
@@ -13204,8 +13269,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1651238655}
         m_TargetAssemblyTypeName: StoreDirector, Assembly-CSharp
-        m_MethodName: OnItem1Buy
-        m_Mode: 1
+        m_MethodName: OnItemBuy
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13300,7 +13365,6 @@ MonoBehaviour:
   weapon_atk: 0
   weapon_pride: 0
   storeflag: 0
-  equipweaponflag: 0
   weaponimage: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

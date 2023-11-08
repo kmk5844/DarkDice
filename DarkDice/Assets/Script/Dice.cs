@@ -12,9 +12,10 @@ public class Dice : MonoBehaviour
     public Sprite[] Pocket;
     public Image Dice1;
     public Image Dice2;
-    public Image PocketDice1;
-    public Image PocketDice2;
-    public int attackSum = 0;
+
+    public int atkSum = 0;
+    public int defSum = 0;
+
     public Button Play_Button;
     public Button Dice_Button;
     public Button Attack_Button;
@@ -28,7 +29,7 @@ public class Dice : MonoBehaviour
 
     IEnumerator coroutine;
 
-    IEnumerator DiceRolling(Image image1, Image image2, Image Pocket1, Image Pocket2)
+    IEnumerator DiceRolling(Image image1, Image image2)
     {
         int rand1 = Random.Range(0, 6);
         int rand2 = Random.Range(0, 6);
@@ -39,8 +40,6 @@ public class Dice : MonoBehaviour
             {
                 StopCoroutine(coroutine);
                 Attack_Button.interactable = true;
-                Pocket1.sprite = Pocket[rand1];
-                Pocket2.sprite = Pocket[rand2];
             }
         }
         image1.sprite = Pocket[rand1];
@@ -51,7 +50,7 @@ public class Dice : MonoBehaviour
 
     void StartMethod()
     {
-        coroutine = DiceRolling(Dice1, Dice2, PocketDice1, PocketDice2);
+        coroutine = DiceRolling(Dice1, Dice2);
         StartCoroutine(coroutine);
     }
     public void OnPlayButton()
@@ -80,7 +79,16 @@ public class Dice : MonoBehaviour
     public void OnAttackButton()
     {
         Play_Button.gameObject.SetActive(true);
-        attackSum = PlusAttack(Dice1, Dice2);
+        if (!GameObject.Find("GameDirector").GetComponent<GameDirector>().atk_or_def)
+        {
+            atkSum = PlusAttack(Dice1, Dice2);
+            defSum = 0;
+        }
+        else
+        {
+            atkSum = DiceToInt(Dice1);
+            defSum = DiceToInt(Dice2);
+        }
         Dice_Button.interactable = true;
     }
 
@@ -88,6 +96,7 @@ public class Dice : MonoBehaviour
     {
         return DiceToInt(image1) + DiceToInt(image2);
     }
+
 
     private int DiceToInt(Image image)
     {

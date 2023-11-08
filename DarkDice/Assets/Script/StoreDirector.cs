@@ -3,153 +3,91 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class StoreDirector : MonoBehaviour
 {
     public TextMeshProUGUI CoinCount;
-    public TextMeshProUGUI Item1_Count;
-    public TextMeshProUGUI Item2_Count;
-    public TextMeshProUGUI Item3_Count;
-    public Button Item1_Button;
-    public Button Item2_Button;
-    public Button Item3_Button;
-    public Button Weapon1_Button;
-    public Button Weapon2_Button;
-    public Button Weapon3_Button;
-
-    public GameObject[] ItemObject_Data;
-    Item_Scritable item1;
-    Item_Scritable item2;
-    Item_Scritable item3;
-
-    public GameObject[] WeaponObject_Data;
-    Weapon_Scritable weapon1;
-    Weapon_Scritable weapon2;
-    Weapon_Scritable weapon3;
 
     public GameObject playerObject;
     Player_Scritable player;
-    // Start is called before the first frame update
+
+    public GameObject[] ItemObject_Data;
+    Item_Scritable[] item;
+
+    public GameObject[] WeaponObject_Data;
+    Weapon_Scritable[] weapon;
+
+    public TextMeshProUGUI[] Item_Count;
+    public TextMeshProUGUI[] Item_Pride;
+    public TextMeshProUGUI[] Weapon_Pride;
+
+    public Button[] Item_Button;
+    public Button[] Weapon_Button;
+
     void Start()
     {
         player = playerObject.GetComponent<Player_Scritable>();
-        item1 = ItemObject_Data[0].GetComponent<Item_Scritable>();
-        item2 = ItemObject_Data[1].GetComponent<Item_Scritable>();
-        item3 = ItemObject_Data[2].GetComponent<Item_Scritable>();
-        weapon1 = WeaponObject_Data[0].GetComponent<Weapon_Scritable>();
-        weapon2 = WeaponObject_Data[1].GetComponent<Weapon_Scritable>();
-        weapon3 = WeaponObject_Data[2].GetComponent<Weapon_Scritable>();
+        item = new Item_Scritable[ItemObject_Data.Length];
+        weapon = new Weapon_Scritable[WeaponObject_Data.Length];
+        for (int i = 0; i < ItemObject_Data.Length; i++)
+        {
+            item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
+            Item_Pride[i].text = item[i].pride + "G";
+        }
+
+        for (int i = 0; i <  WeaponObject_Data.Length; i++)
+        {
+            weapon[i] = WeaponObject_Data[i].GetComponent<Weapon_Scritable>();
+            Weapon_Pride[i].text = weapon[i].weapon_pride + "G";
+        }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         CoinCount.text = player.coin.ToString();
-        Item1_Count.text = item1.itemcount.ToString();
-        Item2_Count.text = item2.itemcount.ToString();
-        Item3_Count.text = item3.itemcount.ToString();
+        for (int i = 0; i < item.Length; i++)
+        {
+            Item_Count[i].text = item[i].itemcount.ToString();
 
-        if(player.coin < item1.pride)
-        {
-            Item1_Button.interactable = false;
-        }
-        else
-        {
-            Item1_Button.interactable = true;
-        }
-
-        if (player.coin < item2.pride) {
-            Item2_Button.interactable = false;
-        }
-        else
-        {
-            Item2_Button.interactable = true;
-        }
-
-        if (player.coin < item3.pride)
-        {
-            Item3_Button.interactable = false;
-        }
-        else
-        {
-            Item3_Button.interactable = true;
-        }
-
-        if(player.coin < weapon1.weapon_pride || weapon1.storeflag)
-        {
-            Weapon1_Button.interactable = false;
-            if (weapon1.storeflag)
+            if (player.coin < item[i].pride)
             {
-                Weapon1_Button.GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                Item_Button[i].interactable = false;
+            }
+            else
+            {
+                Item_Button[i].interactable = true;
             }
         }
-        else
-        {
-            Weapon1_Button.interactable = true;
-        }
 
-        if (player.coin < weapon2.weapon_pride || weapon2.storeflag)
+        for(int i = 0; i < weapon.Length; i++)
         {
-            Weapon2_Button.interactable = false;
-            if (weapon2.storeflag)
+            if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag)
             {
-                Weapon2_Button.GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                Weapon_Button[i].interactable = false;
+                if (weapon[i].storeflag)
+                {
+                    Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                }
+            }
+            else
+            {
+                Weapon_Button[i].interactable = true;
             }
         }
-        else
-        {
-            Weapon2_Button.interactable = true;
-        }
-
-        if (player.coin < weapon3.weapon_pride || weapon3.storeflag)
-        {
-            Weapon3_Button.interactable = false;
-            if (weapon3.storeflag)
-            {
-                Weapon3_Button.GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
-            }
-        }
-        else
-        {
-            Weapon3_Button.interactable = true;
-        }
-
     }
 
-    public void OnItem1Buy()
+    public void OnItemBuy(int i)
     {
-        item1.BuyItem();
-        player.TestMinusCoinData(item1.pride);
+        item[i].BuyItem();
+        player.TestMinusCoinData(item[i].pride);
     }
 
-    public void OnItem2Buy()
+    public void OnWeaponBuy(int i)
     {
-        item2.BuyItem();
-        player.TestMinusCoinData(item2.pride);
-    }
-
-    public void OnItem3Buy()
-    {
-        item3.BuyItem();
-        player.TestMinusCoinData(item3.pride);
-    }
-
-    public void OnWeapon1Buy()
-    {
-        weapon1.BuyWeapon();
-        player.TestMinusCoinData(weapon1.weapon_pride);
-    }
-
-    public void OnWeapon2Buy()
-    {
-        weapon2.BuyWeapon();
-        player.TestMinusCoinData(weapon2.weapon_pride);
-    }
-
-    public void OnWeapon3Buy()
-    {
-        weapon3.BuyWeapon();
-        player.TestMinusCoinData(weapon3.weapon_pride);
+        weapon[i].BuyWeapon();
+        player.TestMinusCoinData(weapon[i].weapon_pride);
     }
 
     public void OnTestCoinButton()

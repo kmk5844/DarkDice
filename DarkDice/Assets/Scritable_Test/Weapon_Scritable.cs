@@ -5,11 +5,10 @@ using UnityEngine;
 public class Weapon_Scritable : MonoBehaviour
 {
     [SerializeField]
-    private WeaponData weaponData;
+    public WeaponData weaponData;
     public int weapon_atk;
     public int weapon_pride;
     public bool storeflag;
-    public bool equipweaponflag;
     public Sprite weaponimage;
 
     private void Awake()

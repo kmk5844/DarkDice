@@ -8,7 +8,7 @@ public class Player_Scritable : MonoBehaviour
     private PlayerData playerData;
     public float hp;
     public int atk;
-    public Weapon_Scritable waepon;
+    public WeaponData weapon;
     public int def;
     public int coin;
 
@@ -16,7 +16,7 @@ public class Player_Scritable : MonoBehaviour
     {
         hp = playerData.Hp;
         atk = playerData.Atk;
-        waepon = playerData.Weapon;
+        weapon = playerData.Weapon;
         def = playerData.Def;
         coin = playerData.Coin;
     }
@@ -25,24 +25,20 @@ public class Player_Scritable : MonoBehaviour
     {
         hp = playerData.Hp;
         atk = playerData.Atk;
-        waepon = playerData.Weapon;
+        weapon = playerData.Weapon;
         def = playerData.Def;
         coin = playerData.Coin;
     }
 
     public void ChangePlayerData(int C_hp, int C_atk, int C_def)
     {
-        playerData.PlusHP(C_hp);
-        playerData.PlusATK(C_atk);
-        playerData.PlusDEF(C_def);
+        playerData.PlusStatus(C_hp, C_atk, C_def);
     }
 
-    public void ChangeWeapon(Weapon_Scritable C_WATK)
+    public void ChangeWeapon(WeaponData C_Weapon)
     {
-        playerData.ChangeWeaponATK(C_WATK);
-
+        playerData.ChangeWeaponATK(C_Weapon);
     }
-
 
     public void TestPlusCoinData()
     {

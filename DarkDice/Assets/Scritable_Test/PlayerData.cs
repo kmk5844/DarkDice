@@ -16,8 +16,8 @@ public class PlayerData : ScriptableObject
     private int atk;
     public int Atk { get { return atk; } }
     [SerializeField]
-    private Weapon_Scritable weapon;
-    public Weapon_Scritable Weapon { get { return weapon; } }
+    private WeaponData weapon;
+    public WeaponData Weapon { get { return weapon; } }
     [SerializeField]
     private int def;
     public int Def { get {  return def; } }
@@ -25,24 +25,17 @@ public class PlayerData : ScriptableObject
     private int coin;
     public int Coin { get { return coin; } }
 
-    public void PlusHP(int C_hp)
+    public void PlusStatus(int C_hp, int C_atk, int C_def)
     {
         hp += (float)C_hp;
-    }
-
-    public void PlusATK(int C_atk)
-    {
         atk += C_atk;
-    }
-
-    public void ChangeWeaponATK(Weapon_Scritable C_WeaponAtk)
-    {
-        weapon = C_WeaponAtk;
-    }
-
-    public void PlusDEF(int C_def)
-    {
         def += C_def;
+    }
+
+
+    public void ChangeWeaponATK(WeaponData C_Weapon)
+    {
+        weapon = C_Weapon;
     }
 
     public void testPlusCoin()

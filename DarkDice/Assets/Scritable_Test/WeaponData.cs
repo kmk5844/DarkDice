@@ -20,7 +20,7 @@ public class WeaponData : ScriptableObject
     public int WeaponPride { get {  return weaponPride; } }
 
     [SerializeField]
-    private bool storeFlag = false;
+    private bool storeFlag;
     public bool StoreFlag { get { return storeFlag; } }
 
     [SerializeField]

@@ -16,5 +16,4 @@ MonoBehaviour:
   weaponAtk: 6
   weaponPride: 100
   storeFlag: 0
-  equipWeaponFlag: 0
   weaponImage: {fileID: 21300000, guid: 04bf026c2d459e74f9ef67f469923893, type: 3}

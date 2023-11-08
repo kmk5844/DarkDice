@@ -8,44 +8,51 @@ public class GameDirector : MonoBehaviour
     [SerializeField]
     private float monster_Atk_Delay = 2.0f;
     [SerializeField]
-    public string ItemName = "";
+    private string ItemName = "";
+    
+    public bool atk_or_def; //만약 false라면 all atk, true라면 atk 와 def 분배
 
     int DiceNum = 0;
     public bool ItemFlag = false;
-    public Toggle Item1;
-    public Toggle Item2;
-    public Toggle Item3;
+    public Toggle[] Item_Toggle;
 
     public Button DiceButton;
 
     Player_Scritable playerData;
     Monster_Scritable monsterData;
-   
+
+    public GameObject[] ItemObject_Data;
+    Item_Scritable[] item;
+
     void Start()
     {
+        item = new Item_Scritable[ItemObject_Data.Length];
+        for(int i = 0; i < ItemObject_Data.Length; i++)
+        {
+            item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
+        }
         playerData = GameObject.Find("Player").GetComponent<Player_Scritable>();
         monsterData = GameObject.Find("Monster").GetComponent<Monster_Scritable>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Item1.isOn)
+        if (Item_Toggle[0].isOn)
         {
-            ItemName = Item1.GetComponentInChildren<Image>().sprite.name;
+            ItemName = Item_Toggle[0].GetComponentInChildren<Image>().sprite.name;
             ItemFlag = true;
         }
-        else if (Item2.isOn)
+        else if (Item_Toggle[1].isOn)
         {
-            ItemName = Item2.GetComponentInChildren<Image>().sprite.name;
+            ItemName = Item_Toggle[1].GetComponentInChildren<Image>().sprite.name;
             ItemFlag = true;
         }
-        else if (Item3.isOn)
+        else if (Item_Toggle[2].isOn)
         {
-            ItemName = Item3.GetComponentInChildren<Image>().sprite.name;
+            ItemName = Item_Toggle[2].GetComponentInChildren<Image>().sprite.name;
             ItemFlag = true;
         }
-        else if (!Item1.isOn && !Item2.isOn && !Item3.isOn)
+        else if (!Item_Toggle[0].isOn && !Item_Toggle[1].isOn && !Item_Toggle[2].isOn)
         {
             ItemFlag = false;
             ItemName = "";
@@ -62,7 +69,6 @@ public class GameDirector : MonoBehaviour
                 DiceButton.interactable = false;
             }
         }
-        
     }
 
     public void CountDice()
@@ -75,20 +81,14 @@ public class GameDirector : MonoBehaviour
         DiceNum++;
         if (DiceNum == 3 && ItemName == "Chance")
         {
-            if (Item1.isOn)
+            ItemUse();
+            for(int i = 0; i < item.Length; i++)
             {
-                Item1.isOn = false;
-                Item1.interactable = false;
-            }
-            else if (Item2.isOn)
-            {
-                Item2.isOn = false;
-                Item2.interactable = false;
-            }
-            else if (Item3.isOn)
-            {
-                Item3.isOn = false;
-                Item3.interactable = false;
+                if (Item_Toggle[i].isOn)
+                {
+                    Item_Toggle[i].isOn = false;
+                    Item_Toggle[i].interactable = false;
+                }
             }
         }
     }
@@ -96,33 +96,37 @@ public class GameDirector : MonoBehaviour
     public void OnFightButton()
     {
         DiceNum = 0;
-        int sum;
-        sum = playerData.atk + playerData.waepon.weapon_atk +GameObject.Find("DiceDirector").GetComponent<Dice>().attackSum;
+        int atksum;
+        atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
         if (ItemFlag == true)
         {
             if(ItemName == "Double")
             {
+                ItemUse();
+
                 Debug.Log("2배 적용!");
-                sum = sum * 2 - playerData.atk - playerData.waepon.weapon_atk;
+                atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
             }
             else if(ItemName == "Heal")
             {
+                ItemUse();
                 Debug.Log("회복 성공!");
                 playerData.hp += 1;
                 Debug.Log("Player Data : " + playerData.hp);
+                Debug.Log("=======================================");
             }
             ItemFlag = false;
         }
-
-        Debug.Log(sum + " 데미지로 공격 시도!");
+        Debug.Log("Player Atk : " + playerData.atk + " + " + playerData.weapon.WeaponAtk + " + " + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum + " = " + atksum);
+        Debug.Log(atksum + " 데미지로 공격 시도!");
         Debug.Log("=======================================");
 
-        if (sum > monsterData.def)
+        if (atksum > monsterData.def)
         {
             monsterData.hp -= 1;
             Debug.Log("Monster Data : " + monsterData.hp);
         }
-        else if(sum == monsterData.def)
+        else if(atksum == monsterData.def)
         {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
@@ -150,15 +154,19 @@ public class GameDirector : MonoBehaviour
     IEnumerator monsterTurn()
     {
         Debug.Log("몬스터 턴");
+        int defSum;
+        defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
+        Debug.Log("Player Def : " + playerData.def + " + "  + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum + " = " + defSum);
+
         yield return new WaitForSeconds(monster_Atk_Delay);
 
-        if(playerData.def < monsterData.atk)
+        if(defSum < monsterData.atk)
         {
             Debug.Log("몬스터 공격 성공!");
             playerData.hp -= 1;
             Debug.Log("Player Data : " + playerData.hp);
         }
-        else if(playerData.def == monsterData.atk) {
+        else if(defSum == monsterData.atk) {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
             playerData.hp -= 0.5f;
@@ -175,6 +183,17 @@ public class GameDirector : MonoBehaviour
         if (playerData.hp == 0)
         {
             Debug.Log("용사 패배");
+        }
+    }
+
+    public void ItemUse()
+    {
+        for (int i = 0; i < item.Length; i++)
+        {
+            if (item[i].item_name == ItemName)
+            {
+                item[i].UseItem();
+            }
         }
     }
 
