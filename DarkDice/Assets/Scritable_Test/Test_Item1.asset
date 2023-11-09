@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Double
   pride: 35
   itemCount: 2
+  itemImage: {fileID: 21300000, guid: 9c2adfcf342945146a3052b76f5afdd5, type: 3}

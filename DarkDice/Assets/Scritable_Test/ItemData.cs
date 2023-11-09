@@ -18,6 +18,10 @@ public class ItemData : ScriptableObject
     private int itemCount;
     public int ItemCount { get { return itemCount;} }
 
+    [SerializeField]
+    private Sprite itemImage;
+    public Sprite ItemImage { get { return itemImage; } }
+
     public void Buy()
     {
         itemCount++;

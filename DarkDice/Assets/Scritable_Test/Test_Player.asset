@@ -18,3 +18,7 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: a688a841fc3ca2c4db1b6415a4e1a875, type: 2}
   def: 10
   coin: 20
+  item:
+  - {fileID: 11400000, guid: b8865d724c1c9204f909257d9b5e6bd2, type: 2}
+  - {fileID: 11400000, guid: d10c8e323f787bb4591dfaa5b099013f, type: 2}
+  - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}

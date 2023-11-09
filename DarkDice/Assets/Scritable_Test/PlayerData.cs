@@ -24,6 +24,11 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private int coin;
     public int Coin { get { return coin; } }
+    [SerializeField]
+    private ItemData[] item;
+    public ItemData[] Item { get { return item; } }
+
+
 
     public void PlusStatus(int C_hp, int C_atk, int C_def)
     {
@@ -31,7 +36,6 @@ public class PlayerData : ScriptableObject
         atk += C_atk;
         def += C_def;
     }
-
 
     public void ChangeWeaponATK(WeaponData C_Weapon)
     {
@@ -46,5 +50,14 @@ public class PlayerData : ScriptableObject
     public void testMinusCoin(int buyCoin)
     {
         coin -= buyCoin;
+    }
+
+    public void EquipItem_Data(ItemData itemData, int num)
+    {
+        item[num] = itemData;
+    }
+    public void DeleteItem_Data(ItemData itemData, int ButtonNum)
+    {
+        item[ButtonNum] = itemData;
     }
 }

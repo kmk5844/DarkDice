@@ -5,16 +5,18 @@ using UnityEngine;
 public class Item_Scritable : MonoBehaviour
 {
     [SerializeField]
-    private ItemData itemData;
+    public ItemData itemData;
     public string item_name;
     public int pride;
     public int itemcount;
+    public Sprite ItemImage;
 
     private void Awake()
     {
         item_name = itemData.ItemName;
         pride = itemData.Pride;
         itemcount = itemData.ItemCount;
+        ItemImage = itemData.ItemImage;
     }
 
     private void Update()

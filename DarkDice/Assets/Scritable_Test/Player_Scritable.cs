@@ -11,6 +11,7 @@ public class Player_Scritable : MonoBehaviour
     public WeaponData weapon;
     public int def;
     public int coin;
+    public ItemData[] item;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Player_Scritable : MonoBehaviour
         weapon = playerData.Weapon;
         def = playerData.Def;
         coin = playerData.Coin;
+        item = playerData.Item;
     }
 
     private void Update()
@@ -28,6 +30,7 @@ public class Player_Scritable : MonoBehaviour
         weapon = playerData.Weapon;
         def = playerData.Def;
         coin = playerData.Coin;
+        item = playerData.Item;
     }
 
     public void ChangePlayerData(int C_hp, int C_atk, int C_def)
@@ -48,5 +51,24 @@ public class Player_Scritable : MonoBehaviour
     public void TestMinusCoinData(int buyCoin)
     {
         playerData.testMinusCoin(buyCoin);
+    }
+
+    public void EquipItem(ItemData clickitem)
+    {
+        for (int i = 0; i < item.Length; i++)
+        {
+            {
+                if (item[i].name == "Test_Item0")
+                {
+                    playerData.EquipItem_Data(clickitem, i);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void DeleteItem(ItemData default_item, int ButtonNum)
+    {
+        playerData.DeleteItem_Data(default_item, ButtonNum);
     }
 }
