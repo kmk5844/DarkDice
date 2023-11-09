@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c2adfcf342945146a3052b76f5afdd5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4afc48acd4a1d56479debb0a809e8eff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -247,6 +247,7 @@ MonoBehaviour:
   item_name: 
   pride: 0
   itemcount: 0
+  ItemImage: {fileID: 0}
 --- !u!1 &212758239
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c2adfcf342945146a3052b76f5afdd5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4afc48acd4a1d56479debb0a809e8eff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -997,6 +998,7 @@ MonoBehaviour:
   item_name: 
   pride: 0
   itemcount: 0
+  ItemImage: {fileID: 0}
 --- !u!1 &779411689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2376,7 @@ MonoBehaviour:
   item_name: 
   pride: 0
   itemcount: 0
+  ItemImage: {fileID: 0}
 --- !u!1 &1908948878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,6 +2907,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   def: 0
   coin: 0
+  item: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

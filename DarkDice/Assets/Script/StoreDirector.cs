@@ -50,7 +50,6 @@ public class StoreDirector : MonoBehaviour
         for (int i = 0; i < item.Length; i++)
         {
             Item_Count[i].text = item[i].itemcount.ToString();
-
             if (player.coin < item[i].pride)
             {
                 Item_Button[i].interactable = false;

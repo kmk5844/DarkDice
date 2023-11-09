@@ -13,6 +13,9 @@ public class GameDirector : MonoBehaviour
     public bool atk_or_def; //만약 false라면 all atk, true라면 atk 와 def 분배
 
     int DiceNum = 0;
+    int atksum;
+    int defSum;
+
     public bool ItemFlag = false;
     public Toggle[] Item_Toggle;
 
@@ -96,15 +99,14 @@ public class GameDirector : MonoBehaviour
     public void OnFightButton()
     {
         DiceNum = 0;
-        int atksum;
         atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
+        defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
         if (ItemFlag == true)
         {
-            if(ItemName == "Double")
+            if(ItemName == "DoubleAtk")
             {
                 ItemUse();
-
-                Debug.Log("2배 적용!");
+                Debug.Log("공격력 2배 적용!");
                 atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
             }
             else if(ItemName == "Heal")
@@ -114,6 +116,11 @@ public class GameDirector : MonoBehaviour
                 playerData.hp += 1;
                 Debug.Log("Player Data : " + playerData.hp);
                 Debug.Log("=======================================");
+            }else if(ItemName == "DoubleDef")
+            {
+                ItemUse();
+                Debug.Log("방어력 2배 적용!");
+                defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent <Dice>().defSum * 2;
             }
             ItemFlag = false;
         }
@@ -154,8 +161,6 @@ public class GameDirector : MonoBehaviour
     IEnumerator monsterTurn()
     {
         Debug.Log("몬스터 턴");
-        int defSum;
-        defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
         Debug.Log("Player Def : " + playerData.def + " + "  + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum + " = " + defSum);
 
         yield return new WaitForSeconds(monster_Atk_Delay);
