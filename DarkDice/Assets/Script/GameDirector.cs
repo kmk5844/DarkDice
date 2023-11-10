@@ -10,14 +10,16 @@ public class GameDirector : MonoBehaviour
     [SerializeField]
     private string ItemName = "";
     
-    public bool atk_or_def; //만약 false라면 all atk, true라면 atk 와 def 분배
-
     int DiceNum = 0;
     int atksum;
     int defSum;
 
+    public GameObject PlayerObject;
+    public GameObject MonsterObject;
     public bool ItemFlag = false;
     public Toggle[] Item_Toggle;
+    public GameObject[] Item_BackGround;
+    public GameObject[] Item_CheckMark;
 
     public Button DiceButton;
 
@@ -27,19 +29,39 @@ public class GameDirector : MonoBehaviour
     public GameObject[] ItemObject_Data;
     Item_Scritable[] item;
 
+
+
     void Start()
     {
         item = new Item_Scritable[ItemObject_Data.Length];
-        for(int i = 0; i < ItemObject_Data.Length; i++)
+        playerData = PlayerObject.GetComponent<Player_Scritable>();
+        monsterData = MonsterObject.GetComponent<Monster_Scritable>();
+
+        for (int i = 0; i < ItemObject_Data.Length; i++)
         {
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
         }
-        playerData = GameObject.Find("Player").GetComponent<Player_Scritable>();
-        monsterData = GameObject.Find("Monster").GetComponent<Monster_Scritable>();
+        
+        for(int i = 0; i < Item_Toggle.Length;  i++ )
+        {
+            if (playerData.item[i].ItemName == "Default")
+            {
+                Item_Toggle[i].interactable = false;
+            }
+        }
+
+        for (int i = 0; i < Item_Toggle.Length; i++)
+        {
+            Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
+            Item_CheckMark[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
+            
+        }
     }
 
     void Update()
     {
+
+
         if (Item_Toggle[0].isOn)
         {
             ItemName = Item_Toggle[0].GetComponentInChildren<Image>().sprite.name;

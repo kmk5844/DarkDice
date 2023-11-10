@@ -79,13 +79,15 @@ public class ItemDirector : MonoBehaviour
             }
         }
 
-        Debug.Log(Equip_Max_Count);
+        for (int i = 0; i < Equip_Item_Count.Length; i++)
+        {
+            Sub_Count[i] = itemData[i].itemcount;
+            Equip_Item_Count[i].text = Sub_Count[i].ToString();
+        }
     }
-
     public void OnEquipItem(int i) {
         playerData.EquipItem(itemData[i].itemData);
         Equip_Max_Count++;
-        Debug.Log(Equip_Max_Count);
         Sub_Count[i]--;
     }
 

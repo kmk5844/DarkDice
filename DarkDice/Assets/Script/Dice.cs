@@ -79,24 +79,10 @@ public class Dice : MonoBehaviour
     public void OnAttackButton()
     {
         Play_Button.gameObject.SetActive(true);
-        if (!GameObject.Find("GameDirector").GetComponent<GameDirector>().atk_or_def)
-        {
-            atkSum = PlusAttack(Dice1, Dice2);
-            defSum = 0;
-        }
-        else
-        {
-            atkSum = DiceToInt(Dice1);
-            defSum = DiceToInt(Dice2);
-        }
+        atkSum = DiceToInt(Dice1);
+        defSum = DiceToInt(Dice2);
         Dice_Button.interactable = true;
     }
-
-    private int PlusAttack(Image image1, Image image2)
-    {
-        return DiceToInt(image1) + DiceToInt(image2);
-    }
-
 
     private int DiceToInt(Image image)
     {
