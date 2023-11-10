@@ -63,6 +63,7 @@
     <Compile Include="Assets\Script\Dice.cs" />
     <Compile Include="Assets\Scritable_Test\PlayerData.cs" />
     <Compile Include="Assets\Script\StageDirector.cs" />
+    <Compile Include="Assets\Script\CameraResoution.cs" />
     <Compile Include="Assets\Script\GameDirector.cs" />
     <Compile Include="Assets\Scritable_Test\MonsterData.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
