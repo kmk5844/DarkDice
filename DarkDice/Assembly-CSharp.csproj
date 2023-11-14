@@ -58,24 +58,54 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Mini_1\PointControl.cs" />
+    <Compile Include="Assets\Script\Mini_2\StartLavaPoint.cs" />
     <Compile Include="Assets\DraggableItem.cs" />
     <Compile Include="Assets\Scritable_Test\Weapon_Scritable.cs" />
+    <Compile Include="Assets\Script\UI\Play_UI\PauseUI.cs" />
+    <Compile Include="Assets\Script\Common\StageChange.cs" />
+    <Compile Include="Assets\Script\Camera\BackGroundBool.cs" />
+    <Compile Include="Assets\Script\Common\ItemSound.cs" />
+    <Compile Include="Assets\Script\Mini_1\FallingPoint.cs" />
+    <Compile Include="Assets\Script\UI\Play_UI\ButtonFlag.cs" />
     <Compile Include="Assets\Script\Dice.cs" />
+    <Compile Include="Assets\Script\Common\Box_Platform.cs" />
     <Compile Include="Assets\Scritable_Test\PlayerData.cs" />
+    <Compile Include="Assets\Script\Camera\parallaxBackground.cs" />
+    <Compile Include="Assets\Script\Player\Controller2D.cs" />
     <Compile Include="Assets\Script\StageDirector.cs" />
     <Compile Include="Assets\Script\CameraResoution.cs" />
     <Compile Include="Assets\Script\GameDirector.cs" />
+    <Compile Include="Assets\Script\Common\PlayerPrefsDelete.cs" />
     <Compile Include="Assets\Scritable_Test\MonsterData.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Script\Mini_2\risingLava.cs" />
+    <Compile Include="Assets\Script\Player\RaycastController.cs" />
     <Compile Include="Assets\Script\WeaponDirector.cs" />
     <Compile Include="Assets\Scritable_Test\Player_Scritable.cs" />
+    <Compile Include="Assets\Script\UI\Start_UI\StageMenu.cs" />
+    <Compile Include="Assets\Script\Common\AudioPlay.cs" />
+    <Compile Include="Assets\Script\Mini_1\FallingPoint_GameDirector.cs" />
     <Compile Include="Assets\Script\StatusDirector.cs" />
     <Compile Include="Assets\Script\StoreDirector.cs" />
+    <Compile Include="Assets\Script\Mini_2\EndLavaPoint.cs" />
+    <Compile Include="Assets\Script\Common\Exit.cs" />
     <Compile Include="Assets\Scritable_Test\WeaponData.cs" />
+    <Compile Include="Assets\Script\Player\BoxAni.cs" />
     <Compile Include="Assets\Scritable_Test\ItemData.cs" />
     <Compile Include="Assets\Scritable_Test\Item_Scritable.cs" />
+    <Compile Include="Assets\Script\UI\Play_UI\KeyDownUI.cs" />
+    <Compile Include="Assets\Script\Item\Information.cs" />
+    <Compile Include="Assets\Script\Common\Reset.cs" />
+    <Compile Include="Assets\Script\Player\PlatformController.cs" />
     <Compile Include="Assets\Scritable_Test\Monster_Scritable.cs" />
+    <Compile Include="Assets\Script\Player\PlayerInput.cs" />
     <Compile Include="Assets\Script\ItemDirector.cs" />
+    <Compile Include="Assets\Script\UI\Play_UI\SliderUI.cs" />
+    <Compile Include="Assets\Script\Mini_1\MiniStart.cs" />
+    <Compile Include="Assets\Script\Item\Item.cs" />
+    <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Script\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
