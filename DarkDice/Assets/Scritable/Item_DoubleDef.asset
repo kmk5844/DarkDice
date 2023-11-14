@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c3554ae0fd6d3343875aea0ad483d75, type: 3}
-  m_Name: Test_Item4
+  m_Name: Item_DoubleDef
   m_EditorClassIdentifier: 
   itemName: DoubleDef
   pride: 35
-  itemCount: 6
-  itemImage: {fileID: 21300000, guid: 9c2adfcf342945146a3052b76f5afdd5, type: 3}
+  itemCount: 5
+  itemImage: {fileID: 21300000, guid: 4afc48acd4a1d56479debb0a809e8eff, type: 3}

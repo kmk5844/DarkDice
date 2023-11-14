@@ -25,6 +25,7 @@ public class GameDirector : MonoBehaviour
     public GameObject[] Item_BackGround;
     public GameObject[] Item_CheckMark;
 
+    public Button AtkButton;
     public Button DiceButton;
     public GameObject Dice_Director;
 
@@ -38,7 +39,7 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
-
+        RoundText.text = RoundNum + " 라운드";
         item = new Item_Scritable[ItemObject_Data.Length];
         playerData = PlayerObject.GetComponent<Player_Scritable>();
         monsterData = MonsterObject.GetComponent<Monster_Scritable>();
@@ -47,8 +48,8 @@ public class GameDirector : MonoBehaviour
         {
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
         }
-        
-        for(int i = 0; i < Item_Toggle.Length;  i++ )
+
+        for (int i = 0; i < Item_Toggle.Length; i++)
         {
             if (playerData.item[i].ItemName == "Default")
             {
@@ -60,13 +61,11 @@ public class GameDirector : MonoBehaviour
         {
             Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
             Item_CheckMark[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
-            
+
         }
     }
-
     void Update()
     {
-        RoundText.text = RoundNum + " 라운드";
         if(RoundNum >= 7)
         {
             RoundText.color = Color.red;
@@ -93,22 +92,69 @@ public class GameDirector : MonoBehaviour
             ItemName = "";
         }
         
+        // 찬스 아이템을 썻을 경우에 다른 아이템 선택이 안되도록 하기
+        // 기본적으로 공격사용하여 아이템 그룹 닫게 한 후 버튼클릭 비활성화
         if(DiceNum == 2)
         {
             if(ItemName == "Chance")
             {
                 DiceButton.interactable = true;
+                AtkButton.interactable = false;
             }
             else
             {
                 DiceButton.interactable = false;
+                if (Dice_Director.GetComponent<Dice>().delay > 0.56f)
+                {
+                    AtkButton.interactable = true;
+                }
             }
         }
     }
 
-    public void CountDice()
+    public void ItemUse()
     {
-        DiceNum += 1;
+        for (int i = 0; i < item.Length; i++)
+        {
+            if (item[i].item_name == ItemName)
+            {
+                item[i].UseItem();
+            }
+        }
+    }
+
+    public void ItemToggle(Toggle toggle)
+    {
+        if (toggle.isOn)
+        {
+            switch (toggle.name)
+            {
+                case "Item1":
+                    toggle.isOn = false;
+                    toggle.interactable = false;
+                    break;
+                case "Item2":
+                    toggle.isOn = false;
+                    toggle.interactable = false;
+                    break;
+                case "Item3":
+                    toggle.isOn = false;
+                    toggle.interactable = false;
+                    break;
+            }
+        }
+    }
+
+    public void OnClickItemGroup()
+    {
+        if (ON_OFF_ItemGroup.gameObject.activeSelf == true)
+        {
+            ON_OFF_ItemGroup.SetActive(false);
+        }
+        else
+        {
+            ON_OFF_ItemGroup.SetActive(true);
+        }
     }
 
     public void ChanceToggleOff()
@@ -117,7 +163,7 @@ public class GameDirector : MonoBehaviour
         if (DiceNum == 3 && ItemName == "Chance")
         {
             ItemUse();
-            for(int i = 0; i < item.Length; i++)
+            for(int i = 0; i < Item_Toggle.Length; i++)
             {
                 if (Item_Toggle[i].isOn)
                 {
@@ -127,20 +173,34 @@ public class GameDirector : MonoBehaviour
             }
         }
     }
+    public void CountDice()
+    {
+        DiceNum += 1;
+    }
 
+
+    //Play Round
     public void OnFightButton()
     {
         RoundNum++;
+        RoundText.text = RoundNum + " 라운드";
         DiceNum = 0;
         atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
         defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
         if (ItemFlag == true)
         {
-            if(ItemName == "DoubleAtk")
+
+            if (ItemName == "DoubleAtk")
             {
                 ItemUse();
                 Debug.Log("공격력 2배 적용!");
                 atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
+            }
+            else if (ItemName == "DoubleDef")
+            {
+                ItemUse();
+                Debug.Log("방어력 2배 적용!");
+                defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
             }
             else if(ItemName == "Heal")
             {
@@ -149,11 +209,6 @@ public class GameDirector : MonoBehaviour
                 playerData.hp += 1;
                 Debug.Log("Player Data : " + playerData.hp);
                 Debug.Log("=======================================");
-            }else if(ItemName == "DoubleDef")
-            {
-                ItemUse();
-                Debug.Log("방어력 2배 적용!");
-                defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent <Dice>().defSum * 2;
             }
             ItemFlag = false;
         }
@@ -221,55 +276,13 @@ public class GameDirector : MonoBehaviour
         if (playerData.hp == 0)
         {
             Debug.Log("용사 패배");
+        }else if(RoundNum == 10)
+        {
+            Debug.Log("용사 패배");
         }
         else
         {
             PlayDice_UI.SetActive(true);
         }
-    }
-
-    public void ItemUse()
-    {
-        for (int i = 0; i < item.Length; i++)
-        {
-            if (item[i].item_name == ItemName)
-            {
-                item[i].UseItem();
-            }
-        }
-    }
-
-    public void ItemToggle(Toggle toggle)
-    {
-        if (toggle.isOn)
-        {
-            switch (toggle.name)
-            {
-                case "Item1":
-                    toggle.isOn = false;
-                    toggle.interactable = false;
-                    break;
-                case "Item2":
-                    toggle.isOn = false;
-                    toggle.interactable = false;
-                    break;
-                case "Item3":
-                    toggle.isOn = false;
-                    toggle.interactable = false;
-                    break;
-            }
-        }
-    }
-
-    public void OnClickItemGroup()
-    {
-        if(ON_OFF_ItemGroup.gameObject.activeSelf == true)
-        {
-            ON_OFF_ItemGroup.SetActive(false);
-        }
-        else
-        {
-            ON_OFF_ItemGroup.SetActive(true);
-        }
-    }
+    }    
 }

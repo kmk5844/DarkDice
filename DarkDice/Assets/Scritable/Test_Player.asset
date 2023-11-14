@@ -19,6 +19,6 @@ MonoBehaviour:
   def: 10
   coin: 20
   item:
-  - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
-  - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
-  - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
+  - {fileID: 11400000, guid: b8865d724c1c9204f909257d9b5e6bd2, type: 2}
+  - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}
+  - {fileID: 11400000, guid: bd876c3b5f20d6c42ba0749c1d95d274, type: 2}

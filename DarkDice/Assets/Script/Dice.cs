@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Dice : MonoBehaviour
 {
     [SerializeField]
-    float delay = 0.01f;
+    public float delay = 0.01f;
 
     public Sprite[] Pocket;
     public Image Dice1;

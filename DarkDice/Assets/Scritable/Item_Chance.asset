@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c3554ae0fd6d3343875aea0ad483d75, type: 3}
-  m_Name: Test_Item2
+  m_Name: Item_Chance
   m_EditorClassIdentifier: 
-  itemName: Heal
-  pride: 40
+  itemName: Chance
+  pride: 35
   itemCount: 2
-  itemImage: {fileID: 21300000, guid: 1c80a4609ca97c543aab993322aca4ea, type: 3}
+  itemImage: {fileID: 21300000, guid: a1839f0ac8d050743a63cdaa8a99e0fd, type: 3}

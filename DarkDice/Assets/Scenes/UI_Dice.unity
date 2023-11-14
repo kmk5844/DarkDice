@@ -2381,6 +2381,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1525425669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525425670}
+  - component: {fileID: 1525425671}
+  m_Layer: 0
+  m_Name: Item4_Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525425670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525425669}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -259.38043, y: -282.26373, z: 5.8632927}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1912594943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525425671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525425669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a57998e8e3756f46b354d8e9f11a3b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: bd876c3b5f20d6c42ba0749c1d95d274, type: 2}
+  item_name: 
+  pride: 0
+  itemcount: 0
+  ItemImage: {fileID: 0}
 --- !u!1 &1565108923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2815,7 @@ Transform:
   - {fileID: 730730526}
   - {fileID: 1695442911}
   - {fileID: 153264881}
+  - {fileID: 1525425670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1943017857
@@ -2932,12 +2982,14 @@ MonoBehaviour:
   - {fileID: 212758239}
   - {fileID: 664016055}
   - {fileID: 2049006296}
+  AtkButton: {fileID: 1215196247}
   DiceButton: {fileID: 779411691}
   Dice_Director: {fileID: 1420889168}
   ItemObject_Data:
   - {fileID: 730730525}
   - {fileID: 1695442910}
   - {fileID: 153264880}
+  - {fileID: 1525425669}
   ON_OFF_ItemGroup: {fileID: 1231115707}
 --- !u!1 &1971005346
 GameObject:
