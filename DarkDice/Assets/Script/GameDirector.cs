@@ -14,6 +14,7 @@ public class GameDirector : MonoBehaviour
     int atksum;
     int defSum;
 
+    public GameObject PlayDice_UI;
     public GameObject PlayerObject;
     public GameObject MonsterObject;
     public bool ItemFlag = false;
@@ -22,6 +23,7 @@ public class GameDirector : MonoBehaviour
     public GameObject[] Item_CheckMark;
 
     public Button DiceButton;
+    public GameObject Dice_Director;
 
     Player_Scritable playerData;
     Monster_Scritable monsterData;
@@ -29,7 +31,7 @@ public class GameDirector : MonoBehaviour
     public GameObject[] ItemObject_Data;
     Item_Scritable[] item;
 
-
+    public GameObject ON_OFF_ItemGroup;
 
     void Start()
     {
@@ -60,8 +62,6 @@ public class GameDirector : MonoBehaviour
 
     void Update()
     {
-
-
         if (Item_Toggle[0].isOn)
         {
             ItemName = Item_Toggle[0].GetComponentInChildren<Image>().sprite.name;
@@ -211,6 +211,10 @@ public class GameDirector : MonoBehaviour
         {
             Debug.Log("용사 패배");
         }
+        else
+        {
+            PlayDice_UI.SetActive(true);
+        }
     }
 
     public void ItemUse()
@@ -243,6 +247,18 @@ public class GameDirector : MonoBehaviour
                     toggle.interactable = false;
                     break;
             }
+        }
+    }
+
+    public void OnClickItemGroup()
+    {
+        if(ON_OFF_ItemGroup.gameObject.activeSelf == true)
+        {
+            ON_OFF_ItemGroup.SetActive(false);
+        }
+        else
+        {
+            ON_OFF_ItemGroup.SetActive(true);
         }
     }
 }
