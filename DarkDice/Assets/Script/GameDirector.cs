@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,13 @@ public class GameDirector : MonoBehaviour
     private float monster_Atk_Delay = 2.0f;
     [SerializeField]
     private string ItemName = "";
-    
+
+    int RoundNum = 0;
     int DiceNum = 0;
     int atksum;
     int defSum;
 
+    public TextMeshProUGUI RoundText;
     public GameObject PlayDice_UI;
     public GameObject PlayerObject;
     public GameObject MonsterObject;
@@ -35,6 +38,7 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
+
         item = new Item_Scritable[ItemObject_Data.Length];
         playerData = PlayerObject.GetComponent<Player_Scritable>();
         monsterData = MonsterObject.GetComponent<Monster_Scritable>();
@@ -62,6 +66,12 @@ public class GameDirector : MonoBehaviour
 
     void Update()
     {
+        RoundText.text = RoundNum + " ¶ó¿îµå";
+        if(RoundNum >= 7)
+        {
+            RoundText.color = Color.red;
+        }
+
         if (Item_Toggle[0].isOn)
         {
             ItemName = Item_Toggle[0].GetComponentInChildren<Image>().sprite.name;
@@ -120,6 +130,7 @@ public class GameDirector : MonoBehaviour
 
     public void OnFightButton()
     {
+        RoundNum++;
         DiceNum = 0;
         atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
         defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;

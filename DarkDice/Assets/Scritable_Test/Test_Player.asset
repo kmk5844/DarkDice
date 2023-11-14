@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test_Player
   m_EditorClassIdentifier: 
   playerName: Test_Player
-  hp: 3
+  hp: 30
   atk: 10
   weapon: {fileID: 11400000, guid: a688a841fc3ca2c4db1b6415a4e1a875, type: 2}
   def: 10
