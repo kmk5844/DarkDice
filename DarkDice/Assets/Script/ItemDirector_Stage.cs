@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemDirector : MonoBehaviour
+public class ItemDirector_Stage : MonoBehaviour
 {
     public GameObject PlayerObject;
     Player_Scritable playerData;
@@ -36,7 +36,7 @@ public class ItemDirector : MonoBehaviour
             ItemStock[i].GetComponent<Image>().sprite = itemData[i].ItemImage;
         }
 
-        for(int i = 0; i < ItemEquip.Length; i++)
+        for (int i = 0; i < ItemEquip.Length; i++)
         {
             ItemEquip[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
@@ -47,7 +47,7 @@ public class ItemDirector : MonoBehaviour
             Equip_Item_Count[i].text = Sub_Count[i].ToString();
         }
 
-        for(int i = 0; i < ItemEquip.Length; i++)
+        for (int i = 0; i < ItemEquip.Length; i++)
         {
             playerData.DeleteItem(default_item, i);
         }
@@ -81,11 +81,11 @@ public class ItemDirector : MonoBehaviour
 
         for (int i = 0; i < Equip_Item_Count.Length; i++)
         {
-            Sub_Count[i] = itemData[i].itemcount;
             Equip_Item_Count[i].text = Sub_Count[i].ToString();
         }
     }
-    public void OnEquipItem(int i) {
+    public void OnEquipItem(int i)
+    {
         playerData.EquipItem(itemData[i].itemData);
         Equip_Max_Count++;
         Sub_Count[i]--;
@@ -97,13 +97,15 @@ public class ItemDirector : MonoBehaviour
         {
             Sub_Count[0]++;
         }
-        else if(ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Heal")
+        else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Heal")
         {
             Sub_Count[1]++;
-        }else if(ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Chance")
+        }
+        else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Chance")
         {
             Sub_Count[2]++;
-        }else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleDef")
+        }
+        else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleDef")
         {
             Sub_Count[3]++;
         }

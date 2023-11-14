@@ -48,7 +48,7 @@ public class Dice : MonoBehaviour
         StartMethod();
     }
 
-    void StartMethod()
+    public void StartMethod()
     {
         coroutine = DiceRolling(Dice1, Dice2);
         StartCoroutine(coroutine);
@@ -78,10 +78,10 @@ public class Dice : MonoBehaviour
 
     public void OnAttackButton()
     {
-        Play_Button.gameObject.SetActive(true);
         atkSum = DiceToInt(Dice1);
         defSum = DiceToInt(Dice2);
         Dice_Button.interactable = true;
+        Attack_Button.interactable = false;
     }
 
     private int DiceToInt(Image image)
