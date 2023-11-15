@@ -25,7 +25,6 @@ public class Player_Scritable : MonoBehaviour
 
     private void Update()
     {
-        hp = playerData.Hp;
         atk = playerData.Atk;
         weapon = playerData.Weapon;
         def = playerData.Def;

@@ -17,7 +17,11 @@ public class GameDirector : MonoBehaviour
     int defSum;
 
     public TextMeshProUGUI RoundText;
-    public GameObject PlayDice_UI;
+    public TextMeshProUGUI[] StatusText;
+
+    public GameObject PlayDice_UI;//주사위 굴릴 때 나오는 UI
+    public GameObject Play_UI; // 전체적인 플레이 UI
+    public GameObject Lose_UI; // 졌을 때의 UI
     public GameObject PlayerObject;
     public GameObject MonsterObject;
     public bool ItemFlag = false;
@@ -29,8 +33,8 @@ public class GameDirector : MonoBehaviour
     public Button DiceButton;
     public GameObject Dice_Director;
 
-    Player_Scritable playerData;
-    Monster_Scritable monsterData;
+    public Player_Scritable playerData;
+    public Monster_Scritable monsterData;
 
     public GameObject[] ItemObject_Data;
     Item_Scritable[] item;
@@ -61,12 +65,22 @@ public class GameDirector : MonoBehaviour
         {
             Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
             Item_CheckMark[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
-
         }
+
+        StatusText[0].text = playerData.hp.ToString();
+        StatusText[1].text = playerData.atk.ToString();
+        StatusText[2].text = playerData.def.ToString();
+        StatusText[3].text = monsterData.hp.ToString();
+        StatusText[4].text = monsterData.atk.ToString();
+        StatusText[5].text = monsterData.def.ToString();
+
     }
     void Update()
     {
-        if(RoundNum >= 7)
+        StatusText[0].text = playerData.hp.ToString();
+        StatusText[3].text = monsterData.hp.ToString();
+
+        if (RoundNum >= 7)
         {
             RoundText.color = Color.red;
         }
@@ -91,10 +105,12 @@ public class GameDirector : MonoBehaviour
             ItemFlag = false;
             ItemName = "";
         }
+
         
         // 찬스 아이템을 썻을 경우에 다른 아이템 선택이 안되도록 하기
-        // 기본적으로 공격사용하여 아이템 그룹 닫게 한 후 버튼클릭 비활성화
-        if(DiceNum == 2)
+        // 기본적으로 공격 사용하여 아이템 그룹 닫게 한 후 버튼클릭 비활성화
+        // -> 공격할 때마다, 아이템 그룹을 전체적으로 닫기
+        if (DiceNum == 2)
         {
             if(ItemName == "Chance")
             {
@@ -189,7 +205,6 @@ public class GameDirector : MonoBehaviour
         defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
         if (ItemFlag == true)
         {
-
             if (ItemName == "DoubleAtk")
             {
                 ItemUse();
@@ -207,33 +222,34 @@ public class GameDirector : MonoBehaviour
                 ItemUse();
                 Debug.Log("회복 성공!");
                 playerData.hp += 1;
-                Debug.Log("Player Data : " + playerData.hp);
+                /*StatusText[0].text = playerData.hp.ToString();*/
                 Debug.Log("=======================================");
             }
             ItemFlag = false;
         }
         Debug.Log("Player Atk : " + playerData.atk + " + " + playerData.weapon.WeaponAtk + " + " + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum + " = " + atksum);
-        Debug.Log(atksum + " 데미지로 공격 시도!");
+        StatusText[1].text = atksum.ToString();
         Debug.Log("=======================================");
 
         if (atksum > monsterData.def)
         {
             monsterData.hp -= 1;
-            Debug.Log("Monster Data : " + monsterData.hp);
+            /*StatusText[3].text = monsterData.hp.ToString();*/
+
         }
         else if(atksum == monsterData.def)
         {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
             playerData.hp -= 0.5f;
-            Debug.Log("Player Data : " + playerData.hp);
-            Debug.Log("Monster Data : " + monsterData.hp);
+            /*StatusText[0].text = playerData.hp.ToString();
+            StatusText[3].text = monsterData.hp.ToString();*/
         }
         else
         {
             Debug.Log("공격 실패!");
             monsterData.hp -= 0.5f;
-            Debug.Log("Monster Data : " + monsterData.hp);
+            /*StatusText[3].text = monsterData.hp.ToString();*/
         }
 
         if (monsterData.hp == 0)
@@ -249,7 +265,7 @@ public class GameDirector : MonoBehaviour
     IEnumerator monsterTurn()
     {
         Debug.Log("몬스터 턴");
-        Debug.Log("Player Def : " + playerData.def + " + "  + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum + " = " + defSum);
+        StatusText[2].text = defSum.ToString();
 
         yield return new WaitForSeconds(monster_Atk_Delay);
 
@@ -257,32 +273,50 @@ public class GameDirector : MonoBehaviour
         {
             Debug.Log("몬스터 공격 성공!");
             playerData.hp -= 1;
-            Debug.Log("Player Data : " + playerData.hp);
+            /*StatusText[0].text = playerData.hp.ToString();*/
+
         }
         else if(defSum == monsterData.atk) {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
             playerData.hp -= 0.5f;
-            Debug.Log("Player Data : " + playerData.hp);
-            Debug.Log("Monster Data : " + monsterData.hp);
+            /*StatusText[0].text = playerData.hp.ToString();
+            StatusText[3].text = monsterData.hp.ToString();*/
         }
         else
         {
             Debug.Log("몬스터 공격 실패!");
             playerData.hp -= -0.5f;
-            Debug.Log("Player Data : " + playerData.hp);
+            /*StatusText[0].text = playerData.hp.ToString();*/
         }
 
-        if (playerData.hp == 0)
+        if (playerData.hp <= 0 || RoundNum == 10)
         {
-            Debug.Log("용사 패배");
-        }else if(RoundNum == 10)
-        {
-            Debug.Log("용사 패배");
+            playerData.hp = 0;
+            StartCoroutine(playerDie());
         }
         else
         {
             PlayDice_UI.SetActive(true);
+            StatusText[1].text = playerData.atk.ToString();
+            StatusText[2].text = playerData.def.ToString();
         }
-    }    
+    }
+    
+    IEnumerator playerDie()
+    {
+        yield return new WaitForSeconds(5f);
+        Time.timeScale = 0;
+        Play_UI.SetActive(false);
+        Lose_UI.SetActive(true);
+    }
+
+    public void OnAD_Retry()
+    {
+        playerData.hp++;
+        Time.timeScale = 1;
+        PlayDice_UI.SetActive(true);
+        Play_UI.SetActive(true);
+        Lose_UI.SetActive(false);
+    }
 }
