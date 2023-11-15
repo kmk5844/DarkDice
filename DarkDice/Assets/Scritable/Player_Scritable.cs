@@ -57,7 +57,7 @@ public class Player_Scritable : MonoBehaviour
         for (int i = 0; i < item.Length; i++)
         {
             {
-                if (item[i].name == "Test_Item0")
+                if (item[i].name == "Item_Default") //스크립터블 아이템 "파일" 이름여야함
                 {
                     playerData.EquipItem_Data(clickitem, i);
                     break;

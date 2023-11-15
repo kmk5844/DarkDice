@@ -8,7 +8,7 @@ public class Weapon_Scritable : MonoBehaviour
     public WeaponData weaponData;
     public int weapon_atk;
     public int weapon_pride;
-    public bool storeflag;
+    public int storeflag;
     public Sprite weaponimage;
 
     private void Awake()

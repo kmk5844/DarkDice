@@ -4,9 +4,9 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Weapon Data", menuName = "WeaponData", order = 3)]
-
 public class WeaponData : ScriptableObject
 {
+
     [SerializeField]
     private string weaponName;
     public string WeaponName { get { return weaponName; } }
@@ -20,15 +20,25 @@ public class WeaponData : ScriptableObject
     public int WeaponPride { get {  return weaponPride; } }
 
     [SerializeField]
-    private bool storeFlag;
-    public bool StoreFlag { get { return storeFlag; } }
+    private int storeFlag;
+    public int StoreFlag { get { return storeFlag; } }
 
     [SerializeField]
     private Sprite weaponImage;
     public Sprite WeaponImage { get {  return weaponImage; } }
 
+    private void Awake()
+    {
+        if (PlayerPrefs.GetInt(weaponName) != 1)
+        {
+            PlayerPrefs.SetInt(weaponName, 0);
+        }
+        storeFlag = PlayerPrefs.GetInt(weaponName);
+    }
+
     public void ChangeStorFlag()
     {
-        storeFlag = true;
+        storeFlag = 1;
+        PlayerPrefs.SetInt(weaponName, 1);
     }
 }

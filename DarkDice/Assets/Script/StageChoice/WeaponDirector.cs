@@ -49,7 +49,7 @@ public class WeaponDirector : MonoBehaviour
     { 
         for(int i = 1; i < Weapon.Length; i++)
         {
-            if (Weapon[i].storeflag)
+            if (Weapon[i].storeflag == 1)
             {
                 Toggle_Weapon[i-1].gameObject.SetActive(true);
             }

@@ -62,10 +62,10 @@ public class StoreDirector : MonoBehaviour
 
         for(int i = 0; i < weapon.Length; i++)
         {
-            if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag)
+            if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag == 1)
             {
                 Weapon_Button[i].interactable = false;
-                if (weapon[i].storeflag)
+                if (weapon[i].storeflag == 1)
                 {
                     Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "º¸À¯ Áß";
                 }

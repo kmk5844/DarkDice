@@ -54,4 +54,9 @@ public class SettingDirector : MonoBehaviour
         SceneManager.LoadScene("StageChoice");
         Time.timeScale = 1;
     }
+
+    public void OnExitButton()
+    {
+        Application.Quit();
+    }
 }
