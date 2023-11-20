@@ -49,7 +49,7 @@ public class ItemDirector_Stage : MonoBehaviour
 
         for (int i = 0; i < ItemEquip.Length; i++)
         {
-            playerData.DeleteItem(default_item, i);
+            playerData.DeleteItem(default_item, i); // 씬으로 돌아갈때 필요, 남아있으면 안됨.
         }
 
     }
@@ -82,6 +82,14 @@ public class ItemDirector_Stage : MonoBehaviour
         for (int i = 0; i < Equip_Item_Count.Length; i++)
         {
             Equip_Item_Count[i].text = Sub_Count[i].ToString();
+        }
+    }
+
+    public void OnUpdate()
+    {
+        for(int i = 0; i <Item_Count.Length; i++)
+        {
+            Sub_Count[i] = itemData[i].itemcount;
         }
     }
     public void OnEquipItem(int i)

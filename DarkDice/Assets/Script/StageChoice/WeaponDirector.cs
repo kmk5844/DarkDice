@@ -43,6 +43,7 @@ public class WeaponDirector : MonoBehaviour
             Toggle_Weapon[1].isOn = false;
             Toggle_Weapon[2].isOn = false;
         }
+
     }
 
     private void Update()
@@ -51,21 +52,40 @@ public class WeaponDirector : MonoBehaviour
         {
             if (Weapon[i].storeflag == 1)
             {
-                Toggle_Weapon[i-1].gameObject.SetActive(true);
+                Toggle_Weapon[i - 1].gameObject.SetActive(true);
             }
+            //-------------------------------------------------------------------------
+            if(Weapon[i].storeflag == 0)
+            {
+                Toggle_Weapon[i - 1].gameObject.SetActive(false); //초기화 전용 코드
+            }
+            //-------------------------------------------------------------------------
+
         }
 
         if (Toggle_Weapon[0].isOn)
         {
             equipWeapon = Weapon[1].weaponData;
+            if (Weapon[1].weaponData.StoreFlag == 0)
+            {
+                equipWeapon = Weapon[0].weaponData;
+            }
         }
         else if (Toggle_Weapon[1].isOn)
         {
             equipWeapon = Weapon[2].weaponData;
+            if (Weapon[2].weaponData.StoreFlag == 0)
+            {
+                equipWeapon = Weapon[0].weaponData;
+            }
         }
         else if (Toggle_Weapon[2].isOn)
         {
             equipWeapon = Weapon[3].weaponData;
+            if (Weapon[3].weaponData.StoreFlag == 0)
+            {
+                equipWeapon = Weapon[0].weaponData;
+            }
         }
         else
         {

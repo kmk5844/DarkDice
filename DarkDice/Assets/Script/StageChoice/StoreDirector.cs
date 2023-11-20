@@ -93,4 +93,12 @@ public class StoreDirector : MonoBehaviour
     {
         player.TestPlusCoinData();
     }
+
+    public void OnInitButton()
+    {
+        for(int i = 0; i < weapon.Length; i++)
+        {
+            weapon[i].weaponData.InitWeapon();
+        }
+    }
 }

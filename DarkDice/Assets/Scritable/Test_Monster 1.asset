@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aba7f10d6f7985948a8712db44a430ec, type: 3}
-  m_Name: Test_Monster
+  m_Name: Test_Monster 1
   m_EditorClassIdentifier: 
   monsterName: Test_Monster
-  hp: 1
-  atk: 10
-  def: 10
+  hp: 3
+  atk: 12
+  def: 12

@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [CreateAssetMenu(fileName = "Weapon Data", menuName = "WeaponData", order = 3)]
 public class WeaponData : ScriptableObject
 {
-
     [SerializeField]
     private string weaponName;
     public string WeaponName { get { return weaponName; } }
@@ -29,16 +27,23 @@ public class WeaponData : ScriptableObject
 
     private void Awake()
     {
-        if (PlayerPrefs.GetInt(weaponName) != 1)
+        if (!PlayerPrefs.HasKey(weaponName))
         {
             PlayerPrefs.SetInt(weaponName, 0);
         }
         storeFlag = PlayerPrefs.GetInt(weaponName);
+        Debug.Log(PlayerPrefs.HasKey(weaponName));
     }
 
     public void ChangeStorFlag()
     {
         storeFlag = 1;
         PlayerPrefs.SetInt(weaponName, 1);
+    }
+
+    public void InitWeapon() //테스트 전용 코드
+    {
+        storeFlag = 0;
+        PlayerPrefs.SetInt(weaponName, 0);
     }
 }

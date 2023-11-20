@@ -186,4 +186,5 @@ public class StatusDirector : MonoBehaviour
     {
         Rest_Status += 2;
     }
+
 }

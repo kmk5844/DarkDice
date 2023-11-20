@@ -13,6 +13,8 @@ public class Player_Scritable : MonoBehaviour
     public int coin;
     public ItemData[] item;
 
+    bool StatusFlag = false;
+
     private void Awake()
     {
         hp = playerData.Hp;
@@ -25,16 +27,22 @@ public class Player_Scritable : MonoBehaviour
 
     private void Update()
     {
-        atk = playerData.Atk;
+        if (StatusFlag)
+        {
+            hp = playerData.Hp;
+            atk = playerData.Atk;
+            def = playerData.Def;
+            StatusFlag = false;
+        }
         weapon = playerData.Weapon;
-        def = playerData.Def;
         coin = playerData.Coin;
-        item = playerData.Item;
+        item = playerData.Item;    
     }
 
     public void ChangePlayerData(int C_hp, int C_atk, int C_def)
     {
         playerData.PlusStatus(C_hp, C_atk, C_def);
+        StatusFlag = true;
     }
 
     public void ChangeWeapon(WeaponData C_Weapon)
@@ -56,12 +64,10 @@ public class Player_Scritable : MonoBehaviour
     {
         for (int i = 0; i < item.Length; i++)
         {
+            if (item[i].name == "Item_Default") //스크립터블 아이템 "파일" 이름여야함
             {
-                if (item[i].name == "Item_Default") //스크립터블 아이템 "파일" 이름여야함
-                {
-                    playerData.EquipItem_Data(clickitem, i);
-                    break;
-                }
+                playerData.EquipItem_Data(clickitem, i);
+                break;
             }
         }
     }
