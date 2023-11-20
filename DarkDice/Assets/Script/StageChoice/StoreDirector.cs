@@ -24,12 +24,18 @@ public class StoreDirector : MonoBehaviour
 
     public Button[] Item_Button;
     public Button[] Weapon_Button;
+    public GameObject Buy_Window;
+    Button YesButton;
+    Button NoButton; 
 
     void Start()
     {
         player = playerObject.GetComponent<Player_Scritable>();
         item = new Item_Scritable[ItemObject_Data.Length];
         weapon = new Weapon_Scritable[WeaponObject_Data.Length];
+        YesButton = Buy_Window.transform.GetChild(0).GetComponent<Button>();
+        NoButton = Buy_Window.transform.GetChild(1).GetComponent<Button>();
+        NoButton.onClick.AddListener(() => Buy_Window.SetActive(false));
         for (int i = 0; i < ItemObject_Data.Length; i++)
         {
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
@@ -77,16 +83,30 @@ public class StoreDirector : MonoBehaviour
         }
     }
 
+    public void OnItemBuyWindow(int i) {
+        Buy_Window.SetActive(true);
+        YesButton.onClick.AddListener(() => OnItemBuy(i));
+    }
+
+    public void OnWeaponBuyWindow(int i) {
+        Buy_Window.SetActive(true);
+        YesButton.onClick.AddListener(() => OnWeaponBuy(i));
+    }
+
     public void OnItemBuy(int i)
     {
+        YesButton.onClick.RemoveAllListeners();
         item[i].BuyItem();
         player.TestMinusCoinData(item[i].pride);
+        Buy_Window.SetActive(false);
     }
 
     public void OnWeaponBuy(int i)
     {
+        YesButton.onClick.RemoveAllListeners();
         weapon[i].BuyWeapon();
         player.TestMinusCoinData(weapon[i].weapon_pride);
+        Buy_Window.SetActive(false);
     }
 
     public void OnTestCoinButton()

@@ -32,7 +32,6 @@ public class WeaponData : ScriptableObject
             PlayerPrefs.SetInt(weaponName, 0);
         }
         storeFlag = PlayerPrefs.GetInt(weaponName);
-        Debug.Log(PlayerPrefs.HasKey(weaponName));
     }
 
     public void ChangeStorFlag()

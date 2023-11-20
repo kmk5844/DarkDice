@@ -16,6 +16,7 @@ public class GameDirector : MonoBehaviour
     int atksum;
     int defSum;
     int MonsterCount = 0;
+    int ItemCount = 0;
 
     public TextMeshProUGUI RoundText;
     public TextMeshProUGUI[] StatusText;
@@ -184,6 +185,7 @@ public class GameDirector : MonoBehaviour
         DiceNum++;
         if (DiceNum == 3 && ItemName == "Chance")
         {
+            ItemCount++;
             ItemUse();
             for(int i = 0; i < Item_Toggle.Length; i++)
             {
@@ -215,12 +217,14 @@ public class GameDirector : MonoBehaviour
                 ItemUse();
                 Debug.Log("공격력 2배 적용!");
                 atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
+                ItemCount++;
             }
             else if (ItemName == "DoubleDef")
             {
                 ItemUse();
                 Debug.Log("방어력 2배 적용!");
                 defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
+                ItemCount++;
             }
             else if(ItemName == "Heal")
             {
@@ -228,6 +232,7 @@ public class GameDirector : MonoBehaviour
                 Debug.Log("회복 성공!");
                 playerData.hp += 1;
                 Debug.Log("=======================================");
+                ItemCount++;
             }
             ItemFlag = false;
         }

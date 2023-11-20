@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scritable\ItemData.cs" />
     <Compile Include="Assets\Script\StageChoice\WeaponDirector.cs" />
     <Compile Include="Assets\Scritable\Monster_Scritable.cs" />
+    <Compile Include="Assets\Script\Common\Start Title.cs" />
     <Compile Include="Assets\Script\InGame\MonsterMoving.cs" />
     <Compile Include="Assets\Script\StageChoice\StoreDirector.cs" />
     <Compile Include="Assets\Scritable\Player_Scritable.cs" />
