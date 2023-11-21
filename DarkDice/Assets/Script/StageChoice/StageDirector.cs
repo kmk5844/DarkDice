@@ -11,6 +11,7 @@ public class StageDirector : MonoBehaviour {
 
     public GameObject stageBar;
     public Image[] item_Image;
+    public Image[] reward_Image;
 
     public GameObject playerObject;
     Player_Scritable player;
@@ -37,7 +38,16 @@ public class StageDirector : MonoBehaviour {
 
     public void OnClickStage(int stageNum)
     {
-        stageName.text = "Stage-" + stageNum;
+        string Sub_StageTitle = "";
+        switch (stageNum){
+            case 1:
+                Sub_StageTitle = "성을 향해";
+                break;
+            case 2 :
+                Sub_StageTitle = "어디론가를 향해";
+                break;
+        }
+        stageName.text = "STAGE" + stageNum + " : " + Sub_StageTitle;
         stageBar.SetActive(true);
     }
 }

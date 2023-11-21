@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class StoreDirector : MonoBehaviour
 {
@@ -66,7 +65,7 @@ public class StoreDirector : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < weapon.Length; i++)
+        for (int i = 0; i < weapon.Length; i++)
         {
             if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag == 1)
             {
@@ -81,6 +80,30 @@ public class StoreDirector : MonoBehaviour
                 Weapon_Button[i].interactable = true;
             }
         }
+
+        if (Buy_Window.activeSelf == true)
+        {
+            for (int i = 0; i < Item_Button.Length; i++)
+            {
+                Item_Button[i].enabled = false;
+            }
+            for (int i = 0; i < Weapon_Button.Length; i++)
+            {
+                Weapon_Button[i].enabled = false;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < Item_Button.Length; i++)
+            {
+                Item_Button[i].enabled = true;
+            }
+            for (int i = 0; i < Weapon_Button.Length; i++)
+            {
+                Weapon_Button[i].enabled = true;
+            }
+        }
+
     }
 
     public void OnItemBuyWindow(int i) {

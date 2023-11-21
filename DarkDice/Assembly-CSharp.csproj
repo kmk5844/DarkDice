@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\InGame\GameDirector.cs" />
     <Compile Include="Assets\Scritable\PlayerData.cs" />
+    <Compile Include="Assets\Script\StageChoice\MonsterInformation.cs" />
     <Compile Include="Assets\Scritable\MonsterData.cs" />
     <Compile Include="Assets\Script\StageChoice\ItemDirector_Stage.cs" />
     <Compile Include="Assets\Scritable\WeaponData.cs" />
