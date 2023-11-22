@@ -10,6 +10,7 @@ public class StageDirector : MonoBehaviour {
     public TextMeshProUGUI stageName;
 
     public GameObject stageBar;
+    public GameObject stageHideButton;
     public Image[] item_Image;
     public Image[] reward_Image;
 
@@ -38,6 +39,7 @@ public class StageDirector : MonoBehaviour {
 
     public void OnClickStage(int stageNum)
     {
+        stageHideButton.SetActive(true);
         string Sub_StageTitle = "";
         switch (stageNum){
             case 1:

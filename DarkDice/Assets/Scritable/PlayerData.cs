@@ -30,9 +30,8 @@ public class PlayerData : ScriptableObject
 
 
 
-    public void PlusStatus(int C_hp, int C_atk, int C_def)
+    public void PlusStatus(int C_atk, int C_def)
     {
-        hp += (float)C_hp;
         atk += C_atk;
         def += C_def;
     }

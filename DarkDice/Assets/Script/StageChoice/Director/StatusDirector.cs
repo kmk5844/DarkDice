@@ -9,8 +9,6 @@ public class StatusDirector : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI Stat_Hp;
     [SerializeField]
-    private TextMeshProUGUI Amout_Hp;
-    [SerializeField]
     private TextMeshProUGUI Stat_Atk;
     [SerializeField]
     private TextMeshProUGUI Amout_Atk;
@@ -21,17 +19,14 @@ public class StatusDirector : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI Rest_Status_Num;
 
-    public Button Plus_HP_Button;
     public Button Plus_ATK_Button;
     public Button Plus_DEF_Button;
-    public Button Minus_HP_Button;
     public Button Minus_ATK_Button;
     public Button Minus_DEF_Button;
 
     public GameObject playerObject;
     Player_Scritable player;
     int Rest_Status = 0;
-    int Sum_hp = 0;
     int Sum_atk = 0;
     int Sum_def = 0;
 
@@ -47,25 +42,14 @@ public class StatusDirector : MonoBehaviour
         Stat_Hp.text = player.hp.ToString();
         Stat_Atk.text =  player.atk.ToString();
         Stat_Def.text = player.def.ToString();
-        Amout_Hp.text = "+" + Sum_hp;
         Amout_Atk.text = "+" + Sum_atk;
         Amout_Def.text = "+" + Sum_def;
         Rest_Status_Num.text = "" + Rest_Status;
 
         if (Rest_Status == 0)
         {
-            Plus_HP_Button.interactable = false;
             Plus_ATK_Button.interactable = false;
             Plus_DEF_Button.interactable = false;
-
-            if (Sum_hp == 0)
-            {
-                Minus_HP_Button.interactable = false;
-            }
-            else if (Sum_hp == 1)
-            {
-                Minus_HP_Button.interactable = true;
-            }
 
             if (Sum_atk == 0)
             {
@@ -87,21 +71,6 @@ public class StatusDirector : MonoBehaviour
         }
         else
         {
-            if (Sum_hp > 1)
-            {
-                Plus_HP_Button.interactable = false;
-            }
-            else if (Sum_hp == 0)
-            {
-                Plus_HP_Button.interactable = true;
-                Minus_HP_Button.interactable = false;
-            }
-            else
-            {
-                Plus_HP_Button.interactable = true;
-                Minus_HP_Button.interactable = true;
-            }
-
             if (Sum_atk > 1)
             {
                 Plus_ATK_Button.interactable = false;
@@ -134,19 +103,7 @@ public class StatusDirector : MonoBehaviour
         }
     }
 
-    public void OnPlusHP(bool flag)
-    {
-        if (flag)
-        {
-            Sum_hp++;
-            Rest_Status--;
-        }
-        else
-        {
-            Sum_hp--;
-            Rest_Status++;
-        }
-    }
+
     public void OnPlusATK(bool flag)
     {
         if (flag)
@@ -176,8 +133,7 @@ public class StatusDirector : MonoBehaviour
 
     public void OnApplyButton()
     {
-        player.ChangePlayerData(Sum_hp, Sum_atk, Sum_def);
-        Sum_hp = 0;
+        player.ChangePlayerData(Sum_atk, Sum_def);
         Sum_atk = 0;
         Sum_def = 0;
     }

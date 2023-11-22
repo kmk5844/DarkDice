@@ -21,9 +21,13 @@ public class StoreDirector : MonoBehaviour
     public TextMeshProUGUI[] Item_Pride;
     public TextMeshProUGUI[] Weapon_Pride;
 
+    public Toggle[] Title_Toggle;
+    public GameObject[] Window_Toggle;
+
     public Button[] Item_Button;
     public Button[] Weapon_Button;
     public GameObject Buy_Window;
+    public GameObject Dont_Click_Panel;
     Button YesButton;
     Button NoButton; 
 
@@ -33,8 +37,11 @@ public class StoreDirector : MonoBehaviour
         item = new Item_Scritable[ItemObject_Data.Length];
         weapon = new Weapon_Scritable[WeaponObject_Data.Length];
         YesButton = Buy_Window.transform.GetChild(0).GetComponent<Button>();
+
         NoButton = Buy_Window.transform.GetChild(1).GetComponent<Button>();
         NoButton.onClick.AddListener(() => Buy_Window.SetActive(false));
+        NoButton.onClick.AddListener(() => Dont_Click_Panel.SetActive(false));
+
         for (int i = 0; i < ItemObject_Data.Length; i++)
         {
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
@@ -47,11 +54,13 @@ public class StoreDirector : MonoBehaviour
             Weapon_Pride[i].text = weapon[i].weapon_pride + "G";
         }
 
+
     }
 
     void Update()
     {
         CoinCount.text = player.coin.ToString();
+
         for (int i = 0; i < item.Length; i++)
         {
             Item_Count[i].text = item[i].itemcount.ToString();
@@ -81,37 +90,18 @@ public class StoreDirector : MonoBehaviour
             }
         }
 
-        if (Buy_Window.activeSelf == true)
-        {
-            for (int i = 0; i < Item_Button.Length; i++)
-            {
-                Item_Button[i].enabled = false;
-            }
-            for (int i = 0; i < Weapon_Button.Length; i++)
-            {
-                Weapon_Button[i].enabled = false;
-            }
-        }
-        else
-        {
-            for (int i = 0; i < Item_Button.Length; i++)
-            {
-                Item_Button[i].enabled = true;
-            }
-            for (int i = 0; i < Weapon_Button.Length; i++)
-            {
-                Weapon_Button[i].enabled = true;
-            }
-        }
+
 
     }
 
     public void OnItemBuyWindow(int i) {
+        Dont_Click_Panel.SetActive(true);
         Buy_Window.SetActive(true);
         YesButton.onClick.AddListener(() => OnItemBuy(i));
     }
 
     public void OnWeaponBuyWindow(int i) {
+        Dont_Click_Panel.SetActive(true);
         Buy_Window.SetActive(true);
         YesButton.onClick.AddListener(() => OnWeaponBuy(i));
     }
@@ -122,6 +112,7 @@ public class StoreDirector : MonoBehaviour
         item[i].BuyItem();
         player.TestMinusCoinData(item[i].pride);
         Buy_Window.SetActive(false);
+        Dont_Click_Panel.SetActive(false);
     }
 
     public void OnWeaponBuy(int i)
@@ -130,6 +121,7 @@ public class StoreDirector : MonoBehaviour
         weapon[i].BuyWeapon();
         player.TestMinusCoinData(weapon[i].weapon_pride);
         Buy_Window.SetActive(false);
+        Dont_Click_Panel.SetActive(false);
     }
 
     public void OnTestCoinButton()

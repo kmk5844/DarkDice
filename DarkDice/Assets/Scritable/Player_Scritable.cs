@@ -39,9 +39,9 @@ public class Player_Scritable : MonoBehaviour
         item = playerData.Item;    
     }
 
-    public void ChangePlayerData(int C_hp, int C_atk, int C_def)
+    public void ChangePlayerData(int C_atk, int C_def)
     {
-        playerData.PlusStatus(C_hp, C_atk, C_def);
+        playerData.PlusStatus(C_atk, C_def);
         StatusFlag = true;
     }
 

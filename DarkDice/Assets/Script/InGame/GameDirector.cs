@@ -19,6 +19,7 @@ public class GameDirector : MonoBehaviour
     int ItemCount = 0;
 
     public TextMeshProUGUI RoundText;
+    public TextMeshPro[] InGameText;
     public TextMeshProUGUI[] StatusText;
 
     public GameObject Play_Button; //전투 개시 버튼
@@ -73,20 +74,16 @@ public class GameDirector : MonoBehaviour
         }
 
         //이것도 변경할 예정 -> UI 변동 사항이 생기기 때문.
-        StatusText[0].text = playerData.hp.ToString();
-        StatusText[1].text = playerData.atk.ToString();
-        StatusText[2].text = playerData.def.ToString();
-        StatusText[3].text = monsterData.hp.ToString();
-        StatusText[4].text = monsterData.atk.ToString();
-        StatusText[5].text = monsterData.def.ToString();
+        StatusText[0].text = playerData.atk.ToString();
+        StatusText[1].text = playerData.def.ToString();
+        StatusText[2].text = monsterData.atk.ToString();
+        StatusText[3].text = monsterData.def.ToString();
 
     }
     void Update()
     {
-        StatusText[0].text = playerData.hp.ToString();
-        StatusText[3].text = monsterData.hp.ToString();
-        StatusText[4].text = monsterData.atk.ToString();
-        StatusText[5].text = monsterData.def.ToString();
+        StatusText[2].text = monsterData.atk.ToString();
+        StatusText[3].text = monsterData.def.ToString();
 
         if (RoundNum >= 7)
         {
