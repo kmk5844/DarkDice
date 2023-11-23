@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class GameDirector : MonoBehaviour
     int DiceNum = 0;
     int atksum;
     int defSum;
-    int MonsterCount = 0;
-    int ItemCount = 0;
+    int MonsterCount = 0; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트(?)
+    int ItemCount = 0; //??
 
     public TextMeshProUGUI RoundText;
     public TextMeshPro[] InGameText;
@@ -28,11 +29,14 @@ public class GameDirector : MonoBehaviour
     public GameObject Win_UI;  // 이겼을 때의 UI
     public GameObject Lose_UI; // 졌을 때의 UI
     public GameObject PlayerObject; //플레이어 오브젝트
-    public GameObject[] MonsterObject; //몬스터 오브젝트
-    public bool ItemFlag = false; //플레이 당시의 사용할건지 말건지
+
+    public Transform mosterGroup; //몬스터 오브젝트
+    GameObject[] monster;
+    int mosterChildCount;
+
+    public bool ItemFlag = false; //플레이 당시의 아이템을 사용할건지 말건지
     public Toggle[] Item_Toggle;
     public GameObject[] Item_BackGround;
-    public GameObject[] Item_CheckMark;
 
     public Button AtkButton;
     public Button DiceButton;
@@ -45,14 +49,25 @@ public class GameDirector : MonoBehaviour
     public GameObject[] ItemObject_Data;
     Item_Scritable[] item;
 
+    public GameObject stage_Data;
+    Stage_Scripter stage;
+
     public GameObject ON_OFF_ItemGroup;
 
     void Start()
     {
+        mosterChildCount = mosterGroup.childCount;
+        monster = new GameObject[mosterChildCount];
+        for (int i = 0; i < mosterChildCount; i++)
+        {
+            monster[i] = mosterGroup.GetChild(i).gameObject;
+        }
+
         RoundText.text = RoundNum + " 라운드";
         item = new Item_Scritable[ItemObject_Data.Length];
         playerData = PlayerObject.GetComponent<Player_Scritable>();
-        monsterData = MonsterObject[MonsterCount].GetComponent<Monster_Scritable>();
+        monsterData = monster[MonsterCount].GetComponent<Monster_Scritable>();
+        stage = stage_Data.GetComponent<Stage_Scripter>(); 
 
         for (int i = 0; i < ItemObject_Data.Length; i++)
         {
@@ -70,7 +85,7 @@ public class GameDirector : MonoBehaviour
         for (int i = 0; i < Item_Toggle.Length; i++)
         {
             Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
-            Item_CheckMark[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
+            Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
         //이것도 변경할 예정 -> UI 변동 사항이 생기기 때문.
@@ -234,7 +249,7 @@ public class GameDirector : MonoBehaviour
             ItemFlag = false;
         }
         Debug.Log("Player Atk : " + playerData.atk + " + " + playerData.weapon.WeaponAtk + " + " + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum + " = " + atksum);
-        StatusText[1].text = atksum.ToString();
+        StatusText[0].text = atksum.ToString();
         Debug.Log("=======================================");
 
         if (atksum > monsterData.def)
@@ -256,15 +271,16 @@ public class GameDirector : MonoBehaviour
         if (monsterData.hp <= 0)
         {
             MonsterCount++;
-            if (MonsterObject.Length == MonsterCount)
+            if (monster.Length == MonsterCount)
             {
                 Monster_Director.GetComponent<MonsterMoving>().monsterDie();
                 Play_UI.SetActive(false);
                 Win_UI.SetActive(true);
+                stage.Win();
             }
             else
             {
-                monsterData = MonsterObject[MonsterCount].GetComponent<Monster_Scritable>();
+                monsterData = monster[MonsterCount].GetComponent<Monster_Scritable>();
                 Monster_Director.GetComponent<MonsterMoving>().monsterDie();
                 StatusText[1].text = playerData.atk.ToString();
                 StatusText[2].text = playerData.def.ToString();
@@ -280,7 +296,7 @@ public class GameDirector : MonoBehaviour
     IEnumerator monsterTurn()
     {
         Debug.Log("몬스터 턴");
-        StatusText[2].text = defSum.ToString();
+        StatusText[1].text = defSum.ToString();
 
         yield return new WaitForSeconds(monster_Atk_Delay);
 
@@ -320,7 +336,6 @@ public class GameDirector : MonoBehaviour
         Play_UI.SetActive(false);
         Lose_UI.SetActive(true);
     }
-
     public void OnAD_Retry()
     {
         playerData.hp++;
@@ -328,5 +343,15 @@ public class GameDirector : MonoBehaviour
         PlayDice_UI.SetActive(true);
         Play_UI.SetActive(true);
         Lose_UI.SetActive(false);
+    }
+
+    public void OnMain()
+    {
+        SceneManager.LoadScene("1.StageChoice");
+    }
+
+    public void OnTry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

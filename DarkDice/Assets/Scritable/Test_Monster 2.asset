@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba7f10d6f7985948a8712db44a430ec, type: 3}
   m_Name: Test_Monster 2
   m_EditorClassIdentifier: 
-  monsterName: Test_Monster
-  hp: 5
-  atk: 15
-  def: 15
+  monsterName: boss1
+  hp: 7
+  atk: 30
+  def: 30

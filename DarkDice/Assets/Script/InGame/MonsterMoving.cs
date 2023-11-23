@@ -1,32 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MonsterMoving : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject[] Monster;
+    public Transform monsterGroup;
+    GameObject[] monster;
+
     public GameObject Play_UI;
-    int Monster_Count = 0;
+    int monsterGroup_childCount;
+    int Monster_DieCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        monsterGroup_childCount = monsterGroup.childCount;
+        monster = new GameObject[monsterGroup_childCount];
+        for (int i = 0; i < monsterGroup_childCount; i++)
+        {
+            monster[i] = monsterGroup.GetChild(i).gameObject;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Monster_Count < Monster.Length)
+        if (Monster_DieCount < monster.Length)
         {
-            if (Player.transform.position.x - Monster[Monster_Count].transform.position.x <= -11.0f)
+            if (Player.transform.position.x - monster[Monster_DieCount].transform.position.x <= -11.0f)
             {
                 Play_UI.SetActive(false);
-                Monster[Monster_Count].transform.Translate(-10.0f * Time.deltaTime, 0, 0);
-                if(Monster_Count > 0)
+                monster[Monster_DieCount].transform.Translate(-10.0f * Time.deltaTime, 0, 0);
+                if(Monster_DieCount > 0)
                 {
-                    Monster[Monster_Count - 1].transform.Translate(-10.0f * Time.deltaTime, 0, 0);
+                    monster[Monster_DieCount - 1].transform.Translate(-15.0f * Time.deltaTime, 0, 0);
                 }
             }
             else
@@ -34,9 +43,9 @@ public class MonsterMoving : MonoBehaviour
                 Play_UI.SetActive(true);
             }
         }
-        else if(Monster_Count == Monster.Length)
+        else if(Monster_DieCount == monster.Length)
         {
-            if (Monster[Monster_Count - 1].transform.position.x - Player.transform.position.x >= -11.0f)
+            if (monster[Monster_DieCount - 1].transform.position.x - Player.transform.position.x >= -11.0f)
             {
                 Player.transform.Translate(10.0f * Time.deltaTime, 0, 0);
             }
@@ -45,6 +54,6 @@ public class MonsterMoving : MonoBehaviour
 
     public void monsterDie()
     {
-        Monster_Count++;
+        Monster_DieCount++;
     }
 }

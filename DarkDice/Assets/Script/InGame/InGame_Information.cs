@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class InGame_Information : MonoBehaviour
@@ -13,14 +14,14 @@ public class InGame_Information : MonoBehaviour
     GameObject[] monster;
     Monster_Scritable[] monsterData;
     TextMeshPro[] monsterHP;
-    int count;
+    int monsterGroup_childCount;
     // Start is called before the first frame update
     void Start()
     {
-        count = monsterGroup.childCount;
-        monster = new GameObject[count];
-        monsterData = new Monster_Scritable[count];
-        monsterHP = new TextMeshPro[count];
+        monsterGroup_childCount = monsterGroup.childCount;
+        monster = new GameObject[monsterGroup_childCount];
+        monsterData = new Monster_Scritable[monsterGroup_childCount];
+        monsterHP = new TextMeshPro[monsterGroup_childCount];
 
         playerData = Player.GetComponent<Player_Scritable>();
         playerHP = playerData.GetComponentInChildren<TextMeshPro>();
@@ -38,7 +39,7 @@ public class InGame_Information : MonoBehaviour
     {
         playerHP.text = playerData.hp.ToString();
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < monsterGroup_childCount; i++)
         {
             monsterHP[i].text = monsterData[i].hp.ToString();
         }

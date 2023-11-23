@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{754A01E9-28CA-9336-3704-7CF6E44F2AE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelImporter.Editor", "ExcelImporter.Editor.csproj", "{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelImporter", "ExcelImporter.csproj", "{53B10563-2705-3375-565B-706B658B8912}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{E1ED3416-1924-29D3-4C22-76EB517DAEE1}"
 EndProject
 Global
@@ -15,6 +19,14 @@ Global
 		{754A01E9-28CA-9336-3704-7CF6E44F2AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{754A01E9-28CA-9336-3704-7CF6E44F2AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{754A01E9-28CA-9336-3704-7CF6E44F2AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B10563-2705-3375-565B-706B658B8912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B10563-2705-3375-565B-706B658B8912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B10563-2705-3375-565B-706B658B8912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B10563-2705-3375-565B-706B658B8912}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1ED3416-1924-29D3-4C22-76EB517DAEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1ED3416-1924-29D3-4C22-76EB517DAEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1ED3416-1924-29D3-4C22-76EB517DAEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
