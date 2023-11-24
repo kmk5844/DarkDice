@@ -8,16 +8,16 @@ using UnityEngine.SceneManagement;
 public class GameDirector : MonoBehaviour
 {
     [SerializeField]
-    private float monster_Atk_Delay = 2.0f;
+    private float monster_Atk_Delay;
     [SerializeField]
-    private string ItemName = "";
+    private string ItemName;
 
-    int RoundNum = 0;
-    int DiceNum = 0;
+    int RoundNum;
+    int DiceNum;
     int atksum;
     int defSum;
     int MonsterCount = 0; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트(?)
-    int ItemCount = 0; //??
+    int ItemCount; //??
 
     public TextMeshProUGUI RoundText;
     public TextMeshPro[] InGameText;
@@ -58,6 +58,11 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
+        ItemCount = 0;
+        ItemName = "";
+        monster_Atk_Delay = 2.0f;
+        RoundNum = 0;
+        DiceNum = 0;
         mosterChildCount = mosterGroup.childCount;
         monster = new GameObject[mosterChildCount];
         for (int i = 0; i < mosterChildCount; i++)

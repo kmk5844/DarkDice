@@ -27,12 +27,14 @@ public class StatusDirector : MonoBehaviour
     public GameObject playerObject;
     Player_Scritable player;
     int Rest_Status;
-    int Sum_atk = 0;
-    int Sum_def = 0;
+    int Sum_atk;
+    int Sum_def;
 
     // Start is called before the first frame update
     void Start()
     {
+        Sum_atk = 0;
+        Sum_def = 0;
         player = playerObject.GetComponent<Player_Scritable>();
         Rest_Status = player.status;
     }

@@ -16,12 +16,13 @@ public class ItemDirector_Stage : MonoBehaviour
     public ItemData default_item;
 
     int[] Sub_Count;
-    int Equip_Max_Count = 0;
+    int Equip_Max_Count;
     public Button[] ItemStock;
     public Button[] ItemEquip;
 
     void Start()
     {
+        Equip_Max_Count = 0;
         playerData = PlayerObject.GetComponent<Player_Scritable>();
         itemData = new Item_Scritable[ItemObject_Data.Length];
         Sub_Count = new int[Equip_Item_Count.Length];

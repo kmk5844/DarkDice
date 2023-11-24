@@ -26,11 +26,12 @@ public class StageDirector : MonoBehaviour {
     public GameObject playerObject;
     Player_Scritable player;
 
-    int stageNum = 0;
+    int stageNum;
     int lockOffStage;
 
     void Start()
     {
+        stageNum = 0;
         stageData = StageObject.GetComponent<Stage_Scripter>();
         player = playerObject.GetComponent<Player_Scritable>();
         

@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class Dice : MonoBehaviour
 {
     [SerializeField]
-    public float delay = 0.01f;
+    public float delay;
 
     public Sprite[] Pocket;
     public Image Dice1;
     public Image Dice2;
 
-    public int atkSum = 0;
-    public int defSum = 0;
+    public int atkSum;
+    public int defSum;
 
     public Button Play_Button;
     public Button Dice_Button;
@@ -24,6 +24,9 @@ public class Dice : MonoBehaviour
 
     private void Start()
     {
+        delay = 0.01f;
+        atkSum = 0;
+        defSum = 0;
         ButtonText = Dice_Button.GetComponentInChildren<TextMeshProUGUI>();
     }
 
