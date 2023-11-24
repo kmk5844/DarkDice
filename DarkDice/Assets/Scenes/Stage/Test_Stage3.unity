@@ -898,6 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 2133339910}
   monsterGroup: {fileID: 117565144}
+  monster: []
   Play_UI: {fileID: 994607906}
 --- !u!114 &250986473
 MonoBehaviour:

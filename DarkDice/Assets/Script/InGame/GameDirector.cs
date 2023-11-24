@@ -16,7 +16,7 @@ public class GameDirector : MonoBehaviour
     int DiceNum;
     int atksum;
     int defSum;
-    int MonsterCount = 0; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트(?)
+    int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트(?)
     int ItemCount; //??
 
     public TextMeshProUGUI RoundText;
@@ -34,7 +34,7 @@ public class GameDirector : MonoBehaviour
     GameObject[] monster;
     int mosterChildCount;
 
-    public bool ItemFlag = false; //플레이 당시의 아이템을 사용할건지 말건지
+    public bool ItemFlag; //플레이 당시의 아이템을 사용할건지 말건지
     public Toggle[] Item_Toggle;
     public GameObject[] Item_BackGround;
 
@@ -58,11 +58,13 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
+        ItemFlag = false;
         ItemCount = 0;
         ItemName = "";
         monster_Atk_Delay = 2.0f;
         RoundNum = 0;
         DiceNum = 0;
+        MonsterCount = 0;
         mosterChildCount = mosterGroup.childCount;
         monster = new GameObject[mosterChildCount];
         for (int i = 0; i < mosterChildCount; i++)
@@ -377,5 +379,7 @@ public class GameDirector : MonoBehaviour
     public void OnMain()
     {
         SceneManager.LoadScene("1.StageChoice");
+        Time.timeScale = 1;
+
     }
 }

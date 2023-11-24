@@ -7,7 +7,8 @@ public class MonsterMoving : MonoBehaviour
 {
     public GameObject Player;
     public Transform monsterGroup;
-    GameObject[] monster;
+    [SerializeField]
+    private GameObject[] monster;
 
     public GameObject Play_UI;
     int monsterGroup_childCount;

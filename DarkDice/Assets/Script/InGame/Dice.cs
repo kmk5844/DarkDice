@@ -19,11 +19,12 @@ public class Dice : MonoBehaviour
     public Button Play_Button;
     public Button Dice_Button;
     public Button Attack_Button;
-    public bool rollingFlag = false;
+    public bool rollingFlag;
     TextMeshProUGUI ButtonText;
 
     private void Start()
     {
+        rollingFlag = false;
         delay = 0.01f;
         atkSum = 0;
         defSum = 0;
