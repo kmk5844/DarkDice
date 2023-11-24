@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("StageChoice");
+            SceneManager.LoadScene("1.StageChoice");
         }
     }
 }

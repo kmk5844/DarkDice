@@ -1,21 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Monster Data", menuName = "MonsterData", order = 2)]
-
-public class MonsterData : ScriptableObject
+public class MonsterData : MonoBehaviour
 {
-    [SerializeField]
-    private string monsterName;
-    public string MonsterName { get { return monsterName; } }
-    [SerializeField]
-    private float hp;
-    public float Hp { get { return hp; } }
-    [SerializeField]
-    private int atk;
-    public int Atk { get { return atk; } }
-    [SerializeField]
-    private int def;
-    public int Def { get {  return def; } }
+    public float hp;
+    public int atk;
+    public int def;
 }

@@ -53,8 +53,6 @@ public class StoreDirector : MonoBehaviour
             weapon[i] = WeaponObject_Data[i].GetComponent<Weapon_Scritable>();
             Weapon_Pride[i].text = weapon[i].weapon_pride + "G";
         }
-
-
     }
 
     void Update()
@@ -89,9 +87,6 @@ public class StoreDirector : MonoBehaviour
                 Weapon_Button[i].interactable = true;
             }
         }
-
-
-
     }
 
     public void OnItemBuyWindow(int i) {
@@ -131,9 +126,15 @@ public class StoreDirector : MonoBehaviour
 
     public void OnInitButton()
     {
+        player.playerInit();
         for(int i = 0; i < weapon.Length; i++)
         {
             weapon[i].weaponData.InitWeapon();
+        }
+
+        for(int i = 0; i < item.Length; i++)
+        {
+            item[i].itemData.Init();
         }
     }
 }

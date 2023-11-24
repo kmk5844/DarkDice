@@ -26,7 +26,7 @@ public class StatusDirector : MonoBehaviour
 
     public GameObject playerObject;
     Player_Scritable player;
-    int Rest_Status = 0;
+    int Rest_Status;
     int Sum_atk = 0;
     int Sum_def = 0;
 
@@ -34,6 +34,7 @@ public class StatusDirector : MonoBehaviour
     void Start()
     {
         player = playerObject.GetComponent<Player_Scritable>();
+        Rest_Status = player.status;
     }
 
     // Update is called once per frame
@@ -69,9 +70,9 @@ public class StatusDirector : MonoBehaviour
                 Minus_DEF_Button.interactable = true;
             }
         }
-        else
+        else // 0이 아닌 구간
         {
-            if (Sum_atk > 1)
+            if (Sum_atk > 3)
             {
                 Plus_ATK_Button.interactable = false;
             }
@@ -86,7 +87,7 @@ public class StatusDirector : MonoBehaviour
                 Minus_ATK_Button.interactable = true;
             }
 
-            if (Sum_def > 1)
+            if (Sum_def > 3)
             {
                 Plus_DEF_Button.interactable = false;
             }
@@ -133,14 +134,14 @@ public class StatusDirector : MonoBehaviour
 
     public void OnApplyButton()
     {
-        player.ChangePlayerData(Sum_atk, Sum_def);
+        player.ChangePlayerData(Sum_atk, Sum_def, Rest_Status);
         Sum_atk = 0;
         Sum_def = 0;
     }
 
     public void OntestPlusButton()
     {
-        Rest_Status += 2;
+        player.plusStatus(4);
+        Rest_Status = player.status;
     }
-
 }

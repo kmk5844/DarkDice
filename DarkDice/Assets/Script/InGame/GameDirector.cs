@@ -44,13 +44,15 @@ public class GameDirector : MonoBehaviour
     public GameObject Monster_Director;
 
     Player_Scritable playerData;
-    Monster_Scritable monsterData;
+    MonsterData monsterData;
 
     public GameObject[] ItemObject_Data;
     Item_Scritable[] item;
 
     public GameObject stage_Data;
     Stage_Scripter stage;
+
+    public DataTable_Test Data;
 
     public GameObject ON_OFF_ItemGroup;
 
@@ -66,7 +68,7 @@ public class GameDirector : MonoBehaviour
         RoundText.text = RoundNum + " ¶ó¿îµå";
         item = new Item_Scritable[ItemObject_Data.Length];
         playerData = PlayerObject.GetComponent<Player_Scritable>();
-        monsterData = monster[MonsterCount].GetComponent<Monster_Scritable>();
+        monsterData = monster[MonsterCount].GetComponent<MonsterData>();
         stage = stage_Data.GetComponent<Stage_Scripter>(); 
 
         for (int i = 0; i < ItemObject_Data.Length; i++)
@@ -270,17 +272,18 @@ public class GameDirector : MonoBehaviour
 
         if (monsterData.hp <= 0)
         {
+            monsterData.hp = 0;
             MonsterCount++;
             if (monster.Length == MonsterCount)
             {
                 Monster_Director.GetComponent<MonsterMoving>().monsterDie();
                 Play_UI.SetActive(false);
                 Win_UI.SetActive(true);
-                stage.Win();
+                TotalWin();
             }
             else
             {
-                monsterData = monster[MonsterCount].GetComponent<Monster_Scritable>();
+                monsterData = monster[MonsterCount].GetComponent<MonsterData>();
                 Monster_Director.GetComponent<MonsterMoving>().monsterDie();
                 StatusText[1].text = playerData.atk.ToString();
                 StatusText[2].text = playerData.def.ToString();
@@ -324,8 +327,8 @@ public class GameDirector : MonoBehaviour
         else
         {
             PlayDice_UI.SetActive(true);
-            StatusText[1].text = playerData.atk.ToString();
-            StatusText[2].text = playerData.def.ToString();
+            StatusText[0].text = playerData.atk.ToString();
+            StatusText[1].text = playerData.def.ToString();
         }
     }
     
@@ -345,13 +348,29 @@ public class GameDirector : MonoBehaviour
         Lose_UI.SetActive(false);
     }
 
+    public void TotalWin()
+    {
+        stage.Win();
+        for(int i = 0; i < Data.stage_Data.Count; i++)
+        {
+            if(stage.curretStageNum == Data.stage_Data[i].number)
+            {
+                playerData.plusCoin(Data.stage_Data[i].reward_gold);
+                if(stage.curretStageNum == stage.stageNum)
+                {
+                    playerData.plusStatus(Data.stage_Data[i].reward_point);
+                    if (Data.stage_Data[i].reward_health != 0)
+                    {
+                        playerData.plusHp(Data.stage_Data[i].reward_health);
+                    }
+                }
+                break;
+            }
+        }
+    }
+
     public void OnMain()
     {
         SceneManager.LoadScene("1.StageChoice");
-    }
-
-    public void OnTry()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

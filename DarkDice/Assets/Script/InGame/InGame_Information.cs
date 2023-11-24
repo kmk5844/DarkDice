@@ -12,7 +12,7 @@ public class InGame_Information : MonoBehaviour
 
     public Transform monsterGroup;
     GameObject[] monster;
-    Monster_Scritable[] monsterData;
+    MonsterData[] monsterData;
     TextMeshPro[] monsterHP;
     int monsterGroup_childCount;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class InGame_Information : MonoBehaviour
     {
         monsterGroup_childCount = monsterGroup.childCount;
         monster = new GameObject[monsterGroup_childCount];
-        monsterData = new Monster_Scritable[monsterGroup_childCount];
+        monsterData = new MonsterData[monsterGroup_childCount];
         monsterHP = new TextMeshPro[monsterGroup_childCount];
 
         playerData = Player.GetComponent<Player_Scritable>();
@@ -29,7 +29,7 @@ public class InGame_Information : MonoBehaviour
         for (int i = 0; i < monsterGroup.childCount; i++)
         {
             monster[i] = monsterGroup.GetChild(i).gameObject;
-            monsterData[i] = monster[i].GetComponent<Monster_Scritable>();
+            monsterData[i] = monster[i].GetComponent<MonsterData>();
             monsterHP[i] = monster[i].GetComponentInChildren<TextMeshPro>();
         }
     }
