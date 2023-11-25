@@ -11,16 +11,16 @@ public class StageDirector : MonoBehaviour {
 
     public GameObject StageObject;
     Stage_Scripter stageData;
-    public Button[] StageButton;
+    public Button[] StageButton; // 스테이지 버튼
 
     public TextMeshProUGUI stageName;
 
-    public GameObject stageBar;
-    public GameObject stageHideButton;
+    public GameObject stageBar; // UI 중 밑에 바가 나오도록 한다.
+    public GameObject stageHideButton; // 화면 밖을 클릭했을 때, 바를 숨길 수 있도록 한다.
     public Image[] item_Image;
-    public Image[] reward_Image;
+    public Image[] reward_Image; //추가 예정
 
-    public GameObject[] ItemLock;
+    public GameObject[] ItemLock; //일정 스테이지 클리어시, 해금
     public GameObject[] WeaponLock;
 
     public GameObject playerObject;
@@ -34,27 +34,16 @@ public class StageDirector : MonoBehaviour {
         stageNum = 0;
         stageData = StageObject.GetComponent<Stage_Scripter>();
         player = playerObject.GetComponent<Player_Scritable>();
-        
+        lockOffStage = stageData.stageNum;
 
         for(int i = 0; i < item_Image.Length; i++)
         {
             item_Image[i].sprite = player.item[i].ItemImage;
         }
-    }
 
-    void Update()
-    {
-        
-
-        lockOffStage = stageData.stageNum;
-        for(int i = 0; i < lockOffStage; i++)
+        for (int i = 0; i < lockOffStage; i++)
         {
             StageButton[i].interactable = true;
-        }
-
-        for (int i = 0; i < item_Image.Length; i++)
-        {
-            item_Image[i].sprite = player.item[i].ItemImage;
         }
 
         for (int i = 0; i < ItemLock.Length; i++)
@@ -65,33 +54,22 @@ public class StageDirector : MonoBehaviour {
             }
         }
 
-        for(int i = 2; i < lockOffStage; i++)
+        for (int i = 2; i < lockOffStage; i++)
         {
-            if(lockOffStage > i)
+            if (lockOffStage > i)
             {
-                WeaponLock[i-2].SetActive(false);
+                WeaponLock[i - 2].SetActive(false);
             }
         }
-
-     /*   if(lockOffStage >= 2)
-        {
-            WeaponLock[0].SetActive(false);
-
-        }
-        if(lockOffStage >= 3)
-        {
-            WeaponLock[1].SetActive(false);
-        }
-        if (lockOffStage >= 4)
-        {
-            WeaponLock[2].SetActive(false);
-        }
-
-*/
     }
 
-        
-
+    void Update()
+    {
+        for (int i = 0; i < item_Image.Length; i++)
+        {
+            item_Image[i].sprite = player.item[i].ItemImage;
+        }
+    }
 
     public void OnClickStage(int Num)
     {
@@ -129,6 +107,4 @@ public class StageDirector : MonoBehaviour {
     {
         stageData.stageInit();
     }
-
-
 }

@@ -30,7 +30,6 @@ public class StatusDirector : MonoBehaviour
     int Sum_atk;
     int Sum_def;
 
-    // Start is called before the first frame update
     void Start()
     {
         Sum_atk = 0;
@@ -39,7 +38,6 @@ public class StatusDirector : MonoBehaviour
         Rest_Status = player.status;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Stat_Hp.text = player.hp.ToString();
@@ -105,8 +103,6 @@ public class StatusDirector : MonoBehaviour
             }
         }
     }
-
-
     public void OnPlusATK(bool flag)
     {
         if (flag)
@@ -133,7 +129,6 @@ public class StatusDirector : MonoBehaviour
             Rest_Status++;
         }
     }
-
     public void OnApplyButton()
     {
         player.ChangePlayerData(Sum_atk, Sum_def, Rest_Status);

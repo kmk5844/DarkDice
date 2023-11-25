@@ -15,7 +15,7 @@ public class ToggleONOFF : MonoBehaviour
         }
         else
         {
-            to.interactable=true;
+            to.interactable = true;
         }
     }
 }

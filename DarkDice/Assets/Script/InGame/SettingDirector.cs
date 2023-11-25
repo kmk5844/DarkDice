@@ -8,8 +8,6 @@ public class SettingDirector : MonoBehaviour
 {
     public GameObject SettingUI;
     public bool SettingFlag;
-/*    public Button[] All_Buttons;
-    public Toggle[] Item_Toggles;*/
 
     public void OnSetting()
     {

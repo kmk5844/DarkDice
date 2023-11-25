@@ -17,12 +17,9 @@ public class StoreDirector : MonoBehaviour
     public GameObject[] WeaponObject_Data;
     Weapon_Scritable[] weapon;
 
-    public TextMeshProUGUI[] Item_Count;
+    public TextMeshProUGUI[] Inventory_Item_Count;
     public TextMeshProUGUI[] Item_Pride;
     public TextMeshProUGUI[] Weapon_Pride;
-
-    public Toggle[] Title_Toggle;
-    public GameObject[] Window_Toggle;
 
     public Button[] Item_Button;
     public Button[] Weapon_Button;
@@ -48,7 +45,7 @@ public class StoreDirector : MonoBehaviour
             Item_Pride[i].text = item[i].pride + "G";
         }
 
-        for (int i = 0; i <  WeaponObject_Data.Length; i++)
+        for (int i = 0; i < WeaponObject_Data.Length; i++)
         {
             weapon[i] = WeaponObject_Data[i].GetComponent<Weapon_Scritable>();
             Weapon_Pride[i].text = weapon[i].weapon_pride + "G";
@@ -61,7 +58,7 @@ public class StoreDirector : MonoBehaviour
 
         for (int i = 0; i < item.Length; i++)
         {
-            Item_Count[i].text = item[i].itemcount.ToString();
+            Inventory_Item_Count[i].text = item[i].itemcount.ToString();
             if (player.coin < item[i].pride)
             {
                 Item_Button[i].interactable = false;
@@ -70,9 +67,25 @@ public class StoreDirector : MonoBehaviour
             {
                 Item_Button[i].interactable = true;
             }
+
+            if(i < weapon.Length) // item = 4 / weapon = 3 즉, for문 최소화.
+            {
+                if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag == 1)
+                {
+                    Weapon_Button[i].interactable = false;
+                    if (weapon[i].storeflag == 1)
+                    {
+                        Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                    }
+                }
+                else
+                {
+                    Weapon_Button[i].interactable = true;
+                }
+            }
         }
 
-        for (int i = 0; i < weapon.Length; i++)
+      /*  for (int i = 0; i < weapon.Length; i++)
         {
             if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag == 1)
             {
@@ -86,7 +99,7 @@ public class StoreDirector : MonoBehaviour
             {
                 Weapon_Button[i].interactable = true;
             }
-        }
+        }*/
     }
 
     public void OnItemBuyWindow(int i) {

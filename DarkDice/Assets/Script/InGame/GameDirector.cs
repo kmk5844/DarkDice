@@ -67,6 +67,7 @@ public class GameDirector : MonoBehaviour
         MonsterCount = 0;
         mosterChildCount = mosterGroup.childCount;
         monster = new GameObject[mosterChildCount];
+
         for (int i = 0; i < mosterChildCount; i++)
         {
             monster[i] = mosterGroup.GetChild(i).gameObject;
@@ -102,9 +103,8 @@ public class GameDirector : MonoBehaviour
         StatusText[1].text = playerData.def.ToString();
         StatusText[2].text = monsterData.atk.ToString();
         StatusText[3].text = monsterData.def.ToString();
-
     }
-    void Update()
+    void LateUpdate()
     {
         StatusText[2].text = monsterData.atk.ToString();
         StatusText[3].text = monsterData.def.ToString();

@@ -2318,7 +2318,7 @@ GameObject:
   - component: {fileID: 166373900}
   - component: {fileID: 166373899}
   m_Layer: 5
-  m_Name: Item1_Text
+  m_Name: Inventory_Item1_Count_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3903,7 +3903,7 @@ GameObject:
   - component: {fileID: 282682693}
   - component: {fileID: 282682692}
   m_Layer: 5
-  m_Name: Item3_Text
+  m_Name: Inventory_Item3_Count_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8346,7 +8346,7 @@ GameObject:
   - component: {fileID: 685515127}
   - component: {fileID: 685515126}
   m_Layer: 5
-  m_Name: 'Item2_Text '
+  m_Name: Inventory_Item2_Count_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14255,7 +14255,7 @@ GameObject:
   - component: {fileID: 1067786888}
   - component: {fileID: 1067786887}
   m_Layer: 5
-  m_Name: Item2_Count
+  m_Name: Invetory_Item2_Count(store)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16742,7 +16742,7 @@ GameObject:
   - component: {fileID: 1275790393}
   - component: {fileID: 1275790392}
   m_Layer: 5
-  m_Name: Item4_Text
+  m_Name: Inventory_Item4_Count_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16970,7 +16970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerObject: {fileID: 369615969}
-  Item_Count:
+  Inventory_Item_Count:
   - {fileID: 166373899}
   - {fileID: 685515126}
   - {fileID: 282682692}
@@ -16980,12 +16980,12 @@ MonoBehaviour:
   - {fileID: 344759929}
   - {fileID: 2129079834}
   - {fileID: 90710950}
+  default_item: {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
   ItemObject_Data:
   - {fileID: 1027483894}
   - {fileID: 929272608}
   - {fileID: 1891605856}
   - {fileID: 1417480785}
-  default_item: {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
   ItemStock:
   - {fileID: 886588344}
   - {fileID: 1196144200}
@@ -17687,7 +17687,7 @@ GameObject:
   - component: {fileID: 1399284775}
   - component: {fileID: 1399284774}
   m_Layer: 5
-  m_Name: Item1_Count
+  m_Name: Invetory_Item1_Count(store)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20322,18 +20322,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1291359901}
-        m_TargetAssemblyTypeName: ItemDirector_Stage, Assembly-CSharp
-        m_MethodName: OnUpdate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &1631032445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20642,7 +20630,7 @@ MonoBehaviour:
   - {fileID: 706917331}
   - {fileID: 1186295158}
   - {fileID: 2081011778}
-  Item_Count:
+  Inventory_Item_Count:
   - {fileID: 1399284774}
   - {fileID: 1067786887}
   - {fileID: 1852158439}
@@ -20656,12 +20644,9 @@ MonoBehaviour:
   - {fileID: 998026008}
   - {fileID: 1405711589}
   - {fileID: 1609241471}
-  Title_Toggle:
+  ItemORWeapon_Toggle:
   - {fileID: 1627524227}
   - {fileID: 1178467492}
-  Window_Toggle:
-  - {fileID: 1355504172}
-  - {fileID: 513389481}
   Item_Button:
   - {fileID: 1604968615}
   - {fileID: 1496015343}
@@ -22426,7 +22411,7 @@ GameObject:
   - component: {fileID: 1787890442}
   - component: {fileID: 1787890443}
   m_Layer: 5
-  m_Name: Item4_Count
+  m_Name: Invetory_Item4_Count(store)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22995,7 +22980,7 @@ GameObject:
   - component: {fileID: 1852158440}
   - component: {fileID: 1852158439}
   m_Layer: 5
-  m_Name: Item3_Count
+  m_Name: Invetory_Item3_Count(store)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25240,8 +25225,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 340421048}
   m_HandleRect: {fileID: 340421047}
   m_Direction: 2
-  m_Value: 1.0000017
-  m_Size: 0.7392788
+  m_Value: 1.0000023
+  m_Size: 0.7392789
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25443,10 +25428,10 @@ Transform:
   m_Children:
   - {fileID: 546571148}
   - {fileID: 1651238656}
-  - {fileID: 142930198}
-  - {fileID: 1291359902}
   - {fileID: 587295485}
   - {fileID: 5391289831004573949}
+  - {fileID: 142930198}
+  - {fileID: 1291359902}
   - {fileID: 300494131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

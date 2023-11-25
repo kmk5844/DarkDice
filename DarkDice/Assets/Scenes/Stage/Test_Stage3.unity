@@ -914,6 +914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 2133339910}
   monsterGroup: {fileID: 117565144}
+  gameDirector_Object: {fileID: 1962942268}
 --- !u!114 &250986474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6064,6 +6065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster_Atk_Delay: 5
   ItemName: 
+  MonsterCount: 0
   RoundText: {fileID: 2104687922}
   InGameText:
   - {fileID: 1208532383}

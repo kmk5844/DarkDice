@@ -58,7 +58,6 @@ public class Stage_Monster_Instance : MonoBehaviour
             obj.GetComponent<MonsterData>().def = Data.monster_Data[Enemy(str)].def;
             obj.name = Data.monster_Data[Enemy(str)].name;
         }
-
     }
 
     public string enemy_unit_num(int i)

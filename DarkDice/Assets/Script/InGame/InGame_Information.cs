@@ -15,6 +15,7 @@ public class InGame_Information : MonoBehaviour
     MonsterData[] monsterData;
     TextMeshPro[] monsterHP;
     int monsterGroup_childCount;
+
     // Start is called before the first frame update
     void Start()
     {
