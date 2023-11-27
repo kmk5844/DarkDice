@@ -914,7 +914,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 2133339910}
   monsterGroup: {fileID: 117565144}
-  gameDirector_Object: {fileID: 1962942268}
 --- !u!114 &250986474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3911,7 +3910,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1962942270}
         m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
-        m_MethodName: OnClickItemGroup
+        m_MethodName: OnClickItemButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6123,7 +6122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster_Atk_Delay: 5
   ItemName: 
-  MonsterCount: 0
   RoundText: {fileID: 2104687922}
   InGameText:
   - {fileID: 1208532383}
@@ -6159,7 +6157,7 @@ MonoBehaviour:
   - {fileID: 1525425669}
   stage_Data: {fileID: 477713922}
   Data: {fileID: 11400000, guid: b64bdb60b750cbd46a6f1f5ccecbeba7, type: 2}
-  ON_OFF_ItemGroup: {fileID: 1231115707}
+  Item_Group: {fileID: 1849535132}
 --- !u!1 &1971005346
 GameObject:
   m_ObjectHideFlags: 0

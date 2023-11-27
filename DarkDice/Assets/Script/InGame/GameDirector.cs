@@ -17,7 +17,7 @@ public class GameDirector : MonoBehaviour
     int atksum;
     int defSum;
     int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트(?)
-    int ItemCount; //??
+    int ItemCount;
 
     public TextMeshProUGUI RoundText;
     public TextMeshPro[] InGameText;
@@ -54,11 +54,14 @@ public class GameDirector : MonoBehaviour
 
     public DataTable_Test Data;
 
-    public GameObject ON_OFF_ItemGroup;
+    bool ItemButton_OpenFlag;
+    public GameObject Item_Group;
+    Animator Ani_Group;
 
     void Start()
     {
         ItemFlag = false;
+        ItemButton_OpenFlag = false;
         ItemCount = 0;
         ItemName = "";
         monster_Atk_Delay = 2.0f;
@@ -67,6 +70,7 @@ public class GameDirector : MonoBehaviour
         MonsterCount = 0;
         mosterChildCount = mosterGroup.childCount;
         monster = new GameObject[mosterChildCount];
+        Ani_Group = Item_Group.GetComponent<Animator>();
 
         for (int i = 0; i < mosterChildCount; i++)
         {
@@ -186,18 +190,6 @@ public class GameDirector : MonoBehaviour
                     toggle.interactable = false;
                     break;
             }
-        }
-    }
-
-    public void OnClickItemGroup()
-    {
-        if (ON_OFF_ItemGroup.gameObject.activeSelf == true)
-        {
-            ON_OFF_ItemGroup.SetActive(false);
-        }
-        else
-        {
-            ON_OFF_ItemGroup.SetActive(true);
         }
     }
 
@@ -380,6 +372,19 @@ public class GameDirector : MonoBehaviour
     {
         SceneManager.LoadScene("1.StageChoice");
         Time.timeScale = 1;
+    }
 
+    public void OnClickItemButton()
+    {
+        if (!ItemButton_OpenFlag)
+        {
+            Ani_Group.SetBool("ItemOpenCloseFlag", true);
+            ItemButton_OpenFlag = true;
+        }
+        else
+        {
+            Ani_Group.SetBool("ItemOpenCloseFlag", false);
+            ItemButton_OpenFlag = false;
+        }
     }
 }

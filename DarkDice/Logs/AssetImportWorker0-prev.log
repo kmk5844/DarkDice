@@ -15,7 +15,7 @@ C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60407
+62724
 Successfully changed project path to: C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
 C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [21952] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 2770953236 [EditorId] 2770953236 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [25440] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 4280173146 [EditorId] 4280173146 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [21952] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 2770953236 [EditorId] 2770953236 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [25440] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 4280173146 [EditorId] 4280173146 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 12.57 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 13.43 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.9f1 (ea401c316338)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -70,47 +70,47 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56444
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009856 seconds.
-- Loaded All Assemblies, in  0.328 seconds
+Registered in 0.009945 seconds.
+- Loaded All Assemblies, in  0.361 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 272 ms
+Android Extension - Scanning For ADB Devices 2197 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.594 seconds
-Domain Reload Profiling: 921ms
-	BeginReloadAssembly (100ms)
+- Finished resetting the current domain, in  2.472 seconds
+Domain Reload Profiling: 2831ms
+	BeginReloadAssembly (109ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (129ms)
-		LoadAssemblies (99ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (62ms)
+	LoadAllAssembliesAndSetupDomain (144ms)
+		LoadAssemblies (108ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (127ms)
-			TypeCache.Refresh (125ms)
-				TypeCache.ScanAssembly (114ms)
+		AnalyzeDomain (142ms)
+			TypeCache.Refresh (140ms)
+				TypeCache.ScanAssembly (125ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (594ms)
+	FinalizeReload (2472ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (542ms)
+		SetupLoadedEditorAssemblies (2419ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (378ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (2295ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (101ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (81ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,8 +118,8 @@ Domain Reload Profiling: 921ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.650 seconds
-Refreshing native plugins compatible for Editor in 4.58 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.686 seconds
+Refreshing native plugins compatible for Editor in 5.75 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -127,47 +127,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.634 seconds
-Domain Reload Profiling: 1281ms
-	BeginReloadAssembly (142ms)
+- Finished resetting the current domain, in  0.633 seconds
+Domain Reload Profiling: 1316ms
+	BeginReloadAssembly (138ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (420ms)
-		LoadAssemblies (316ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (453ms)
+		LoadAssemblies (331ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (189ms)
-			TypeCache.Refresh (159ms)
-				TypeCache.ScanAssembly (138ms)
-			ScanForSourceGeneratedMonoScriptInfo (23ms)
+		AnalyzeDomain (200ms)
+			TypeCache.Refresh (164ms)
+				TypeCache.ScanAssembly (147ms)
+			ScanForSourceGeneratedMonoScriptInfo (30ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (635ms)
+	FinalizeReload (634ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (465ms)
+		SetupLoadedEditorAssemblies (471ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (29ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (79ms)
-			ProcessInitializeOnLoadAttributes (314ms)
-			ProcessInitializeOnLoadMethodAttributes (34ms)
+			BeforeProcessingInitializeOnLoad (80ms)
+			ProcessInitializeOnLoadAttributes (309ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 5.72 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 6.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4134 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (63.1 KB). Loaded Objects now: 4596.
-Memory consumption went from 149.0 MB to 148.9 MB.
-Total: 3.393400 ms (FindLiveObjects: 0.298600 ms CreateObjectMapping: 0.196900 ms MarkObjects: 2.778900 ms  DeleteObjects: 0.118400 ms)
+Unloading 68 unused Assets / (63.2 KB). Loaded Objects now: 4596.
+Memory consumption went from 148.9 MB to 148.9 MB.
+Total: 4.152500 ms (FindLiveObjects: 0.511100 ms CreateObjectMapping: 0.320600 ms MarkObjects: 3.168700 ms  DeleteObjects: 0.150400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -184,231 +184,181 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 491016.987870 seconds.
-  path: Assets/Scenes/test
-  artifactKey: Guid(9433a53025715bc4b986bc12046e4d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test using Guid(9433a53025715bc4b986bc12046e4d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8a8bcc24d36de802ea9f6a70904e9bd') in 0.002091 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 100.322994 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Example/bg.png
-  artifactKey: Guid(fb08f98c62a59784cb59590ab191bb3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Example/bg.png using Guid(fb08f98c62a59784cb59590ab191bb3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97f9849f7f221d4dc64bc98ec21734c0') in 0.082211 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 4.326293 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_1_Salamander.prefab
-  artifactKey: Guid(e0dc5b9c5a1759b4983be5f02a62649c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_1_Salamander.prefab using Guid(e0dc5b9c5a1759b4983be5f02a62649c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '572eb30adc6c54bb8d7cc6113cd63e02') in 0.008205 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.001431 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_4_Armored Salamander.prefab
-  artifactKey: Guid(10750a68cc032594e85dd9a7dbf2e439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_4_Armored Salamander.prefab using Guid(10750a68cc032594e85dd9a7dbf2e439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ec9c400e46d168d53fdd4945bbefa0e') in 0.002717 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_8_Slime.prefab
-  artifactKey: Guid(1c102c09daeada64fbc7985a01dc548d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_8_Slime.prefab using Guid(1c102c09daeada64fbc7985a01dc548d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7134711cc0fa20e7917c462a4ee7b9d7') in 0.001852 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_20_Saw Shadow.prefab
-  artifactKey: Guid(1fbc5734039db804a8ac5a99f018b4a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_20_Saw Shadow.prefab using Guid(1fbc5734039db804a8ac5a99f018b4a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bde8467d17809fd7716ac681230233dc') in 0.001676 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_28_Dark Dragon.prefab
-  artifactKey: Guid(9c73deb5d1fedfd4cab051ef94cf1cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_28_Dark Dragon.prefab using Guid(9c73deb5d1fedfd4cab051ef94cf1cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a22cfa43c0e262c40ddf3e80f09b4de') in 0.001622 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_24_Floating Stone.prefab
-  artifactKey: Guid(4c6483ffb0dc3594db190f4557f962da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_24_Floating Stone.prefab using Guid(4c6483ffb0dc3594db190f4557f962da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b09ea1696290c9a44553b10495f04ec') in 0.001724 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_36_Spring Tree.prefab
-  artifactKey: Guid(ee45a6c5c7c27aa42808cbba06d1abe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_36_Spring Tree.prefab using Guid(ee45a6c5c7c27aa42808cbba06d1abe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '747489efe51372fa55f6c6e1df7abf64') in 0.001732 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_11_Pure Slime.prefab
-  artifactKey: Guid(165c405f8e726434582cbc2bf03bb773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_11_Pure Slime.prefab using Guid(165c405f8e726434582cbc2bf03bb773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a319253b9dafc61e236965479569f340') in 0.001801 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_22_Skeleton King.prefab
-  artifactKey: Guid(38b352992cf71374584c5086c809fc06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_22_Skeleton King.prefab using Guid(38b352992cf71374584c5086c809fc06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fa184cb5bb32c5d4638802840f5fc39') in 0.001716 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_7_Chained Yeti.prefab
-  artifactKey: Guid(3284c2a16d253f04d9ee5698f0ffd5ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_7_Chained Yeti.prefab using Guid(3284c2a16d253f04d9ee5698f0ffd5ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9c7c2ae23d14b242d64c45714258fb') in 0.001707 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_21_Skeleton.prefab
+  Time since last request: 495183.482881 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_21_Skeleton.prefab
   artifactKey: Guid(6bb39c8b5d3b95e4bbaca211a0ce08ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_21_Skeleton.prefab using Guid(6bb39c8b5d3b95e4bbaca211a0ce08ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bd966b0f5345fbe2902fbf15d63b2f') in 0.001690 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_32_Grass Rabbit.prefab
-  artifactKey: Guid(7e9a1fa7351a2a44c8034e0de3bacd5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_32_Grass Rabbit.prefab using Guid(7e9a1fa7351a2a44c8034e0de3bacd5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83bb47b764bd9932b63e4d1e5e3ec381') in 0.002483 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_15_Crystal Golem.prefab
-  artifactKey: Guid(0e0bf5b7e211f234b894b603701d4339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_15_Crystal Golem.prefab using Guid(0e0bf5b7e211f234b894b603701d4339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '844a9c3384408aa5946463dbe16f50d8') in 0.002072 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_16_Sword Shadow.prefab
-  artifactKey: Guid(31d7392d738c40546b71acebf59df247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_16_Sword Shadow.prefab using Guid(31d7392d738c40546b71acebf59df247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ff5af8926b4e647a8fa956474aa3565') in 0.001922 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_27_Fire Dragon.prefab
-  artifactKey: Guid(6bf15c32cf527a64e8aafb169cb4f3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_27_Fire Dragon.prefab using Guid(6bf15c32cf527a64e8aafb169cb4f3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53991675470029b03a9b76f02ee30d8c') in 0.001634 seconds
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_21_Skeleton.prefab using Guid(6bb39c8b5d3b95e4bbaca211a0ce08ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bd966b0f5345fbe2902fbf15d63b2f') in 0.023038 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_19_Crescent Shadow.prefab
-  artifactKey: Guid(b58d4b03dcd6787449ea0d58a0829f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_19_Crescent Shadow.prefab using Guid(b58d4b03dcd6787449ea0d58a0829f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ead167fd2f308d8fc0bc221ff272925') in 0.002204 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_9_Evil Slime.prefab
-  artifactKey: Guid(bf9070cc71aa742448b0cb9c177aace0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_9_Evil Slime.prefab using Guid(bf9070cc71aa742448b0cb9c177aace0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6ef610e416e8e2ccd9add2a70669cf2') in 0.002079 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_40_Fire Wolf.prefab
-  artifactKey: Guid(3442179da1a9f5049a54ab5f9f093215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_40_Fire Wolf.prefab using Guid(3442179da1a9f5049a54ab5f9f093215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb3c45b0b9f54762c82240c2de3bacb9') in 0.001717 seconds
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_68_Scythe Ghost.prefab
+  artifactKey: Guid(8a17bcfa706783642950c759238bc6b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_68_Scythe Ghost.prefab using Guid(8a17bcfa706783642950c759238bc6b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7917b4ff607a29835af3b9760010fb3') in 0.002096 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
   Time since last request: 0.000014 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_26_Floating Steel.prefab
-  artifactKey: Guid(314d1aeee6d26cd4ca565a22a479cebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_26_Floating Steel.prefab using Guid(314d1aeee6d26cd4ca565a22a479cebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb991d4fbcec49e83219b63dea67adb4') in 0.001653 seconds
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_60_Sword Block.prefab
+  artifactKey: Guid(ace972142439e0a418babf220a8164cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_60_Sword Block.prefab using Guid(ace972142439e0a418babf220a8164cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac34775c6869bc7d01f5880ffd72e7d5') in 0.002331 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 7
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_17_Mace Shadow.prefab
-  artifactKey: Guid(51c4418660e752f4f8b77ef60bec8381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/test/Fantazia Animated 2D Monsters/Prefabs/Monster_17_Mace Shadow.prefab using Guid(51c4418660e752f4f8b77ef60bec8381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f74713632397949922567b62fd22e4e') in 0.002283 seconds
+  Time since last request: 0.000012 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_15_Crystal Golem.prefab
+  artifactKey: Guid(0e0bf5b7e211f234b894b603701d4339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_15_Crystal Golem.prefab using Guid(0e0bf5b7e211f234b894b603701d4339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '844a9c3384408aa5946463dbe16f50d8') in 0.001659 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 7
 ========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_73_Corrupted Knight.prefab
+  artifactKey: Guid(8cc50c59ad8b6e548a7899c23fd406b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_73_Corrupted Knight.prefab using Guid(8cc50c59ad8b6e548a7899c23fd406b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fe8cee4322bb98465b24333a2cd07d9') in 0.001592 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs
+  artifactKey: Guid(01123677fffdef24a919dfac7dbe87ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs using Guid(01123677fffdef24a919dfac7dbe87ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abb3b06556e68c8bcbd79fc2535218e6') in 0.000293 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.533 seconds
-Refreshing native plugins compatible for Editor in 4.78 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.874 seconds
+Refreshing native plugins compatible for Editor in 5.28 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.906 seconds
-Domain Reload Profiling: 1435ms
-	BeginReloadAssembly (165ms)
+- Finished resetting the current domain, in  0.948 seconds
+Domain Reload Profiling: 1816ms
+	BeginReloadAssembly (422ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (11ms)
+		DisableScriptedObjects (19ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (283ms)
-		LoadAssemblies (352ms)
+		CreateAndSetChildDomain (113ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (61ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (288ms)
+		LoadAssemblies (439ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (6ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (906ms)
+		AnalyzeDomain (31ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (4ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (949ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (370ms)
+		SetupLoadedEditorAssemblies (425ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (70ms)
-			ProcessInitializeOnLoadAttributes (241ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (291ms)
 			ProcessInitializeOnLoadMethodAttributes (25ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (11ms)
-Refreshing native plugins compatible for Editor in 5.53 ms, found 4 plugins.
+Shader 'Spine/Outline/Skeleton': fallback shader 'Spine/Skeleton' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Blend Modes/Skeleton PMA Screen': fallback shader 'Spine/Blend Modes/Skeleton PMA Screen' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Blend Modes/Skeleton PMA Screen' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Blend Modes/Skeleton PMA Screen' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Skeleton Tint Black': fallback shader 'Spine/Special/Skeleton Grayscale' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Tint Black' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Tint Black' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/SkeletonGraphic': fallback shader 'Spine/SkeletonGraphic' not found
+WARNING: Shader Unsupported: 'Spine/Outline/SkeletonGraphic' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/SkeletonGraphic' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/OutlineOnly-ZWrite': fallback shader 'Spine/Skeleton' not found
+Shader 'Spine/Outline/Special/Skeleton Grayscale': fallback shader 'Spine/Special/Skeleton Grayscale' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Special/Skeleton Grayscale' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Special/Skeleton Grayscale' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Sprite/Vertex Lit': fallback shader 'Spine/Sprite/Vertex Lit' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Sprite/Vertex Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Sprite/Vertex Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/SkeletonGraphic Tint Black': fallback shader 'Spine/SkeletonGraphic Tint Black' not found
+WARNING: Shader Unsupported: 'Spine/Outline/SkeletonGraphic Tint Black' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/SkeletonGraphic Tint Black' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Skeleton Lit ZWrite': fallback shader 'Spine/Skeleton Lit ZWrite' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Lit ZWrite' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Lit ZWrite' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Skeleton Fill': fallback shader 'Spine/Skeleton Fill' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Fill' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Fill' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Blend Modes/Skeleton PMA Additive': fallback shader 'Spine/Blend Modes/Skeleton PMA Additive' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Blend Modes/Skeleton PMA Additive' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Blend Modes/Skeleton PMA Additive' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Spine/Outline/Skeleton Tint': fallback shader 'Spine/Skeleton Tint' not found
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Tint' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Spine/Outline/Skeleton Tint' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 4.76 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4108 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 40 unused Assets / (38.2 KB). Loaded Objects now: 4606.
-Memory consumption went from 141.9 MB to 141.8 MB.
-Total: 3.305100 ms (FindLiveObjects: 0.322500 ms CreateObjectMapping: 0.105900 ms MarkObjects: 2.811300 ms  DeleteObjects: 0.064500 ms)
+Unloading 4361 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 78 unused Assets / (3.5 MB). Loaded Objects now: 4817.
+Memory consumption went from 159.2 MB to 155.7 MB.
+Total: 4.307600 ms (FindLiveObjects: 0.295500 ms CreateObjectMapping: 0.128300 ms MarkObjects: 2.394300 ms  DeleteObjects: 1.488600 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -424,3 +374,714 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 114.422823 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_15_Crystal Golem.prefab
+  artifactKey: Guid(0e0bf5b7e211f234b894b603701d4339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_15_Crystal Golem.prefab using Guid(0e0bf5b7e211f234b894b603701d4339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0ab59063a5db4ec22a09aba15db70b') in 0.042665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_60_Sword Block.prefab
+  artifactKey: Guid(ace972142439e0a418babf220a8164cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Prefabs/Monster_60_Sword Block.prefab using Guid(ace972142439e0a418babf220a8164cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b14c4f0f67f5a25c043b3ced276faeb') in 0.003716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 9.188146 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images
+  artifactKey: Guid(c0e9a55d74cbf42449652d4f9fc53f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images using Guid(c0e9a55d74cbf42449652d4f9fc53f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f7f751efd2863a4381fe3c58a51b362') in 0.000484 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.088662 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2ARM 1A.png
+  artifactKey: Guid(ee83510bf1f1d9e45a7104c77b2e6019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2ARM 1A.png using Guid(ee83510bf1f1d9e45a7104c77b2e6019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35d093477839b5d20ed1ddc1e2647b09') in 0.064710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/ARM 2A.png
+  artifactKey: Guid(05a720ae8aa011147ac974451a91ea73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/ARM 2A.png using Guid(05a720ae8aa011147ac974451a91ea73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '709bd06591eee0eac6a88a8bbfeb74b7') in 0.028316 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3HIP.png
+  artifactKey: Guid(19165a7c1cdfd984c9676d1422a88e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3HIP.png using Guid(19165a7c1cdfd984c9676d1422a88e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a5e8a64b6ce69f255b928db731dac8b') in 0.026898 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3ARM 1C.png
+  artifactKey: Guid(34f80f9c736bfd94a982ca0108822342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3ARM 1C.png using Guid(34f80f9c736bfd94a982ca0108822342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f74631c4bb26d95bc6bc38a24040b749') in 0.025286 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2HIP.png
+  artifactKey: Guid(51b8229e9a58a5846a3e6f23ff32514b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2HIP.png using Guid(51b8229e9a58a5846a3e6f23ff32514b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68163fa6ba044d4a7b39b41a9043ee24') in 0.024033 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2HEAD.png
+  artifactKey: Guid(7d39c96adb9c49d4cac2fe72c6108f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2HEAD.png using Guid(7d39c96adb9c49d4cac2fe72c6108f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43c6fb0c7f779c1d712475f83b03e2d4') in 0.027692 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/ARM 1B.png
+  artifactKey: Guid(ec1d74f6b96b4c74b824db28550798e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/ARM 1B.png using Guid(ec1d74f6b96b4c74b824db28550798e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f6efdb6638a0cebddc33e3e45b96ce') in 0.025634 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3EYE CLOSED.png
+  artifactKey: Guid(46cba9b2e03a24e4e8a0aa95aa962523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3EYE CLOSED.png using Guid(46cba9b2e03a24e4e8a0aa95aa962523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2168c3afb9cd0004f5dadd94968e5201') in 0.023690 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2ARM 2A.png
+  artifactKey: Guid(c806c3ee2d899064b8ae35e885da0821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/2ARM 2A.png using Guid(c806c3ee2d899064b8ae35e885da0821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '541cd91f8fca3ba31c1302ba11f26714') in 0.026281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/ARM 1C.png
+  artifactKey: Guid(3b6bfd1108c05c942b94868ac97fe26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/ARM 1C.png using Guid(3b6bfd1108c05c942b94868ac97fe26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94f341a69170b89a7fa2088de0d68094') in 0.020169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3ARM 1A.png
+  artifactKey: Guid(7b2df1ae5ad601941854cebaaa46c622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3ARM 1A.png using Guid(7b2df1ae5ad601941854cebaaa46c622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e164ce37b604e277476956328b0bb47d') in 0.023951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3ARM 1B.png
+  artifactKey: Guid(ccaf676e67a536b4aad7f8c9e4f36094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3ARM 1B.png using Guid(ccaf676e67a536b4aad7f8c9e4f36094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1d4394c9b7041325527e534ce77ad95') in 0.024842 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3BODY.png
+  artifactKey: Guid(011aaee88e00ce64a9ad30db65fd3cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Spine/Monster_13_14_15_Golem/images/3BODY.png using Guid(011aaee88e00ce64a9ad30db65fd3cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e123ff2437a6dfdf0fca2363f3423c8') in 0.025239 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 6.852475 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_13_14_15_Golem/monster_04.png
+  artifactKey: Guid(a56d950cadbc6d548ac2f936c5666132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_13_14_15_Golem/monster_04.png using Guid(a56d950cadbc6d548ac2f936c5666132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1052ba7edce4d0e2fab77028ebe0501') in 0.026493 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 16.835398 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_60_61_62_63_Block/monster_17.png
+  artifactKey: Guid(31e9252c8db96844887e937a761948c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_60_61_62_63_Block/monster_17.png using Guid(31e9252c8db96844887e937a761948c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32928c71c9bb23d6cd2781bcaccadff7') in 0.029125 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 10.960528 seconds.
+  path: Assets/Spine Examples/spine-unity-examples.asmdef
+  artifactKey: Guid(8f5163e4753269348a069fd2fedcba29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/spine-unity-examples.asmdef using Guid(8f5163e4753269348a069fd2fedcba29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8020ba13ed6ddbaff023ab5d8910a306') in 0.000611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.306224 seconds.
+  path: Assets/Spine Examples/Images/outline-shaders-heading.png
+  artifactKey: Guid(de1fb4dac677a6d45ae2ad12a49091c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/Images/outline-shaders-heading.png using Guid(de1fb4dac677a6d45ae2ad12a49091c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f3d4069e4c52bb18761e94d82b0f38') in 0.023424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 3.517481 seconds.
+  path: Assets/Spine Examples/Sound/Footstep.ogg
+  artifactKey: Guid(e885484e1bc99fb47a0ac3f6bfa586b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/Sound/Footstep.ogg using Guid(e885484e1bc99fb47a0ac3f6bfa586b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db902a5195a58b0ba9b2bbf93619a807') in 0.049946 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 1.292443 seconds.
+  path: Assets/Spine Examples/Spine Skeletons/Runtime Template Material.mat
+  artifactKey: Guid(365eb017d7ae7134d820c8b808eeb121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine Examples/Spine Skeletons/Runtime Template Material.mat using Guid(365eb017d7ae7134d820c8b808eeb121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8ea3ef8dfba5d1002790cbfd8f5e17b') in 0.070293 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.524 seconds
+Refreshing native plugins compatible for Editor in 5.63 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.006 seconds
+Domain Reload Profiling: 1527ms
+	BeginReloadAssembly (163ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (287ms)
+		LoadAssemblies (338ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (26ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1007ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (444ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (31ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (75ms)
+			ProcessInitializeOnLoadAttributes (286ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 4.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4286 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 148 unused Assets / (3.6 MB). Loaded Objects now: 4819.
+Memory consumption went from 158.0 MB to 154.5 MB.
+Total: 4.267300 ms (FindLiveObjects: 0.303500 ms CreateObjectMapping: 0.126700 ms MarkObjects: 2.376100 ms  DeleteObjects: 1.460300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.469 seconds
+Refreshing native plugins compatible for Editor in 5.07 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.978 seconds
+Domain Reload Profiling: 1444ms
+	BeginReloadAssembly (152ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (240ms)
+		LoadAssemblies (303ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (979ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (413ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (30ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (271ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 6.01 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4286 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 77 unused Assets / (3.5 MB). Loaded Objects now: 4823.
+Memory consumption went from 157.9 MB to 154.4 MB.
+Total: 5.622400 ms (FindLiveObjects: 0.428900 ms CreateObjectMapping: 0.296700 ms MarkObjects: 3.274000 ms  DeleteObjects: 1.621900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 55.320082 seconds.
+  path: Assets/Spine/Runtime
+  artifactKey: Guid(ddb0e27aa2258854a8d171196f395b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime using Guid(ddb0e27aa2258854a8d171196f395b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '262262f6052a4792635de91f40143309') in 0.001706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.600716 seconds.
+  path: Assets/Spine/Runtime/spine-unity.asmdef
+  artifactKey: Guid(68765d262e2128e4ab49c983f3411946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity.asmdef using Guid(68765d262e2128e4ab49c983f3411946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '536af56ecc4d17e107bd3bf5804dde39') in 0.000561 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.643942 seconds.
+  path: Assets/Spine/Runtime/spine-unity
+  artifactKey: Guid(29a3535756b284a428d35dcd4327185e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity using Guid(29a3535756b284a428d35dcd4327185e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10fcc1cccb4e3afb948e8c440e72714a') in 0.000467 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.721688 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types
+  artifactKey: Guid(1dc4b7c23385e8c43ad19d01cbed78ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types using Guid(1dc4b7c23385e8c43ad19d01cbed78ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f148a2f5e48f6ca950dc944e07ccb61') in 0.000452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.732369 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types/AtlasAssetBase.cs
+  artifactKey: Guid(787a36933c1c6e14db2104c01ed92dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types/AtlasAssetBase.cs using Guid(787a36933c1c6e14db2104c01ed92dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bef10977a5b16de9b61c76832a6dd2f') in 0.000487 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.782855 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types/BlendModeMaterials.cs
+  artifactKey: Guid(d03ca55657e89b949a4c07bc9207beac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types/BlendModeMaterials.cs using Guid(d03ca55657e89b949a4c07bc9207beac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db18d68e3f8f7e8f158bfc82f8c192b') in 0.000525 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.792138 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types/SkeletonDataModifierAsset.cs
+  artifactKey: Guid(79a44aba1f342f440965874280b4c318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types/SkeletonDataModifierAsset.cs using Guid(79a44aba1f342f440965874280b4c318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c041a88768f7bc6d274ace8002a5efa') in 0.000525 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.560745 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types/SkeletonDataCompatibility.cs
+  artifactKey: Guid(4224df6e20549f0449154531ae080201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types/SkeletonDataCompatibility.cs using Guid(4224df6e20549f0449154531ae080201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7372001254958e1a1c6dc06c8694e1c8') in 0.000529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.379122 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types/SpineSpriteAtlasAsset.cs
+  artifactKey: Guid(ce59897dd7e6cbc4690a05ebaf975dff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types/SpineSpriteAtlasAsset.cs using Guid(ce59897dd7e6cbc4690a05ebaf975dff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee73e6ee18007267f6b3445f418ee9a') in 0.000535 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.564315 seconds.
+  path: Assets/Spine/Runtime/spine-unity/Asset Types/RegionlessAttachmentLoader.cs
+  artifactKey: Guid(15f0f78b87720c047a320c5e0e3f91b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-unity/Asset Types/RegionlessAttachmentLoader.cs using Guid(15f0f78b87720c047a320c5e0e3f91b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7cc8c246f6aab54bcf88725e30f6bdc') in 0.000556 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.233298 seconds.
+  path: Assets/Spine/Runtime/spine-csharp/Attachments
+  artifactKey: Guid(2afe1c6b912aac54abb5925ca4ac52c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spine/Runtime/spine-csharp/Attachments using Guid(2afe1c6b912aac54abb5925ca4ac52c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a01cb49554c51e47addd89bec5d66019') in 0.000454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.441 seconds
+Refreshing native plugins compatible for Editor in 5.15 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.940 seconds
+Domain Reload Profiling: 1377ms
+	BeginReloadAssembly (151ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (223ms)
+		LoadAssemblies (280ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (941ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (395ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (256ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 6.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4285 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 77 unused Assets / (3.5 MB). Loaded Objects now: 4827.
+Memory consumption went from 157.7 MB to 154.2 MB.
+Total: 5.517100 ms (FindLiveObjects: 0.573600 ms CreateObjectMapping: 0.211900 ms MarkObjects: 3.166900 ms  DeleteObjects: 1.563600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 157.005216 seconds.
+  path: Assets/Resources/Monster.prefab
+  artifactKey: Guid(ee0ec7a93c6b03041b11ad3110df7fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Monster.prefab using Guid(ee0ec7a93c6b03041b11ad3110df7fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc16f14a540a949925ae3e9a0cabc8ea') in 0.087028 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 25
+========================================================================
+Received Import Request.
+  Time since last request: 175.969848 seconds.
+  path: Assets/Scritable/Excel/DataTable_Test.xlsx
+  artifactKey: Guid(53cc7fb9cfdebcb4d9f3e81ca19f438a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scritable/Excel/DataTable_Test.xlsx using Guid(53cc7fb9cfdebcb4d9f3e81ca19f438a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1db0740e42d332a53d4409374ef7fb90') in 0.001077 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 204.603985 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_67_68_69_Ghost/monster_19.png
+  artifactKey: Guid(fc322385d0db4d84188cc3e0b48fd8f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_67_68_69_Ghost/monster_19.png using Guid(fc322385d0db4d84188cc3e0b48fd8f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6c3ea25f4428f664e7ffbcb4e8fe818') in 0.025821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_67_68_69_Ghost/monster_19_SkeletonData.asset
+  artifactKey: Guid(a50c29ef97d4b6541a24b77a3d4385e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_67_68_69_Ghost/monster_19_SkeletonData.asset using Guid(a50c29ef97d4b6541a24b77a3d4385e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e2702825c39f60e90d287ae7bdc158') in 0.190530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 60
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.464 seconds
+Refreshing native plugins compatible for Editor in 5.05 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.973 seconds
+Domain Reload Profiling: 1432ms
+	BeginReloadAssembly (149ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (244ms)
+		LoadAssemblies (303ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (973ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (423ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (82ms)
+			ProcessInitializeOnLoadAttributes (273ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 5.10 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4285 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 77 unused Assets / (3.6 MB). Loaded Objects now: 4833.
+Memory consumption went from 158.1 MB to 154.5 MB.
+Total: 5.152800 ms (FindLiveObjects: 0.338400 ms CreateObjectMapping: 0.114700 ms MarkObjects: 2.907200 ms  DeleteObjects: 1.791600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.525 seconds
+Refreshing native plugins compatible for Editor in 4.63 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.969 seconds
+Domain Reload Profiling: 1490ms
+	BeginReloadAssembly (150ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (295ms)
+		LoadAssemblies (358ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (970ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (425ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (26ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (83ms)
+			ProcessInitializeOnLoadAttributes (272ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 5.69 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4286 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 77 unused Assets / (3.5 MB). Loaded Objects now: 4837.
+Memory consumption went from 158.1 MB to 154.6 MB.
+Total: 4.951000 ms (FindLiveObjects: 0.338100 ms CreateObjectMapping: 0.137000 ms MarkObjects: 2.699300 ms  DeleteObjects: 1.775600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 971.899103 seconds.
+  path: Assets/Scenes/Stage/Test_Stage3.unity
+  artifactKey: Guid(54efc2fe78c8fd14db5eb1ae37e773a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stage/Test_Stage3.unity using Guid(54efc2fe78c8fd14db5eb1ae37e773a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50849d645b60a2c6bfb374e8f9cb01b6') in 0.002938 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.235005 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_21_22_23_Skeleton/monster 06 skeleton SMALL 512_512.png
+  artifactKey: Guid(ebd265c7bd6096f4994c24a20f7c2e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_21_22_23_Skeleton/monster 06 skeleton SMALL 512_512.png using Guid(ebd265c7bd6096f4994c24a20f7c2e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a355d3feaf44f73a35b86e3917cfd032') in 0.072258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_21_22_23_Skeleton/monster 06 skeleton SMALL 512_512_Material.mat
+  artifactKey: Guid(5394091fb3d2428408ed26c017bbec01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_21_22_23_Skeleton/monster 06 skeleton SMALL 512_512_Material.mat using Guid(5394091fb3d2428408ed26c017bbec01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbe2681786aa5a0ca50a826129742594') in 0.068695 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.531084 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_73_74_75_Corrupted Knight/monster_21.png
+  artifactKey: Guid(8f133a1218bb4a9488c6f89a882b625b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_73_74_75_Corrupted Knight/monster_21.png using Guid(8f133a1218bb4a9488c6f89a882b625b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af09a2edaba30acb073bc6d11cba9c68') in 0.021477 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_73_74_75_Corrupted Knight/monster_21_Material.mat
+  artifactKey: Guid(42a8214058585614dbbcd85607f65ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_73_74_75_Corrupted Knight/monster_21_Material.mat using Guid(42a8214058585614dbbcd85607f65ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dba84c0a92badb3ad2b112646968a639') in 0.029769 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 251.024398 seconds.
+  path: Assets/Scenes/0-1. toon.unity
+  artifactKey: Guid(ec252d4d13f457349b88fbb721b4191d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/0-1. toon.unity using Guid(ec252d4d13f457349b88fbb721b4191d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0199bf9a7e8d9d5ee2b5619f10c1459b') in 0.000640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.841279 seconds.
+  path: Assets/Scenes/1-0. toon.unity
+  artifactKey: Guid(ec252d4d13f457349b88fbb721b4191d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/1-0. toon.unity using Guid(ec252d4d13f457349b88fbb721b4191d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3039eb50b24aa8c000ca1bd8cebddf8a') in 0.000460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 890.049697 seconds.
+  path: Assets/Sprite/Dice/Dice1.png
+  artifactKey: Guid(014f9db33819ffc41afeb4448fbdd07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/Dice/Dice1.png using Guid(014f9db33819ffc41afeb4448fbdd07d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '883f52574132d88c5e1c0002e398a62d') in 0.038327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprite/Dice/Dice5.png
+  artifactKey: Guid(f8c3968a2a94dc546b7e693f9cbcd44e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/Dice/Dice5.png using Guid(f8c3968a2a94dc546b7e693f9cbcd44e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0411b89c81d8a73122b80012b8720a0') in 0.027828 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprite/Dice/Dice4.png
+  artifactKey: Guid(3cab248467896824e8d56ea4950f1f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/Dice/Dice4.png using Guid(3cab248467896824e8d56ea4950f1f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5579e172eeae2f6c6af4f249a288cb4') in 0.026110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
