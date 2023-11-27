@@ -9,10 +9,10 @@ public class ItemDirector_Stage : MonoBehaviour
     public GameObject PlayerObject;
     Player_Scritable playerData;
 
-    public TextMeshProUGUI[] Item_Count;
+    public TextMeshProUGUI[] Inventory_Item_Count;
     public TextMeshProUGUI[] Equip_Item_Count;
-    public GameObject[] ItemObject_Data;
-    Item_Scritable[] itemData;
+    public GameObject[] ItemObject;
+    Item_Scritable[] itemData_Object;
     public ItemData default_item;
 
     int[] Sub_Count;
@@ -22,21 +22,16 @@ public class ItemDirector_Stage : MonoBehaviour
 
     void Start()
     {
+        itemData_Object = new Item_Scritable[ItemObject.Length];
         Equip_Max_Count = 0;
         playerData = PlayerObject.GetComponent<Player_Scritable>();
-        itemData = new Item_Scritable[ItemObject_Data.Length];
         Sub_Count = new int[Equip_Item_Count.Length];
 
-        for (int i = 0; i < Item_Count.Length; i++)
+        for (int i = 0; i < Inventory_Item_Count.Length; i++)
         {
-            itemData[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
+            itemData_Object[i] = ItemObject[i].GetComponent<Item_Scritable>();
         }
-
-        for (int i = 0; i < ItemObject_Data.Length; i++)
-        {
-            ItemStock[i].GetComponent<Image>().sprite = itemData[i].ItemImage;
-        }
-
+        
         for (int i = 0; i < ItemEquip.Length; i++)
         {
             ItemEquip[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
@@ -44,8 +39,13 @@ public class ItemDirector_Stage : MonoBehaviour
 
         for (int i = 0; i < Equip_Item_Count.Length; i++)
         {
-            Sub_Count[i] = itemData[i].itemcount;
+            Sub_Count[i] = itemData_Object[i].itemcount;
             Equip_Item_Count[i].text = Sub_Count[i].ToString();
+        }
+
+        for (int i = 0; i < ItemObject.Length; i++)
+        {
+            ItemStock[i].GetComponent<Image>().sprite = itemData_Object[i].ItemImage;
         }
 
         for (int i = 0; i < ItemEquip.Length; i++)
@@ -55,11 +55,11 @@ public class ItemDirector_Stage : MonoBehaviour
 
     }
 
-    private void Update()
+     private void Update()
     {
-        for (int i = 0; i < Item_Count.Length; i++)
+        for (int i = 0; i < Inventory_Item_Count.Length; i++)
         {
-            Item_Count[i].text = "X " + itemData[i].itemcount;
+            Inventory_Item_Count[i].text = "X " + itemData_Object[i].itemcount;
         }
 
         for (int i = 0; i < ItemEquip.Length; i++)
@@ -88,14 +88,14 @@ public class ItemDirector_Stage : MonoBehaviour
 
     public void OnUpdate()
     {
-        for(int i = 0; i <Item_Count.Length; i++)
+        for(int i = 0; i < Inventory_Item_Count.Length; i++)
         {
-            Sub_Count[i] = itemData[i].itemcount;
+            Sub_Count[i] = itemData_Object[i].itemcount;
         }
     }
     public void OnEquipItem(int i)
     {
-        playerData.EquipItem(itemData[i].itemData);
+        playerData.EquipItem(itemData_Object[i].itemData);
         Equip_Max_Count++;
         Sub_Count[i]--;
     }

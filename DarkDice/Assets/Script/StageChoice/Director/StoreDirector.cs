@@ -59,32 +59,37 @@ public class StoreDirector : MonoBehaviour
     {
         CoinCount.text = player.coin.ToString();
 
-        for (int i = 0; i < item.Length; i++)
+        if (Title_Toggle[0].isOn)
         {
-            Item_Count[i].text = item[i].itemcount.ToString();
-            if (player.coin < item[i].pride)
+            for (int i = 0; i < item.Length; i++)
             {
-                Item_Button[i].interactable = false;
-            }
-            else
-            {
-                Item_Button[i].interactable = true;
-            }
-        }
-
-        for (int i = 0; i < weapon.Length; i++)
-        {
-            if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag == 1)
-            {
-                Weapon_Button[i].interactable = false;
-                if (weapon[i].storeflag == 1)
+                Item_Count[i].text = item[i].itemcount.ToString();
+                if (player.coin < item[i].pride)
                 {
-                    Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                    Item_Button[i].interactable = false;
+                }
+                else
+                {
+                    Item_Button[i].interactable = true;
                 }
             }
-            else
+        }
+        else
+        {
+            for (int i = 0; i < weapon.Length; i++)
             {
-                Weapon_Button[i].interactable = true;
+                if (player.coin < weapon[i].weapon_pride || weapon[i].storeflag == 1)
+                {
+                    Weapon_Button[i].interactable = false;
+                    if (weapon[i].storeflag == 1)
+                    {
+                        Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                    }
+                }
+                else
+                {
+                    Weapon_Button[i].interactable = true;
+                }
             }
         }
     }

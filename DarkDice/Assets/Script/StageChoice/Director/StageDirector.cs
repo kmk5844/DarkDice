@@ -26,6 +26,8 @@ public class StageDirector : MonoBehaviour {
     public GameObject playerObject;
     Player_Scritable player;
 
+    Animator Bar_ani;
+
     int stageNum;
     int lockOffStage;
 
@@ -34,6 +36,7 @@ public class StageDirector : MonoBehaviour {
         stageNum = 0;
         stageData = StageObject.GetComponent<Stage_Scripter>();
         player = playerObject.GetComponent<Player_Scritable>();
+        Bar_ani = stageBar.GetComponent<Animator>();
         
 
         for(int i = 0; i < item_Image.Length; i++)
@@ -44,8 +47,6 @@ public class StageDirector : MonoBehaviour {
 
     void Update()
     {
-        
-
         lockOffStage = stageData.stageNum;
         for(int i = 0; i < lockOffStage; i++)
         {
@@ -72,30 +73,13 @@ public class StageDirector : MonoBehaviour {
                 WeaponLock[i-2].SetActive(false);
             }
         }
-
-     /*   if(lockOffStage >= 2)
-        {
-            WeaponLock[0].SetActive(false);
-
-        }
-        if(lockOffStage >= 3)
-        {
-            WeaponLock[1].SetActive(false);
-        }
-        if (lockOffStage >= 4)
-        {
-            WeaponLock[2].SetActive(false);
-        }
-
-*/
     }
-
-        
 
 
     public void OnClickStage(int Num)
     {
         stageNum = Num;
+        stageBar.SetActive(true);
         stageHideButton.SetActive(true);
         string Sub_StageTitle = "";
         switch (Num){
@@ -116,7 +100,12 @@ public class StageDirector : MonoBehaviour {
                 break;
         }
         stageName.text = "STAGE" + Num + " : " + Sub_StageTitle;
-        stageBar.SetActive(true);
+        Bar_ani.SetBool("StageBar", true);
+    }
+
+    public void OnClickHide()
+    {
+        Bar_ani.SetBool("StageBar", false);
     }
 
     public void OnClickFight()
@@ -129,6 +118,4 @@ public class StageDirector : MonoBehaviour {
     {
         stageData.stageInit();
     }
-
-
 }

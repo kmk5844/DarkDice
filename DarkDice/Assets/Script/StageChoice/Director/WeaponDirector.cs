@@ -43,7 +43,6 @@ public class WeaponDirector : MonoBehaviour
             Toggle_Weapon[1].isOn = false;
             Toggle_Weapon[2].isOn = false;
         }
-
     }
 
     private void Update()
