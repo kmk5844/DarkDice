@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spine-unity-editor", "spine-unity-editor.csproj", "{4D47226C-F250-F786-C464-784F6B1F19E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spine-unity", "spine-unity.csproj", "{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{754A01E9-28CA-9336-3704-7CF6E44F2AE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelImporter.Editor", "ExcelImporter.Editor.csproj", "{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}"
@@ -15,6 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D47226C-F250-F786-C464-784F6B1F19E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D47226C-F250-F786-C464-784F6B1F19E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D47226C-F250-F786-C464-784F6B1F19E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D47226C-F250-F786-C464-784F6B1F19E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{754A01E9-28CA-9336-3704-7CF6E44F2AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{754A01E9-28CA-9336-3704-7CF6E44F2AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{754A01E9-28CA-9336-3704-7CF6E44F2AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
