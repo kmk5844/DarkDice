@@ -909,6 +909,14 @@
       <Project>{53B10563-2705-3375-565B-706B658B8912}</Project>
       <Name>ExcelImporter</Name>
     </ProjectReference>
+    <ProjectReference Include="spine-unity.csproj">
+      <Project>{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}</Project>
+      <Name>spine-unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="spine-unity-editor.csproj">
+      <Project>{4D47226C-F250-F786-C464-784F6B1F19E8}</Project>
+      <Name>spine-unity-editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
