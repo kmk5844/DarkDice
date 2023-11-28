@@ -54,6 +54,7 @@ public class GameDirector : MonoBehaviour
 
     public DataTable_Test Data;
 
+    public Button ItemGroup_Button;
     bool ItemButton_OpenFlag;
     public GameObject Item_Group;
     Animator Ani_Group;
@@ -112,6 +113,13 @@ public class GameDirector : MonoBehaviour
     {
         StatusText[2].text = monsterData.atk.ToString();
         StatusText[3].text = monsterData.def.ToString();
+
+        if (ItemCount == 1)
+        {
+            ItemButton_OpenFlag = false;
+            ItemGroup_Button.interactable = false;
+            Ani_Group.SetBool("ItemOpenCloseFlag", false);
+        }
 
         if (RoundNum >= 7)
         {
@@ -198,8 +206,8 @@ public class GameDirector : MonoBehaviour
         DiceNum++;
         if (DiceNum == 3 && ItemName == "Chance")
         {
-            ItemCount++;
             ItemUse();
+            ItemCount++;
             for(int i = 0; i < Item_Toggle.Length; i++)
             {
                 if (Item_Toggle[i].isOn)
@@ -249,6 +257,7 @@ public class GameDirector : MonoBehaviour
             }
             ItemFlag = false;
         }
+
         Debug.Log("Player Atk : " + playerData.atk + " + " + playerData.weapon.WeaponAtk + " + " + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum + " = " + atksum);
         StatusText[0].text = atksum.ToString();
         Debug.Log("=======================================");
@@ -287,6 +296,8 @@ public class GameDirector : MonoBehaviour
                 StatusText[1].text = playerData.atk.ToString();
                 StatusText[2].text = playerData.def.ToString();
                 Play_Button.SetActive(true);
+                ItemCount = 0;
+                ItemGroup_Button.interactable = true;
             }
         }
         else
@@ -326,6 +337,8 @@ public class GameDirector : MonoBehaviour
         else
         {
             PlayDice_UI.SetActive(true);
+            ItemCount = 0;
+            ItemGroup_Button.interactable = true;
             StatusText[0].text = playerData.atk.ToString();
             StatusText[1].text = playerData.def.ToString();
         }
