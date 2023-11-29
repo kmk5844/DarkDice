@@ -39,19 +39,13 @@ public class Dice : MonoBehaviour
         if (rollingFlag == false)
         {
             delay += 0.05f;
-            Dice1.transform.Rotate(0, 0, 8f);
-            Dice2.transform.Rotate(0, 0, -8f);
             if (delay > 0.56f)
             {
                 StopCoroutine(coroutine);
                 Attack_Button.interactable = true;
             }
         }
-        else
-        {
-            Dice1.transform.Rotate(0, 0, 2f);
-            Dice2.transform.Rotate(0, 0, -2f);
-        }
+
         image1.sprite = Pocket[rand1];
         image2.sprite = Pocket[rand2];
         yield return new WaitForSeconds(delay);

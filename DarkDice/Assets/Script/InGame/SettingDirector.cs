@@ -27,18 +27,6 @@ public class SettingDirector : MonoBehaviour
         }
     }
 
-    public void OnReset()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1;
-    }
-
-    public void OnStage()
-    {
-        SceneManager.LoadScene("1.StageChoice");
-        Time.timeScale = 1;
-    }
-
     public void OnExitButton()
     {
         Application.Quit();

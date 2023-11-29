@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster_Mini_Information : MonoBehaviour
 {
     public GameObject Information_Window;
     private bool isClick;
+    Button btn;
+
+    void Start()
+    {
+        btn = GetComponent<Button>();    
+    }
+
     public void ButtonDown()
     {
        isClick = true;
@@ -16,10 +24,9 @@ public class Monster_Mini_Information : MonoBehaviour
         isClick = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(isClick)
+        if (isClick && btn.interactable == true)
         {
             Information_Window.SetActive(true);
         }

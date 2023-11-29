@@ -16,7 +16,7 @@ public class GameDirector : MonoBehaviour
     int DiceNum;
     int atksum;
     int defSum;
-    int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트(?)
+    int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트
     int ItemCount;
 
     public TextMeshProUGUI RoundText;
@@ -52,12 +52,14 @@ public class GameDirector : MonoBehaviour
     public GameObject stage_Data;
     Stage_Scripter stage;
 
-    public DataTable_Test Data;
+    public DataTable Data;
 
     public Button ItemGroup_Button;
     bool ItemButton_OpenFlag;
     public GameObject Item_Group;
-    Animator Ani_Group;
+    Animator Ani_ItemGroup;
+
+    GameManager gameManager;
 
     void Start()
     {
@@ -71,7 +73,17 @@ public class GameDirector : MonoBehaviour
         MonsterCount = 0;
         mosterChildCount = mosterGroup.childCount;
         monster = new GameObject[mosterChildCount];
-        Ani_Group = Item_Group.GetComponent<Animator>();
+        Ani_ItemGroup = Item_Group.GetComponent<Animator>();
+
+        try
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+        catch
+        {
+            print("게임 매니저가 없을 뿐이야~");
+        }
+
 
         for (int i = 0; i < mosterChildCount; i++)
         {
@@ -118,7 +130,7 @@ public class GameDirector : MonoBehaviour
         {
             ItemButton_OpenFlag = false;
             ItemGroup_Button.interactable = false;
-            Ani_Group.SetBool("ItemOpenCloseFlag", false);
+            Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
         }
 
         if (RoundNum >= 7)
@@ -347,7 +359,6 @@ public class GameDirector : MonoBehaviour
     IEnumerator playerDie()
     {
         yield return new WaitForSeconds(4f);
-        Time.timeScale = 0;
         Play_UI.SetActive(false);
         Lose_UI.SetActive(true);
     }
@@ -357,6 +368,7 @@ public class GameDirector : MonoBehaviour
         Time.timeScale = 1;
         PlayDice_UI.SetActive(true);
         Play_UI.SetActive(true);
+        Lose_UI.transform.GetChild(1).GetComponent<Transform>().gameObject.SetActive(false);
         Lose_UI.SetActive(false);
     }
 
@@ -367,13 +379,13 @@ public class GameDirector : MonoBehaviour
         {
             if(stage.curretStageNum == Data.stage_Data[i].number)
             {
-                playerData.plusCoin(Data.stage_Data[i].reward_gold);
+                playerData.plusCoin(Data.stage_Data[i].reward_coin);
                 if(stage.curretStageNum == stage.stageNum)
                 {
                     playerData.plusStatus(Data.stage_Data[i].reward_point);
-                    if (Data.stage_Data[i].reward_health != 0)
+                    if (Data.stage_Data[i].reward_hp != 0)
                     {
-                        playerData.plusHp(Data.stage_Data[i].reward_health);
+                        playerData.plusHp(Data.stage_Data[i].reward_hp);
                     }
                 }
                 break;
@@ -383,7 +395,14 @@ public class GameDirector : MonoBehaviour
 
     public void OnMain()
     {
-        SceneManager.LoadScene("1.StageChoice");
+        try
+        {
+            gameManager.NextLevle("1.StageChoice");
+        }
+        catch
+        {
+            SceneManager.LoadScene("1.StageChoice");
+        }
         Time.timeScale = 1;
     }
 
@@ -391,12 +410,12 @@ public class GameDirector : MonoBehaviour
     {
         if (!ItemButton_OpenFlag)
         {
-            Ani_Group.SetBool("ItemOpenCloseFlag", true);
+            Ani_ItemGroup.SetBool("ItemOpenCloseFlag", true);
             ItemButton_OpenFlag = true;
         }
         else
         {
-            Ani_Group.SetBool("ItemOpenCloseFlag", false);
+            Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
             ItemButton_OpenFlag = false;
         }
     }

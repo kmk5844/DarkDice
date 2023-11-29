@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Stage_Monster_Instance : MonoBehaviour
 {
     public Transform monsterGroup;
-    public DataTable_Test Data;
+    public DataTable Data;
     int stage;
     void Awake()
     {
@@ -52,8 +52,8 @@ public class Stage_Monster_Instance : MonoBehaviour
             {
                 str = Data.stage_Data[stage].enemy_unit3;
             }
-            var obj = Instantiate((GameObject)Resources.Load("Monster", typeof(GameObject)), monsterGroup);
-            obj.GetComponent<MonsterData>().hp = Data.monster_Data[Enemy(str)].health;
+            var obj = Instantiate((GameObject)Resources.Load(Data.monster_Data[Enemy(str)].name, typeof(GameObject)), monsterGroup);
+            obj.GetComponent<MonsterData>().hp = Data.monster_Data[Enemy(str)].hp;
             obj.GetComponent<MonsterData>().atk = Data.monster_Data[Enemy(str)].atk;
             obj.GetComponent<MonsterData>().def = Data.monster_Data[Enemy(str)].def;
             obj.name = Data.monster_Data[Enemy(str)].name;

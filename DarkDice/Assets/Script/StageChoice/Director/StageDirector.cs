@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using JetBrains.Annotations;
+using System.Linq;
+using UnityEditor.SceneManagement;
 
 public class StageDirector : MonoBehaviour {
 
@@ -14,6 +16,7 @@ public class StageDirector : MonoBehaviour {
     public Button[] StageButton;
 
     public TextMeshProUGUI stageName;
+    public TextMeshProUGUI stageStory;
 
     public GameObject stageBar;
     public GameObject stageHideButton;
@@ -26,7 +29,12 @@ public class StageDirector : MonoBehaviour {
     public GameObject playerObject;
     Player_Scritable player;
 
+    public DataTable Data;
+    public Transform[] Monster_inforGroup;
+    public Button[] Monster_inf_Button;
+
     Animator Bar_ani;
+    GameManager gameManager;
 
     int stageNum;
     int lockOffStage;
@@ -37,9 +45,16 @@ public class StageDirector : MonoBehaviour {
         stageData = StageObject.GetComponent<Stage_Scripter>();
         player = playerObject.GetComponent<Player_Scritable>();
         Bar_ani = stageBar.GetComponent<Animator>();
-        
+        try
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }catch
+        {
+            print("그냥 단지, 게임매니저가 없을 뿐이야~!");
+        }
 
-        for(int i = 0; i < item_Image.Length; i++)
+
+        for (int i = 0; i < item_Image.Length; i++)
         {
             item_Image[i].sprite = player.item[i].ItemImage;
         }
@@ -75,32 +90,60 @@ public class StageDirector : MonoBehaviour {
         }
     }
 
-
     public void OnClickStage(int Num)
     {
         stageNum = Num;
         stageBar.SetActive(true);
         stageHideButton.SetActive(true);
-        string Sub_StageTitle = "";
-        switch (Num){
-            case 1:
-                Sub_StageTitle = "여행을 떠나";
-                break;
-            case 2 :
-                Sub_StageTitle = "어디론가를 향해";
-                break;
-            case 3 :
-                Sub_StageTitle = "컴컴한 언덕을 향해";
-                break;
-            case 4:
-                Sub_StageTitle = "마왕의 성을 향해";
-                break;
-            case 5:
-                Sub_StageTitle = "끝을 향해";
-                break;
+
+        stageName.text = "STAGE" + Num + " : " + Data.stage_Data[Num-1].stage_fullname;
+        stageStory.text = Data.stage_Data[Num - 1].stage_info;
+        
+        for(int i = 0; i < Monster_inf_Button.Length; i++)
+        {
+            if (i < Data.stage_Data[Num -1].enemy_count)
+            {
+                Monster_inf_Button[i].interactable = true;
+
+            }
+            else {
+                Monster_inf_Button[i].interactable = false;
+            }
         }
-        stageName.text = "STAGE" + Num + " : " + Sub_StageTitle;
+
+
+        for (int i = 0; i < Monster_inforGroup.Length; i++)
+        {
+            if (i == Data.stage_Data[Num - 1].enemy_count)
+            {
+                break;
+            }
+            string str = "";
+            if (i == 0)
+            {
+                str = Data.stage_Data[Num - 1].enemy_unit1;
+            }
+            else if (i == 1)
+            {
+                str = Data.stage_Data[Num - 1].enemy_unit2;
+            }
+            else if (i == 2)
+            {
+                str = Data.stage_Data[Num - 1].enemy_unit3;
+            }
+            Monster_inforGroup[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "이름 : " + Data.monster_Data[Enemy(str)].name;
+            Monster_inforGroup[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "체력 : " + Data.monster_Data[Enemy(str)].hp.ToString();
+            Monster_inforGroup[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "공격력 : " + Data.monster_Data[Enemy(str)].atk.ToString();
+            Monster_inforGroup[i].transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "방어력 : " + Data.monster_Data[Enemy(str)].def.ToString();
+            Monster_inforGroup[i].transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "정보 : " + Data.monster_Data[Enemy(str)].enemy_info;
+        }
         Bar_ani.SetBool("StageBar", true);
+    }
+
+    public int Enemy(string str)
+    {
+        int index = Data.monster_Data.FindIndex(x => x.name.Equals(str));
+        return index;
     }
 
     public void OnClickHide()
@@ -110,7 +153,14 @@ public class StageDirector : MonoBehaviour {
 
     public void OnClickFight()
     {
-        SceneManager.LoadScene("Test_Stage" + stageNum);
+        try
+        {
+            gameManager.NextLevle("Test_Stage" + stageNum);
+        }
+        catch
+        {
+            SceneManager.LoadScene("Test_Stage" + stageNum);
+        }
         stageData.fightClickButton(stageNum);
     }
 
