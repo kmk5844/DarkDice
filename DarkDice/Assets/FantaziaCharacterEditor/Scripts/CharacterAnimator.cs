@@ -16,9 +16,9 @@ public class CharacterAnimator : MonoBehaviour
     public Jobs MyJob;
 
     Dictionary<PlayerAnimations, string> WarriorAnimations = new Dictionary<PlayerAnimations, string>();
-    Dictionary<PlayerAnimations, string> ArcherAnimations = new Dictionary<PlayerAnimations, string>();
+/*    Dictionary<PlayerAnimations, string> ArcherAnimations = new Dictionary<PlayerAnimations, string>();
     Dictionary<PlayerAnimations, string> ElementalistAnimations = new Dictionary<PlayerAnimations, string>();
-    Dictionary<PlayerAnimations, string> DuelistAnimations = new Dictionary<PlayerAnimations, string>();
+    Dictionary<PlayerAnimations, string> DuelistAnimations = new Dictionary<PlayerAnimations, string>();*/
     Dictionary<Jobs, Dictionary<PlayerAnimations, string>> JobsAnimations = new Dictionary<Jobs, Dictionary<PlayerAnimations, string>>();
 
     PlayerAnimations AnimationToPlay;
@@ -70,16 +70,15 @@ public class CharacterAnimator : MonoBehaviour
                 Angle = 50;
             }
             GameObject newArrow = Instantiate(ArrowPrefab, ArrowStartingPosition, Quaternion.Euler(0, 0, 90 + Angle));
-            newArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Angle*Mathf.PI/180), Mathf.Sin(Angle *  Mathf.PI/180)) *3200;
+            newArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Angle * Mathf.PI / 180), Mathf.Sin(Angle * Mathf.PI / 180)) * 3200;
         }
-
     }
 
     public void FireArrow_Archer()
     {
         IsFireArrow = !IsFireArrow;
     }
-    
+
 
     void CreateAnimationsDictionary()
     { 
@@ -89,7 +88,8 @@ public class CharacterAnimator : MonoBehaviour
         WarriorAnimations.Add(PlayerAnimations.Attack2, "Attack2");
         WarriorAnimations.Add(PlayerAnimations.Idle, "Idle");
         WarriorAnimations.Add(PlayerAnimations.Walk, "Walk");
-        WarriorAnimations.Add(PlayerAnimations.Run, "Run");
+/*        WarriorAnimations.Add(PlayerAnimations.Run, "Run");*/
+        WarriorAnimations.Add(PlayerAnimations.Run, "Run DUELIST");
         WarriorAnimations.Add(PlayerAnimations.FullJump, "Jump");
         WarriorAnimations.Add(PlayerAnimations.Jump1, "Jump1");
         WarriorAnimations.Add(PlayerAnimations.Jump2, "Jump2");
@@ -99,7 +99,7 @@ public class CharacterAnimator : MonoBehaviour
         WarriorAnimations.Add(PlayerAnimations.Special, "Defence");
         WarriorAnimations.Add(PlayerAnimations.Death, "Death");
 
-        ArcherAnimations.Add(PlayerAnimations.Attack1, "Shoot1");
+/*        ArcherAnimations.Add(PlayerAnimations.Attack1, "Shoot1");
         ArcherAnimations.Add(PlayerAnimations.Attack2, "Shoot2");
         ArcherAnimations.Add(PlayerAnimations.Idle, "Idle ARCHER");
         ArcherAnimations.Add(PlayerAnimations.Walk, "Walk");
@@ -139,12 +139,12 @@ public class CharacterAnimator : MonoBehaviour
         DuelistAnimations.Add(PlayerAnimations.Buff, "Buff");
         DuelistAnimations.Add(PlayerAnimations.Hurt, "Hurt");
         DuelistAnimations.Add(PlayerAnimations.Special, "Attack 3 DUELIST");
-        DuelistAnimations.Add(PlayerAnimations.Death, "Death");
+        DuelistAnimations.Add(PlayerAnimations.Death, "Death");*/
 
-        JobsAnimations.Add(Jobs.Archer, ArcherAnimations);
         JobsAnimations.Add(Jobs.Warrior, WarriorAnimations);
+/*        JobsAnimations.Add(Jobs.Archer, ArcherAnimations);
         JobsAnimations.Add(Jobs.Elementalist, ElementalistAnimations);
-        JobsAnimations.Add(Jobs.Duelist, DuelistAnimations);
+        JobsAnimations.Add(Jobs.Duelist, DuelistAnimations);*/
     }
 
     //Function called when the job is changed 
@@ -156,7 +156,6 @@ public class CharacterAnimator : MonoBehaviour
         {
             AnimationManager();
         }
-
     }
 
     //Takes a string AnimationString which is the name of the animation and assigns it to AnimationToPlay
@@ -172,7 +171,6 @@ public class CharacterAnimator : MonoBehaviour
         bool IsLoop = AnimationToPlay == PlayerAnimations.Death ? false : true;
         characterSkeleton.AnimationState.SetAnimation(0, JobsAnimations[AccGE.Job][AnimationToPlay], IsLoop);
     }
-
 }
 public enum PlayerAnimations
 {
