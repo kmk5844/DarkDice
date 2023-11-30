@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Spine.Unity;
 
 public class GameDirector : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class GameDirector : MonoBehaviour
     Animator Ani_ItemGroup;
 
     GameManager gameManager;
+    SkeletonAnimation skA;
 
     void Start()
     {
@@ -293,28 +295,15 @@ public class GameDirector : MonoBehaviour
         if (monsterData.hp <= 0)
         {
             monsterData.hp = 0;
-            MonsterCount++;
-            if (monster.Length == MonsterCount)
-            {
-                Monster_Director.GetComponent<MonsterMoving>().monsterDie();
-                Play_UI.SetActive(false);
-                Win_UI.SetActive(true);
-                TotalWin();
-            }
-            else
-            {
-                monsterData = monster[MonsterCount].GetComponent<MonsterData>();
-                Monster_Director.GetComponent<MonsterMoving>().monsterDie();
-                StatusText[1].text = playerData.atk.ToString();
-                StatusText[2].text = playerData.def.ToString();
-                Play_Button.SetActive(true);
-                ItemCount = 0;
-                ItemGroup_Button.interactable = true;
-            }
+            skA = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+            skA.state.SetAnimation(0, "Dead", false).TimeScale = 1; // ¼Óµµ -> TimeScale
+
+            StartCoroutine(monsterDieDelay());
         }
         else
         {
             StartCoroutine(monsterTurn());
+
         }
     }
 
@@ -358,9 +347,32 @@ public class GameDirector : MonoBehaviour
     
     IEnumerator playerDie()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         Play_UI.SetActive(false);
         Lose_UI.SetActive(true);
+    }
+
+    IEnumerator monsterDieDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        MonsterCount++;
+        if (monster.Length == MonsterCount)
+        {
+            Monster_Director.GetComponent<MonsterMoving>().monsterDie();
+            Play_UI.SetActive(false);
+            Win_UI.SetActive(true);
+            TotalWin();
+        }
+        else
+        {
+            monsterData = monster[MonsterCount].GetComponent<MonsterData>();
+            Monster_Director.GetComponent<MonsterMoving>().monsterDie();
+            StatusText[1].text = playerData.atk.ToString();
+            StatusText[2].text = playerData.def.ToString();
+            Play_Button.SetActive(true);
+            ItemCount = 0;
+            ItemGroup_Button.interactable = true;
+        }
     }
     public void OnAD_Retry()
     {

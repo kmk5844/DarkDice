@@ -9,7 +9,8 @@ public class Dice : MonoBehaviour
     [SerializeField]
     public float delay;
 
-    public Sprite[] Pocket;
+    public Sprite[] AtkPocket;
+    public Sprite[] DefPocket;
     public Image Dice1;
     public Image Dice2;
 
@@ -46,8 +47,8 @@ public class Dice : MonoBehaviour
             }
         }
 
-        image1.sprite = Pocket[rand1];
-        image2.sprite = Pocket[rand2];
+        image1.sprite = AtkPocket[rand1];
+        image2.sprite = DefPocket[rand2];
         yield return new WaitForSeconds(delay);
         StartMethod();
     }
@@ -82,26 +83,46 @@ public class Dice : MonoBehaviour
 
     public void OnAttackButton()
     {
-        atkSum = DiceToInt(Dice1);
-        defSum = DiceToInt(Dice2);
+        atkSum = AtkDiceToInt(Dice1);
+        defSum = DefDiceToInt(Dice2);
         Dice_Button.interactable = true;
         Attack_Button.interactable = false;
     }
 
-    private int DiceToInt(Image image)
+    private int AtkDiceToInt(Image image)
     {
         switch (image.sprite.name) {
-            case "Dice1":
+            case "AtkDice1":
                 return 1;
-            case "Dice2":
+            case "AtkDice2":
                 return 2;
-            case "Dice3":
+            case "AtkDice3":
                 return 3;
-            case "Dice4":
+            case "AtkDice4":
                 return 4;
-            case "Dice5":
+            case "AtkDice5":
                 return 5;
-            case "Dice6":
+            case "AtkDice6":
+                return 6;
+        }
+        return 0;
+    }
+
+    private int DefDiceToInt(Image image)
+    {
+        switch (image.sprite.name)
+        {
+            case "DefDice1":
+                return 1;
+            case "DefDice2":
+                return 2;
+            case "DefDice3":
+                return 3;
+            case "DefDice4":
+                return 4;
+            case "DefDice5":
+                return 5;
+            case "DefDice6":
                 return 6;
         }
         return 0;

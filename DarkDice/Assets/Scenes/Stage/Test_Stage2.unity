@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterGroup: {fileID: 117565144}
-  Data: {fileID: 11400000, guid: b64bdb60b750cbd46a6f1f5ccecbeba7, type: 2}
+  Data: {fileID: 11400000, guid: 673461363ce6d624bbc59aeb4f05707f, type: 2}
 --- !u!1 &302140263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,13 +4315,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.01
-  Pocket:
+  AtkPocket:
   - {fileID: 21300000, guid: 014f9db33819ffc41afeb4448fbdd07d, type: 3}
   - {fileID: 21300000, guid: 74e0ba4c95306c64783d2e92e3653594, type: 3}
   - {fileID: 21300000, guid: 486da7386c3b6194390528df129b8233, type: 3}
   - {fileID: 21300000, guid: 3cab248467896824e8d56ea4950f1f35, type: 3}
   - {fileID: 21300000, guid: f8c3968a2a94dc546b7e693f9cbcd44e, type: 3}
   - {fileID: 21300000, guid: 9176160ed684f9443b17a2039c5994bc, type: 3}
+  DefPocket:
+  - {fileID: 21300000, guid: 4453bd5601f332244be074869b116b63, type: 3}
+  - {fileID: 21300000, guid: 3a71f7bbae635584694903f1f5a45837, type: 3}
+  - {fileID: 21300000, guid: 546e3568489494549a73036da2b13dbc, type: 3}
+  - {fileID: 21300000, guid: 5faca6dbdc6f6f34c8c5064b8ae8b7e2, type: 3}
+  - {fileID: 21300000, guid: d3ae3a5e26402ad468fe8d79e8d6b7d1, type: 3}
+  - {fileID: 21300000, guid: 345cc0091aa0bee47ab90a0613f1f137, type: 3}
   Dice1: {fileID: 1304751511}
   Dice2: {fileID: 721188530}
   atkSum: 0
@@ -4569,6 +4576,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1976978294}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1455911375
 MonoBehaviour:
@@ -5512,7 +5531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC2DC\uD558\uAE30\n"
+  m_text: "\uB2E4   \uC74C\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
   m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
@@ -5850,7 +5869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 481, y: -77}
+  m_AnchoredPosition: {x: 324, y: -77}
   m_SizeDelta: {x: 5.76, y: 2.4519}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1849535134
@@ -6258,7 +6277,7 @@ MonoBehaviour:
   - {fileID: 153264880}
   - {fileID: 1525425669}
   stage_Data: {fileID: 477713922}
-  Data: {fileID: 11400000, guid: b64bdb60b750cbd46a6f1f5ccecbeba7, type: 2}
+  Data: {fileID: 11400000, guid: 673461363ce6d624bbc59aeb4f05707f, type: 2}
   ItemGroup_Button: {fileID: 1360618006}
   Item_Group: {fileID: 1849535132}
 --- !u!1 &1971005346
@@ -7002,7 +7021,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
