@@ -61,12 +61,14 @@
     <Compile Include="Assets\Script\InGame\GameDirector.cs" />
     <Compile Include="Assets\Scritable\Stage\Stage_Scripter.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\WeaponDirector.cs" />
+    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\CharacterAnimator.cs" />
     <Compile Include="Assets\Script\InGame\Stage_Monster_Instance.cs" />
     <Compile Include="Assets\Scritable\MonsterData.cs" />
     <Compile Include="Assets\Scritable\Weapon\WeaponData.cs" />
     <Compile Include="Assets\Scritable\Stage\StageData.cs" />
     <Compile Include="Assets\Scritable\Excel\monsterEntity.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\StoreDirector.cs" />
+    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearButtonClicker.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\Monster_Mini_Information.cs" />
     <Compile Include="Assets\Scritable\Item\Item_Scritable.cs" />
     <Compile Include="Assets\Script\InGame\Dice.cs" />
@@ -78,6 +80,8 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scritable\Weapon\Weapon_Scritable.cs" />
     <Compile Include="Assets\Script\Common\Start Title.cs" />
+    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearEquipper.cs" />
+    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\InventoryIconsManager.cs" />
     <Compile Include="Assets\Script\InGame\MonsterMoving.cs" />
     <Compile Include="Assets\Scritable\Item\ItemData.cs" />
     <Compile Include="Assets\Scritable\Excel\DataTable.cs" />
@@ -89,6 +93,7 @@
     <Compile Include="Assets\Script\StageChoice\Director\UiDirector.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\Entity\MstItemEntity.cs" />
     <Compile Include="Assets\Script\GameManager\GameManager.cs" />
+    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearsManager.cs" />
     <Compile Include="Assets\Script\InGame\SettingDirector.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\StageDirector.cs" />
     <Compile Include="Assets\Script\InGame\InGame_Information.cs" />
@@ -114,10 +119,13 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Fantazia Animated 2D Monsters\Source_Animations\Monster_67_68_69_Ghost\monster_19.atlas.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\FantaziaCharacterEditor\readme.txt" />
+    <None Include="Assets\FantaziaCharacterEditor\SpineSkeletonData\Character.atlas.txt" />
     <None Include="Assets\Fantazia Animated 2D Monsters\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\FantaziaCharacterEditor\SpineProjectFile\Character.atlas.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
