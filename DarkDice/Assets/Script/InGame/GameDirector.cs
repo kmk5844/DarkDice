@@ -9,9 +9,8 @@ using Spine.Unity;
 public class GameDirector : MonoBehaviour
 {
     [SerializeField]
-    private float monster_Atk_Delay;
-    [SerializeField]
     private string ItemName;
+    public GameTurn gameTurn;
 
     int RoundNum;
     int DiceNum;
@@ -19,6 +18,11 @@ public class GameDirector : MonoBehaviour
     int defSum;
     int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트
     int ItemCount;
+
+    SkeletonAnimation playerAni;
+    SkeletonAnimation monsterAni;
+    Vector3 playerPosition;
+    Vector3 monsterPosition;
 
     public TextMeshProUGUI RoundText;
     public TextMeshPro[] InGameText;
@@ -61,7 +65,6 @@ public class GameDirector : MonoBehaviour
     Animator Ani_ItemGroup;
 
     GameManager gameManager;
-    SkeletonAnimation skA;
 
     void Start()
     {
@@ -69,7 +72,6 @@ public class GameDirector : MonoBehaviour
         ItemButton_OpenFlag = false;
         ItemCount = 0;
         ItemName = "";
-        monster_Atk_Delay = 2.0f;
         RoundNum = 0;
         DiceNum = 0;
         MonsterCount = 0;
@@ -77,6 +79,9 @@ public class GameDirector : MonoBehaviour
         monster = new GameObject[mosterChildCount];
         Ani_ItemGroup = Item_Group.GetComponent<Animator>();
 
+        playerAni = PlayerObject.GetComponentInChildren<SkeletonAnimation>();
+
+        gameTurn = GameTurn.BeforeFight;
         try
         {
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -85,7 +90,6 @@ public class GameDirector : MonoBehaviour
         {
             print("게임 매니저가 없을 뿐이야~");
         }
-
 
         for (int i = 0; i < mosterChildCount; i++)
         {
@@ -117,6 +121,8 @@ public class GameDirector : MonoBehaviour
             Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
+
+
         //이것도 변경할 예정 -> UI 변동 사항이 생기기 때문.
         StatusText[0].text = playerData.atk.ToString();
         StatusText[1].text = playerData.def.ToString();
@@ -125,6 +131,11 @@ public class GameDirector : MonoBehaviour
     }
     void LateUpdate()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
+
         StatusText[2].text = monsterData.atk.ToString();
         StatusText[3].text = monsterData.def.ToString();
 
@@ -159,6 +170,91 @@ public class GameDirector : MonoBehaviour
         {
             ItemFlag = false;
             ItemName = "";
+        }
+
+        if (gameTurn == GameTurn.PlayerTurn_StartMoving)
+        {
+            if (playerAni.AnimationName != "Run")
+            {
+                playerAni.state.SetAnimation(0, "Run", true);
+            }
+
+            if (PlayerObject.GetComponent<Transform>().position.x - monster[MonsterCount].GetComponent<Transform>().position.x <= -2f)
+            {
+                PlayerObject.GetComponent<Transform>().Translate(10f * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                gameTurn = GameTurn.PlayerTurn_Attack;
+            }
+        }
+
+        if(gameTurn == GameTurn.PlayerTurn_EndMoving)
+        {
+            PlayerObject.transform.localScale = new Vector3(-1, 1, 1);
+            if (playerAni.AnimationName != "Run")
+            {
+                playerAni.state.SetAnimation(0, "Run", true);
+            }
+
+
+            if (PlayerObject.GetComponent<Transform>().position.x - playerPosition.x >= 0)
+            {
+                PlayerObject.GetComponent<Transform>().Translate(-10f * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                PlayerObject.transform.localScale = new Vector3(1, 1, 1);
+                if(playerAni.AnimationName != "Idle")
+                {
+                    playerAni.state.SetAnimation(0, "Idle", true);
+                }
+
+                gameTurn = GameTurn.Waiting;
+            }
+        }
+
+        if (gameTurn == GameTurn.MonsterTurn_StartMoving)
+        {
+            if (monsterAni.AnimationName != "Walk")
+            {
+                monsterAni.state.SetAnimation(0, "Walk", true);
+            }
+
+            if (PlayerObject.GetComponent<Transform>().position.x - monster[MonsterCount].GetComponent<Transform>().position.x <= -3f)
+            {
+                monster[MonsterCount].GetComponent<Transform>().Translate(-10f * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                gameTurn = GameTurn.MonsterTurn_Attack;
+            }
+        }
+
+        if(gameTurn == GameTurn.MonsterTurn_EndMoving)
+        {
+            float scale = monster[MonsterCount].transform.localScale.y;
+            monster[MonsterCount].transform.localScale = new Vector3(scale, scale, scale);
+            if (monsterAni.AnimationName != "Walk")
+            {
+                monsterAni.state.SetAnimation(0, "Walk", true);
+            }
+
+
+            if (monster[MonsterCount].GetComponent<Transform>().position.x - monsterPosition.x <= 0)
+            {
+                monster[MonsterCount].GetComponent<Transform>().Translate(10f * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                monster[MonsterCount].transform.localScale = new Vector3(-scale, scale, scale);
+                if (monsterAni.AnimationName != "Idle")
+                {
+                    monsterAni.state.SetAnimation(0, "Idle", true);
+                }
+
+                gameTurn = GameTurn.Waiting;
+            }
         }
 
         // 찬스 아이템을 썻을 경우에 다른 아이템 선택이 안되도록 하기
@@ -272,15 +368,31 @@ public class GameDirector : MonoBehaviour
             ItemFlag = false;
         }
 
+        StartCoroutine(playerTurn());
+    }
+
+    IEnumerator playerTurn()
+    {
+        Debug.Log("플레이어 턴");
+
         Debug.Log("Player Atk : " + playerData.atk + " + " + playerData.weapon.WeaponAtk + " + " + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum + " = " + atksum);
         StatusText[0].text = atksum.ToString();
         Debug.Log("=======================================");
 
+        //이 구간에서 이동 후, 때리기
+        playerPosition = PlayerObject.GetComponent<Transform>().position;
+        monsterPosition = monster[MonsterCount].GetComponent<Transform>().position;
+        gameTurn = GameTurn.PlayerTurn_StartMoving;
+
+        yield return new WaitUntil(() => gameTurn == GameTurn.PlayerTurn_Attack);
+        playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 2f;
+
         if (atksum > monsterData.def)
         {
+            Debug.Log("공격 성공!");
             monsterData.hp -= 1;
         }
-        else if(atksum == monsterData.def)
+        else if (atksum == monsterData.def)
         {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
@@ -292,18 +404,29 @@ public class GameDirector : MonoBehaviour
             monsterData.hp -= 0.5f;
         }
 
-        if (monsterData.hp <= 0)
+        if (monsterData.hp == 0)
         {
             monsterData.hp = 0;
-            skA = monster[MonsterCount].GetComponent<SkeletonAnimation>();
-            skA.state.SetAnimation(0, "Dead", false).TimeScale = 1; // 속도 -> TimeScale
+        }
 
+        yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+
+        if (monsterData.hp == 0)
+        {
+            monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+            monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
+        }
+
+        gameTurn = GameTurn.PlayerTurn_EndMoving;
+        yield return new WaitUntil(() => gameTurn == GameTurn.Waiting);
+
+        if (monsterData.hp == 0)
+        {
             StartCoroutine(monsterDieDelay());
         }
         else
         {
             StartCoroutine(monsterTurn());
-
         }
     }
 
@@ -311,8 +434,9 @@ public class GameDirector : MonoBehaviour
     {
         Debug.Log("몬스터 턴");
         StatusText[1].text = defSum.ToString();
-
-        yield return new WaitForSeconds(monster_Atk_Delay);
+        monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+        gameTurn = GameTurn.MonsterTurn_StartMoving;
+        yield return new WaitUntil(() => gameTurn == GameTurn.MonsterTurn_Attack);
 
         if(defSum < monsterData.atk)
         {
@@ -329,6 +453,14 @@ public class GameDirector : MonoBehaviour
             Debug.Log("몬스터 공격 실패!");
             playerData.hp -= 0.5f;
         }
+
+        monsterAni.state.SetAnimation(0, "Attack", false);
+        yield return new WaitForSeconds(0.4f);
+        playerAni.state.SetAnimation(0, "Hurt", false).TimeScale = 1.2f;
+        yield return new WaitForSeconds(0.8f);
+
+        gameTurn = GameTurn.MonsterTurn_EndMoving;
+        yield return new WaitUntil(() => gameTurn == GameTurn.Waiting);
 
         if (playerData.hp <= 0 || RoundNum == 10)
         {
@@ -347,6 +479,7 @@ public class GameDirector : MonoBehaviour
     
     IEnumerator playerDie()
     {
+        playerAni.state.SetAnimation(0, "Death", false).TimeScale = 0.8f;
         yield return new WaitForSeconds(3f);
         Play_UI.SetActive(false);
         Lose_UI.SetActive(true);
@@ -356,6 +489,7 @@ public class GameDirector : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         MonsterCount++;
+        gameTurn = GameTurn.BeforeFight;
         if (monster.Length == MonsterCount)
         {
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
@@ -365,6 +499,7 @@ public class GameDirector : MonoBehaviour
         }
         else
         {
+            //이 구간에서 몬스터의 애니메이션 변경
             monsterData = monster[MonsterCount].GetComponent<MonsterData>();
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
             StatusText[1].text = playerData.atk.ToString();
@@ -374,7 +509,13 @@ public class GameDirector : MonoBehaviour
             ItemGroup_Button.interactable = true;
         }
     }
-    public void OnAD_Retry()
+
+    public void OnAD_Try()
+    {
+        StartCoroutine(OnAD_Ani());
+    }
+
+    IEnumerator OnAD_Ani()
     {
         playerData.hp++;
         Time.timeScale = 1;
@@ -382,6 +523,8 @@ public class GameDirector : MonoBehaviour
         Play_UI.SetActive(true);
         Lose_UI.transform.GetChild(1).GetComponent<Transform>().gameObject.SetActive(false);
         Lose_UI.SetActive(false);
+        yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
+        playerAni.state.SetAnimation(0, "Idle", true);
     }
 
     public void TotalWin()
@@ -431,4 +574,16 @@ public class GameDirector : MonoBehaviour
             ItemButton_OpenFlag = false;
         }
     }
+}
+
+public enum GameTurn { 
+    BeforeFight,
+    Fighting,
+    PlayerTurn_StartMoving,
+    PlayerTurn_Attack,
+    PlayerTurn_EndMoving,
+    Waiting,
+    MonsterTurn_StartMoving,
+    MonsterTurn_Attack,
+    MonsterTurn_EndMoving
 }

@@ -153,14 +153,7 @@ public class StageDirector : MonoBehaviour {
 
     public void OnClickFight()
     {
-        try
-        {
-            gameManager.NextLevle("Test_Stage" + stageNum);
-        }
-        catch
-        {
-            SceneManager.LoadScene("Test_Stage" + stageNum);
-        }
+        SceneManager.LoadScene("Test_Stage" + stageNum);
         stageData.fightClickButton(stageNum);
     }
 

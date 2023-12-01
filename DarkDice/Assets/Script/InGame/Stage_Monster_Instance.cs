@@ -57,6 +57,7 @@ public class Stage_Monster_Instance : MonoBehaviour
             obj.GetComponent<MonsterData>().atk = Data.monster_Data[Enemy(str)].atk;
             obj.GetComponent<MonsterData>().def = Data.monster_Data[Enemy(str)].def;
             obj.name = Data.monster_Data[Enemy(str)].name;
+            obj.SetActive(false);
         }
     }
 

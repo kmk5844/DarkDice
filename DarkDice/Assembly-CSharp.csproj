@@ -77,7 +77,6 @@
     <Compile Include="Assets\Scritable\Player\PlayerData.cs" />
     <Compile Include="Assets\Script\GameManager\ScreenChange.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\Example.cs" />
-    <Compile Include="Assets\Scenes\test_sc.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scritable\Weapon\Weapon_Scritable.cs" />
     <Compile Include="Assets\Script\Common\Start Title.cs" />
