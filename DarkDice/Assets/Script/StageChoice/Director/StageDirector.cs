@@ -4,10 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
-using JetBrains.Annotations;
-using System.Linq;
-using UnityEditor.SceneManagement;
 
 public class StageDirector : MonoBehaviour {
 

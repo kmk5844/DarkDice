@@ -75,7 +75,9 @@
     <Compile Include="Assets\Script\StageChoice\Director\ItemDirector_Stage.cs" />
     <Compile Include="Assets\Scritable\Player\Player_Scritable.cs" />
     <Compile Include="Assets\Scritable\Player\PlayerData.cs" />
+    <Compile Include="Assets\Test\ChangeTest.cs" />
     <Compile Include="Assets\Script\GameManager\ScreenChange.cs" />
+    <Compile Include="Assets\Script\GameManager\Frame.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\Example.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scritable\Weapon\Weapon_Scritable.cs" />
