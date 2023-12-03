@@ -385,7 +385,6 @@ public class GameDirector : MonoBehaviour
         gameTurn = GameTurn.PlayerTurn_StartMoving;
 
         yield return new WaitUntil(() => gameTurn == GameTurn.PlayerTurn_Attack);
-        playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 2f;
 
         if (atksum > monsterData.def)
         {
@@ -401,15 +400,31 @@ public class GameDirector : MonoBehaviour
         else
         {
             Debug.Log("공격 실패!");
-            monsterData.hp -= 0.5f;
         }
 
-        if (monsterData.hp == 0)
+        if (monsterData.hp <= 0)
         {
             monsterData.hp = 0;
         }
+        int AttakcRand = Random.Range(0, 4);
 
-        yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+        if (AttakcRand == 0)
+        {
+            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+        }
+        else if(AttakcRand == 1)
+        {
+            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
+        }else if(AttakcRand == 2)
+        {
+            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack 3 DUELIST", false));
+        }else if(AttakcRand == 3)
+        {
+            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Cast2", false));
+        }else if(AttakcRand == 4)
+        {
+            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Cast3", false));
+        }
 
         if (monsterData.hp == 0)
         {
@@ -451,7 +466,6 @@ public class GameDirector : MonoBehaviour
         else
         {
             Debug.Log("몬스터 공격 실패!");
-            playerData.hp -= 0.5f;
         }
 
         monsterAni.state.SetAnimation(0, "Attack", false);
