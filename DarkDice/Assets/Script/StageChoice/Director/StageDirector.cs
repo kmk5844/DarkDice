@@ -30,7 +30,6 @@ public class StageDirector : MonoBehaviour {
     public Button[] Monster_inf_Button;
 
     Animator Bar_ani;
-    GameManager gameManager;
 
     int stageNum;
     int lockOffStage;
@@ -41,14 +40,6 @@ public class StageDirector : MonoBehaviour {
         stageData = StageObject.GetComponent<Stage_Scripter>();
         player = playerObject.GetComponent<Player_Scritable>();
         Bar_ani = stageBar.GetComponent<Animator>();
-        try
-        {
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        }catch
-        {
-            print("그냥 단지, 게임매니저가 없을 뿐이야~!");
-        }
-
 
         for (int i = 0; i < item_Image.Length; i++)
         {

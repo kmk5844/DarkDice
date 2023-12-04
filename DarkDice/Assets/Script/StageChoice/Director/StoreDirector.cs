@@ -114,7 +114,6 @@ public class StoreDirector : MonoBehaviour
         Buy_Window.SetActive(false);
         Dont_Click_Panel.SetActive(false);
     }
-
     public void OnWeaponBuy(int i)
     {
         YesButton.onClick.RemoveAllListeners();

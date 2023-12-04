@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Chance
   pride: 35
-  itemCount: 4
-  itemImage: {fileID: 21300000, guid: a1839f0ac8d050743a63cdaa8a99e0fd, type: 3}
+  itemCount: 5
+  itemImage: {fileID: 21300000, guid: 24b380ded925af249bdc92244f994138, type: 3}

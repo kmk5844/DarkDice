@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Test_Player
   hp: 2
-  atk: 10
+  atk: 7
   weapon: {fileID: 11400000, guid: a688a841fc3ca2c4db1b6415a4e1a875, type: 2}
-  def: 10
-  coin: 210
+  def: 7
+  coin: 0
   status: 3
   item:
   - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}

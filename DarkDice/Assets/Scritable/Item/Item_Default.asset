@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Default
   pride: 0
   itemCount: 0
-  itemImage: {fileID: 21300000, guid: f9e7061603b07244892311f46467b27c, type: 3}
+  itemImage: {fileID: 21300000, guid: c1d633cc83edc56479637d66e930ffbd, type: 3}

@@ -26,7 +26,10 @@ public class GameDirector : MonoBehaviour
 
     public TextMeshProUGUI RoundText;
     public TextMeshPro[] InGameText;
-    public TextMeshProUGUI[] StatusText;
+    public TextMeshProUGUI Player_Atk_Text;
+    public TextMeshProUGUI Player_Def_Text;
+    public TextMeshProUGUI Monster_Atk_Text;
+    public TextMeshProUGUI Monster_Def_Text;
 
     public GameObject Play_Button; //전투 개시 버튼
     public GameObject PlayDice_UI;//주사위 굴릴 때 나오는 UI
@@ -35,9 +38,9 @@ public class GameDirector : MonoBehaviour
     public GameObject Lose_UI; // 졌을 때의 UI
     public GameObject PlayerObject; //플레이어 오브젝트
 
+    int mosterChildCount;
     public Transform mosterGroup; //몬스터 오브젝트
     GameObject[] monster;
-    int mosterChildCount;
 
     public bool ItemFlag; //플레이 당시의 아이템을 사용할건지 말건지
     public Toggle[] Item_Toggle;
@@ -68,18 +71,19 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
-        ItemFlag = false;
-        ItemButton_OpenFlag = false;
-        ItemCount = 0;
         ItemName = "";
         RoundNum = 0;
         DiceNum = 0;
         MonsterCount = 0;
-        mosterChildCount = mosterGroup.childCount;
-        monster = new GameObject[mosterChildCount];
-        Ani_ItemGroup = Item_Group.GetComponent<Animator>();
+        ItemCount = 0;
 
         playerAni = PlayerObject.GetComponentInChildren<SkeletonAnimation>();
+        mosterChildCount = mosterGroup.childCount;
+        monster = new GameObject[mosterChildCount];
+        ItemFlag = false;
+
+        ItemButton_OpenFlag = false;
+        Ani_ItemGroup = Item_Group.GetComponent<Animator>();
 
         gameTurn = GameTurn.BeforeFight;
         try
@@ -100,7 +104,7 @@ public class GameDirector : MonoBehaviour
         item = new Item_Scritable[ItemObject_Data.Length];
         playerData = PlayerObject.GetComponent<Player_Scritable>();
         monsterData = monster[MonsterCount].GetComponent<MonsterData>();
-        stage = stage_Data.GetComponent<Stage_Scripter>(); 
+        stage = stage_Data.GetComponent<Stage_Scripter>();
 
         for (int i = 0; i < ItemObject_Data.Length; i++)
         {
@@ -121,13 +125,10 @@ public class GameDirector : MonoBehaviour
             Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
-
-
-        //이것도 변경할 예정 -> UI 변동 사항이 생기기 때문.
-        StatusText[0].text = playerData.atk.ToString();
-        StatusText[1].text = playerData.def.ToString();
-        StatusText[2].text = monsterData.atk.ToString();
-        StatusText[3].text = monsterData.def.ToString();
+        Player_Atk_Text.text = playerData.atk.ToString();
+        Player_Def_Text.text = playerData.def.ToString();
+        Monster_Atk_Text.text = monsterData.atk.ToString();
+        Monster_Def_Text.text = monsterData.def.ToString();
     }
     void LateUpdate()
     {
@@ -136,14 +137,24 @@ public class GameDirector : MonoBehaviour
             return;
         }
 
-        StatusText[2].text = monsterData.atk.ToString();
-        StatusText[3].text = monsterData.def.ToString();
+        Monster_Atk_Text.text = monsterData.atk.ToString();
+        Monster_Def_Text.text = monsterData.def.ToString();
 
         if (ItemCount == 1)
         {
             ItemButton_OpenFlag = false;
             ItemGroup_Button.interactable = false;
             Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
+        }
+
+        if (playerData.hp <= 0)
+        {
+            playerData.hp = 0;
+        }
+
+        if(monsterData.hp <= 0)
+        {
+            monsterData.hp = 0;
         }
 
         if (RoundNum >= 7)
@@ -185,6 +196,10 @@ public class GameDirector : MonoBehaviour
             }
             else
             {
+                if (playerAni.AnimationName != "Idle")
+                {
+                    playerAni.state.SetAnimation(0, "Idle", true);
+                }
                 gameTurn = GameTurn.PlayerTurn_Attack;
             }
         }
@@ -209,7 +224,6 @@ public class GameDirector : MonoBehaviour
                 {
                     playerAni.state.SetAnimation(0, "Idle", true);
                 }
-
                 gameTurn = GameTurn.Waiting;
             }
         }
@@ -227,6 +241,11 @@ public class GameDirector : MonoBehaviour
             }
             else
             {
+
+                if (monsterAni.AnimationName != "Idle")
+                {
+                    monsterAni.state.SetAnimation(0, "Idle", true);
+                }
                 gameTurn = GameTurn.MonsterTurn_Attack;
             }
         }
@@ -239,7 +258,6 @@ public class GameDirector : MonoBehaviour
             {
                 monsterAni.state.SetAnimation(0, "Walk", true);
             }
-
 
             if (monster[MonsterCount].GetComponent<Transform>().position.x - monsterPosition.x <= 0)
             {
@@ -339,8 +357,14 @@ public class GameDirector : MonoBehaviour
         RoundNum++;
         RoundText.text = RoundNum + " 라운드";
         DiceNum = 0;
+        monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
         atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
         defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
+        StartCoroutine(playerTurn());
+    }
+
+    IEnumerator playerTurn()
+    {
         if (ItemFlag == true)
         {
             if (ItemName == "DoubleAtk")
@@ -357,77 +381,82 @@ public class GameDirector : MonoBehaviour
                 defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
                 ItemCount++;
             }
-            else if(ItemName == "Heal")
+            else if (ItemName == "Heal")
             {
                 ItemUse();
-                Debug.Log("회복 성공!");
                 playerData.hp += 1;
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
+                Debug.Log("회복 성공!");
                 Debug.Log("=======================================");
                 ItemCount++;
             }
             ItemFlag = false;
         }
 
-        StartCoroutine(playerTurn());
-    }
-
-    IEnumerator playerTurn()
-    {
         Debug.Log("플레이어 턴");
-
         Debug.Log("Player Atk : " + playerData.atk + " + " + playerData.weapon.WeaponAtk + " + " + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum + " = " + atksum);
-        StatusText[0].text = atksum.ToString();
+        Player_Atk_Text.text = atksum.ToString();
+        Player_Def_Text.text = defSum.ToString();
         Debug.Log("=======================================");
 
         //이 구간에서 이동 후, 때리기
         playerPosition = PlayerObject.GetComponent<Transform>().position;
         monsterPosition = monster[MonsterCount].GetComponent<Transform>().position;
         gameTurn = GameTurn.PlayerTurn_StartMoving;
+        monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
 
         yield return new WaitUntil(() => gameTurn == GameTurn.PlayerTurn_Attack);
+
+        int AttakcRand = Random.Range(0, 2);
 
         if (atksum > monsterData.def)
         {
             Debug.Log("공격 성공!");
             monsterData.hp -= 1;
+
+            if (AttakcRand == 0)
+            {
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+            }
+            else if (AttakcRand == 1)
+            {
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
+            }
+            else if (AttakcRand == 2)
+            {
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack 3 DUELIST", false));
+            }
         }
         else if (atksum == monsterData.def)
         {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
             playerData.hp -= 0.5f;
+
+            monsterAni.state.SetAnimation(0, "Attack", false);
+            if (AttakcRand == 0)
+            {
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+            }
+            else if (AttakcRand == 1)
+            {
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
+            }
+            else if (AttakcRand == 2)
+            {
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack 3 DUELIST", false));
+            }
         }
         else
         {
             Debug.Log("공격 실패!");
+            monsterAni.state.SetAnimation(0, "Attack", false);
+            yield return new WaitForSeconds(0.4f);
+            playerAni.state.SetAnimation(0, "Defence", false).TimeScale = 1.2f;
+            yield return new WaitForSeconds(0.8f);
         }
 
-        if (monsterData.hp <= 0)
-        {
-            monsterData.hp = 0;
-        }
-        int AttakcRand = Random.Range(0, 4);
-
-        if (AttakcRand == 0)
-        {
-            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
-        }
-        else if(AttakcRand == 1)
-        {
-            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
-        }else if(AttakcRand == 2)
-        {
-            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack 3 DUELIST", false));
-        }else if(AttakcRand == 3)
-        {
-            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Cast2", false));
-        }else if(AttakcRand == 4)
-        {
-            yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Cast3", false));
-        }
-
-        if (monsterData.hp == 0)
-        {
+        if(monsterData.hp <= 0) { 
             monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
             monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
         }
@@ -448,7 +477,6 @@ public class GameDirector : MonoBehaviour
     IEnumerator monsterTurn()
     {
         Debug.Log("몬스터 턴");
-        StatusText[1].text = defSum.ToString();
         monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
         gameTurn = GameTurn.MonsterTurn_StartMoving;
         yield return new WaitUntil(() => gameTurn == GameTurn.MonsterTurn_Attack);
@@ -457,28 +485,38 @@ public class GameDirector : MonoBehaviour
         {
             Debug.Log("몬스터 공격 성공!");
             playerData.hp -= 1;
+
+            monsterAni.state.SetAnimation(0, "Attack", false);
+            yield return new WaitForSeconds(0.4f);
+            playerAni.state.SetAnimation(0, "Hurt", false).TimeScale = 1.2f;
+            yield return new WaitForSeconds(0.8f);
         }
         else if(defSum == monsterData.atk) {
             Debug.Log("서로 공격 맞음");
             monsterData.hp -= 0.5f;
             playerData.hp -= 0.5f;
+
+            monsterAni.state.SetAnimation(0, "Attack", false);
+            yield return new WaitForSeconds(0.4f);
+            playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 1.2f;
+            yield return new WaitForSeconds(0.8f);
         }
         else
         {
             Debug.Log("몬스터 공격 실패!");
-        }
 
-        monsterAni.state.SetAnimation(0, "Attack", false);
-        yield return new WaitForSeconds(0.4f);
-        playerAni.state.SetAnimation(0, "Hurt", false).TimeScale = 1.2f;
-        yield return new WaitForSeconds(0.8f);
+            monsterAni.state.SetAnimation(0, "Attack", false);
+            yield return new WaitForSeconds(0.4f);
+            playerAni.state.SetAnimation(0, "Defence", false).TimeScale = 1.2f;
+            yield return new WaitForSeconds(0.8f);
+            playerAni.state.SetAnimation(0, "Idle", true);
+        }
 
         gameTurn = GameTurn.MonsterTurn_EndMoving;
         yield return new WaitUntil(() => gameTurn == GameTurn.Waiting);
 
         if (playerData.hp <= 0 || RoundNum == 10)
         {
-            playerData.hp = 0;
             StartCoroutine(playerDie());
         }
         else
@@ -486,8 +524,8 @@ public class GameDirector : MonoBehaviour
             PlayDice_UI.SetActive(true);
             ItemCount = 0;
             ItemGroup_Button.interactable = true;
-            StatusText[0].text = playerData.atk.ToString();
-            StatusText[1].text = playerData.def.ToString();
+            Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
+            Player_Def_Text.text = playerData.def.ToString();
         }
     }
     
@@ -516,8 +554,8 @@ public class GameDirector : MonoBehaviour
             //이 구간에서 몬스터의 애니메이션 변경
             monsterData = monster[MonsterCount].GetComponent<MonsterData>();
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
-            StatusText[1].text = playerData.atk.ToString();
-            StatusText[2].text = playerData.def.ToString();
+            Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
+            Player_Def_Text.text = playerData.def.ToString();
             Play_Button.SetActive(true);
             ItemCount = 0;
             ItemGroup_Button.interactable = true;
@@ -532,6 +570,10 @@ public class GameDirector : MonoBehaviour
     IEnumerator OnAD_Ani()
     {
         playerData.hp++;
+        if(RoundNum == 10)
+        {
+            RoundNum--;
+        }
         Time.timeScale = 1;
         PlayDice_UI.SetActive(true);
         Play_UI.SetActive(true);

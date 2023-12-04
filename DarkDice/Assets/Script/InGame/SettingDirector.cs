@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class SettingDirector : MonoBehaviour
 {
     public GameObject SettingUI;
-    public bool SettingFlag;
     public GameObject ExitWindow;
     GameManager gameManager;
 
@@ -28,23 +27,26 @@ public class SettingDirector : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape)) {
             ExitWindow.SetActive(true);
         }
-    }
 
-    public void OnSetting()
-    {
-        if (!SettingFlag)
+        if (SettingUI.activeSelf)
         {
-            SettingUI.SetActive(true);
-            SettingFlag = true;
-
             Time.timeScale = 0;
         }
         else
         {
-            SettingUI.SetActive(false);
-            SettingFlag = false;
-
             Time.timeScale = 1;
+        }
+    }
+
+    public void OnSetting()
+    {
+        if (!SettingUI.activeSelf)
+        {
+            SettingUI.SetActive(true);
+        }
+        else
+        {
+            SettingUI.SetActive(false);
         }
     }
 

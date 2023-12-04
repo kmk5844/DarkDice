@@ -9,6 +9,8 @@ public class Dice : MonoBehaviour
     [SerializeField]
     public float delay;
 
+    public Sprite PlaySprite;
+    public Sprite PauseSprite;
     public Sprite[] AtkPocket;
     public Sprite[] DefPocket;
     public Image Dice1;
@@ -21,7 +23,6 @@ public class Dice : MonoBehaviour
     public Button Dice_Button;
     public Button Attack_Button;
     public bool rollingFlag;
-    TextMeshProUGUI ButtonText;
 
     private void Start()
     {
@@ -29,7 +30,6 @@ public class Dice : MonoBehaviour
         delay = 0.01f;
         atkSum = 0;
         defSum = 0;
-        ButtonText = Dice_Button.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     IEnumerator coroutine;
@@ -71,12 +71,13 @@ public class Dice : MonoBehaviour
             rollingFlag = true;
             delay = 0.01f;
             StartMethod();
-            ButtonText.text = "∏ÿ√ﬂ±‚";
+            Dice_Button.GetComponent<Image>().sprite = PauseSprite;
         }
         else
         {
+
             rollingFlag = false;
-            ButtonText.text = "±º∏Æ±‚";
+            Dice_Button.GetComponent<Image>().sprite = PlaySprite;
             Dice_Button.interactable = false;
         }
     }

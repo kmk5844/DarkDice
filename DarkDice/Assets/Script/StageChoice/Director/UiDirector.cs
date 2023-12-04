@@ -5,18 +5,11 @@ using UnityEngine.UI;
 
 public class UiDirector : MonoBehaviour
 {
-    Animator statusAni;
-
     public GameObject Store_UI;
     public GameObject Status_UI;
     public GameObject Item_UI;
     public GameObject Stage_UI;
     public GameObject Panel_UI; //stage Panel
-
-    private void Start()
-    {
-        statusAni = Status_UI.GetComponent<Animator>();
-    }
 
     void Update()
     {

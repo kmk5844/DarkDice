@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: DoubleAtk
   pride: 35
-  itemCount: 3
-  itemImage: {fileID: 21300000, guid: 9c2adfcf342945146a3052b76f5afdd5, type: 3}
+  itemCount: 5
+  itemImage: {fileID: 21300000, guid: 35be7e023766b904abd25a504e9db1ec, type: 3}

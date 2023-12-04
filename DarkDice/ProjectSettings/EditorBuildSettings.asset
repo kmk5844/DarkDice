@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/1-0.Toon.unity
+    guid: ec252d4d13f457349b88fbb721b4191d
+  - enabled: 1
     path: Assets/Scenes/0.Start_Screen.unity
     guid: 00fd5b1065d2a94418f870824b5b81ec
   - enabled: 1
@@ -16,14 +19,14 @@ EditorBuildSettings:
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
     path: Assets/Scenes/Stage/Test_Stage2.unity
-    guid: c1e9281de3890d447950828ed9ab051f
+    guid: 8079fe9d0effb6941a840d229be69be6
   - enabled: 1
     path: Assets/Scenes/Stage/Test_Stage3.unity
-    guid: 7e92ffb54ab802b44b4236c9ba3a1bff
+    guid: 871183b3248e8204aa3bbffa650f87b4
   - enabled: 1
     path: Assets/Scenes/Stage/Test_Stage4.unity
-    guid: 717f0c68f93e72240825b59e4be628c1
+    guid: 96a055c747d4cc843882a2129a511d40
   - enabled: 1
     path: Assets/Scenes/Stage/Test_Stage5.unity
-    guid: e74d0679fb6554143b1a9c32ad9003aa
+    guid: fe123c07edab43a42bbcdf1bb81d83b0
   m_configObjects: {}
