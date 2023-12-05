@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+
 public class ChangeTest : MonoBehaviour
 {
     public Transform Player;
     [SerializeField]
     private int Count;
+
     // Start is called before the first frame update
     void Start()
     {

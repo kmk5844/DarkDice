@@ -24,6 +24,7 @@ public class Dice : MonoBehaviour
     public Button Attack_Button;
     public bool rollingFlag;
 
+
     private void Start()
     {
         rollingFlag = false;
@@ -40,6 +41,7 @@ public class Dice : MonoBehaviour
         if (rollingFlag == false)
         {
             delay += 0.05f;
+
             if (delay > 0.56f)
             {
                 StopCoroutine(coroutine);

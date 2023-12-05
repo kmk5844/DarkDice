@@ -69,6 +69,9 @@ public class GameDirector : MonoBehaviour
 
     GameManager gameManager;
 
+    public GameObject Heal_Part;
+    public GameObject Revival_Part;
+    public GameObject Chance_Part;
     void Start()
     {
         ItemName = "";
@@ -334,6 +337,7 @@ public class GameDirector : MonoBehaviour
         DiceNum++;
         if (DiceNum == 3 && ItemName == "Chance")
         {
+            ParticlePlay(2);
             ItemUse();
             ItemCount++;
             for(int i = 0; i < Item_Toggle.Length; i++)
@@ -385,6 +389,7 @@ public class GameDirector : MonoBehaviour
             {
                 ItemUse();
                 playerData.hp += 1;
+                ParticlePlay(0);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 Debug.Log("회복 성공!");
                 Debug.Log("=======================================");
@@ -518,6 +523,9 @@ public class GameDirector : MonoBehaviour
         if (playerData.hp <= 0 || RoundNum == 10)
         {
             StartCoroutine(playerDie());
+        }else if(monsterData.hp <= 0)
+        {
+            StartCoroutine(monsterDieDelay());
         }
         else
         {
@@ -579,6 +587,7 @@ public class GameDirector : MonoBehaviour
         Play_UI.SetActive(true);
         Lose_UI.transform.GetChild(1).GetComponent<Transform>().gameObject.SetActive(false);
         Lose_UI.SetActive(false);
+        ParticlePlay(1);
         yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
         playerAni.state.SetAnimation(0, "Idle", true);
     }
@@ -628,6 +637,21 @@ public class GameDirector : MonoBehaviour
         {
             Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
             ItemButton_OpenFlag = false;
+        }
+    }
+
+    public void ParticlePlay(int num)
+    {
+        if(num == 0)
+        {
+            Heal_Part.SetActive(true);
+        }
+        else if(num == 1)
+        {
+            Revival_Part.SetActive(true);
+        }else if(num == 2)
+        {
+            Chance_Part.SetActive(true);
         }
     }
 }
