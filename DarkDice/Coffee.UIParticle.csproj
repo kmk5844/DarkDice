@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{754A01E9-28CA-9336-3704-7CF6E44F2AE5}</ProjectGuid>
+    <ProjectGuid>{97B9D186-4A48-8BC0-2BBF-9DD8E5F8C7E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Coffee.UIParticle</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -58,79 +58,32 @@
     <Analyzer Include="D:\UN\Unity Hub\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\InGame\GameDirector.cs" />
-    <Compile Include="Assets\Scritable\Stage\Stage_Scripter.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\WeaponDirector.cs" />
-    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\CharacterAnimator.cs" />
-    <Compile Include="Assets\Script\InGame\Stage_Monster_Instance.cs" />
-    <Compile Include="Assets\Scritable\MonsterData.cs" />
-    <Compile Include="Assets\Scritable\Weapon\WeaponData.cs" />
-    <Compile Include="Assets\Scritable\Stage\StageData.cs" />
-    <Compile Include="Assets\Scritable\Excel\monsterEntity.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\StoreDirector.cs" />
-    <Compile Include="Assets\Script\Start + Loading\Start Title.cs" />
-    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearButtonClicker.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\Monster_Mini_Information.cs" />
-    <Compile Include="Assets\Scritable\Item\Item_Scritable.cs" />
-    <Compile Include="Assets\Script\InGame\Dice.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\ItemDirector_Stage.cs" />
-    <Compile Include="Assets\Scritable\Player\Player_Scritable.cs" />
-    <Compile Include="Assets\Scritable\Player\PlayerData.cs" />
-    <Compile Include="Assets\Test\ChangeTest.cs" />
-    <Compile Include="Assets\ExcelImporter\Example\Scripts\Example.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scritable\Weapon\Weapon_Scritable.cs" />
-    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\InventoryIconsManager.cs" />
-    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearEquipper.cs" />
-    <Compile Include="Assets\Script\InGame\MonsterMoving.cs" />
-    <Compile Include="Assets\Scritable\Item\ItemData.cs" />
-    <Compile Include="Assets\Scritable\Excel\DataTable.cs" />
-    <Compile Include="Assets\Script\StageChoice\ToggleONOFF.cs" />
-    <Compile Include="Assets\ExcelImporter\Example\Scripts\ExcelAsset\MstItems.cs" />
-    <Compile Include="Assets\Script\Start + Loading\Ani_Loading_Off.cs" />
-    <Compile Include="Assets\Scritable\Excel\stageEntity.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\StatusDirector.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\UiDirector.cs" />
-    <Compile Include="Assets\ExcelImporter\Example\Scripts\Entity\MstItemEntity.cs" />
-    <Compile Include="Assets\Script\GameManager\GameManager.cs" />
-    <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearsManager.cs" />
-    <Compile Include="Assets\Script\Start + Loading\ScreenChange.cs" />
-    <Compile Include="Assets\Script\InGame\SettingDirector.cs" />
-    <Compile Include="Assets\Script\StageChoice\Director\StageDirector.cs" />
-    <Compile Include="Assets\Script\InGame\InGame_Information.cs" />
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\UIParticleAttractor.cs">
+      <Link>Scripts\UIParticleAttractor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\UIParticleRenderer.cs">
+      <Link>Scripts\UIParticleRenderer.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\UIParticleUpdater.cs">
+      <Link>Scripts\UIParticleUpdater.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\ModifiedMaterial.cs">
+      <Link>Scripts\ModifiedMaterial.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\UIParticle.cs">
+      <Link>Scripts\UIParticle.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\AnimatableProperty.cs">
+      <Link>Scripts\AnimatableProperty.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\Utils.cs">
+      <Link>Scripts\Utils.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\Spine\version.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Fantazia Animated 2D Monsters\Source_Animations\Monster_21_22_23_Skeleton\monster 06 skeleton SMALL 512_512.atlas.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Fantazia Animated 2D Monsters\Source_Animations\Monster_73_74_75_Corrupted Knight\monster_21.atlas.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Fantazia Animated 2D Monsters\Source_Animations\Monster_60_61_62_63_Block\monster_17.atlas.txt" />
-    <None Include="Assets\Fantazia Animated 2D Monsters\Source_Animations\Monster_13_14_15_Golem\monster_04.atlas.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Fantazia Animated 2D Monsters\Source_Animations\Monster_67_68_69_Ghost\monster_19.atlas.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\FantaziaCharacterEditor\readme.txt" />
-    <None Include="Assets\FantaziaCharacterEditor\SpineSkeletonData\Character.atlas.txt" />
-    <None Include="Assets\Fantazia Animated 2D Monsters\readme.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\FantaziaCharacterEditor\SpineProjectFile\Character.atlas.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="C:\Users\kw_eng\Desktop\ParticleEffectForUGUI-main\ParticleEffectForUGUI-main\Scripts\Coffee.UIParticle.asmdef">
+      <Link>Scripts\Coffee.UIParticle.asmdef</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -373,11 +326,56 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\UN\Unity Hub\2022.3.9f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>D:\UN\Unity Hub\2022.3.9f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>D:\UN\Unity Hub\2022.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>D:\UN\Unity Hub\2022.3.9f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>Assets\ExcelImporter\Editor\NPOI\Net20\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>Assets\ExcelImporter\Editor\NPOI\Net20\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\ExcelImporter\Editor\NPOI\Net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>Assets\ExcelImporter\Editor\NPOI\Net20\NPOI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>Assets\ExcelImporter\Editor\NPOI\Net20\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\UN\Unity Hub\2022.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -754,166 +752,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:\UN\Unity Hub\2022.3.9f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Path.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Aseprite.Common">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Aseprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="PsdPlugin">
-      <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.005">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.005.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="spine-unity.csproj">
-      <Project>{DCDE37B2-7DEA-7F42-1EA7-CC00BF5A83AF}</Project>
-      <Name>spine-unity</Name>
-    </ProjectReference>
-    <ProjectReference Include="Coffee.UIParticle.csproj">
-      <Project>{97B9D186-4A48-8BC0-2BBF-9DD8E5F8C7E1}</Project>
-      <Name>Coffee.UIParticle</Name>
-    </ProjectReference>
-    <ProjectReference Include="ExcelImporter.Editor.csproj">
-      <Project>{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}</Project>
-      <Name>ExcelImporter.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ExcelImporter.csproj">
-      <Project>{53B10563-2705-3375-565B-706B658B8912}</Project>
-      <Name>ExcelImporter</Name>
-    </ProjectReference>
-    <ProjectReference Include="spine-unity-editor.csproj">
-      <Project>{4D47226C-F250-F786-C464-784F6B1F19E8}</Project>
-      <Name>spine-unity-editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
