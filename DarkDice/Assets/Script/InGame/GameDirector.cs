@@ -70,7 +70,7 @@ public class GameDirector : MonoBehaviour
 
     GameManager gameManager;
 
-    public GameObject[] PlayerHit_Part;
+    public GameObject[] Hit_Part; //0, 1번 플레이어 히트, 2번 동시 히트, 3번 몬스터 히트
     public GameObject Heal_Part;
     public GameObject Revival_Part;
     public GameObject[] ItemChoice_Part;
@@ -435,7 +435,7 @@ public class GameDirector : MonoBehaviour
 
         yield return new WaitUntil(() => gameTurn == GameTurn.PlayerTurn_Attack);
 
-        int AttakcRand = Random.Range(0, 1);
+        int AttakcRand = Random.Range(0, 2);
 
         if (atksum > monsterData.def)
         {
@@ -443,15 +443,15 @@ public class GameDirector : MonoBehaviour
             monsterData.hp -= 1;
             if (AttakcRand == 0)
             {
-                PlayerHit_Part[0].SetActive(true);
+                Hit_Part[0].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
-                PlayerHit_Part[0].SetActive(false);
+                Hit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
-                PlayerHit_Part[1].SetActive(true);
+                Hit_Part[1].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
-                PlayerHit_Part[1].SetActive(false);
+                Hit_Part[1].SetActive(false);
             }
         }
         else if (atksum == monsterData.def)
@@ -460,20 +460,22 @@ public class GameDirector : MonoBehaviour
             monsterData.hp -= 0.5f;
             playerData.hp -= 0.5f;
 
+            Hit_Part[2].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Hurt_Image.SetActive(true);
             if (AttakcRand == 0)
             {
-                PlayerHit_Part[0].SetActive(true);
+                Hit_Part[0].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
-                PlayerHit_Part[0].SetActive(false);
+                Hit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
-                PlayerHit_Part[1].SetActive(true);
+                Hit_Part[1].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
-                PlayerHit_Part[1].SetActive(false);
+                Hit_Part[1].SetActive(false);
             }
+            Hit_Part[2].SetActive(false);
         }
         else
         {
@@ -515,6 +517,7 @@ public class GameDirector : MonoBehaviour
             playerData.hp -= 1;
 
             monsterAni.state.SetAnimation(0, "Attack", false);
+            Hit_Part[3].SetActive(true);
             yield return new WaitForSeconds(0.4f);
             Hurt_Image.SetActive(true);
             playerAni.state.SetAnimation(0, "Hurt", false).TimeScale = 1.2f;
@@ -526,8 +529,10 @@ public class GameDirector : MonoBehaviour
             playerData.hp -= 0.5f;
 
             monsterAni.state.SetAnimation(0, "Attack", false);
-            yield return new WaitForSeconds(0.4f);
-            playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 1.2f;
+            Hit_Part[2].SetActive(true);
+            Hurt_Image.SetActive(true);
+            yield return new WaitForSeconds(0.15f);
+            playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 1.3f;
             yield return new WaitForSeconds(0.8f);
         }
         else
@@ -547,8 +552,15 @@ public class GameDirector : MonoBehaviour
         if (playerData.hp <= 0 || RoundNum == 10)
         {
             StartCoroutine(playerDie());
-        }else if(monsterData.hp <= 0)
+            if(monsterData.hp == 0)
+            {
+                monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+                monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
+            }
+        }else if(monsterData.hp == 0)
         {
+            monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+            monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
             StartCoroutine(monsterDieDelay());
         }
         else
@@ -602,6 +614,7 @@ public class GameDirector : MonoBehaviour
     IEnumerator OnAD_Ani()
     {
         playerData.hp++;
+        
         if(RoundNum == 10)
         {
             RoundNum--;
@@ -612,6 +625,11 @@ public class GameDirector : MonoBehaviour
         Lose_UI.transform.GetChild(1).GetComponent<Transform>().gameObject.SetActive(false);
         Lose_UI.SetActive(false);
         ParticlePlay(1);
+        if (monsterData.hp == 0)
+        {
+            PlayDice_UI.SetActive(false);
+            StartCoroutine(monsterDieDelay());
+        }
         yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
         playerAni.state.SetAnimation(0, "Idle", true);
     }
