@@ -15,9 +15,9 @@ MonoBehaviour:
   stage_Data:
   - number: 1
     stage_name: stage1
-    enemy_count: 2
+    enemy_count: 1
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
     reward_point: 3
