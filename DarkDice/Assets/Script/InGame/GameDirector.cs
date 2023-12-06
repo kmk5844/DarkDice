@@ -37,6 +37,7 @@ public class GameDirector : MonoBehaviour
     public GameObject Win_UI;  // 이겼을 때의 UI
     public GameObject Lose_UI; // 졌을 때의 UI
     public GameObject PlayerObject; //플레이어 오브젝트
+    public GameObject Hurt_Image; //맞았을 때의 UI
 
     int mosterChildCount;
     public Transform mosterGroup; //몬스터 오브젝트
@@ -69,9 +70,10 @@ public class GameDirector : MonoBehaviour
 
     GameManager gameManager;
 
+    public GameObject[] PlayerHit_Part;
     public GameObject Heal_Part;
     public GameObject Revival_Part;
-    public GameObject Chance_Part;
+    public GameObject[] ItemChoice_Part;
     void Start()
     {
         ItemName = "";
@@ -169,21 +171,33 @@ public class GameDirector : MonoBehaviour
         {
             ItemName = Item_Toggle[0].GetComponentInChildren<Image>().sprite.name;
             ItemFlag = true;
+            ItemChoice_Part[0].SetActive(true);
+            ItemChoice_Part[1].SetActive(false);
+            ItemChoice_Part[2].SetActive(false);
         }
         else if (Item_Toggle[1].isOn)
         {
             ItemName = Item_Toggle[1].GetComponentInChildren<Image>().sprite.name;
             ItemFlag = true;
+            ItemChoice_Part[0].SetActive(false);
+            ItemChoice_Part[1].SetActive(true);
+            ItemChoice_Part[2].SetActive(false);
         }
         else if (Item_Toggle[2].isOn)
         {
             ItemName = Item_Toggle[2].GetComponentInChildren<Image>().sprite.name;
             ItemFlag = true;
+            ItemChoice_Part[0].SetActive(false);
+            ItemChoice_Part[1].SetActive(false);
+            ItemChoice_Part[2].SetActive(true);
         }
         else if (!Item_Toggle[0].isOn && !Item_Toggle[1].isOn && !Item_Toggle[2].isOn)
         {
             ItemFlag = false;
             ItemName = "";
+            ItemChoice_Part[0].SetActive(false);
+            ItemChoice_Part[1].SetActive(false);
+            ItemChoice_Part[2].SetActive(false);
         }
 
         if (gameTurn == GameTurn.PlayerTurn_StartMoving)
@@ -193,7 +207,7 @@ public class GameDirector : MonoBehaviour
                 playerAni.state.SetAnimation(0, "Run", true);
             }
 
-            if (PlayerObject.GetComponent<Transform>().position.x - monster[MonsterCount].GetComponent<Transform>().position.x <= -2f)
+            if (PlayerObject.GetComponent<Transform>().position.x - monster[MonsterCount].GetComponent<Transform>().position.x <= -3f)
             {
                 PlayerObject.GetComponent<Transform>().Translate(10f * Time.deltaTime, 0, 0);
             }
@@ -210,6 +224,8 @@ public class GameDirector : MonoBehaviour
         if(gameTurn == GameTurn.PlayerTurn_EndMoving)
         {
             PlayerObject.transform.localScale = new Vector3(-1, 1, 1);
+            float playerScale_Circle = PlayerObject.transform.GetChild(1).localScale.y;
+            PlayerObject.transform.GetChild(1).localScale = new Vector3(-playerScale_Circle, playerScale_Circle, playerScale_Circle);
             if (playerAni.AnimationName != "Run")
             {
                 playerAni.state.SetAnimation(0, "Run", true);
@@ -223,7 +239,9 @@ public class GameDirector : MonoBehaviour
             else
             {
                 PlayerObject.transform.localScale = new Vector3(1, 1, 1);
-                if(playerAni.AnimationName != "Idle")
+                PlayerObject.transform.GetChild(1).localScale = new Vector3(playerScale_Circle, playerScale_Circle, playerScale_Circle);
+
+                if (playerAni.AnimationName != "Idle")
                 {
                     playerAni.state.SetAnimation(0, "Idle", true);
                 }
@@ -255,8 +273,10 @@ public class GameDirector : MonoBehaviour
 
         if(gameTurn == GameTurn.MonsterTurn_EndMoving)
         {
-            float scale = monster[MonsterCount].transform.localScale.y;
-            monster[MonsterCount].transform.localScale = new Vector3(scale, scale, scale);
+            float monsterScale = monster[MonsterCount].transform.localScale.y;
+            float monsterScale_Circle = monster[MonsterCount].transform.GetChild(0).localScale.y;
+            monster[MonsterCount].transform.localScale = new Vector3(monsterScale, monsterScale, monsterScale);
+            monster[MonsterCount].transform.GetChild(0).localScale = new Vector3(monsterScale_Circle, monsterScale_Circle, monsterScale_Circle);
             if (monsterAni.AnimationName != "Walk")
             {
                 monsterAni.state.SetAnimation(0, "Walk", true);
@@ -268,7 +288,8 @@ public class GameDirector : MonoBehaviour
             }
             else
             {
-                monster[MonsterCount].transform.localScale = new Vector3(-scale, scale, scale);
+                monster[MonsterCount].transform.localScale = new Vector3(-monsterScale, monsterScale, monsterScale);
+                monster[MonsterCount].transform.GetChild(0).localScale = new Vector3(-monsterScale_Circle, monsterScale_Circle, monsterScale_Circle);
                 if (monsterAni.AnimationName != "Idle")
                 {
                     monsterAni.state.SetAnimation(0, "Idle", true);
@@ -319,14 +340,17 @@ public class GameDirector : MonoBehaviour
                 case "Item1":
                     toggle.isOn = false;
                     toggle.interactable = false;
+                    ItemChoice_Part[0].SetActive(false);
                     break;
                 case "Item2":
                     toggle.isOn = false;
                     toggle.interactable = false;
+                    ItemChoice_Part[1].SetActive(false);
                     break;
                 case "Item3":
                     toggle.isOn = false;
                     toggle.interactable = false;
+                    ItemChoice_Part[2].SetActive(false);
                     break;
             }
         }
@@ -337,7 +361,6 @@ public class GameDirector : MonoBehaviour
         DiceNum++;
         if (DiceNum == 3 && ItemName == "Chance")
         {
-            ParticlePlay(2);
             ItemUse();
             ItemCount++;
             for(int i = 0; i < Item_Toggle.Length; i++)
@@ -412,24 +435,23 @@ public class GameDirector : MonoBehaviour
 
         yield return new WaitUntil(() => gameTurn == GameTurn.PlayerTurn_Attack);
 
-        int AttakcRand = Random.Range(0, 2);
+        int AttakcRand = Random.Range(0, 1);
 
         if (atksum > monsterData.def)
         {
             Debug.Log("공격 성공!");
             monsterData.hp -= 1;
-
             if (AttakcRand == 0)
             {
+                PlayerHit_Part[0].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+                PlayerHit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
+                PlayerHit_Part[1].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
-            }
-            else if (AttakcRand == 2)
-            {
-                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack 3 DUELIST", false));
+                PlayerHit_Part[1].SetActive(false);
             }
         }
         else if (atksum == monsterData.def)
@@ -439,17 +461,18 @@ public class GameDirector : MonoBehaviour
             playerData.hp -= 0.5f;
 
             monsterAni.state.SetAnimation(0, "Attack", false);
+            Hurt_Image.SetActive(true);
             if (AttakcRand == 0)
             {
+                PlayerHit_Part[0].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+                PlayerHit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
+                PlayerHit_Part[1].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
-            }
-            else if (AttakcRand == 2)
-            {
-                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack 3 DUELIST", false));
+                PlayerHit_Part[1].SetActive(false);
             }
         }
         else
@@ -493,6 +516,7 @@ public class GameDirector : MonoBehaviour
 
             monsterAni.state.SetAnimation(0, "Attack", false);
             yield return new WaitForSeconds(0.4f);
+            Hurt_Image.SetActive(true);
             playerAni.state.SetAnimation(0, "Hurt", false).TimeScale = 1.2f;
             yield return new WaitForSeconds(0.8f);
         }
@@ -651,7 +675,7 @@ public class GameDirector : MonoBehaviour
             Revival_Part.SetActive(true);
         }else if(num == 2)
         {
-            Chance_Part.SetActive(true);
+
         }
     }
 }

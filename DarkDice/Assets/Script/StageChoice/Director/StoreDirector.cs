@@ -83,7 +83,7 @@ public class StoreDirector : MonoBehaviour
                     Weapon_Button[i].interactable = false;
                     if (weapon[i].storeflag == 1)
                     {
-                        Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "보유 중";
+                        Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "<color=white>보유 중</color>";
                     }
                 }
                 else

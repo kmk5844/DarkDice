@@ -15,7 +15,7 @@ C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-60384
+61706
 Successfully changed project path to: C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
 C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/admin/Desktop/kmk/DarkDice/DarkDice
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [28840] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 40779355 [EditorId] 40779355 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [23816] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 684232363 [EditorId] 684232363 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [28840] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 40779355 [EditorId] 40779355 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [23816] Host "[IP] 192.168.200.187 [Port] 0 [Flags] 2 [Guid] 684232363 [EditorId] 684232363 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ILO6AIA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 159.26 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 16.07 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.9f1 (ea401c316338)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -70,47 +70,47 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.010902 seconds.
-- Loaded All Assemblies, in  0.991 seconds
+Registered in 0.009528 seconds.
+- Loaded All Assemblies, in  0.388 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 249 ms
+Android Extension - Scanning For ADB Devices 261 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.572 seconds
-Domain Reload Profiling: 1561ms
-	BeginReloadAssembly (110ms)
+- Finished resetting the current domain, in  0.560 seconds
+Domain Reload Profiling: 947ms
+	BeginReloadAssembly (123ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (205ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (600ms)
-		LoadAssemblies (108ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (131ms)
+		LoadAssemblies (122ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (598ms)
-			TypeCache.Refresh (596ms)
-				TypeCache.ScanAssembly (584ms)
+		AnalyzeDomain (128ms)
+			TypeCache.Refresh (126ms)
+				TypeCache.ScanAssembly (114ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (572ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (561ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (516ms)
+		SetupLoadedEditorAssemblies (511ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (359ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (371ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (98ms)
-			ProcessInitializeOnLoadMethodAttributes (52ms)
+			ProcessInitializeOnLoadAttributes (94ms)
+			ProcessInitializeOnLoadMethodAttributes (37ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,8 +118,8 @@ Domain Reload Profiling: 1561ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.777 seconds
-Refreshing native plugins compatible for Editor in 4.91 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.579 seconds
+Refreshing native plugins compatible for Editor in 4.65 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -127,156 +127,48 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.618 seconds
-Domain Reload Profiling: 1392ms
-	BeginReloadAssembly (146ms)
+- Finished resetting the current domain, in  0.550 seconds
+Domain Reload Profiling: 1127ms
+	BeginReloadAssembly (123ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (540ms)
-		LoadAssemblies (320ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (376ms)
+		LoadAssemblies (284ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (305ms)
-			TypeCache.Refresh (279ms)
-				TypeCache.ScanAssembly (220ms)
-			ScanForSourceGeneratedMonoScriptInfo (21ms)
+		AnalyzeDomain (164ms)
+			TypeCache.Refresh (141ms)
+				TypeCache.ScanAssembly (126ms)
+			ScanForSourceGeneratedMonoScriptInfo (18ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (619ms)
+	FinalizeReload (551ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (466ms)
+		SetupLoadedEditorAssemblies (420ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (75ms)
-			ProcessInitializeOnLoadAttributes (314ms)
-			ProcessInitializeOnLoadMethodAttributes (40ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 5.02 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4336 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 81 unused Assets / (1.3 MB). Loaded Objects now: 4812.
-Memory consumption went from 181.5 MB to 180.2 MB.
-Total: 4.801000 ms (FindLiveObjects: 0.372000 ms CreateObjectMapping: 0.299700 ms MarkObjects: 3.460900 ms  DeleteObjects: 0.667400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/TitleOff.cs: ee35b2cbfd7795e3f60e864416a5a695 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/Ani_Loading_Off.cs: e82274031ff9fc7192a3e0fd7fb3f65e -> d69f258117783da8cd48d74290667cf4
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 442564.055255 seconds.
-  path: Assets/Particle/Particle_Png/Png/Rotated/muzzle_01_rotated.png
-  artifactKey: Guid(74f6a4f39e7930943a4d214bf54723ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Particle/Particle_Png/Png/Rotated/muzzle_01_rotated.png using Guid(74f6a4f39e7930943a4d214bf54723ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d8c7a736824bd80d226681d63bba423') in 0.079330 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Particle/Particle_Png/Png/Rotated/trace_06_rotated.png
-  artifactKey: Guid(b257e1d005e1d634cbb7639a0bb0cc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Particle/Particle_Png/Png/Rotated/trace_06_rotated.png using Guid(b257e1d005e1d634cbb7639a0bb0cc70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf8fb2c38770860759e97582724fa01b') in 0.025182 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Particle/Particle_Png/Png/Rotated/trace_07_rotated.png
-  artifactKey: Guid(ae2ed2e56d7e8ac43a5885c65e837e11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Particle/Particle_Png/Png/Rotated/trace_07_rotated.png using Guid(ae2ed2e56d7e8ac43a5885c65e837e11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '580b3357aa5c5cb4af2b97c5e936b85a') in 0.024273 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Particle/Particle_Png/Png/Rotated/muzzle_05_rotated.png
-  artifactKey: Guid(1c76b6efa76689145a46e4a62293c0fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Particle/Particle_Png/Png/Rotated/muzzle_05_rotated.png using Guid(1c76b6efa76689145a46e4a62293c0fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '093585c7aa30b4a28adfeb10e2f33ce6') in 0.022412 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 41.825263 seconds.
-  path: Assets/Scritable/Item/Item_DoubleAtk.asset
-  artifactKey: Guid(b8865d724c1c9204f909257d9b5e6bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scritable/Item/Item_DoubleAtk.asset using Guid(b8865d724c1c9204f909257d9b5e6bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7788ea26804738280721e174b2b98996') in 0.013398 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.485 seconds
-Refreshing native plugins compatible for Editor in 7.16 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.010 seconds
-Domain Reload Profiling: 1491ms
-	BeginReloadAssembly (166ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (14ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (43ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (247ms)
-		LoadAssemblies (309ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (18ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1011ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (441ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
+			InitializePlatformSupportModulesInManaged (22ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (92ms)
-			ProcessInitializeOnLoadAttributes (275ms)
-			ProcessInitializeOnLoadMethodAttributes (39ms)
-			AfterProcessingInitializeOnLoad (10ms)
+			BeforeProcessingInitializeOnLoad (73ms)
+			ProcessInitializeOnLoadAttributes (283ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
-Refreshing native plugins compatible for Editor in 6.46 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 4.87 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4284 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 54 unused Assets / (1.3 MB). Loaded Objects now: 4822.
-Memory consumption went from 168.5 MB to 167.3 MB.
-Total: 3.891500 ms (FindLiveObjects: 0.355500 ms CreateObjectMapping: 0.141100 ms MarkObjects: 2.721300 ms  DeleteObjects: 0.672600 ms)
+Unloading 4336 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 81 unused Assets / (1.2 MB). Loaded Objects now: 4812.
+Memory consumption went from 181.6 MB to 180.3 MB.
+Total: 3.647600 ms (FindLiveObjects: 0.309600 ms CreateObjectMapping: 0.131500 ms MarkObjects: 2.544500 ms  DeleteObjects: 0.661200 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -287,592 +179,11 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/TitleOff.cs: ee35b2cbfd7795e3f60e864416a5a695 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/Ani_Loading_Off.cs: e82274031ff9fc7192a3e0fd7fb3f65e -> d69f258117783da8cd48d74290667cf4
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 846.912506 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/ButtonBlack.png
-  artifactKey: Guid(9d6e914a89d7e02478e4ca23e89c7483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/ButtonBlack.png using Guid(9d6e914a89d7e02478e4ca23e89c7483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '464c8c7d8226f30ff00f1145c10586b6') in 0.082399 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/FantaziaPromo.png
-  artifactKey: Guid(06a4fb8a4f5591a44aa2c143060ea6cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/FantaziaPromo.png using Guid(06a4fb8a4f5591a44aa2c143060ea6cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07795289930a0db004eaad2340d9485c') in 0.034816 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 18.242780 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 2.png
-  artifactKey: Guid(fd84b599e3226ea46a5299bd134c913a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 2.png using Guid(fd84b599e3226ea46a5299bd134c913a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bc53d4e9494365491248cf6dee65f17') in 0.022869 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 6.png
-  artifactKey: Guid(07d5fc0c52ed98a46bcfe29ae77baa8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 6.png using Guid(07d5fc0c52ed98a46bcfe29ae77baa8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f15e1b9a658869dc0bf340df94d2b1') in 0.022249 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 10.png
-  artifactKey: Guid(8f5bf7f746a517a44953bd808793f346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 10.png using Guid(8f5bf7f746a517a44953bd808793f346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '698c6cb07e490087cd708e81d7470acf') in 0.022995 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 14.png
-  artifactKey: Guid(807f5e375e4063d40b9316f4a662d88f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 14.png using Guid(807f5e375e4063d40b9316f4a662d88f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88568beed5aec4d36001051829234eea') in 0.022153 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 16.png
-  artifactKey: Guid(e70fafb6b61cf8a4fafc717f28e354c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 16.png using Guid(e70fafb6b61cf8a4fafc717f28e354c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4a4d0e0b1b27a1b719f4ed9c26df40d') in 0.023507 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 8.png
-  artifactKey: Guid(2077380766149d1499d5ee076a1a7866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 8.png using Guid(2077380766149d1499d5ee076a1a7866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '439f540baa093dc5d655e9f7843d27dc') in 0.024821 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 13.png
-  artifactKey: Guid(b8fb33f6cf00e5741a99e6ef768845ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 13.png using Guid(b8fb33f6cf00e5741a99e6ef768845ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fca329ef02334e425eb49896d814279') in 0.023508 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 5.png
-  artifactKey: Guid(ac615aacb19cc504aa65cbaf0bcdb638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Quiver/QUIVER 5.png using Guid(ac615aacb19cc504aa65cbaf0bcdb638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b37f8b50f99bd9ea7bd4c854638834b') in 0.024126 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.359352 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 2.png
-  artifactKey: Guid(c64fad00a14a9bf42b28d1027ed3de3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 2.png using Guid(c64fad00a14a9bf42b28d1027ed3de3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd6d08c1c038498ae26c83dabfe9dd1') in 0.020936 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 6.png
-  artifactKey: Guid(a3dc6498e69492b42b0ac7d639fdfbc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 6.png using Guid(a3dc6498e69492b42b0ac7d639fdfbc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c624e9caf5b9e1a71e04483f488db3a4') in 0.021792 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 10.png
-  artifactKey: Guid(524389b12565b7d42b79d8ebd9e4c377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 10.png using Guid(524389b12565b7d42b79d8ebd9e4c377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3933af37ca42af5273b4c5b6a8337586') in 0.020337 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 11.png
-  artifactKey: Guid(66d81368d037e364ba047c747b533452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 11.png using Guid(66d81368d037e364ba047c747b533452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3a2123f7b3c4a737bd5329ad1507a4d') in 0.022633 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 18.png
-  artifactKey: Guid(9ff797a447a227b4b9e7b391c2fa9bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 18.png using Guid(9ff797a447a227b4b9e7b391c2fa9bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdb8b39f942494470c869c554fc25e31') in 0.024735 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 19.png
-  artifactKey: Guid(f8cfea13b4a5c434a8bfd41510339d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 19.png using Guid(f8cfea13b4a5c434a8bfd41510339d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9644ad9c5d445f50fb82158c70601b02') in 0.023609 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 8.png
-  artifactKey: Guid(fd2f0e97abdd4294da5a1796de348d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shield/SHIELD 8.png using Guid(fd2f0e97abdd4294da5a1796de348d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '460dfd391d0dbb1243667c90c23f7f68') in 0.022782 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.513284 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 2.png
-  artifactKey: Guid(41f20bf85640de9428310c91911e810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 2.png using Guid(41f20bf85640de9428310c91911e810b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b059ce57f02a63920b156fece63e11b') in 0.019419 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 5.png
-  artifactKey: Guid(76d40fc46c3e0e041a892a1ec4bb9879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 5.png using Guid(76d40fc46c3e0e041a892a1ec4bb9879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50806d35979a989f6172e6918e4ad4f2') in 0.020050 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 9.png
-  artifactKey: Guid(ecfe04f667bb3ce479bba4946c21e403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 9.png using Guid(ecfe04f667bb3ce479bba4946c21e403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb33be78381d55136ba1199f7f9dcbd4') in 0.028210 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 13.png
-  artifactKey: Guid(36f4ac897c04091498c8528ffea8aad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 13.png using Guid(36f4ac897c04091498c8528ffea8aad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ff62b87dc429792577135247fcc38d0') in 0.021012 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 17.png
-  artifactKey: Guid(0a2cb75df98f83b4cbcdf7f405d2c859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 17.png using Guid(0a2cb75df98f83b4cbcdf7f405d2c859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04b92de3e1fb73b3c4820d178a92644b') in 0.024497 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 18.png
-  artifactKey: Guid(9193ee285351cd246ae4e6f63f91a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 18.png using Guid(9193ee285351cd246ae4e6f63f91a799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd22b4f9ce89cfa80d1325598e47cf043') in 0.025005 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 7.png
-  artifactKey: Guid(eb9093f87844303489121ab4ab35ea28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Shoulder/SHOULDER 7.png using Guid(eb9093f87844303489121ab4ab35ea28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a9b87487ad60efcebbea2eb38cbc354') in 0.026147 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.573210 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 2.png
-  artifactKey: Guid(fa1d9a326dfb94247bfbc193edf4441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 2.png using Guid(fa1d9a326dfb94247bfbc193edf4441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43b4e29eca512f1ef51311127526af00') in 0.019042 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 4.png
-  artifactKey: Guid(2ec732fa3697aa5449da146eb0fb5362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 4.png using Guid(2ec732fa3697aa5449da146eb0fb5362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d455de079ee37275376e1a7815b342') in 0.021347 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 7.png
-  artifactKey: Guid(5d58093d0be57844cb310576a51b1813) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 7.png using Guid(5d58093d0be57844cb310576a51b1813) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '084afc7a5d6acee77a1e2bdf6f3da9b8') in 0.028134 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 14.png
-  artifactKey: Guid(302942958cc4b1a4d9c57edf6eea1eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 14.png using Guid(302942958cc4b1a4d9c57edf6eea1eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5c49e64ab4cd730141f9d17c8798919') in 0.022305 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 17.png
-  artifactKey: Guid(881543a8fe4f82a4a99e408ca70dda8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 17.png using Guid(881543a8fe4f82a4a99e408ca70dda8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '148adcb98ac7765cb818bf9ab5082717') in 0.023446 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 16.png
-  artifactKey: Guid(df5337952e42ea94ab4d3ae83f76e90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 16.png using Guid(df5337952e42ea94ab4d3ae83f76e90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c8fb373800dc495668aa56cb80d3df6') in 0.023068 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 20.png
-  artifactKey: Guid(fd6b4722a303a0542aa024d89705746b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 20.png using Guid(fd6b4722a303a0542aa024d89705746b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfab49708b9689871f4fadc213f0b32b') in 0.023161 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.520583 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 23.png
-  artifactKey: Guid(ffe3bfb881b57d44b966750edc8b6f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 23.png using Guid(ffe3bfb881b57d44b966750edc8b6f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '404db343f9f446cc7e0e879c9d69a597') in 0.020655 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.010979 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 26.png
-  artifactKey: Guid(74103ef821efc65459450cd6752c854a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 26.png using Guid(74103ef821efc65459450cd6752c854a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a761910341d747d6160b513c46618ae') in 0.020597 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.230151 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 31.png
-  artifactKey: Guid(c2b062ce9d7dc4e408513d234c2ba3dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 31.png using Guid(c2b062ce9d7dc4e408513d234c2ba3dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e89ffc8c44174c0ee507c13301baa90b') in 0.019878 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002555 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 34.png
-  artifactKey: Guid(ecb5b07247b5dbf429684c425d0af7a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Staff/STAFF 34.png using Guid(ecb5b07247b5dbf429684c425d0af7a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ae062bf9101ff84478693f802ae74ec') in 0.020324 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.291692 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 3.png
-  artifactKey: Guid(fe650cdeb9b90aa4eb936ecc459391d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 3.png using Guid(fe650cdeb9b90aa4eb936ecc459391d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7182427ebbce5c74174ab69d6a8b06ba') in 0.020881 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 7.png
-  artifactKey: Guid(b54fa7cb00012d24c988a1f0c6435247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 7.png using Guid(b54fa7cb00012d24c988a1f0c6435247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35d6f5521d6ac5f82ed00039970e146c') in 0.023560 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 6.png
-  artifactKey: Guid(8a4e10582afbd384a992a93648a29387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 6.png using Guid(8a4e10582afbd384a992a93648a29387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42af177af78898b5b4ce44926c994d2') in 0.022281 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 16.png
-  artifactKey: Guid(b4ce02d1966e881448e7489e69b93d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 16.png using Guid(b4ce02d1966e881448e7489e69b93d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7b7e64b7c1b073d62c245b8deff3d55') in 0.021258 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 20.png
-  artifactKey: Guid(74eb7fc1551e0d34b85077652ffb1bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 20.png using Guid(74eb7fc1551e0d34b85077652ffb1bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f046c5103ee3d9ae45473ff1432128') in 0.025558 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 8.png
-  artifactKey: Guid(2c93c7b5c6b4508498ad5590ce5d57c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 8.png using Guid(2c93c7b5c6b4508498ad5590ce5d57c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73f16b5b2995d8a9a9fe388094303a33') in 0.025564 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 18.png
-  artifactKey: Guid(32c5f8c54f908a54b8fef7a79d25dcdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Helmet/HELMET 18.png using Guid(32c5f8c54f908a54b8fef7a79d25dcdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f0c172a574edca48a7871f16ab124c6') in 0.025927 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.167482 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 2.png
-  artifactKey: Guid(718956b7d8ff3e7458e233667a50c711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 2.png using Guid(718956b7d8ff3e7458e233667a50c711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaa2f8140e1400a61a0d2714d08701d8') in 0.021250 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 5.png
-  artifactKey: Guid(c743ccae0504bd74692255419d57ebb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 5.png using Guid(c743ccae0504bd74692255419d57ebb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6c6174ebbbcf03d0d763edda67ac58a') in 0.021483 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 9.png
-  artifactKey: Guid(2c190a0a236b3af47a0494955cf17bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 9.png using Guid(2c190a0a236b3af47a0494955cf17bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3515f6d86457302f9519ac419d96844f') in 0.023887 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 10.png
-  artifactKey: Guid(108f56ce55b385b4a86b57e688e3e149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 10.png using Guid(108f56ce55b385b4a86b57e688e3e149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f28af678ae8ecebae86d7e20d14c06f6') in 0.023368 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 18.png
-  artifactKey: Guid(7326efce265a95746add9ea0a5987b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 18.png using Guid(7326efce265a95746add9ea0a5987b51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '701b5cc838e7053f04d02fcf347b7c26') in 0.025534 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 13.png
-  artifactKey: Guid(2f742e03f948e894d8274771159ad925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Hair/HAIR 13.png using Guid(2f742e03f948e894d8274771159ad925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e499238f640c704a2129602832a322cc') in 0.024890 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.712273 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 2.png
-  artifactKey: Guid(e6ad550d9a572664080d05f677831711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 2.png using Guid(e6ad550d9a572664080d05f677831711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b9dc1e8df219bc7ae4c1250d507524') in 0.020879 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 6.png
-  artifactKey: Guid(bae6e68ea2fa62241a16717264c18634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 6.png using Guid(bae6e68ea2fa62241a16717264c18634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4796d87228894fd95a64776ea175146') in 0.021101 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 9.png
-  artifactKey: Guid(81d4c4af03aa6fb498114c93d29ac65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 9.png using Guid(81d4c4af03aa6fb498114c93d29ac65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f04361e34d8acf02122e3a7b2759956e') in 0.020370 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 13.png
-  artifactKey: Guid(091d8e47870fc3b4a9a0152a3c8d5dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 13.png using Guid(091d8e47870fc3b4a9a0152a3c8d5dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '824430ed487eb1b5bb51224950df075b') in 0.022940 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 18.png
-  artifactKey: Guid(0c53a074bcb8da34691ce856a24a3e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 18.png using Guid(0c53a074bcb8da34691ce856a24a3e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87373d94ee519f1341a1dcfede7c04f0') in 0.021681 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 15.png
-  artifactKey: Guid(171220b90b532e4418a7a3f9a9e5274c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 15.png using Guid(171220b90b532e4418a7a3f9a9e5274c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe7222947cb16d4677647a139c9e6b53') in 0.025160 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 16.png
-  artifactKey: Guid(95d7179837f076f4581e1ab4ad7446cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Feet/FEET 16.png using Guid(95d7179837f076f4581e1ab4ad7446cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9660ff13ed51e47f2af20b2305e7f5fa') in 0.023269 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.232895 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 2.png
-  artifactKey: Guid(173da314528e89c46bc493e468864933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 2.png using Guid(173da314528e89c46bc493e468864933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f446fa48a46bbbde65bcdec929b37d') in 0.024737 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 6.png
-  artifactKey: Guid(b3247503f09494743b8897b84386adfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 6.png using Guid(b3247503f09494743b8897b84386adfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0445a440dc1249009f52e03f056de36b') in 0.023101 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 11.png
-  artifactKey: Guid(f65b70a397fbde440805a15b4efbad5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 11.png using Guid(f65b70a397fbde440805a15b4efbad5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfeee0f612e3075bac787a43ba1aeeb3') in 0.023276 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 15.png
-  artifactKey: Guid(9b1e58fe72a52c34597f6339ea5a3470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 15.png using Guid(9b1e58fe72a52c34597f6339ea5a3470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69729c7249ba23c00fe2671d9f1628b8') in 0.023599 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 16.png
-  artifactKey: Guid(8aeb49ce475e10d448b6c0b2c297f9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 16.png using Guid(8aeb49ce475e10d448b6c0b2c297f9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd3e302340fc5f255fa7e5d79f99b787') in 0.025834 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 18.png
-  artifactKey: Guid(0b7a3bb665885aa458cc5d8670832c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 18.png using Guid(0b7a3bb665885aa458cc5d8670832c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac5683f714660f59b4b68c2b8fe8c75e') in 0.026894 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 13.png
-  artifactKey: Guid(0ec70c776df6ed04db7fbeefff438e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 13.png using Guid(0ec70c776df6ed04db7fbeefff438e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdef3168b79773002886d5b13b90c349') in 0.023341 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 22.731821 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 23.png
-  artifactKey: Guid(fc8dc6f8dc6aee34bb7e92e0e487e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 23.png using Guid(fc8dc6f8dc6aee34bb7e92e0e487e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd788f9ac297628b35ea4dee2275c1ae') in 0.023350 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 10.841601 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 27.png
-  artifactKey: Guid(e213d3414bc4a254b8b702127530060e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 27.png using Guid(e213d3414bc4a254b8b702127530060e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea95ae9a8459cb4e1c29dabede4c122') in 0.021749 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002272 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 30.png
-  artifactKey: Guid(5b9748941cd17dc4a89267f8a232bd5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 30.png using Guid(5b9748941cd17dc4a89267f8a232bd5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '999b0c44b9d85f81930a585304a5380c') in 0.023980 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003961 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 33.png
-  artifactKey: Guid(b204cefdbc98ed24193022b6de624683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 33.png using Guid(b204cefdbc98ed24193022b6de624683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59f0030314afe9c422f732754e3413bb') in 0.027974 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 36.png
-  artifactKey: Guid(b3923c595ff842b45893cd702430f149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 36.png using Guid(b3923c595ff842b45893cd702430f149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a283603d93c17d8904cfa16a372944c') in 0.023609 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.014938 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 39.png
-  artifactKey: Guid(5ddef48663b7b814cb9cfe6210c31376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 39.png using Guid(5ddef48663b7b814cb9cfe6210c31376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b469f90f4d8adbbb9a3c9b60c7c9a65') in 0.022442 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.224222 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 43.png
-  artifactKey: Guid(fa1113d794b16764da759a79b2a99670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 43.png using Guid(fa1113d794b16764da759a79b2a99670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a38be38cb7b3760be8b3d731a4273b0') in 0.021825 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003934 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 46.png
-  artifactKey: Guid(77f5bb1172e25fe4cb05ed6210d74153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 46.png using Guid(77f5bb1172e25fe4cb05ed6210d74153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee205dd7cb6a0590634763b521b51067') in 0.025049 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001080 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 49.png
-  artifactKey: Guid(346274fc8b7a1b642a0aa6956070c612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 49.png using Guid(346274fc8b7a1b642a0aa6956070c612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b74d00c0a3a08bccc301aaecf5cf2bf') in 0.025080 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 52.png
-  artifactKey: Guid(d7f0ebd56f326a5449d360e5d30db11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 52.png using Guid(d7f0ebd56f326a5449d360e5d30db11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90495e77a628e5f2b57a7073730d751a') in 0.020518 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.237583 seconds.
-  path: Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 55.png
-  artifactKey: Guid(3638cb05957a2b64aafbff565594dbf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FantaziaCharacterEditor/Resources/GearsIcons/Melee/MELEE 55.png using Guid(3638cb05957a2b64aafbff565594dbf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3826cd63a9b7d76fab36d95fb773154') in 0.022064 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
