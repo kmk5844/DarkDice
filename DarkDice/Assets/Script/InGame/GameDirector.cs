@@ -666,6 +666,7 @@ public class GameDirector : MonoBehaviour
 
     public void OnMain()
     {
+        Time.timeScale = 1;
         try
         {
             gameManager.NextLevle("1.StageChoice");
@@ -674,7 +675,6 @@ public class GameDirector : MonoBehaviour
         {
             SceneManager.LoadScene("1.StageChoice");
         }
-        Time.timeScale = 1;
     }
 
     public void OnClickItemButton()
