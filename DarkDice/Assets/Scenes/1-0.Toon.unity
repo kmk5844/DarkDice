@@ -813,8 +813,8 @@ MonoBehaviour:
     \uB2F9\uC2E0\uC774 \uBC14\uB85C \uC774 \uD63C\uB3C8\uC73C\uB85C\uBD80\uD130 \uC655\uAD6D\uC744
     \uAD6C\uD560 \uC6A9\uC0AC\uB77C\uACE0 \uB9D0\uD569\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
-  m_sharedMaterial: {fileID: 1099491107725619986, guid: ab3e729bae9bb904bb62c3d6fdf9efd5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: add6ab814bb03904d8fed6788610e3b5, type: 2}
+  m_sharedMaterial: {fileID: 6374033910365416501, guid: add6ab814bb03904d8fed6788610e3b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

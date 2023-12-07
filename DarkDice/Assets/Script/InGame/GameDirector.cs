@@ -70,7 +70,9 @@ public class GameDirector : MonoBehaviour
 
     GameManager gameManager;
 
-    public GameObject[] Hit_Part; //0, 1번 플레이어 히트, 2번 동시 히트, 3번 몬스터 히트
+    public GameObject[] Hit_Part; //0, 1번 플레이어 히트, 2번 동시 히트, 3번 몬스터 히트 4번 디펜스
+    public GameObject[] Buff_Part; //0번 힐, 1번 부활, 2번 atk, 3번 def
+    
     public GameObject Heal_Part;
     public GameObject Revival_Part;
     public GameObject[] ItemChoice_Part;
@@ -398,6 +400,8 @@ public class GameDirector : MonoBehaviour
             {
                 ItemUse();
                 Debug.Log("공격력 2배 적용!");
+                BuffParticlePlay(2);
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
                 ItemCount++;
             }
@@ -405,6 +409,8 @@ public class GameDirector : MonoBehaviour
             {
                 ItemUse();
                 Debug.Log("방어력 2배 적용!");
+                BuffParticlePlay(3);
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
                 ItemCount++;
             }
@@ -412,7 +418,7 @@ public class GameDirector : MonoBehaviour
             {
                 ItemUse();
                 playerData.hp += 1;
-                ParticlePlay(0);
+                BuffParticlePlay(0);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 Debug.Log("회복 성공!");
                 Debug.Log("=======================================");
@@ -482,11 +488,13 @@ public class GameDirector : MonoBehaviour
             Debug.Log("공격 실패!");
             monsterAni.state.SetAnimation(0, "Attack", false);
             yield return new WaitForSeconds(0.4f);
+            Hit_Part[4].SetActive(true);
             playerAni.state.SetAnimation(0, "Defence", false).TimeScale = 1.2f;
             yield return new WaitForSeconds(0.8f);
+            Hit_Part[4].SetActive(false);
         }
 
-        if(monsterData.hp <= 0) { 
+        if (monsterData.hp <= 0) { 
             monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
             monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
         }
@@ -531,8 +539,8 @@ public class GameDirector : MonoBehaviour
             monsterAni.state.SetAnimation(0, "Attack", false);
             Hit_Part[2].SetActive(true);
             Hurt_Image.SetActive(true);
-            yield return new WaitForSeconds(0.15f);
-            playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 1.3f;
+            yield return new WaitForSeconds(0.1f);
+            playerAni.state.SetAnimation(0, "Attack1", false).TimeScale = 2f;
             yield return new WaitForSeconds(0.8f);
         }
         else
@@ -541,6 +549,7 @@ public class GameDirector : MonoBehaviour
 
             monsterAni.state.SetAnimation(0, "Attack", false);
             yield return new WaitForSeconds(0.4f);
+            Hit_Part[4].SetActive(true);
             playerAni.state.SetAnimation(0, "Defence", false).TimeScale = 1.2f;
             yield return new WaitForSeconds(0.8f);
             playerAni.state.SetAnimation(0, "Idle", true);
@@ -624,7 +633,7 @@ public class GameDirector : MonoBehaviour
         Play_UI.SetActive(true);
         Lose_UI.transform.GetChild(1).GetComponent<Transform>().gameObject.SetActive(false);
         Lose_UI.SetActive(false);
-        ParticlePlay(1);
+        BuffParticlePlay(1);
         if (monsterData.hp == 0)
         {
             PlayDice_UI.SetActive(false);
@@ -682,18 +691,21 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    public void ParticlePlay(int num)
+    public void BuffParticlePlay(int num)
     {
         if(num == 0)
         {
-            Heal_Part.SetActive(true);
+            Buff_Part[0].SetActive(true);
         }
         else if(num == 1)
         {
-            Revival_Part.SetActive(true);
+            Buff_Part[1].SetActive(true);
         }else if(num == 2)
         {
-
+            Buff_Part[2].SetActive(true);
+        }else if(num == 3)
+        {
+            Buff_Part[3].SetActive(true);
         }
     }
 }

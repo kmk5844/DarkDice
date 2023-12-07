@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class StageDirector : MonoBehaviour {
 
@@ -52,6 +53,10 @@ public class StageDirector : MonoBehaviour {
         lockOffStage = stageData.stageNum;
         for(int i = 0; i < lockOffStage; i++)
         {
+            if(i == StageButton.Length)
+            {
+                break;
+            }
             StageButton[i].interactable = true;
         }
 
@@ -70,7 +75,12 @@ public class StageDirector : MonoBehaviour {
 
         for(int i = 2; i < lockOffStage; i++)
         {
-            if(lockOffStage > i)
+            if (i == StageButton.Length)
+            {
+                break;
+            }
+
+            if (lockOffStage > i)
             {
                 WeaponLock[i-2].SetActive(false);
             }
@@ -88,6 +98,8 @@ public class StageDirector : MonoBehaviour {
         
         for(int i = 0; i < Monster_inf_Button.Length; i++)
         {
+            Monster_inf_Button[i].GetComponent<Image>().sprite = Resources.Load<Sprite>("monsterImage/default");
+
             if (i < Data.stage_Data[Num -1].enemy_count)
             {
                 Monster_inf_Button[i].interactable = true;
@@ -97,7 +109,6 @@ public class StageDirector : MonoBehaviour {
                 Monster_inf_Button[i].interactable = false;
             }
         }
-
 
         for (int i = 0; i < Monster_inforGroup.Length; i++)
         {
@@ -118,11 +129,12 @@ public class StageDirector : MonoBehaviour {
             {
                 str = Data.stage_Data[Num - 1].enemy_unit3;
             }
+            Monster_inf_Button[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(Data.monster_Data[Enemy(str)].image);
             Monster_inforGroup[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "이름 : " + Data.monster_Data[Enemy(str)].name;
             Monster_inforGroup[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "체력 : " + Data.monster_Data[Enemy(str)].hp.ToString();
             Monster_inforGroup[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "공격력 : " + Data.monster_Data[Enemy(str)].atk.ToString();
             Monster_inforGroup[i].transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "방어력 : " + Data.monster_Data[Enemy(str)].def.ToString();
-            Monster_inforGroup[i].transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "정보 : " + Data.monster_Data[Enemy(str)].enemy_info;
+            Monster_inforGroup[i].transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "스토리 : " + Data.monster_Data[Enemy(str)].enemy_info.Replace("\\n", "\n");
         }
         Bar_ani.SetBool("StageBar", true);
     }
