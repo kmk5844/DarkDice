@@ -30,9 +30,6 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private ItemData[] item;
     public ItemData[] Item { get { return item; } }
-
-
-
     public void PlusStatus(int C_atk, int C_def, int num)
     {
         atk += C_atk;
@@ -68,6 +65,11 @@ public class PlayerData : ScriptableObject
     public void RewardHp(int hpNum)
     {
         hp += hpNum;
+    }
+
+    public void ApplyStatus(int num)
+    {
+        status = num;
     }
 
     public void EquipItem_Data(ItemData itemData, int num)

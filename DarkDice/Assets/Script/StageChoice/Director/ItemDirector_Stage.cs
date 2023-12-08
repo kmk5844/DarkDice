@@ -59,7 +59,7 @@ public class ItemDirector_Stage : MonoBehaviour
     {
         for (int i = 0; i < Inventory_Item_Count.Length; i++)
         {
-            Inventory_Item_Count[i].text = "X " + itemData_Object[i].itemcount;
+            Inventory_Item_Count[i].text = itemData_Object[i].itemcount.ToString();
         }
 
         for (int i = 0; i < ItemEquip.Length; i++)

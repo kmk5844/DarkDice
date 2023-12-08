@@ -33,8 +33,6 @@ public class UiDirector : MonoBehaviour
         if(Stage_UI.activeSelf)
         { 
             Stage_UI.SetActive(false); 
-            
         }
     }
-
 }

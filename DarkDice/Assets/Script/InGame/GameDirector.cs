@@ -25,7 +25,6 @@ public class GameDirector : MonoBehaviour
     Vector3 monsterPosition;
 
     public TextMeshProUGUI RoundText;
-    public TextMeshPro[] InGameText;
     public TextMeshProUGUI Player_Atk_Text;
     public TextMeshProUGUI Player_Def_Text;
     public TextMeshProUGUI Monster_Atk_Text;
@@ -62,6 +61,8 @@ public class GameDirector : MonoBehaviour
     Stage_Scripter stage;
 
     public DataTable Data;
+    public TextMeshProUGUI reward_Coin;
+    public Image[] reward_Image;
 
     public Button ItemGroup_Button;
     bool ItemButton_OpenFlag;
@@ -600,6 +601,7 @@ public class GameDirector : MonoBehaviour
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
             Play_UI.SetActive(false);
             Win_UI.SetActive(true);
+            Change_Reward();
             TotalWin();
         }
         else
@@ -643,24 +645,47 @@ public class GameDirector : MonoBehaviour
         playerAni.state.SetAnimation(0, "Idle", true);
     }
 
+    void Change_Reward()
+    {
+        reward_Coin.text = Data.stage_Data[stage.curretStageNum - 1].reward_coin.ToString() + "G";
+
+        if (stage.curretStageNum == stage.stageNum)
+        {
+            if (Data.stage_Data[stage.curretStageNum - 1].reward_point == 3)
+            {
+                reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat3");
+            }
+            else if (Data.stage_Data[stage.curretStageNum - 1].reward_point == 4)
+            {
+                reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat4");
+            }
+
+            if (Data.stage_Data[stage.curretStageNum - 1].reward_hp == 0)
+            {
+                reward_Image[1].sprite = Resources.Load<Sprite>("Reward/default");
+            }
+            else
+            {
+                reward_Image[1].sprite = Resources.Load<Sprite>("Reward/icon_hp");
+            }
+        }
+        else
+        {
+            reward_Image[0].sprite = Resources.Load<Sprite>("Reward/default");
+            reward_Image[1].sprite = Resources.Load<Sprite>("Reward/default");
+        }
+    }
+
     public void TotalWin()
     {
         stage.Win();
-        for(int i = 0; i < Data.stage_Data.Count; i++)
+        playerData.plusCoin(Data.stage_Data[stage.curretStageNum-1].reward_coin);
+        if (stage.curretStageNum == stage.stageNum)
         {
-            if(stage.curretStageNum == Data.stage_Data[i].number)
-            {
-                playerData.plusCoin(Data.stage_Data[i].reward_coin);
-                if(stage.curretStageNum == stage.stageNum)
-                {
-                    playerData.plusStatus(Data.stage_Data[i].reward_point);
-                    if (Data.stage_Data[i].reward_hp != 0)
-                    {
-                        playerData.plusHp(Data.stage_Data[i].reward_hp);
-                    }
-                }
-                break;
-            }
+            Debug.Log(stage.curretStageNum);
+            Debug.Log(stage.stageNum);
+            playerData.plusStatus(Data.stage_Data[stage.curretStageNum - 1].reward_point);
+            playerData.plusHp(Data.stage_Data[stage.curretStageNum - 1].reward_hp);
         }
     }
 

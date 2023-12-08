@@ -19,6 +19,7 @@ public class StageDirector : MonoBehaviour {
     public GameObject stageHideButton;
     public Image[] item_Image;
     public Image[] reward_Image;
+    public TextMeshProUGUI reward_coin_text;
 
     public GameObject[] ItemLock;
     public GameObject[] WeaponLock;
@@ -46,23 +47,15 @@ public class StageDirector : MonoBehaviour {
         {
             item_Image[i].sprite = player.item[i].ItemImage;
         }
-    }
 
-    void Update()
-    {
         lockOffStage = stageData.stageNum;
-        for(int i = 0; i < lockOffStage; i++)
+        for (int i = 0; i < lockOffStage; i++)
         {
-            if(i == StageButton.Length)
+            if (i == StageButton.Length)
             {
                 break;
             }
             StageButton[i].interactable = true;
-        }
-
-        for (int i = 0; i < item_Image.Length; i++)
-        {
-            item_Image[i].sprite = player.item[i].ItemImage;
         }
 
         for (int i = 0; i < ItemLock.Length; i++)
@@ -73,7 +66,7 @@ public class StageDirector : MonoBehaviour {
             }
         }
 
-        for(int i = 2; i < lockOffStage; i++)
+        for (int i = 2; i < lockOffStage; i++)
         {
             if (i == StageButton.Length)
             {
@@ -82,8 +75,16 @@ public class StageDirector : MonoBehaviour {
 
             if (lockOffStage > i)
             {
-                WeaponLock[i-2].SetActive(false);
+                WeaponLock[i - 2].SetActive(false);
             }
+        }
+    }
+
+    void Update()
+    {
+        for (int i = 0; i < item_Image.Length; i++)
+        {
+            item_Image[i].sprite = player.item[i].ItemImage;
         }
     }
 
@@ -95,8 +96,9 @@ public class StageDirector : MonoBehaviour {
 
         stageName.text = "STAGE" + Num + " : " + Data.stage_Data[Num-1].stage_fullname;
         stageStory.text = Data.stage_Data[Num - 1].stage_info;
-        
-        for(int i = 0; i < Monster_inf_Button.Length; i++)
+        reward_coin_text.text = Data.stage_Data[Num - 1].reward_coin.ToString() + "G";
+
+        for (int i = 0; i < Monster_inf_Button.Length; i++)
         {
             Monster_inf_Button[i].GetComponent<Image>().sprite = Resources.Load<Sprite>("monsterImage/default");
 
@@ -136,6 +138,36 @@ public class StageDirector : MonoBehaviour {
             Monster_inforGroup[i].transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "방어력 : " + Data.monster_Data[Enemy(str)].def.ToString();
             Monster_inforGroup[i].transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "스토리 : " + Data.monster_Data[Enemy(str)].enemy_info.Replace("\\n", "\n");
         }
+
+        for(int i = 0; i < reward_Image.Length; i++) //두번째 칸과 세번째 칸만 이미지 바뀐다.
+        {
+            if (Num == lockOffStage)
+            {
+                if (Data.stage_Data[Num - 1].reward_point == 3)
+                {
+                    reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat3");
+                }
+                else if (Data.stage_Data[Num - 1].reward_point == 4)
+                {
+                    reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat4");
+                }
+
+                if (Data.stage_Data[Num - 1].reward_hp == 0)
+                {
+                    reward_Image[1].sprite = Resources.Load<Sprite>("Reward/default");
+                }
+                else
+                {
+                    reward_Image[1].sprite = Resources.Load<Sprite>("Reward/icon_hp");
+                }
+            }
+            else
+            {
+                reward_Image[0].sprite = Resources.Load<Sprite>("Reward/default");
+                reward_Image[1].sprite = Resources.Load<Sprite>("Reward/default");
+            }
+        }
+        
         Bar_ani.SetBool("StageBar", true);
     }
 

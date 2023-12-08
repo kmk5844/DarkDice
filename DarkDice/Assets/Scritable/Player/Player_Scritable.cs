@@ -78,6 +78,11 @@ public class Player_Scritable : MonoBehaviour
         playerData.RewardHp(hp);
     }
 
+    public void applyStat(int stat)
+    {
+        playerData.ApplyStatus(stat);
+    }
+
     public void EquipItem(ItemData clickitem)
     {
         for (int i = 0; i < item.Length; i++)
@@ -89,7 +94,6 @@ public class Player_Scritable : MonoBehaviour
             }
         }
     }
-
     public void DeleteItem(ItemData default_item, int ButtonNum)
     {
         playerData.DeleteItem_Data(default_item, ButtonNum);

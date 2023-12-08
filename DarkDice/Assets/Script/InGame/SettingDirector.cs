@@ -27,15 +27,6 @@ public class SettingDirector : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape)) {
             ExitWindow.SetActive(true);
         }
-
-        if (SettingUI.activeSelf)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
     }
 
     public void OnSetting()
@@ -43,10 +34,12 @@ public class SettingDirector : MonoBehaviour
         if (!SettingUI.activeSelf)
         {
             SettingUI.SetActive(true);
+            Time.timeScale = 0;
         }
         else
         {
             SettingUI.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 

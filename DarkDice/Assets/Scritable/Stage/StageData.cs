@@ -10,10 +10,6 @@ public class StageData : ScriptableObject
     public int StageNum { get { return stageNum; } }
 
     [SerializeField]
-    private int guid;
-    public int Guid { get { return guid; } }
-
-    [SerializeField]
     private int curretstageNum;
     public int CurretStageNum { get { return curretstageNum; } }
 
@@ -22,11 +18,6 @@ public class StageData : ScriptableObject
         stageNum++;
     }
 
-    public void guidPlus()
-    {
-        guid++;
-    }
-    
     public void ClickNum(int num)
     {
         curretstageNum = num;
@@ -35,7 +26,6 @@ public class StageData : ScriptableObject
     public void init()
     {
         stageNum = 1;
-        guid = 0;
         curretstageNum = 0;
     }
 }

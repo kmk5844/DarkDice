@@ -29,6 +29,7 @@ public class StatusDirector : MonoBehaviour
     int Rest_Status;
     int Sum_atk;
     int Sum_def;
+    int Stat;
 
     void Start()
     {
@@ -132,6 +133,7 @@ public class StatusDirector : MonoBehaviour
     public void OnApplyButton()
     {
         player.ChangePlayerData(Sum_atk, Sum_def, Rest_Status);
+        player.applyStat(Rest_Status);
         Sum_atk = 0;
         Sum_def = 0;
     }

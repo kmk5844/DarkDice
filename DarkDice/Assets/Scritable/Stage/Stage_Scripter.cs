@@ -7,13 +7,11 @@ public class Stage_Scripter : MonoBehaviour
     [SerializeField]
     public StageData stageData;
     public int stageNum;
-    public int guid;
     public int curretStageNum;
 
     private void Awake()
     {
         stageNum = stageData.StageNum;
-        guid = stageData.Guid;
         curretStageNum = stageData.CurretStageNum;
     }
 
@@ -21,10 +19,6 @@ public class Stage_Scripter : MonoBehaviour
     void Update()
     {
         stageNum = stageData.StageNum;
-        if (guid != 1)
-        {
-            guid = stageData.Guid;
-        }
         curretStageNum = stageData.CurretStageNum;
     }
 
@@ -39,7 +33,6 @@ public class Stage_Scripter : MonoBehaviour
             stageData.winStage();
         }
     }
-
     public void stageInit()
     {
         stageData.init();
