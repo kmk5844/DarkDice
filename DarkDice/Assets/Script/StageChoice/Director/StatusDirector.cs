@@ -27,6 +27,7 @@ public class StatusDirector : MonoBehaviour
     public GameObject playerObject;
     Player_Scritable player;
     int Rest_Status;
+    int Init_Status; //초기화 전용 스테이터스
     int Sum_atk;
     int Sum_def;
 
@@ -36,14 +37,17 @@ public class StatusDirector : MonoBehaviour
         Sum_def = 0;
         player = playerObject.GetComponent<Player_Scritable>();
         Rest_Status = player.status;
+        Init_Status = player.status;
     }
 
     void Update()
     {
-        if (player.StatusFlag)
+        if(Init_Status != player.status)
         {
             Rest_Status = player.status;
+            Init_Status = player.status;
         }
+
         Stat_Hp.text = player.hp.ToString();
         Stat_Atk.text =  player.atk.ToString();
         Stat_Def.text = player.def.ToString();
@@ -76,11 +80,7 @@ public class StatusDirector : MonoBehaviour
         }
         else // 0이 아닌 구간
         {
-            if (Sum_atk > 3)
-            {
-                Plus_ATK_Button.interactable = false;
-            }
-            else if (Sum_atk == 0)
+            if (Sum_atk == 0)
             {
                 Plus_ATK_Button.interactable = true;
                 Minus_ATK_Button.interactable = false;
@@ -91,11 +91,7 @@ public class StatusDirector : MonoBehaviour
                 Minus_ATK_Button.interactable = true;
             }
 
-            if (Sum_def > 3)
-            {
-                Plus_DEF_Button.interactable = false;
-            }
-            else if (Sum_def == 0)
+            if (Sum_def == 0)
             {
                 Plus_DEF_Button.interactable = true;
                 Minus_DEF_Button.interactable = false;
@@ -140,7 +136,6 @@ public class StatusDirector : MonoBehaviour
         Sum_atk = 0;
         Sum_def = 0;
     }
-
     public void OntestPlusButton()
     {
         player.plusStatus(4);

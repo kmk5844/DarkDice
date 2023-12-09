@@ -6,27 +6,27 @@ using UnityEngine.UI;
 
 public class StoreDirector : MonoBehaviour
 {
-    public TextMeshProUGUI CoinCount;
-
-    public GameObject playerObject;
+    public GameObject playerObject; // 플레이어 정보를 가져온다.
     Player_Scritable player;
 
-    public GameObject[] ItemObject_Data;
+    public GameObject[] ItemObject_Data; //아이템 오브젝트 데이터를 가져온다.
     Item_Scritable[] item;
 
-    public GameObject[] WeaponObject_Data;
+    public GameObject[] WeaponObject_Data; // 무기 오브젝트 데이터를 가져온다.
     Weapon_Scritable[] weapon;
 
-    public TextMeshProUGUI[] Item_Count;
-    public TextMeshProUGUI[] Item_Pride;
-    public TextMeshProUGUI[] Weapon_Pride;
+    public TextMeshProUGUI CoinCount; // 현재 가지고 있는 코인
 
-    public Toggle[] Title_Toggle;
+    public TextMeshProUGUI[] Item_Count; // 아이템 갯수
+    public TextMeshProUGUI[] Item_Pride; // 아이템 가격
+    public TextMeshProUGUI[] Weapon_Pride; // 무기 가격
+
+    public Toggle[] Title_Toggle; // 아이템 상점과 무기 상점을 바꿀 수 있는 토글
     public GameObject[] Window_Toggle;
 
     public Button[] Item_Button;
     public Button[] Weapon_Button;
-    public GameObject Buy_Window;
+    public GameObject Buy_Window; // 마지막 확인
     public GameObject Dont_Click_Panel;
     Button YesButton;
     Button NoButton; 
@@ -59,7 +59,7 @@ public class StoreDirector : MonoBehaviour
     {
         CoinCount.text = player.coin.ToString();
 
-        if (Title_Toggle[0].isOn)
+        if (Title_Toggle[0].isOn) // 아이템 상점
         {
             for (int i = 0; i < item.Length; i++)
             {
@@ -73,8 +73,17 @@ public class StoreDirector : MonoBehaviour
                     Item_Button[i].interactable = true;
                 }
             }
+
+            if (player.coin < 500)
+            {
+                Item_Button[4].interactable = false;
+            }
+            else
+            {
+                Item_Button[4].interactable = true;
+            }
         }
-        else
+        else // 무기 상점
         {
             for (int i = 0; i < weapon.Length; i++)
             {
@@ -85,6 +94,11 @@ public class StoreDirector : MonoBehaviour
                     {
                         Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "<color=white>보유 중</color>";
                     }
+                    else
+                    {
+                        Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = weapon[i].weapon_pride + "G";
+                    }
+                   
                 }
                 else
                 {

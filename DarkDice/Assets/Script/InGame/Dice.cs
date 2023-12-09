@@ -24,7 +24,6 @@ public class Dice : MonoBehaviour
     public Button Attack_Button;
     public bool rollingFlag;
 
-
     private void Start()
     {
         rollingFlag = false;
@@ -77,7 +76,6 @@ public class Dice : MonoBehaviour
         }
         else
         {
-
             rollingFlag = false;
             Dice_Button.GetComponent<Image>().sprite = PlaySprite;
             Dice_Button.interactable = false;

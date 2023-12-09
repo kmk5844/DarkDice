@@ -6,16 +6,18 @@ using UnityEngine.UI;
 
 public class WeaponDirector : MonoBehaviour
 {
+    public GameObject PlayerObject; //플레이어 데이터를 가져온다.
+    Player_Scritable playerData;
+    
+    WeaponData equipWeapon;
+    Weapon_Scritable[] Weapon;
+
     public Image equipWeaponImage; //현재 장착중인 웨폰 이미지
 
-    public GameObject PlayerObject; //플레이어 데이터를 가져온다.
     public GameObject[] WeaponObject_Data; //웨폰의 정보를 가져온다.
     public Toggle[] Toggle_Weapon;
     public TextMeshProUGUI Status_Weapon_Atk_Text;
 
-    Player_Scritable playerData;
-    Weapon_Scritable[] Weapon;
-    WeaponData equipWeapon;
 
     private void Start()
     {
@@ -60,6 +62,7 @@ public class WeaponDirector : MonoBehaviour
                 Toggle_Weapon[i - 1].gameObject.SetActive(true);
             }else if(Weapon[i].storeflag == 0) //--------------------------------------
             {
+                Toggle_Weapon[i - 1].isOn = false;
                 Toggle_Weapon[i - 1].gameObject.SetActive(false); //개발자 초기화 전용 코드
             }
             //-------------------------------------------------------------------------

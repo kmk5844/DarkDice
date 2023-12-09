@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ToggleONOFF : MonoBehaviour
 {
-    public Toggle to;
+    public Toggle to; //스토어 전용 토글 ( 아이템 / 무기 )
 
     private void Update()
     {

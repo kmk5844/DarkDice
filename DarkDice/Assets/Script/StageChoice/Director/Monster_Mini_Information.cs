@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Monster_Mini_Information : MonoBehaviour
 {
-    public GameObject Information_Window;
-    private bool isClick;
+    public GameObject Information_Window; //몬스터의 정보를 불러올 창
+    private bool isClickFlag; 
     Button btn;
 
     void Start()
@@ -16,17 +16,17 @@ public class Monster_Mini_Information : MonoBehaviour
 
     public void ButtonDown()
     {
-       isClick = true;
+        isClickFlag = true;
     }
 
     public void ButtonUp()
     {
-        isClick = false;
+        isClickFlag = false;
     }
 
     void Update()
     {
-        if (isClick && btn.interactable == true)
+        if (isClickFlag && btn.interactable == true)
         {
             Information_Window.SetActive(true);
         }

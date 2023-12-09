@@ -6,19 +6,22 @@ using UnityEngine.UI;
 
 public class ItemDirector_Stage : MonoBehaviour
 {
-    public GameObject PlayerObject;
+    public GameObject PlayerObject; //플레이어 데이터를 가지고 옴
     Player_Scritable playerData;
-
-    public TextMeshProUGUI[] Inventory_Item_Count;
-    public TextMeshProUGUI[] Equip_Item_Count;
-    public GameObject[] ItemObject;
+    
+    public GameObject[] ItemObject; //아이템 데이터를 가지고 옴
     Item_Scritable[] itemData_Object;
+
+    public TextMeshProUGUI[] Inventory_Item_Count; //가방에 있는 아이템 갯수
+    public TextMeshProUGUI[] Equip_Item_Count; //장착할 때 볼 수 있는 아이템 갯수
     public ItemData default_item;
 
-    int[] Sub_Count;
-    int Equip_Max_Count;
-    public Button[] ItemStock;
-    public Button[] ItemEquip;
+    int[] Sub_Count; // 아이템 데이터를 받아 임시로 저장하는 갯수
+    int Equip_Max_Count; //장착 갯수 -> 3개까지 셀 수 있도록
+
+    //아이템 장착 버튼
+    public Button[] ItemStock; // 소지하고 있는 아이템 버튼
+    public Button[] ItemEquip; // 전투 들어가기 전의 아이템 버튼
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class ItemDirector_Stage : MonoBehaviour
         
         for (int i = 0; i < ItemEquip.Length; i++)
         {
+            playerData.DeleteItem(default_item, i); // 씬으로 돌아갈때 필요, 남아있으면 안됨.
             ItemEquip[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
@@ -47,12 +51,6 @@ public class ItemDirector_Stage : MonoBehaviour
         {
             ItemStock[i].GetComponent<Image>().sprite = itemData_Object[i].ItemImage;
         }
-
-        for (int i = 0; i < ItemEquip.Length; i++)
-        {
-            playerData.DeleteItem(default_item, i); // 씬으로 돌아갈때 필요, 남아있으면 안됨.
-        }
-
     }
 
      private void Update()
@@ -79,11 +77,6 @@ public class ItemDirector_Stage : MonoBehaviour
                 ItemStock[i].interactable = true;
             }
         }
-
-        for (int i = 0; i < Equip_Item_Count.Length; i++)
-        {
-            Equip_Item_Count[i].text = Sub_Count[i].ToString();
-        }
     }
 
     public void OnUpdate()
@@ -102,7 +95,7 @@ public class ItemDirector_Stage : MonoBehaviour
 
     public void OnDeleteItem(int i)
     {
-        if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleAtk")
+        if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Chance")
         {
             Sub_Count[0]++;
         }
@@ -110,7 +103,7 @@ public class ItemDirector_Stage : MonoBehaviour
         {
             Sub_Count[1]++;
         }
-        else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Chance")
+        else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleAtk")
         {
             Sub_Count[2]++;
         }
@@ -118,6 +111,7 @@ public class ItemDirector_Stage : MonoBehaviour
         {
             Sub_Count[3]++;
         }
+
         if (Equip_Max_Count > 0)
         {
             Equip_Max_Count--;
