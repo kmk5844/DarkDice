@@ -625,8 +625,9 @@ public class GameDirector : MonoBehaviour
     IEnumerator OnAD_Ani()
     {
         playerData.hp++;
-        
-        if(RoundNum == 10)
+        Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
+        Player_Def_Text.text = playerData.def.ToString();
+        if (RoundNum == 10)
         {
             RoundNum--;
         }

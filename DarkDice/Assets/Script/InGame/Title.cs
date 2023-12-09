@@ -35,7 +35,7 @@ public class Title : MonoBehaviour
 
     public string changeText(int num)
     {
-        return "<size=100><color=#f05650>Stage-" + (num + 1) + "</size></color>\n" + Data.stage_Data[num].stage_fullname; 
+        return "<size=120><color=#FFD966>Stage " + (num + 1) + "</size></color>\n" + Data.stage_Data[num].stage_fullname; 
     }
 
     public void PlayOnButton()

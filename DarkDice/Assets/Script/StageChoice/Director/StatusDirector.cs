@@ -29,7 +29,6 @@ public class StatusDirector : MonoBehaviour
     int Rest_Status;
     int Sum_atk;
     int Sum_def;
-    int Stat;
 
     void Start()
     {
@@ -41,12 +40,16 @@ public class StatusDirector : MonoBehaviour
 
     void Update()
     {
+        if (player.StatusFlag)
+        {
+            Rest_Status = player.status;
+        }
         Stat_Hp.text = player.hp.ToString();
         Stat_Atk.text =  player.atk.ToString();
         Stat_Def.text = player.def.ToString();
         Amout_Atk.text = "+" + Sum_atk;
         Amout_Def.text = "+" + Sum_def;
-        Rest_Status_Num.text = "" + Rest_Status;
+        Rest_Status_Num.text = Rest_Status.ToString();
 
         if (Rest_Status == 0)
         {

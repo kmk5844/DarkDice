@@ -109,8 +109,16 @@ public class StoreDirector : MonoBehaviour
     public void OnItemBuy(int i)
     {
         YesButton.onClick.RemoveAllListeners();
-        item[i].BuyItem();
-        player.TestMinusCoinData(item[i].pride);
+        if(i == 4)
+        {
+            player.BuyCoinData(500);
+            player.playerItemInit();
+        }
+        else
+        {
+            item[i].BuyItem();
+            player.BuyCoinData(item[i].pride);
+        }
         Buy_Window.SetActive(false);
         Dont_Click_Panel.SetActive(false);
     }
@@ -118,7 +126,7 @@ public class StoreDirector : MonoBehaviour
     {
         YesButton.onClick.RemoveAllListeners();
         weapon[i].BuyWeapon();
-        player.TestMinusCoinData(weapon[i].weapon_pride);
+        player.BuyCoinData(weapon[i].weapon_pride);
         Buy_Window.SetActive(false);
         Dont_Click_Panel.SetActive(false);
     }

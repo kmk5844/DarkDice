@@ -13,9 +13,22 @@ public class StageData : ScriptableObject
     private int curretstageNum;
     public int CurretStageNum { get { return curretstageNum; } }
 
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("stageNum"))
+        {
+            PlayerPrefs.SetInt("stageNum", 1);
+        }
+
+
+        stageNum = PlayerPrefs.GetInt("stageNum");
+        curretstageNum = 0;
+    }
+
     public void winStage()
     {
         stageNum++;
+        PlayerPrefs.SetInt("stageNum", stageNum);
     }
 
     public void ClickNum(int num)
@@ -27,5 +40,6 @@ public class StageData : ScriptableObject
     {
         stageNum = 1;
         curretstageNum = 0;
+        PlayerPrefs.SetInt("stageNum", 1);
     }
 }

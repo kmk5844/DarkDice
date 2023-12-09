@@ -30,11 +30,48 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private ItemData[] item;
     public ItemData[] Item { get { return item; } }
+
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("Player_Hp"))
+        {
+            PlayerPrefs.SetInt("Player_Hp", 2);
+        }
+        if (!PlayerPrefs.HasKey("Player_Atk"))
+        {
+            PlayerPrefs.SetInt("Player_Atk", 10);
+        }
+        if (!PlayerPrefs.HasKey("Player_Def"))
+        {
+            PlayerPrefs.SetInt("Player_Def", 10);
+        }
+        if (!PlayerPrefs.HasKey("Player_Weapon"))
+        {
+            PlayerPrefs.SetInt("Player_Weapon", 0);
+        }
+        if (!PlayerPrefs.HasKey("Player_Coin"))
+        {
+            PlayerPrefs.SetInt("Player_Coin", 0);
+        }
+        if (!PlayerPrefs.HasKey("Player_Status"))
+        {
+            PlayerPrefs.SetInt("Player_Status", 0);
+        }
+        hp = PlayerPrefs.GetInt("Player_Hp");
+        atk = PlayerPrefs.GetInt("Player_Atk");
+        def = PlayerPrefs.GetInt("Player_Def");
+        coin = PlayerPrefs.GetInt("Player_Coin");
+        status = PlayerPrefs.GetInt("Player_Status");
+    }
+
     public void PlusStatus(int C_atk, int C_def, int num)
     {
         atk += C_atk;
         def += C_def;
         status -= num;
+        PlayerPrefs.SetInt("Player_Atk", atk);
+        PlayerPrefs.SetInt("Player_Atk", def);
+        PlayerPrefs.SetInt("Player_Atk", status);
     }
 
     public void ChangeWeaponATK(WeaponData C_Weapon)
@@ -45,48 +82,71 @@ public class PlayerData : ScriptableObject
     public void testPlusCoin()
     {
         coin += 100;
+        PlayerPrefs.SetInt("Player_Coin", coin);
     }
 
-    public void testMinusCoin(int buyCoin)
+    public void BuyCoin(int buyCoin)
     {
         coin -= buyCoin;
+        PlayerPrefs.SetInt("Player_Coin", coin);
     }
 
     public void RewardCoin(int coinNum)
     {
         coin += coinNum;
+        PlayerPrefs.SetInt("Player_Coin", coin);
     }
 
     public void RewardStatus(int num)
     {
         status += num;
+        PlayerPrefs.SetInt("Player_Status", status);
     }
 
     public void RewardHp(int hpNum)
     {
         hp += hpNum;
+        PlayerPrefs.SetInt("Player_Hp", (int)hp);
     }
 
     public void ApplyStatus(int num)
     {
         status = num;
+        PlayerPrefs.SetInt("Player_Status", status);
     }
 
     public void EquipItem_Data(ItemData itemData, int num)
     {
         item[num] = itemData;
     }
+
     public void DeleteItem_Data(ItemData itemData, int ButtonNum)
     {
         item[ButtonNum] = itemData;
     }
 
-    public void Init()
+    public void Init() //개발자 전용 초기화
     {
         hp = 2;
         atk = 10;
         def = 10;
         coin = 0;
         status = 0;
+        PlayerPrefs.SetInt("Player_Hp", (int)hp);
+        PlayerPrefs.SetInt("Player_Atk", atk);
+        PlayerPrefs.SetInt("Player_Def", def);
+        PlayerPrefs.SetInt("Player_Coin", coin);
+        PlayerPrefs.SetInt("Player_Status", status);
+    }
+
+    public void ItemInit() //플레이어 전용 초기화
+    {
+        status = (atk - 10) + (def - 10);
+        Debug.Log(status);
+        atk = 10;
+        def = 10;
+        PlayerPrefs.SetInt("Player_Status", status);
+        PlayerPrefs.SetInt("Player_Atk", atk);
+        PlayerPrefs.SetInt("Player_Def", def);
     }
 }

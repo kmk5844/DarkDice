@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681c3f47bc7bca14390a9a6e2661364e, type: 3}
   m_Name: Test_Weapon3
   m_EditorClassIdentifier: 
-  weaponName: Test_Weapon3
+  weaponName: Weapon3
   weaponAtk: 6
   weaponPride: 100
   storeFlag: 0

@@ -14,7 +14,7 @@ public class Player_Scritable : MonoBehaviour
     public int status;
     public ItemData[] item;
 
-    bool StatusFlag = false;
+    public bool StatusFlag = false;
 
     private void Awake()
     {
@@ -58,9 +58,9 @@ public class Player_Scritable : MonoBehaviour
         playerData.testPlusCoin();
     }
 
-    public void TestMinusCoinData(int buyCoin)
+    public void BuyCoinData(int buyCoin)
     {
-        playerData.testMinusCoin(buyCoin);
+        playerData.BuyCoin(buyCoin);
     }
 
     public void plusCoin(int coin)
@@ -102,5 +102,11 @@ public class Player_Scritable : MonoBehaviour
     public void playerInit()
     {
         playerData.Init();
+    }
+
+    public void playerItemInit()
+    {
+        playerData.ItemInit();
+        StatusFlag = true;
     }
 }

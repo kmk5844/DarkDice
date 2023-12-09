@@ -22,18 +22,32 @@ public class ItemData : ScriptableObject
     private Sprite itemImage;
     public Sprite ItemImage { get { return itemImage; } }
 
+    string str;
+
+    private void Awake()
+    {
+        str = itemName + "_count";
+        if (!PlayerPrefs.HasKey(str)){
+            PlayerPrefs.SetInt(str, 0);
+        }
+        itemCount = PlayerPrefs.GetInt(str);
+    }
+
     public void Buy()
     {
         itemCount++;
+        PlayerPrefs.SetInt(str, itemCount);
     }
 
     public void Use()
     {
         itemCount--;
+        PlayerPrefs.SetInt(str, itemCount);
     }
 
     public void Init()
     {
         itemCount = 0;
+        PlayerPrefs.SetInt(str, itemCount);
     }
 }
