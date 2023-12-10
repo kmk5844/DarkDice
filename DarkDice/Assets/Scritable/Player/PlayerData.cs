@@ -35,27 +35,27 @@ public class PlayerData : ScriptableObject
     {
         if (!PlayerPrefs.HasKey("Player_Hp"))
         {
-            PlayerPrefs.SetInt("Player_Hp", 2);
+            PlayerPrefs.SetInt("Player_Hp", 2); // 기본설정
         }
         if (!PlayerPrefs.HasKey("Player_Atk"))
         {
-            PlayerPrefs.SetInt("Player_Atk", 10);
+            PlayerPrefs.SetInt("Player_Atk", 10); // 기본 설정
         }
         if (!PlayerPrefs.HasKey("Player_Def"))
         {
-            PlayerPrefs.SetInt("Player_Def", 10);
+            PlayerPrefs.SetInt("Player_Def", 10); // 기본 설정
         }
         if (!PlayerPrefs.HasKey("Player_Weapon"))
         {
-            PlayerPrefs.SetInt("Player_Weapon", 0);
+            PlayerPrefs.SetInt("Player_Weapon", 0); // 기본 설정
         }
         if (!PlayerPrefs.HasKey("Player_Coin"))
         {
-            PlayerPrefs.SetInt("Player_Coin", 0);
+            PlayerPrefs.SetInt("Player_Coin", 0); // 기본 설정
         }
         if (!PlayerPrefs.HasKey("Player_Status"))
         {
-            PlayerPrefs.SetInt("Player_Status", 0);
+            PlayerPrefs.SetInt("Player_Status", 0); // 기본 설정
         }
         hp = PlayerPrefs.GetInt("Player_Hp");
         atk = PlayerPrefs.GetInt("Player_Atk");
@@ -74,15 +74,9 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.SetInt("Player_Atk", status);
     }
 
-    public void ChangeWeaponATK(WeaponData C_Weapon)
+    public void ChangeWeapon(WeaponData C_Weapon)
     {
         weapon = C_Weapon;
-    }
-
-    public void testPlusCoin()
-    {
-        coin += 100;
-        PlayerPrefs.SetInt("Player_Coin", coin);
     }
 
     public void BuyCoin(int buyCoin)
@@ -115,14 +109,33 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.SetInt("Player_Status", status);
     }
 
-    public void EquipItem_Data(ItemData itemData, int num)
+    public void EquipItem(ItemData itemData, int num)
     {
         item[num] = itemData;
     }
 
-    public void DeleteItem_Data(ItemData itemData, int ButtonNum)
+    public void DeleteItem(ItemData itemData, int ButtonNum)
     {
         item[ButtonNum] = itemData;
+    }
+
+    
+
+    public void ItemUse_Init() //플레이어 전용 초기화
+    {
+        status = (atk - 10) + (def - 10);
+        atk = 10;
+        def = 10;
+        PlayerPrefs.SetInt("Player_Status", status);
+        PlayerPrefs.SetInt("Player_Atk", atk);
+        PlayerPrefs.SetInt("Player_Def", def);
+    }
+
+    //개발자 전용
+    public void testPlusCoin()
+    {
+        coin += 100;
+        PlayerPrefs.SetInt("Player_Coin", coin);
     }
 
     public void Init() //개발자 전용 초기화
@@ -137,15 +150,5 @@ public class PlayerData : ScriptableObject
         PlayerPrefs.SetInt("Player_Def", def);
         PlayerPrefs.SetInt("Player_Coin", coin);
         PlayerPrefs.SetInt("Player_Status", status);
-    }
-
-    public void ItemInit() //플레이어 전용 초기화
-    {
-        status = (atk - 10) + (def - 10);
-        atk = 10;
-        def = 10;
-        PlayerPrefs.SetInt("Player_Status", status);
-        PlayerPrefs.SetInt("Player_Atk", atk);
-        PlayerPrefs.SetInt("Player_Def", def);
     }
 }

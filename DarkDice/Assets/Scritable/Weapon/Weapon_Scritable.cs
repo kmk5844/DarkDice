@@ -27,9 +27,8 @@ public class Weapon_Scritable : MonoBehaviour
         weaponimage = weaponData.WeaponImage;
     }
 
-    public void BuyWeapon()
+    public void BuyWeapon_Weapon()
     {
         weaponData.ChangeStorFlag();
     }
-
 }

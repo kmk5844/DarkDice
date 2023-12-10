@@ -22,18 +22,18 @@ public class Stage_Scripter : MonoBehaviour
         curretStageNum = stageData.CurretStageNum;
     }
 
-    public void  fightClickButton(int button_NUM)
-    {
-        stageData.ClickNum(button_NUM);
-    }
-    public void Win()
+    public void WinStage_Stage()
     {
         if (curretStageNum == stageNum)
         {
-            stageData.winStage();
+            stageData.WinStage();
         }
     }
-    public void stageInit()
+    public void ClickNum_Stage(int button_NUM)
+    {
+        stageData.ClickNum(button_NUM);
+    }
+    public void Init_Stage()
     {
         stageData.init();
     }

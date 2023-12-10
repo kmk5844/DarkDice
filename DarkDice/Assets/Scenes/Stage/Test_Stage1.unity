@@ -31701,6 +31701,7 @@ MonoBehaviour:
   coin: 0
   status: 0
   item: []
+  StatusFlag: 0
 --- !u!114 &894304833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37527,7 +37528,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1962942270}
         m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
-        m_MethodName: ItemToggle
+        m_MethodName: After_Useing_ItemToggle
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1587446257}
@@ -37539,7 +37540,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1962942270}
         m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
-        m_MethodName: ItemToggle
+        m_MethodName: After_Useing_ItemToggle
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1692357440}
@@ -37551,7 +37552,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1962942270}
         m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
-        m_MethodName: ItemToggle
+        m_MethodName: After_Useing_ItemToggle
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 405974485}
@@ -65014,8 +65015,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae1b841ca0cc314f8427fd9ee8a27d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: 
   gameTurn: 0
+  ItemObject_Data:
+  - {fileID: 730730525}
+  - {fileID: 1695442910}
+  - {fileID: 153264880}
+  - {fileID: 1525425669}
+  stage_Data: {fileID: 477713922}
+  Data: {fileID: 11400000, guid: 673461363ce6d624bbc59aeb4f05707f, type: 2}
+  Dice_Director: {fileID: 1420889168}
+  Monster_Director: {fileID: 250986470}
+  ItemName: 
+  ItemFlag: 0
+  Item_Toggle:
+  - {fileID: 1587446257}
+  - {fileID: 1692357440}
+  - {fileID: 405974485}
+  Item_BackGround:
+  - {fileID: 4228331}
+  - {fileID: 1469283591}
+  - {fileID: 229100288}
   RoundText: {fileID: 2104687922}
   Player_Atk_Text: {fileID: 2082734182}
   Player_Def_Text: {fileID: 583653257}
@@ -65029,31 +65048,13 @@ MonoBehaviour:
   PlayerObject: {fileID: 894304828}
   Hurt_Image: {fileID: 1984671486}
   mosterGroup: {fileID: 117565144}
-  ItemFlag: 0
-  Item_Toggle:
-  - {fileID: 1587446257}
-  - {fileID: 1692357440}
-  - {fileID: 405974485}
-  Item_BackGround:
-  - {fileID: 4228331}
-  - {fileID: 1469283591}
-  - {fileID: 229100288}
   AtkButton: {fileID: 1215196247}
   DiceButton: {fileID: 779411691}
-  Dice_Director: {fileID: 1420889168}
-  Monster_Director: {fileID: 250986470}
-  ItemObject_Data:
-  - {fileID: 730730525}
-  - {fileID: 1695442910}
-  - {fileID: 153264880}
-  - {fileID: 1525425669}
-  stage_Data: {fileID: 477713922}
-  Data: {fileID: 11400000, guid: 673461363ce6d624bbc59aeb4f05707f, type: 2}
+  ItemGroup_Button: {fileID: 1360618006}
   reward_Coin: {fileID: 606476291}
   reward_Image:
   - {fileID: 6326934830606720347}
   - {fileID: 2525860887967827763}
-  ItemGroup_Button: {fileID: 1360618006}
   Item_Group: {fileID: 1849535132}
   Hit_Part:
   - {fileID: 486335810}

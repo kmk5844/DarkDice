@@ -42,71 +42,73 @@ public class Player_Scritable : MonoBehaviour
         item = playerData.Item;
     }
 
-    public void ChangePlayerData(int C_atk, int C_def, int num)
+    public void PlusStatus_Player(int C_atk, int C_def, int num)
     {
         playerData.PlusStatus(C_atk, C_def, num);
         StatusFlag = true;
     }
 
-    public void ChangeWeapon(WeaponData C_Weapon)
+    public void ChangeWeapon_Player(WeaponData C_Weapon)
     {
-        playerData.ChangeWeaponATK(C_Weapon);
+        playerData.ChangeWeapon(C_Weapon);
     }
 
-    public void TestPlusCoinData()
-    {
-        playerData.testPlusCoin();
-    }
-
-    public void BuyCoinData(int buyCoin)
+    public void BuyCoin_Player(int buyCoin)
     {
         playerData.BuyCoin(buyCoin);
     }
 
-    public void plusCoin(int coin)
+    public void RewardCoin_Player(int coin)
     {
         playerData.RewardCoin(coin);
     }
 
-    public void plusStatus(int num)
+    public void RewardStatus_Player(int num)
     {
         playerData.RewardStatus(num);
     }
 
-    public void plusHp(int hp)
+    public void RewardHp_Player(int hp)
     {
         playerData.RewardHp(hp);
     }
 
-    public void applyStat(int stat)
+    public void ApplyStatus_Player(int stat)
     {
         playerData.ApplyStatus(stat);
     }
 
-    public void EquipItem(ItemData clickitem)
+    public void EquipItem_Player(ItemData clickitem)
     {
         for (int i = 0; i < item.Length; i++)
         {
             if (item[i].name == "Item_Default") //스크립터블 아이템 "파일" 이름여야함
             {
-                playerData.EquipItem_Data(clickitem, i);
+                playerData.EquipItem(clickitem, i);
                 break;
             }
         }
     }
-    public void DeleteItem(ItemData default_item, int ButtonNum)
+    public void DeleteItem_Player(ItemData default_item, int ButtonNum)
     {
-        playerData.DeleteItem_Data(default_item, ButtonNum);
+        playerData.DeleteItem(default_item, ButtonNum);
+    }
+
+
+    public void ItemUse_Init_Player()
+    {
+        playerData.ItemUse_Init();
+        StatusFlag = true;
+    }
+
+    // 개발자 전용
+    public void TestPlusCoinData()
+    {
+        playerData.testPlusCoin();
     }
 
     public void playerInit()
     {
         playerData.Init();
-    }
-
-    public void playerItemInit()
-    {
-        playerData.ItemInit();
-        StatusFlag = true;
     }
 }

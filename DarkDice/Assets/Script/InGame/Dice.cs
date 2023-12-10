@@ -19,9 +19,9 @@ public class Dice : MonoBehaviour
     public int atkSum;
     public int defSum;
 
-    public Button Play_Button;
-    public Button Dice_Button;
-    public Button Attack_Button;
+    public Button Play_Button; // '전투 개시' 버튼
+    public Button Dice_Button; // '굴리기' 및 '멈추기' 버튼
+    public Button Attack_Button; //' '공격' 버튼
     public bool rollingFlag;
 
     private void Start()
@@ -37,6 +37,7 @@ public class Dice : MonoBehaviour
     {
         int rand1 = Random.Range(0, 6);
         int rand2 = Random.Range(0, 6);
+
         if (rollingFlag == false)
         {
             delay += 0.05f;
@@ -65,6 +66,7 @@ public class Dice : MonoBehaviour
         Dice_Button.interactable = true;
         Play_Button.gameObject.SetActive(false);
     }
+
     public void OnDiceButton()
     {
         if (!rollingFlag)

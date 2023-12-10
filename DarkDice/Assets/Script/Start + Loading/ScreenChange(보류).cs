@@ -9,10 +9,10 @@ public class ScreenChange : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+/*        if (Input.GetMouseButton(0))
         {
             LoadNextLevel();
-        }
+        }*/
     }
 
     public void LoadNextLevel()

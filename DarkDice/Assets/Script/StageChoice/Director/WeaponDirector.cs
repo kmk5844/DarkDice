@@ -104,7 +104,7 @@ public class WeaponDirector : MonoBehaviour
             PlayerPrefs.SetInt("Player_Weapon", 0);
         }
 
-        playerData.ChangeWeapon(equipWeapon);
+        playerData.ChangeWeapon_Player(equipWeapon);
         equipWeaponImage.sprite = equipWeapon.WeaponImage;
         Status_Weapon_Atk_Text.text = "+ 무기 공격력 : " + equipWeapon.WeaponAtk.ToString();
     }

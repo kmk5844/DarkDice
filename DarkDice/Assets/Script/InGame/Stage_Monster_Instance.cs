@@ -37,7 +37,7 @@ public class Stage_Monster_Instance : MonoBehaviour
         }
     }
 
-    public void FindEnemy(int stage)
+    public void FindEnemy(int stage) // 데이터 테이블에 있는 몬스터 정보를 가져오기 위해서
     {
         string str = "";
         for (int i = 0; i < Data.stage_Data[stage].enemy_count; i++)
@@ -60,12 +60,6 @@ public class Stage_Monster_Instance : MonoBehaviour
             obj.SetActive(false);
         }
     }
-
-    public string enemy_unit_num(int i)
-    {
-        return "enemy_unit" + i + 1;
-    }
-
     public int Enemy(string str)
     {
         int index = Data.monster_Data.FindIndex(x => x.name.Equals(str));

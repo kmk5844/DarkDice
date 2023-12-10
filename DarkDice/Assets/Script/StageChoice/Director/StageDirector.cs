@@ -185,12 +185,12 @@ public class StageDirector : MonoBehaviour {
     public void OnClickFight()
     {
         SceneManager.LoadScene("Test_Stage" + stageNum);
-        stageData.fightClickButton(stageNum);
+        stageData.ClickNum_Stage(stageNum);
     }
 
     public void OnInitButton()
     {
-        stageData.stageInit();
+        stageData.Init_Stage();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //플레이어 초기화도 되어야 함.
     }
 }

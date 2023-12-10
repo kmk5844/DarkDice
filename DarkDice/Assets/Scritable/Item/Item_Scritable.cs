@@ -24,17 +24,17 @@ public class Item_Scritable : MonoBehaviour
         itemcount = itemData.ItemCount;
     }
 
-    public void BuyItem()
+    public void Buy_Item()
     {
         itemData.Buy();
     }
 
-    public void UseItem()
+    public void Use_Item()
     {
         itemData.Use();
     }
 
-    public void ItemInit()
+    public void Init_Item()
     {
         itemData.Init();
     }

@@ -18,20 +18,20 @@ public class SettingDirector : MonoBehaviour
         }
         catch
         {
-            print("게임 매니저가 없을 뿐이야~!");
+            Debug.Log("게임 매니저가 없을 뿐이야~!");
         }
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape)) {
+        if (Input.GetKey(KeyCode.Escape)) { // 게임 종료를 하고 싶을 경우에
             ExitWindow.SetActive(true);
         }
     }
 
     public void OnSetting()
     {
-        if (!SettingUI.activeSelf)
+        if (!SettingUI.activeSelf) // 설정 창을 클릭했을 경우
         {
             SettingUI.SetActive(true);
             Time.timeScale = 0;
@@ -43,7 +43,7 @@ public class SettingDirector : MonoBehaviour
         }
     }
 
-    public void OnStoryBUtton()
+    public void OnStoryBUtton() // 스토리 클릭 했을 경우
     {
         try
         {
@@ -55,7 +55,7 @@ public class SettingDirector : MonoBehaviour
         }
     }
 
-    public void OnExitButton()
+    public void OnExitButton() // 나가기 버튼 클릭했을 경우
     {
         Application.Quit();
     }

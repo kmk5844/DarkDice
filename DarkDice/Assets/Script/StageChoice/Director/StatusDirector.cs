@@ -131,14 +131,16 @@ public class StatusDirector : MonoBehaviour
     }
     public void OnApplyButton()
     {
-        player.ChangePlayerData(Sum_atk, Sum_def, Rest_Status);
-        player.applyStat(Rest_Status);
+        player.PlusStatus_Player(Sum_atk, Sum_def, Rest_Status);
+        player.ApplyStatus_Player(Rest_Status);
         Sum_atk = 0;
         Sum_def = 0;
     }
+
+    //개발자 전용 스텟 추가
     public void OntestPlusButton()
     {
-        player.plusStatus(4);
+        player.RewardStatus_Player(4);
         Rest_Status = player.status;
     }
 }

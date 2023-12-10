@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R9PW30HTHXD",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 18991,
+        "processId": 719,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -120,6 +120,18 @@
             "deviceId": "R9PW30HTHXD",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 18991,
+            "exited": false
+        },
+        {
+            "deviceId": "R9PW30HTHXD",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 31763,
+            "exited": false
+        },
+        {
+            "deviceId": "R9PW30HTHXD",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 719,
             "exited": false
         }
     ],

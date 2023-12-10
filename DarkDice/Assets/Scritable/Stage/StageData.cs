@@ -20,12 +20,11 @@ public class StageData : ScriptableObject
             PlayerPrefs.SetInt("stageNum", 1);
         }
 
-
         stageNum = PlayerPrefs.GetInt("stageNum");
         curretstageNum = 0;
     }
 
-    public void winStage()
+    public void WinStage()
     {
         stageNum++;
         PlayerPrefs.SetInt("stageNum", stageNum);

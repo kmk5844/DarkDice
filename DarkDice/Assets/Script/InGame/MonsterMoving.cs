@@ -1,8 +1,4 @@
 using Spine.Unity;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Threading;
 using UnityEngine;
 
 public class MonsterMoving : MonoBehaviour
@@ -32,7 +28,7 @@ public class MonsterMoving : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (GameDirector.GetComponent<GameDirector>().gameTurn == GameTurn.BeforeFight)
+        if (GameDirector.GetComponent<GameDirector>().gameTurn == GameTurn.BeforeFight) // 몬스터 조우 전
         {
             if (Monster_DieCount < monster.Length)
             {
@@ -56,7 +52,7 @@ public class MonsterMoving : MonoBehaviour
                         monster[Monster_DieCount - 1].transform.Translate(-12.0f * Time.deltaTime, 0, 0);
                     }
                 }
-                else
+                else // 몬스터 조우 후,
                 {
                     if (monster[Monster_DieCount].GetComponent<SkeletonAnimation>().AnimationName != "Idle")
                     {
@@ -73,10 +69,10 @@ public class MonsterMoving : MonoBehaviour
                         monster[Monster_DieCount - 1].SetActive(false);
                     }
                     Play_UI.SetActive(true);
-                    GameDirector.GetComponent<GameDirector>().gameTurn = GameTurn.Fighting;
+                    GameDirector.GetComponent<GameDirector>().gameTurn = GameTurn.Fighting; // 싸움 준비턴으로 변경
                 }
             }
-            else if (Monster_DieCount == monster.Length)
+            else if (Monster_DieCount == monster.Length) // 만약 몬스터가 다 죽었다면
             {
                 if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                 {
@@ -86,7 +82,7 @@ public class MonsterMoving : MonoBehaviour
                 if (monster[Monster_DieCount - 1].transform.position.x - Player.transform.position.x >= -11.0f)
                 {
                     Player.transform.Translate(10.0f * Time.deltaTime, 0, 0);
-                }
+                } // 플레이어가 지나가는 애니메이션
             }
         }
     }

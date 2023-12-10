@@ -47,4 +47,6 @@ public class Title : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    // 스테이지 입장 시, 스테이지 정보를 불러옴.
 }

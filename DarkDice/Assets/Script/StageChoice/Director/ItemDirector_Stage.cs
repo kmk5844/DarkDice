@@ -37,7 +37,7 @@ public class ItemDirector_Stage : MonoBehaviour
         
         for (int i = 0; i < ItemEquip.Length; i++)
         {
-            playerData.DeleteItem(default_item, i); // 씬으로 돌아갈때 필요, 남아있으면 안됨.
+            playerData.DeleteItem_Player(default_item, i); // 씬으로 돌아갈때 필요, 남아있으면 안됨.
             ItemEquip[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
@@ -88,7 +88,7 @@ public class ItemDirector_Stage : MonoBehaviour
     }
     public void OnEquipItem(int i)
     {
-        playerData.EquipItem(itemData_Object[i].itemData);
+        playerData.EquipItem_Player(itemData_Object[i].itemData);
         Equip_Max_Count++;
         Sub_Count[i]--;
     }
@@ -117,6 +117,6 @@ public class ItemDirector_Stage : MonoBehaviour
             Equip_Max_Count--;
         }
 
-        playerData.DeleteItem(default_item, i);
+        playerData.DeleteItem_Player(default_item, i);
     }
 }

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
 public class InGame_Information : MonoBehaviour
 {
+    //체력 관련된 텍스트 관리하는 스크립트
     public GameObject Player;
     Player_Scritable playerData;
     TextMeshPro playerHP;
