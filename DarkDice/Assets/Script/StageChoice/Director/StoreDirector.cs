@@ -37,7 +37,6 @@ public class StoreDirector : MonoBehaviour
         item = new Item_Scritable[ItemObject_Data.Length];
         weapon = new Weapon_Scritable[WeaponObject_Data.Length];
         YesButton = Buy_Window.transform.GetChild(0).GetComponent<Button>();
-
         NoButton = Buy_Window.transform.GetChild(1).GetComponent<Button>();
         NoButton.onClick.AddListener(() => Buy_Window.SetActive(false));
         NoButton.onClick.AddListener(() => Dont_Click_Panel.SetActive(false));

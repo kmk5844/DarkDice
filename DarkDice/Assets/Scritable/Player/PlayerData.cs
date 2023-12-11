@@ -70,8 +70,8 @@ public class PlayerData : ScriptableObject
         def += C_def;
         status -= num;
         PlayerPrefs.SetInt("Player_Atk", atk);
-        PlayerPrefs.SetInt("Player_Atk", def);
-        PlayerPrefs.SetInt("Player_Atk", status);
+        PlayerPrefs.SetInt("Player_Def", def);
+        PlayerPrefs.SetInt("Player_Status", status);
     }
 
     public void ChangeWeapon(WeaponData C_Weapon)
