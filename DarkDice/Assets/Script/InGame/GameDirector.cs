@@ -471,15 +471,15 @@ public class GameDirector : MonoBehaviour
             if (AttakcRand == 0)
             {
                 Hit_Part[0].SetActive(true);
-                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
                 SFX_Sound.playerAttack_SFX(0);
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
                 Hit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
                 Hit_Part[1].SetActive(true);
-                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
                 SFX_Sound.playerAttack_SFX(1);
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
                 Hit_Part[1].SetActive(false);
             }
             Hit_Part[2].SetActive(false);
@@ -541,6 +541,7 @@ public class GameDirector : MonoBehaviour
         }
         else if(defSum == monsterData.atk) { // 서로 맞음
             monsterAni.state.SetAnimation(0, "Attack", false);
+            SFX_Sound.playerAttack_SFX(0);
             SFX_Sound.MonsterAttack_SFX(monster[MonsterCount].name);
             Hit_Part[2].SetActive(true);
             Hurt_Image.SetActive(true);

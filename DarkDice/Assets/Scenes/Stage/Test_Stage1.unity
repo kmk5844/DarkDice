@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 250986472}
   - component: {fileID: 250986473}
   - component: {fileID: 250986474}
+  - component: {fileID: 250986475}
   m_Layer: 0
   m_Name: MonsterDirector
   m_TagString: Untagged
@@ -1088,6 +1089,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterGroup: {fileID: 117565144}
   Data: {fileID: 11400000, guid: 673461363ce6d624bbc59aeb4f05707f, type: 2}
+--- !u!114 &250986475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250986470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c683339bd4ddc6549ada8a36d9f652ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: {fileID: 1067788050}
+  test2: {fileID: 772402517}
 --- !u!1 &299208770
 GameObject:
   m_ObjectHideFlags: 0
@@ -26805,7 +26820,7 @@ AudioSource:
   m_GameObject: {fileID: 772402517}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -5902178575173002101, guid: eb57f343d789b254183cc5aa3e2fec7a, type: 2}
+  OutputAudioMixerGroup: {fileID: -914256431206618989, guid: eb57f343d789b254183cc5aa3e2fec7a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -32719,7 +32734,7 @@ AudioSource:
   m_GameObject: {fileID: 1067788050}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3582836967023598451, guid: eb57f343d789b254183cc5aa3e2fec7a, type: 2}
+  OutputAudioMixerGroup: {fileID: -632815793682677520, guid: eb57f343d789b254183cc5aa3e2fec7a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

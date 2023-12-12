@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   playerName: Test_Player
-  hp: 9999
-  atk: 7
+  hp: 99
+  atk: 12
   weapon: {fileID: 11400000, guid: a688a841fc3ca2c4db1b6415a4e1a875, type: 2}
-  def: 7
-  coin: 375
-  status: 7
+  def: 9
+  coin: 580
+  status: 12
   item:
   - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}
   - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}

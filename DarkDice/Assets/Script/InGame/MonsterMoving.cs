@@ -14,9 +14,12 @@ public class MonsterMoving : MonoBehaviour
     int monsterGroup_childCount;
     int Monster_DieCount;
 
+    InGame_Sound test_SFX;
+
     // Start is called before the first frame update
     void Start()
     {
+        test_SFX = GetComponent<InGame_Sound>();
         Monster_DieCount = 0;
         monsterGroup_childCount = monsterGroup.childCount;
         monster = new GameObject[monsterGroup_childCount];
@@ -43,6 +46,7 @@ public class MonsterMoving : MonoBehaviour
 
                     if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                     {
+                        test_SFX.PlayerWalk_SFX(0);
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
                     }
 
@@ -61,6 +65,7 @@ public class MonsterMoving : MonoBehaviour
 
                     if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Idle")
                     {
+                        test_SFX.PlayerWalk_SFX(1);
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Idle", true);
                     }
 
@@ -76,13 +81,18 @@ public class MonsterMoving : MonoBehaviour
             {
                 if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                 {
+                    test_SFX.PlayerWalk_SFX(0);
                     Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
                 }
 
                 if (monster[Monster_DieCount - 1].transform.position.x - Player.transform.position.x >= -11.0f)
                 {
                     Player.transform.Translate(10.0f * Time.deltaTime, 0, 0);
-                } // 플레이어가 지나가는 애니메이션
+                }
+                else
+                { // 플레이어가 지나가는 애니메이션
+                    test_SFX.PlayerWalk_SFX(1);
+                }
             }
         }
     }
