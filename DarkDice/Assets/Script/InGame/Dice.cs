@@ -8,6 +8,10 @@ public class Dice : MonoBehaviour
 {
     [SerializeField]
     public float delay;
+    public GameObject test;
+    AudioSource audiotest;
+    AudioClip dice_roll_SFX;
+    AudioClip dice_end_SFX;
 
     public Sprite PlaySprite;
     public Sprite PauseSprite;
@@ -26,6 +30,9 @@ public class Dice : MonoBehaviour
 
     private void Start()
     {
+        audiotest = test.GetComponent<AudioSource>();
+        dice_roll_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_roll_loop_new");
+        dice_end_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_random_new_new");
         rollingFlag = false;
         delay = 0.01f;
         atkSum = 0;
@@ -40,7 +47,7 @@ public class Dice : MonoBehaviour
 
         if (rollingFlag == false)
         {
-            delay += 0.05f;
+            delay += 0.059f;
 
             if (delay > 0.56f)
             {
@@ -49,6 +56,7 @@ public class Dice : MonoBehaviour
             }
         }
 
+        
         image1.sprite = AtkPocket[rand1];
         image2.sprite = DefPocket[rand2];
         yield return new WaitForSeconds(delay);
@@ -73,12 +81,22 @@ public class Dice : MonoBehaviour
         {
             rollingFlag = true;
             delay = 0.01f;
+
+            audiotest.loop = true;
+            audiotest.clip = dice_roll_SFX;
+            audiotest.Play();
+
             StartMethod();
             Dice_Button.GetComponent<Image>().sprite = PauseSprite;
         }
         else
         {
             rollingFlag = false;
+
+            audiotest.loop = false;
+            audiotest.clip = dice_end_SFX;
+            audiotest.Play();
+
             Dice_Button.GetComponent<Image>().sprite = PlaySprite;
             Dice_Button.interactable = false;
         }

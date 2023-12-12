@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab559fa1f16bf04c8bb52445f3765b7, type: 3}
   m_Name: Stage Data
   m_EditorClassIdentifier: 
-  stageNum: 2
-  curretstageNum: 2
+  stageNum: 5
+  curretstageNum: 0

@@ -8,6 +8,9 @@ using Spine.Unity;
 
 public class GameDirector : MonoBehaviour
 {
+    //테스트 전용 오디오 스크립트
+    InGame_Sound SFX_Sound;
+
     public GameTurn gameTurn;
     Player_Scritable playerData; // 플레이어 정보 데이터를 불러온다.
     MonsterData monsterData;
@@ -77,6 +80,8 @@ public class GameDirector : MonoBehaviour
     public GameObject[] ItemChoice_Part;
     void Start()
     {
+        SFX_Sound = GetComponent<InGame_Sound>();
+
         ItemName = "";
         RoundNum = 0;
         DiceNum = 0;
@@ -206,6 +211,7 @@ public class GameDirector : MonoBehaviour
             if (playerAni.AnimationName != "Run") 
             {
                 playerAni.state.SetAnimation(0, "Run", true);
+                SFX_Sound.PlayerWalk_SFX(0);
             }
 
             if (PlayerObject.GetComponent<Transform>().position.x - monster[MonsterCount].GetComponent<Transform>().position.x <= -3f)
@@ -217,6 +223,7 @@ public class GameDirector : MonoBehaviour
                 if (playerAni.AnimationName != "Idle")
                 {
                     playerAni.state.SetAnimation(0, "Idle", true);
+                    SFX_Sound.PlayerWalk_SFX(1);
                 }
                 gameTurn = GameTurn.PlayerTurn_Attack; // 게임턴이 플레이어가 공격할 때 변경
             }// 도착 했을 때, idle로 변경
@@ -230,6 +237,7 @@ public class GameDirector : MonoBehaviour
             if (playerAni.AnimationName != "Run")
             {
                 playerAni.state.SetAnimation(0, "Run", true);
+                SFX_Sound.PlayerWalk_SFX(0);
             }
 
             if (PlayerObject.GetComponent<Transform>().position.x - playerPosition.x >= 0)
@@ -244,6 +252,7 @@ public class GameDirector : MonoBehaviour
                 if (playerAni.AnimationName != "Idle")
                 {
                     playerAni.state.SetAnimation(0, "Idle", true);
+                    SFX_Sound.PlayerWalk_SFX(1);
                 }
                 gameTurn = GameTurn.Waiting; // 게임턴이 일단 기다림
             }// 도착 했을 때, idle로 변경
@@ -326,6 +335,7 @@ public class GameDirector : MonoBehaviour
             if (item[i].item_name == ItemName)
             {
                 item[i].Use_Item();
+                SFX_Sound.playerBuff_SFX();
             }
         }
     }
@@ -432,19 +442,21 @@ public class GameDirector : MonoBehaviour
 
         yield return new WaitUntil(() => gameTurn == GameTurn.PlayerTurn_Attack);
 
-        int AttakcRand = Random.Range(0, 2);
+        int AttakcRand = Random.Range(0, 1);
 
         if (atksum > monsterData.def) // 공격 성공했을 때
         {
             if (AttakcRand == 0)
             {
                 Hit_Part[0].SetActive(true);
+                SFX_Sound.playerAttack_SFX(0);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
                 Hit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
                 Hit_Part[1].SetActive(true);
+                SFX_Sound.playerAttack_SFX(1);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
                 Hit_Part[1].SetActive(false);
             }
@@ -453,18 +465,21 @@ public class GameDirector : MonoBehaviour
         else if (atksum == monsterData.def) // 공격 서로 맞았을 때
         {
             Hit_Part[2].SetActive(true);
+            SFX_Sound.MonsterAttack_SFX(monster[MonsterCount].name);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Hurt_Image.SetActive(true);
             if (AttakcRand == 0)
             {
                 Hit_Part[0].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack1", false));
+                SFX_Sound.playerAttack_SFX(0);
                 Hit_Part[0].SetActive(false);
             }
             else if (AttakcRand == 1)
             {
                 Hit_Part[1].SetActive(true);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Attack2", false));
+                SFX_Sound.playerAttack_SFX(1);
                 Hit_Part[1].SetActive(false);
             }
             Hit_Part[2].SetActive(false);
@@ -474,6 +489,7 @@ public class GameDirector : MonoBehaviour
         else // 공격 실패할 때
         {
             monsterAni.state.SetAnimation(0, "Attack", false);
+            SFX_Sound.MonsterAttack_SFX(monster[MonsterCount].name);
             yield return new WaitForSeconds(0.4f);
             Hit_Part[4].SetActive(true);
             playerAni.state.SetAnimation(0, "Defence", false).TimeScale = 1.2f;
@@ -483,6 +499,7 @@ public class GameDirector : MonoBehaviour
 
         if (monsterData.hp <= 0) {  // 플레이어 턴에서 몬스터가 먼저 죽었을 때 -> 죽는 애니메이션
             monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+            SFX_Sound.MonsterDead_SFX(monster[MonsterCount].name);
             monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
         }
 
@@ -514,6 +531,7 @@ public class GameDirector : MonoBehaviour
         if(defSum < monsterData.atk) // 방어 실패
         {
             monsterAni.state.SetAnimation(0, "Attack", false);
+            SFX_Sound.MonsterAttack_SFX(monster[MonsterCount].name);
             Hit_Part[3].SetActive(true);
             yield return new WaitForSeconds(0.4f);
             Hurt_Image.SetActive(true);
@@ -523,6 +541,7 @@ public class GameDirector : MonoBehaviour
         }
         else if(defSum == monsterData.atk) { // 서로 맞음
             monsterAni.state.SetAnimation(0, "Attack", false);
+            SFX_Sound.MonsterAttack_SFX(monster[MonsterCount].name);
             Hit_Part[2].SetActive(true);
             Hurt_Image.SetActive(true);
             yield return new WaitForSeconds(0.1f);
@@ -534,6 +553,7 @@ public class GameDirector : MonoBehaviour
         else // 방어 성공
         {
             monsterAni.state.SetAnimation(0, "Attack", false);
+            SFX_Sound.MonsterAttack_SFX(monster[MonsterCount].name);
             yield return new WaitForSeconds(0.4f);
             Hit_Part[4].SetActive(true);
             playerAni.state.SetAnimation(0, "Defence", false).TimeScale = 1.2f;
@@ -550,11 +570,13 @@ public class GameDirector : MonoBehaviour
             if(monsterData.hp == 0)
             {
                 monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+                SFX_Sound.MonsterDead_SFX(monster[MonsterCount].name);
                 monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
             }
         }else if(monsterData.hp == 0) // 몬스터 체력이 0일경우
         {
             monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
+            SFX_Sound.MonsterDead_SFX(monster[MonsterCount].name);
             monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
             StartCoroutine(monsterDieDelay());
         }
@@ -571,6 +593,7 @@ public class GameDirector : MonoBehaviour
     IEnumerator playerDie() // 만약 플레이어가 죽었을 경우에, 윈도우 창을 뜨게 함.
     {
         playerAni.state.SetAnimation(0, "Death", false).TimeScale = 0.8f;
+        SFX_Sound.PlayerDead_SFX();
         yield return new WaitForSeconds(3f);
         Play_UI.SetActive(false);
         Lose_UI.SetActive(true);
@@ -626,6 +649,7 @@ public class GameDirector : MonoBehaviour
             PlayDice_UI.SetActive(false);
             StartCoroutine(monsterDieDelay());
         }
+        SFX_Sound.playerBuff_SFX();
         yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
         playerAni.state.SetAnimation(0, "Idle", true);
     }
