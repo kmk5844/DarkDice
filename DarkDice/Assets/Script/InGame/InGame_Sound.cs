@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class InGame_Sound : MonoBehaviour
 {
-    public GameObject test;
-    public GameObject test2;
-    AudioSource audiotest;
-    AudioSource audiotest2;
+    AudioSource Player_SFX;
+    AudioSource Monster_SFX;
     AudioClip PlayerAttack1;
     AudioClip PlayerAttack2;
+    AudioClip PlayerDraw;
     AudioClip PlayerBuff;
     AudioClip PlayerDead;
     AudioClip PlayerWalk;
@@ -23,13 +22,14 @@ public class InGame_Sound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audiotest = test.GetComponent<AudioSource>();
-        audiotest2 = test2.GetComponent<AudioSource>();
+        Player_SFX = GameObject.Find("Sfx_Player").GetComponent<AudioSource>();
+        Monster_SFX = GameObject.Find("Sfx_Monster").GetComponent<AudioSource>();
         PlayerAttack1 = Resources.Load<AudioClip>("Sound/SFX/player_Attack1_new");
         PlayerAttack2 = Resources.Load<AudioClip>("Sound/SFX/player_Attack2_new");
+        PlayerDraw = Resources.Load<AudioClip>("Sound/SFX/player_Attack1_draw");
         PlayerBuff = Resources.Load<AudioClip>("Sound/SFX/player_Buff");
         PlayerDead = Resources.Load<AudioClip>("Sound/SFX/player_dead");
-        PlayerWalk = Resources.Load<AudioClip>("Sound/SFX/player_walk_onestep_new");
+        PlayerWalk = Resources.Load<AudioClip>("Sound/SFX/player_walk_onestep_new_new");
         Monster_Skelleton_Attack = Resources.Load<AudioClip>("Sound/SFX/monster_skelleton_A");
         Monster_Skelleton_Dead = Resources.Load<AudioClip>("Sound/SFX/monster_skelleton_D");
         Monster_Ston_Attack = Resources.Load<AudioClip>("Sound/SFX/monster_stone_A");
@@ -44,36 +44,39 @@ public class InGame_Sound : MonoBehaviour
     {
         if (i == 0)
         {
-            audiotest.PlayOneShot(PlayerAttack1);
+            Player_SFX.PlayOneShot(PlayerAttack1);
         }
         else if(i == 1)
         {
-            audiotest.PlayOneShot(PlayerAttack2);
+            Player_SFX.PlayOneShot(PlayerAttack2);
+        }else if(i == 2)
+        {
+            Player_SFX.PlayOneShot(PlayerDraw);
         }
     }
 
     public void playerBuff_SFX()
     {
-        audiotest.PlayOneShot(PlayerBuff);
+        Player_SFX.PlayOneShot(PlayerBuff);
     }
 
     public void PlayerDead_SFX()
     {
-        audiotest.PlayOneShot(PlayerDead);
+        Player_SFX.PlayOneShot(PlayerDead);
     }
 
     public void PlayerWalk_SFX(int i)
     {
         if(i == 0)
         {
-            audiotest.loop = true;
-            audiotest.clip = PlayerWalk;
-            audiotest.Play();
+            Player_SFX.loop = true;
+            Player_SFX.clip = PlayerWalk;
+            Player_SFX.Play();
         }
         else if(i == 1)
         {
-            audiotest.loop = false;
-            audiotest.Pause();
+            Player_SFX.loop = false;
+            Player_SFX.Pause();
         }
     }
 
@@ -81,20 +84,20 @@ public class InGame_Sound : MonoBehaviour
     {
         if (str.Equals("½ºÄÌ·¹Åæ"))
         {
-            audiotest2.PlayOneShot(Monster_Skelleton_Attack);
+            Monster_SFX.PlayOneShot(Monster_Skelleton_Attack);
         }
         else if (str.Equals("½ºÅæÇÇ½ºÆ®"))
         {
-            audiotest2.PlayOneShot(Monster_Ston_Attack);
+            Monster_SFX.PlayOneShot(Monster_Ston_Attack);
         } else if (str.Equals("¾ÆÀÌ½º°ñ·½"))
         {
-            audiotest2.PlayOneShot(Monster_Golem_Attack);
+            Monster_SFX.PlayOneShot(Monster_Golem_Attack);
         } else if (str.Equals("±×¸² ¸®ÆÛ"))
         {
-            audiotest2.PlayOneShot(Monster_Grim_Attack);
+            Monster_SFX.PlayOneShot(Monster_Grim_Attack);
         } else if (str.Equals("ÆÄ±«ÀÚ ¸ð·Î½º"))
         {
-            audiotest2.PlayOneShot(Monster_Moros_Attack);
+            Monster_SFX.PlayOneShot(Monster_Moros_Attack);
         }
     }
 
@@ -102,11 +105,11 @@ public class InGame_Sound : MonoBehaviour
     {
         if (str.Equals("½ºÄÌ·¹Åæ"))
         {
-            audiotest2.PlayOneShot(Monster_Skelleton_Dead);
+            Monster_SFX.PlayOneShot(Monster_Skelleton_Dead);
         }
         else
         {
-            audiotest2.PlayOneShot(Monster_Dead);
+            Monster_SFX.PlayOneShot(Monster_Dead);
         }
     }
 }

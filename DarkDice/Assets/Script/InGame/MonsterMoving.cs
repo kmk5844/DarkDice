@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class MonsterMoving : MonoBehaviour
 {
+    InGame_Sound SFX_Sound;
+
+
     public GameObject Player;
     public Transform monsterGroup;
     [SerializeField]
@@ -17,6 +20,8 @@ public class MonsterMoving : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SFX_Sound = GetComponent<InGame_Sound>();
+
         Monster_DieCount = 0;
         monsterGroup_childCount = monsterGroup.childCount;
         monster = new GameObject[monsterGroup_childCount];
@@ -44,6 +49,7 @@ public class MonsterMoving : MonoBehaviour
                     if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                     {
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
+                        SFX_Sound.PlayerWalk_SFX(0);
                     }
 
                     monster[Monster_DieCount].transform.Translate(-10.0f * Time.deltaTime, 0, 0);
@@ -61,6 +67,7 @@ public class MonsterMoving : MonoBehaviour
 
                     if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Idle")
                     {
+                        SFX_Sound.PlayerWalk_SFX(1);
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Idle", true);
                     }
 
@@ -76,12 +83,17 @@ public class MonsterMoving : MonoBehaviour
             {
                 if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                 {
+                    SFX_Sound.PlayerWalk_SFX(0);
                     Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
                 }
 
                 if (monster[Monster_DieCount - 1].transform.position.x - Player.transform.position.x >= -11.0f)
                 {
                     Player.transform.Translate(10.0f * Time.deltaTime, 0, 0);
+                }
+                else
+                {
+                    SFX_Sound.PlayerWalk_SFX(1);
                 } // 플레이어가 지나가는 애니메이션
             }
         }

@@ -14,23 +14,23 @@ public class Stage_Monster_Instance : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "Test_Stage1":
+            case "Stage1":
                 stage = 0;
                 FindEnemy(stage);
                 break;
-            case "Test_Stage2":
+            case "Stage2":
                 stage = 1;
                 FindEnemy(stage);
                 break;
-            case "Test_Stage3":
+            case "Stage3":
                 stage = 2;
                 FindEnemy(stage);
                 break;
-            case "Test_Stage4":
+            case "Stage4":
                 stage = 3;
                 FindEnemy(stage);
                 break;
-            case "Test_Stage5":
+            case "Stage5":
                 stage = 4;
                 FindEnemy(stage);
                 break;

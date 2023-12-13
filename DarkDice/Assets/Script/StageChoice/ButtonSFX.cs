@@ -50,6 +50,6 @@ public class ButtonSFX : MonoBehaviour
 
     public void Button_PopUp_SFX()
     {
-        /*SFX_Source.PlayOneShot(popUp);*/
+        SFX_Source.PlayOneShot(popUp);
     }
 }

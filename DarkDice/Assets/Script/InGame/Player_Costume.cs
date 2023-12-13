@@ -12,9 +12,9 @@ public class Player_Costume : MonoBehaviour
         playerData = GetComponent<Player_Scritable>();
         switch (playerData.weapon.name)
         {
-            case "Test_Weapon0":
+            case "Weapon0":
                 break;
-            case "Test_Weapon1":
+            case "Weapon1":
                 this.GetComponent<GearEquipper>().Melee = 50;
                 this.GetComponent<GearEquipper>().Armor = 14;
                 this.GetComponent<GearEquipper>().Helmet = 14;
@@ -23,7 +23,7 @@ public class Player_Costume : MonoBehaviour
                 this.GetComponent<GearEquipper>().Feet = 14;
                 this.GetComponent<GearEquipper>().ApplySkinChanges();
                 break;
-            case "Test_Weapon2":
+            case "Weapon2":
                 this.GetComponent<GearEquipper>().Melee = 5;
                 this.GetComponent<GearEquipper>().Armor = 5;
                 this.GetComponent<GearEquipper>().Helmet = 5;
@@ -32,7 +32,7 @@ public class Player_Costume : MonoBehaviour
                 this.GetComponent<GearEquipper>().Feet = 5;
                 this.GetComponent<GearEquipper>().ApplySkinChanges();
                 break;
-            case "Test_Weapon3":
+            case "Weapon3":
                 this.GetComponent<GearEquipper>().Melee = 49;
                 this.GetComponent<GearEquipper>().Armor = 29;
                 this.GetComponent<GearEquipper>().Helmet = 29;

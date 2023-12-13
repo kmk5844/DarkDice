@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 681c3f47bc7bca14390a9a6e2661364e, type: 3}
-  m_Name: Test_Weapon2
+  m_Name: Weapon1
   m_EditorClassIdentifier: 
-  weaponName: Weapon2
-  weaponAtk: 5
-  weaponPride: 70
-  storeFlag: 0
-  weaponImage: {fileID: 21300000, guid: ba1ea9581454f334f9694b3bbfda33a4, type: 3}
+  weaponName: Weapon1
+  weaponAtk: 4
+  weaponPride: 50
+  storeFlag: 1
+  weaponImage: {fileID: 21300000, guid: 0ce15b5a9d9be02489a1b1c404327b11, type: 3}

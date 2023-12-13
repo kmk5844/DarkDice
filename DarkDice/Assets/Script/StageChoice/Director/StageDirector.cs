@@ -184,7 +184,7 @@ public class StageDirector : MonoBehaviour {
 
     public void OnClickFight()
     {
-        SceneManager.LoadScene("Test_Stage" + stageNum);
+        SceneManager.LoadScene("Stage" + stageNum);
         stageData.ClickNum_Stage(stageNum);
     }
 
