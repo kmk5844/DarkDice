@@ -69,6 +69,7 @@ public class MonsterMoving : MonoBehaviour
                     {
                         SFX_Sound.PlayerWalk_SFX(1);
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Idle", true);
+                        GameObject.Find("TutorialDirector").GetComponent<TutorialDirector>().Check_Guide();
                     }
 
                     if (Monster_DieCount > 0)

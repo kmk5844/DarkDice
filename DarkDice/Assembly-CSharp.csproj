@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scritable\Item\ItemData.cs" />
     <Compile Include="Assets\Scritable\Excel\DataTable.cs" />
     <Compile Include="Assets\Script\StageChoice\ToggleONOFF.cs" />
+    <Compile Include="Assets\Script\Tutorial\TutorialDirector.cs" />
     <Compile Include="Assets\Script\InGame\InGame_Sound.cs" />
     <Compile Include="Assets\Script\InGame\Title.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\ExcelAsset\MstItems.cs" />
