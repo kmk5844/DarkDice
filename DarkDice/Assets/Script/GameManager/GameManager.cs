@@ -8,10 +8,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] Animator transitionAnim;
     void Awake()
     {
-/*        // Make the game run as fast as possible
-        Application.targetFrameRate = -1;
-        // Limit the framerate to 60
-        Application.targetFrameRate = 60;*/
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        /*        // Make the game run as fast as possible
+                Application.targetFrameRate = -1;
+                // Limit the framerate to 60
+                Application.targetFrameRate = 60;*/
         DontDestroyOnLoad(gameObject);
     }
 

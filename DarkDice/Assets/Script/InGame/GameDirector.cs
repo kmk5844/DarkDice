@@ -8,8 +8,6 @@ using Spine.Unity;
 
 public class GameDirector : MonoBehaviour
 {
-    //테스트 전용 오디오 스크립트
-    InGame_Sound SFX_Sound;
 
     public GameTurn gameTurn;
     Player_Scritable playerData; // 플레이어 정보 데이터를 불러온다.
@@ -78,6 +76,9 @@ public class GameDirector : MonoBehaviour
     public GameObject Heal_Part;
     public GameObject Revival_Part;
     public GameObject[] ItemChoice_Part;
+
+    InGame_Sound SFX_Sound;
+
     void Start()
     {
         SFX_Sound = GetComponent<InGame_Sound>();
@@ -707,6 +708,11 @@ public class GameDirector : MonoBehaviour
         catch
         {
             SceneManager.LoadScene("1.StageChoice");
+        }
+
+        if (GameObject.Find("Sfx_Player").GetComponent<AudioSource>().isPlaying) // 걷는 부분에서 Loop가 켜져있어서 강제로 끄게 만듦 -> 플레이어 걷는 효과음 나고 있을 경우에 메인으로 돌아가면 버그 발생
+        {
+            SFX_Sound.PlayerWalk_SFX(1);
         }
     }
 

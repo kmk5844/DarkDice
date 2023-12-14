@@ -46,6 +46,9 @@ public class Title : MonoBehaviour
     public void Ani_TitleOff()
     {
         this.gameObject.SetActive(false);
+        if (SceneManager.GetActiveScene().name.Equals("Stage1")){
+            GameObject.Find("TutorialDirector").GetComponent<TutorialDirector>().Check_Guide();
+        }
     }
 
     // 스테이지 입장 시, 스테이지 정보를 불러옴.
