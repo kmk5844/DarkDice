@@ -33,7 +33,7 @@ MonoBehaviour:
     stage_name: stage2
     enemy_count: 2
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
+    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
     enemy_unit3: 
     reward_hp: 2
     reward_point: 3
@@ -47,7 +47,7 @@ MonoBehaviour:
   - number: 3
     stage_name: stage3
     enemy_count: 1
-    enemy_unit1: "\uC544\uC774\uC2A4\uACE8\uB818"
+    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
     stage_name: stage4
     enemy_count: 2
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uADF8\uB9BC \uB9AC\uD37C"
+    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
     enemy_unit3: 
     reward_hp: 2
     reward_point: 4
@@ -81,8 +81,8 @@ MonoBehaviour:
     stage_name: stage5
     enemy_count: 3
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
-    enemy_unit3: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit3: "\uC2A4\uCF08\uB808\uD1A4"
     reward_hp: 0
     reward_point: 4
     reward_coin: 160

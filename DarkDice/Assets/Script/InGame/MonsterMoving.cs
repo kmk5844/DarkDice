@@ -93,6 +93,7 @@ public class MonsterMoving : MonoBehaviour
                 }
                 else
                 {
+                    Player.SetActive(false);
                     SFX_Sound.PlayerWalk_SFX(1);
                 } // 플레이어가 지나가는 애니메이션
             }

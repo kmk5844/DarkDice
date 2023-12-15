@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/1-0.Toon.unity
-    guid: ec252d4d13f457349b88fbb721b4191d
   - enabled: 1
     path: Assets/Scenes/0.Start_Screen.unity
     guid: 00fd5b1065d2a94418f870824b5b81ec
+  - enabled: 1
+    path: Assets/Scenes/1-0.Toon.unity
+    guid: ec252d4d13f457349b88fbb721b4191d
   - enabled: 1
     path: Assets/Scenes/1.StageChoice.unity
     guid: 46c21de7660e9ec4eb77ea7aafbcb7a2
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage/Stage5.unity
     guid: 60e0781a0c5468e4f80e9d8211881276
+  - enabled: 1
+    path: Assets/Scenes/1-1.Toon.unity
+    guid: d504878e966df294fac7f61981476245
   m_configObjects: {}

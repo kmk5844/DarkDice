@@ -18,7 +18,14 @@ public class StartTitle : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && UI.activeSelf == false)
         {
-            gameManager.NextLevle("1.StageChoice");
+            if (PlayerPrefs.GetInt("Guide_Count") == 0)
+            {
+                gameManager.NextLevle("1-0.Toon");
+            }
+            else
+            {
+                gameManager.NextLevle("1.StageChoice");
+            }
         }
     }
 }

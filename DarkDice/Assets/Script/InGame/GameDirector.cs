@@ -51,6 +51,7 @@ public class GameDirector : MonoBehaviour
     public GameObject PlayDice_UI;//주사위 굴릴 때 나오는 UI
     public GameObject Play_UI; // 전체적인 플레이 UI
     public GameObject Win_UI;  // 이겼을 때의 UI
+    public TextMeshProUGUI Win_UI_Button_Text; // 스테이지 5인 경우에, 텍스트 변경
     public GameObject Lose_UI; // 졌을 때의 UI
     public GameObject PlayerObject; //플레이어 오브젝트
     public GameObject Hurt_Image; //맞았을 때의 UI
@@ -76,6 +77,8 @@ public class GameDirector : MonoBehaviour
     public GameObject Heal_Part;
     public GameObject Revival_Part;
     public GameObject[] ItemChoice_Part;
+
+    public Transform BackGround;
 
     InGame_Sound SFX_Sound;
 
@@ -118,6 +121,38 @@ public class GameDirector : MonoBehaviour
         monsterData = monster[MonsterCount].GetComponent<MonsterData>(); // 몬스터 데이터를 불러온다.
         stage = stage_Data.GetComponent<Stage_Scripter>(); // 스테이지 데이터를 불러온다.
 
+
+        //스테이지마다 배경 변경
+        if(stage.curretStageNum == 1 || stage.curretStageNum == 2)
+        {
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage1&2");
+        }else if(stage.curretStageNum == 3)
+        {
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage3");
+        }
+        else if(stage.curretStageNum == 4)
+        {
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage4");
+        }else if(stage.curretStageNum == 5)
+        {
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage5");
+        }
+
+        //몬스터 수마다 배경 이동 / 3마리인 경우에 배경 길이 늘어남
+        if (mosterChildCount == 1)
+        {
+            BackGround.position = new Vector3(-2, 1, 700);
+        }
+        else if(mosterChildCount == 2)
+        {
+            BackGround.position = new Vector3(19, 1, 700);
+        }
+        else if(mosterChildCount == 3)
+        {
+            BackGround.position = new Vector3(8, 1, 700);
+            BackGround.localScale = new Vector3(16, 1, 1.7f);
+        }
+
         for (int i = 0; i < ItemObject_Data.Length; i++)
         {
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>(); // 아이템 데이터를 불러온다.
@@ -129,13 +164,15 @@ public class GameDirector : MonoBehaviour
             {
                 Item_Toggle[i].interactable = false; // 만약 아이템 정보가 기본이라면 잠근다.
             }
-        }
-
-        for (int i = 0; i < Item_Toggle.Length; i++)
-        {
             Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage; //백그라운드와 이미지를 설정한다.
             Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
+
+/*        for (int i = 0; i < Item_Toggle.Length; i++)
+        {
+            Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage; //백그라운드와 이미지를 설정한다.
+            Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
+        }*/
 
         Player_Atk_Text.text = playerData.atk.ToString();
         Player_Def_Text.text = playerData.def.ToString();
@@ -609,6 +646,10 @@ public class GameDirector : MonoBehaviour
         if (monster.Length == MonsterCount)
         {
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
+            if (SceneManager.GetActiveScene().name.Equals("Stage5"))
+            {
+                Win_UI_Button_Text.text = "해피엔딩";
+            }
             Play_UI.SetActive(false);
             Win_UI.SetActive(true);
             Change_Reward(); // 클리어에 따라 보상을 바꾼다.
@@ -695,6 +736,37 @@ public class GameDirector : MonoBehaviour
         {
             playerData.RewardStatus_Player(Data.stage_Data[stage.curretStageNum - 1].reward_point);
             playerData.RewardHp_Player(Data.stage_Data[stage.curretStageNum - 1].reward_hp);
+        }
+    }
+
+    public void OnClearMain() //종합 우승 이후, 메인으로 돌아가기
+    {
+        try
+        {
+            if (SceneManager.GetActiveScene().name.Equals("Stage5"))
+            {
+                gameManager.NextLevle("1-1.Toon");
+            }
+            else
+            {
+                gameManager.NextLevle("1.StageChoice");
+            }
+        }
+        catch
+        {
+            if (SceneManager.GetActiveScene().name.Equals("Stage5"))
+            {
+                SceneManager.LoadScene("1-1.Toon");
+            }
+            else
+            {
+                SceneManager.LoadScene("1.StageChoice");
+            }
+        }
+
+        if (GameObject.Find("Sfx_Player").GetComponent<AudioSource>().isPlaying) // 걷는 부분에서 Loop가 켜져있어서 강제로 끄게 만듦 -> 플레이어 걷는 효과음 나고 있을 경우에 메인으로 돌아가면 버그 발생
+        {
+            SFX_Sound.PlayerWalk_SFX(1);
         }
     }
 

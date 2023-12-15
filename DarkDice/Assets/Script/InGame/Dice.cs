@@ -42,11 +42,11 @@ public class Dice : MonoBehaviour
     IEnumerator coroutine;
     IEnumerator DiceRolling(Image image1, Image image2)
     {
-        /* int rand1 = Random.Range(0, 6);
-         int rand2 = Random.Range(0, 6);
- */
-        int rand1 = 0;
-        int rand2 = 0;
+        int rand1 = Random.Range(0, 6);
+        int rand2 = Random.Range(0, 6);
+
+        /*     int rand1 = 0;
+             int rand2 = 0;*/
         if (rollingFlag == false)
         {
             delay += 0.059f;

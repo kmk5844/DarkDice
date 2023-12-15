@@ -38,11 +38,11 @@ public class TutorialDirector : MonoBehaviour
             if (sub_count == 0)
             {
                 Step[0].SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "아까 들었다시피 난 주사위 요정이야"));
+                StartCoroutine(Typing(Step_text[0], "아까 들었다시피 난 주사위 정령이야"));
             }
             else if (sub_count == 1)
             {
-                StartCoroutine(Typing(Step_text[0], "나약한 스켈레톤이 보인다!! \n행운의 주사위를 가지고 한번 싸워보자".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[0], "나약한 스켈레톤이 보인다!!\n행운의 주사위를 가지고 한번 싸워보자".Replace("\\n", "\n")));
             }
             else if (sub_count == 2)
             {
@@ -55,7 +55,7 @@ public class TutorialDirector : MonoBehaviour
             {
                 Step[1].SetActive(false);
                 Step[0].SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "짜자잔! 주사위가 나왔다구!\n굴리고 멈출 수 있지!".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[0], "짜자잔! 주사위가 나타났어!\n오른쪽 주사위는 너의 공격력을, 왼쪽은 너의 방어력을 높여줄거야!\n오른쪽 버튼을 눌러 주사위를 굴러!!".Replace("\\n", "\n")));
             }
             else if (sub_count == 4)
             {
@@ -67,18 +67,18 @@ public class TutorialDirector : MonoBehaviour
             {
                 Step[0].SetActive(false);
                 Step[2].SetActive(true);
-                StartCoroutine(Typing(Step_text[2], "공격하기 전에 아이템 한번 눌러보자".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[2], "잘했어! 여기까지 잘 따라왔네!\n공격하기 전에 아이템 한번 눌러보자".Replace("\\n", "\n")));
             }
             else if (sub_count == 6)
             {
-                StartCoroutine(Typing(Step_text[2], "아이템은 턴마다 1회 사용 가능해!\n아이템 버튼 한번 더 누르자".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[2], "짜자자잔!! 아이템은 턴마다 1회 사용 가능해!\n아이템 버튼 한번 더 누르면 닫을 수 있어\n한번 닫아보자".Replace("\\n", "\n")));
             }
             else if (sub_count == 7)
             {
                 Button_flag = false;
                 Step[2].SetActive(false);
                 Step[3].SetActive(true);
-                StartCoroutine(Typing(Step_text[3], "공격하기 전에, 설명서를 참고하는 것이 좋아".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[3], "마지막으로 공격하기 전에, 설명서를 참고하는 것이 좋아\n나중에 돌아와서 설명해줄게".Replace("\\n", "\n")));
             }
             else if (sub_count == 8)
             {
@@ -102,18 +102,18 @@ public class TutorialDirector : MonoBehaviour
             if (sub_count == 0)
             {
                 Step[0].SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "이기고 온건지 도망치고 온건지 모르겠지만!\n일단 어서와!".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[0], "오 드디어 왔구나!\n내가 많이 기다렸다고!! 설명을 해줄테니 잘 들어!".Replace("\\n", "\n")));
             }else if (sub_count == 1)
             {
                 part.SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "위에 있는 플레이어 버튼을 눌러보자"));
+                StartCoroutine(Typing(Step_text[0], "먼저 위에 있는 플레이어 버튼을 눌러보자"));
                 Button_flag = true;
             }
             else if(sub_count == 2)
             {
                 part.SetActive(false);
                 Button_flag = false;
-                StartCoroutine(Typing(Step_text[0], "잘 따라오고 있어!\n스테이지마다 최초 클리어하는 경우, 스텟이 주어져".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[0], "좋아, 잘 따라오고 있어!\n스테이지마다 최초 클리어하는 경우, 스테이터스의 포인트를\n 받을 수 있어".Replace("\\n", "\n")));
             }else if(sub_count == 3)
             {
                 StartCoroutine(Typing(Step_text[0], "너가 원하는 공격력과 방어력을 강화할 수 있어!".Replace("\\n", "\n")));
@@ -122,7 +122,7 @@ public class TutorialDirector : MonoBehaviour
                 StartCoroutine(Typing(Step_text[0], "내 역할은 여기까지야.\n앞으로 더 나아가 몬스터를 무찔러줘!".Replace("\\n", "\n")));
             }else if(sub_count == 5)
             {
-                StartCoroutine(Typing(Step_text[0], "아참! 참고로 물음표 버튼이 보일텐데 그것도 설명서야!\n숙지 잘 하도록 하자!!".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[0], "아참! 참고로 물음표 버튼이 보일텐데 그것도 설명서야!\n숙지 잘 하도록 하자!! 아이템 장착도 잊지 말고!".Replace("\\n", "\n")));
             }
             else if(sub_count == 6)
             {
