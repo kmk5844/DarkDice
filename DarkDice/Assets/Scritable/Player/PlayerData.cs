@@ -123,7 +123,7 @@ public class PlayerData : ScriptableObject
 
     public void ItemUse_Init() //플레이어 전용 초기화
     {
-        status = (atk - 10) + (def - 10);
+        status = (atk - 10) + (def - 10) + status;
         atk = 10;
         def = 10;
         PlayerPrefs.SetInt("Player_Status", status);

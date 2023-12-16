@@ -192,6 +192,6 @@ public class StageDirector : MonoBehaviour {
     {
         stageData.Init_Stage();
         PlayerPrefs.SetInt("Guide_Count", 0);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //플레이어 초기화도 되어야 함.
+        SceneManager.LoadScene("0.Start_Screen"); //플레이어 초기화도 되어야 함.
     }
 }

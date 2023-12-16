@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        /*        // Make the game run as fast as possible
-                Application.targetFrameRate = -1;
-                // Limit the framerate to 60
-                Application.targetFrameRate = 60;*/
+        // Make the game run as fast as possible
+        Application.targetFrameRate = -1;
+        // Limit the framerate to 60
+        Application.targetFrameRate = 60;
         DontDestroyOnLoad(gameObject);
     }
 

@@ -19,16 +19,16 @@ EditorBuildSettings:
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
     path: Assets/Scenes/Stage/Stage2.unity
-    guid: f36838af750132b4f8ea84ca1d26a0ec
+    guid: f37b14b194fcdf647a203ddfa2f9d749
   - enabled: 1
     path: Assets/Scenes/Stage/Stage3.unity
-    guid: 3cbd1f10b06060a439898642ec859e89
+    guid: 1955169f2a7a1884b91b13ef53e637be
   - enabled: 1
     path: Assets/Scenes/Stage/Stage4.unity
-    guid: 348dba368bd9ae741b23a07e5b73798f
+    guid: 8ddaa2120e708214e9a38c8dc3de34dc
   - enabled: 1
     path: Assets/Scenes/Stage/Stage5.unity
-    guid: 60e0781a0c5468e4f80e9d8211881276
+    guid: 782f7c1a58e28d940a08898cb6d9e3f5
   - enabled: 1
     path: Assets/Scenes/1-1.Toon.unity
     guid: d504878e966df294fac7f61981476245

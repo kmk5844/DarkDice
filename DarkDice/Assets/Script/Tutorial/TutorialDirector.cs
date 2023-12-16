@@ -11,13 +11,14 @@ public class TutorialDirector : MonoBehaviour
     public GameObject[] Step;
     public TextMeshProUGUI[] Step_text;
     public GameObject Skip_Panel;
-    public GameObject[] Dont_touch_Panel;
+    public GameObject[] Dont_touch_Panel; //1스테이지에 0번은 DicePanel로 되어있다.
     public GameObject part;
 
     int guide;
     int sub_count;
     bool text_flag;
     bool Button_flag;
+    bool Dice_flag;
 
     void Update()
     {
@@ -50,6 +51,7 @@ public class TutorialDirector : MonoBehaviour
                 Step[1].SetActive(true);
                 StartCoroutine(Typing(Step_text[1], "전투 개시 버튼을 클릭해서 전투를 시작하자구!"));
                 Button_flag = true;
+                Dice_flag = true;
             }
             else if (sub_count == 3)
             {
@@ -60,11 +62,11 @@ public class TutorialDirector : MonoBehaviour
             else if (sub_count == 4)
             {
                 Step_text[0].text = null;
-
                 StartCoroutine(Typing(Step_text[0], "이제 멈...멈춰!!"));
             }
             else if (sub_count == 5)
             {
+                Dice_flag = false;
                 Step[0].SetActive(false);
                 Step[2].SetActive(true);
                 StartCoroutine(Typing(Step_text[2], "잘했어! 여기까지 잘 따라왔네!\n공격하기 전에 아이템 한번 눌러보자".Replace("\\n", "\n")));
@@ -139,6 +141,7 @@ public class TutorialDirector : MonoBehaviour
     {
         guide = PlayerPrefs.GetInt("Guide_Count", 0); // playerpref로 받아올 예정
         sub_count = 0;
+        Dice_flag = false;
         if (guide == 0 || guide == 1)
         {
             if (guide == 0 && SceneManager.GetActiveScene().name.Equals("1.StageChoice"))
@@ -160,6 +163,11 @@ public class TutorialDirector : MonoBehaviour
 
     IEnumerator Typing(TextMeshProUGUI text_UI, string talk)
     {
+        if (Dice_flag)
+        {
+            Dont_touch_Panel[0].SetActive(true);
+        }
+        //-----------------------------------------------------
         text_flag = false;
 
         text_UI.text = null;
@@ -170,6 +178,11 @@ public class TutorialDirector : MonoBehaviour
         }
 
         text_flag = true;
+        //----------------------------------------------------
+        if (Dice_flag)
+        {
+            Dont_touch_Panel[0].SetActive(false);
+        }
     }
 
     public void Button_Count()

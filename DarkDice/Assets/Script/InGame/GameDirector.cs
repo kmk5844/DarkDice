@@ -125,17 +125,17 @@ public class GameDirector : MonoBehaviour
         //스테이지마다 배경 변경
         if(stage.curretStageNum == 1 || stage.curretStageNum == 2)
         {
-            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage1&2");
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Background/Stage1&2");
         }else if(stage.curretStageNum == 3)
         {
-            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage3");
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Background/Stage3");
         }
         else if(stage.curretStageNum == 4)
         {
-            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage4");
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Background/Stage4");
         }else if(stage.curretStageNum == 5)
         {
-            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Stage5");
+            BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Background/Stage5");
         }
 
         //몬스터 수마다 배경 이동 / 3마리인 경우에 배경 길이 늘어남
