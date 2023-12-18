@@ -39,7 +39,7 @@ public class TutorialDirector : MonoBehaviour
             if (sub_count == 0)
             {
                 Step[0].SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "아까 들었다시피 난 주사위 정령이야"));
+                StartCoroutine(Typing(Step_text[0], "아까 들었다시피 난 주사위 정령인 \"랑이\"라고 해"));
             }
             else if (sub_count == 1)
             {

@@ -36,6 +36,7 @@ public class GameDirector : MonoBehaviour
     int defSum; // 방어력
     int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트
     int ItemCount; // 아이템 횟수 -> 찬스 아이템을 굴린 후, 또 다른 아이템 허용하지 않도록 함
+    int conditionsDefeat; //패배 조건
 
     SkeletonAnimation playerAni; //플레이어 애니메이션
     SkeletonAnimation monsterAni; // 몬스터 애니메이션
@@ -94,6 +95,15 @@ public class GameDirector : MonoBehaviour
         DiceNum = 0;
         MonsterCount = 0;
         ItemCount = 0;
+
+        if (SceneManager.GetActiveScene().name.Equals("Stage5"))
+        {
+            conditionsDefeat = 15;
+        }
+        else
+        {
+            conditionsDefeat = 10;
+        }
 
         playerAni = PlayerObject.GetComponentInChildren<SkeletonAnimation>();
         mosterChildCount = mosterGroup.childCount;
@@ -171,13 +181,13 @@ public class GameDirector : MonoBehaviour
             Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
-/*        for (int i = 0; i < Item_Toggle.Length; i++)
-        {
-            Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage; //백그라운드와 이미지를 설정한다.
-            Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
-        }*/
+        /*        for (int i = 0; i < Item_Toggle.Length; i++)
+                {
+                    Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage; //백그라운드와 이미지를 설정한다.
+                    Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
+                }*/
 
-        Player_Atk_Text.text = playerData.atk.ToString();
+        Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
         Player_Def_Text.text = playerData.def.ToString();
         Monster_Atk_Text.text = monsterData.atk.ToString();
         Monster_Def_Text.text = monsterData.def.ToString();
@@ -209,10 +219,20 @@ public class GameDirector : MonoBehaviour
             monsterData.hp = 0;
         }
 
-        if (RoundNum >= 7)
+        if (conditionsDefeat == 10)
         {
-            RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
+            if (RoundNum >= 7)
+            {
+                RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
+            }
+        }else if(conditionsDefeat == 15)
+        {
+            if (RoundNum >= 12)
+            {
+                RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
+            }
         }
+        
 
         if (Item_Toggle[0].isOn) //아이템을 클릭 했을 때, 사용할 아이템 저장 및 파티클 구현
         {
@@ -606,9 +626,9 @@ public class GameDirector : MonoBehaviour
         gameTurn = GameTurn.MonsterTurn_EndMoving;
         yield return new WaitUntil(() => gameTurn == GameTurn.Waiting);
 
-        if (playerData.hp <= 0 || RoundNum == 10) // 패배 조건 -> 플레이어 체력이 0이거나 10라운드일 경우
+        if (playerData.hp <= 0 || RoundNum == conditionsDefeat) // 패배 조건 -> 플레이어 체력이 0이거나 10라운드일 경우
         {
-            if(RoundNum == 10 && playerData.hp >= 0 && monsterData.hp == 0) {
+            if(RoundNum == conditionsDefeat && playerData.hp >= 0 && monsterData.hp == 0) {
                 monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
                 Sound_SFX.MonsterDead_SFX(monster[MonsterCount].name);
                 monsterAni.state.SetAnimation(0, "Dead", false).TimeScale = 2f;
@@ -689,9 +709,10 @@ public class GameDirector : MonoBehaviour
         playerData.hp++;
         Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
         Player_Def_Text.text = playerData.def.ToString();
-        if (RoundNum == 10)
+        if (RoundNum == conditionsDefeat)
         {
             RoundNum--;
+            RoundText.text = RoundNum + " 라운드";
         }
         Time.timeScale = 1;
         PlayDice_UI.SetActive(true);

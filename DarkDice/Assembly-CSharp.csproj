@@ -80,7 +80,6 @@
     <Compile Include="Assets\Script\StageChoice\Director\ItemDirector_Stage.cs" />
     <Compile Include="Assets\Scritable\Player\Player_Scritable.cs" />
     <Compile Include="Assets\Scritable\Player\PlayerData.cs" />
-    <Compile Include="Assets\Test\ChangeTest.cs" />
     <Compile Include="Assets\Script\StageChoice\ButtonSFX.cs" />
     <Compile Include="Assets\Script\CutScene\End_CutScene.cs" />
     <Compile Include="Assets\Script\InGame\Player_Costume.cs" />
