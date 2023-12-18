@@ -49,7 +49,7 @@ public class Dice : MonoBehaviour
              int rand2 = 0;*/
         if (rollingFlag == false)
         {
-            delay += 0.059f;
+            delay += 0.062f;
 
             if (delay > 0.56f)
             {

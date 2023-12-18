@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void NextLevle(string SceneName)
+    public void NextLevel(string SceneName)
     {
         StartCoroutine(LoadLevel(SceneName));
     }

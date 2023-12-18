@@ -45,7 +45,7 @@ public class SettingDirector : MonoBehaviour
     {
         try
         {
-            gameManager.NextLevle("1-0.Toon");
+            gameManager.NextLevel("1-0.Toon");
         }
         catch
         {

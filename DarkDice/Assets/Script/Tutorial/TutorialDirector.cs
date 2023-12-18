@@ -215,6 +215,11 @@ public class TutorialDirector : MonoBehaviour
     public void Skip_Button()
     {
         guide++;
+        if(SceneManager.GetActiveScene().name.Equals("1.StageChoice") && part.activeSelf == true 
+            )
+        {
+            part.SetActive(false);
+        }
         PlayerPrefs.SetInt("Guide_Count", guide);
         On_DontTouchPanel(false);
         Tutorial_UI.SetActive(false);

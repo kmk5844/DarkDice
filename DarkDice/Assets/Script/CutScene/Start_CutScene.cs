@@ -48,7 +48,7 @@ public class Start_CutScene : MonoBehaviour
         {
             try
             {
-                GameObject.Find("GameManager").GetComponent<GameManager>().NextLevle("1.StageChoice");
+                GameObject.Find("GameManager").GetComponent<GameManager>().NextLevel ("1.StageChoice");
             }
             catch
             {
