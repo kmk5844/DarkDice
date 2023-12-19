@@ -58,11 +58,12 @@ public class StageDirector : MonoBehaviour {
             {
                 break;
             }
+
             StageButton[i].interactable = true;
-            if(i < lockOffStage - 1)
+/*            if(i < lockOffStage - 1)
             {
                 Stage_Road[i].interactable = true;
-            }
+            }*/
         }
 
         for (int i = 0; i < ItemLock.Length; i++)
@@ -75,7 +76,7 @@ public class StageDirector : MonoBehaviour {
 
         for (int i = 2; i < lockOffStage; i++)
         {
-            if (i == StageButton.Length) // 인덱스 초과 방지
+            if (i == StageButton.Length - 1) // 인덱스 초과 방지
             {
                 break;
             }
@@ -105,6 +106,7 @@ public class StageDirector : MonoBehaviour {
         stageName.text = "STAGE" + Num + " : " + Data.stage_Data[Num-1].stage_fullname;
         stageStory.text = Data.stage_Data[Num - 1].stage_info.Replace("\\n", "\n");
         reward_coin_text.text = Data.stage_Data[Num - 1].reward_coin.ToString() + "G";
+
         if(Num == 5)
         {
             roundText.text = "15라운드";

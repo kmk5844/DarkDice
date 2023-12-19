@@ -44,6 +44,7 @@ public class TutorialDirector : MonoBehaviour
             else if (sub_count == 1)
             {
                 StartCoroutine(Typing(Step_text[0], "나약한 스켈레톤이 보인다!!\n행운의 주사위를 가지고 한번 싸워보자".Replace("\\n", "\n")));
+                Dice_flag = true;
             }
             else if (sub_count == 2)
             {
@@ -51,7 +52,6 @@ public class TutorialDirector : MonoBehaviour
                 Step[1].SetActive(true);
                 StartCoroutine(Typing(Step_text[1], "전투 개시 버튼을 클릭해서 전투를 시작하자구!"));
                 Button_flag = true;
-                Dice_flag = true;
             }
             else if (sub_count == 3)
             {
@@ -163,12 +163,13 @@ public class TutorialDirector : MonoBehaviour
 
     IEnumerator Typing(TextMeshProUGUI text_UI, string talk)
     {
+        text_flag = false;
+
         if (Dice_flag)
         {
             Dont_touch_Panel[0].SetActive(true);
         }
         //-----------------------------------------------------
-        text_flag = false;
 
         text_UI.text = null;
         for(int i = 0; i < talk.Length; i++)

@@ -36,14 +36,14 @@ public class Start_CutScene : MonoBehaviour
             Toon[1].SetActive(false);
             Toon[2].SetActive(true);
             Next_Button.interactable = false;
-            StartCoroutine(Typing("이때 평범한 점원인 당신에게도 새로운 바람이 불어오는데..\n주머니 속 주사위에서 나타난 주사위 정령 \"랑이\"!!\n정령은 당신이 바로 이 혼돈으로부터 왕국을 구할 용사라고 말합니다.\n".Replace("\n\n", "\n")));
+            StartCoroutine(Typing("이때 평범한 점원인 당신에게도 새로운 바람이 불어오는데..\n주머니 속 주사위에서 나타난 주사위 정령 \"랑이\"!!\n랑이는 당신이 바로 이 혼돈으로부터 왕국을 구할 용사라고 말합니다.\n".Replace("\n\n", "\n")));
         }
         else if (count == 3)
         {
             Toon[2].SetActive(false);
             Toon[3].SetActive(true);
             Next_Button.interactable = false;
-            StartCoroutine(Typing("뜬끔없이 주사위 정령의 선택을 받은 당신!\n이제 본업은 잠시 접어두고 용사로서 세상을 구할 시간입니다.".Replace("\n\n", "\n")));
+            StartCoroutine(Typing("뜬끔없이 주사위 정령 랑이의 선택을 받은 당신!\n이제 본업은 잠시 접어두고 용사로서 세상을 구할 시간입니다.".Replace("\n\n", "\n")));
         } else if (count == 4)
         {
             try
