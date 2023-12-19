@@ -19,7 +19,7 @@ public class End_CutScene : MonoBehaviour
         Sound_BGM = GameObject.Find("Bgm").GetComponent<AudioSource>();
         Next_Button.interactable = false;
         Toon[0].SetActive(true);
-        StartCoroutine(Typing("열심히 싸운 당신, 당신의 용기와 노력 덕에 왕국은 다시 평화를 되찾았습니다.\n용사로 살아갈지 점원으로 살아갈지는 당신에게 달려있습니다.".Replace("\n\n", "\n")));
+        StartCoroutine(Typing("열심히 싸운 당신, 당신의 용기와 노력 덕에 왕국은 다시 평화를 되찾았습니다.".Replace("\n\n", "\n")));
     }
 
     public void Click_NextButton()

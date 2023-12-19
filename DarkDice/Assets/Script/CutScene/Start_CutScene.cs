@@ -17,7 +17,7 @@ public class Start_CutScene : MonoBehaviour
         
         Next_Button.interactable = false;
         Toon[0].SetActive(true);
-        StartCoroutine(Typing("평화로운 왕국에 여느 때와 같은 평범한 아침이 밝았습니다"));
+        StartCoroutine(Typing("평화로운 다이스 왕국에 여느 때와 같은 평범한 아침이 밝았습니다."));
     }
 
     public void Click_NextButton()
