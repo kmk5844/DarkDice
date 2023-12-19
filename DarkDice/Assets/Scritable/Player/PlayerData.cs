@@ -123,9 +123,9 @@ public class PlayerData : ScriptableObject
 
     public void ItemUse_Init() //플레이어 전용 초기화
     {
-        status = (atk - 10) + (def - 10) + status;
-        atk = 10;
-        def = 10;
+        status = (atk - 9) + (def - 9) + status;
+        atk = 9;
+        def = 9;
         PlayerPrefs.SetInt("Player_Status", status);
         PlayerPrefs.SetInt("Player_Atk", atk);
         PlayerPrefs.SetInt("Player_Def", def);
@@ -141,8 +141,8 @@ public class PlayerData : ScriptableObject
     public void Init() //개발자 전용 초기화
     {
         hp = 2;
-        atk = 10;
-        def = 10;
+        atk = 9;
+        def = 9;
         coin = 0;
         status = 0;
         PlayerPrefs.SetInt("Player_Hp", (int)hp);

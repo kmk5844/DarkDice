@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon1
   m_EditorClassIdentifier: 
   weaponName: Weapon1
-  weaponAtk: 4
+  weaponAtk: 3
   weaponPride: 50
-  storeFlag: 1
+  storeFlag: 0
   weaponImage: {fileID: 21300000, guid: 0ce15b5a9d9be02489a1b1c404327b11, type: 3}
