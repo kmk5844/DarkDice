@@ -22,6 +22,7 @@ public class StageDirector : MonoBehaviour {
 
     public TextMeshProUGUI stageName; // 스테이지 이름
     public TextMeshProUGUI stageStory; // 스테이지 스토리    
+    public TextMeshProUGUI roundText; // 라운드 텍스트   
     public Image[] item_Image;  //플레이어 장착된 아이템
     public Image[] reward_Image; // 스테이지 보상
     public TextMeshProUGUI reward_coin_text; //스테이지 보상 중, 코인 텍스트
@@ -104,6 +105,14 @@ public class StageDirector : MonoBehaviour {
         stageName.text = "STAGE" + Num + " : " + Data.stage_Data[Num-1].stage_fullname;
         stageStory.text = Data.stage_Data[Num - 1].stage_info.Replace("\\n", "\n");
         reward_coin_text.text = Data.stage_Data[Num - 1].reward_coin.ToString() + "G";
+        if(Num == 5)
+        {
+            roundText.text = "15라운드";
+        }
+        else
+        {
+            roundText.text = "10라운드";
+        }
 
         // 몬스터 정보 갱신
         for (int i = 0; i < Monster_inf_Button.Length; i++)
