@@ -33,11 +33,11 @@ MonoBehaviour:
     stage_name: stage2
     enemy_count: 2
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
     enemy_unit3: 
     reward_hp: 2
     reward_point: 3
-    reward_coin: 110
+    reward_coin: 120
     open_item: (3417,3420,3521)
     stage_fullname: "\uD798\uACA8\uC6B4 \uC804\uC9C4"
     stage_info: "\uCCAB \uC804\uD22C\uC5D0\uC11C \uC2B9\uB9AC\uD558\uACE0 \uC131\uC744
@@ -47,12 +47,12 @@ MonoBehaviour:
   - number: 3
     stage_name: stage3
     enemy_count: 1
-    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit1: "\uC544\uC774\uC2A4\uACE8\uB818"
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
     reward_point: 3
-    reward_coin: 120
+    reward_coin: 140
     open_item: (3418,3419,3522)
     stage_fullname: "\uC131\uBB38\uC744 \uC5F4\uC5B4\uB77C"
     stage_info: "\uACA8\uC6B0 \uB3C4\uCC29\uD55C \uBAA9\uC801\uC9C0\uC5D0 \uBCF4\uC774\uB294
@@ -65,11 +65,11 @@ MonoBehaviour:
     stage_name: stage4
     enemy_count: 2
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit2: "\uADF8\uB9BC \uB9AC\uD37C"
     enemy_unit3: 
     reward_hp: 2
     reward_point: 4
-    reward_coin: 140
+    reward_coin: 160
     open_item: (3523)
     stage_fullname: "\uBCF4\uC2A4\uB294 \uC5B4\uB514\uC5D0"
     stage_info: "\uBB34\uC0AC\uD788 \uC131 \uC548\uC5D0 \uB4E4\uC5B4\uC628 \uB2F9\uC2E0.\\n\uC131
@@ -81,11 +81,11 @@ MonoBehaviour:
     stage_name: stage5
     enemy_count: 3
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit3: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
+    enemy_unit3: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
     reward_hp: 0
     reward_point: 4
-    reward_coin: 160
+    reward_coin: 200
     open_item: 
     stage_fullname: "\uCD5C\uD6C4\uC758 \uC804\uD22C"
     stage_info: "\uC774\uC81C\uB294 \uC815\uB9D0 \uBAA8\uB4E0 \uAC83\uC744 \uB05D\uB0BC
@@ -127,11 +127,11 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 5
-    atk: 20
-    def: 20
+    atk: 17
+    def: 17
     image: monsterImage/monster_golem
     sound: 
-    enemy_info: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8\uAC00 \uC5BC\uC74C\uC6D0\uC18C\uC640\\n\uACB0\uD569\uD574
+    enemy_info: "\\n\uC2A4\uD1A4\uD53C\uC2A4\uD2B8\uAC00 \uC5BC\uC74C\uC6D0\uC18C\uC640\\n\uACB0\uD569\uD574
       \uD0C4\uC0DD\uD55C \uC815\uC608 \uBAAC\uC2A4\uD130. \\n\uC5BC\uC74C\uACFC \uBC14\uC704\uAC00
       \uACB0\uD569\uD574 \uB354\uC6B1 \uB2E8\uB2E8\uD55C \uC8FC\uBA39\uACFC \uC678\uD53C\uB97C
       \uAC00\uC9C4\uB2E4."
@@ -141,13 +141,13 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 5
-    atk: 25
-    def: 20
+    atk: 20
+    def: 17
     image: monsterImage/monster_grime
     sound: 
-    enemy_info: "\uD06C\uACE0 \uB0A0\uCE74\uB85C\uC6B4 \uB0AB\uC744 \uC8FC\uBB34\uAE30\uB85C
+    enemy_info: "\\n\uD06C\uACE0 \uB0A0\uCE74\uB85C\uC6B4 \uB0AB\uC744 \uC8FC\uBB34\uAE30\uB85C
       \uC0BC\uB294 \uC815\uC608 \uBAAC\uC2A4\uD130. \\n\uD2B9\uC720\uC758 \uB0A0\uB835\uD568\uC744
-      \uBC14\uD0D5\uC73C\uB85C\uD55C \uAC15\uB825\uD55C \uACF5\uACA9 \uB355\uBD84\uC5D0
+      \uBC14\uD0D5\uC73C\uB85C\uD55C \uAC15\uD55C \uACF5\uACA9 \uB355\uBD84\uC5D0
       \uBCF4\uC2A4 \uBC14\uB85C \uB2E4\uC74C\uC758 \uC9C0\uC704\uB97C \uAC00\uC9C4\uB2E4."
   - id: 2314
     name: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
@@ -155,11 +155,11 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 7
-    atk: 30
-    def: 30
+    atk: 23
+    def: 23
     image: monsterImage/monster_boss
     sound: 
-    enemy_info: "\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0\\n\uAD70\uB9BC\uD558\uB294
+    enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294
       \uC655.\\n\uD30C\uAD34\uC790\uB780 \uC774\uB984\uC5D0 \uAC78\uB9DE\uAC8C \uADF8
       \uAC80\uC5D0 \uB2FF\uB294 \uBAA8\uB4E0 \uAC83\uC744 \uD30C\uAD34\uD558\uB294
       \uAC15\uB825\uD55C \uD798\uC744\\n\uAC00\uC84C\uB2E4."
@@ -169,11 +169,11 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 7
-    atk: 30
-    def: 30
+    atk: 23
+    def: 23
     image: monsterImage/monster_boss
     sound: 
-    enemy_info: "\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0\\n\uAD70\uB9BC\uD558\uB294
+    enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294
       \uC655.\\n\uD30C\uAD34\uC790\uB780 \uC774\uB984\uC5D0 \uAC78\uB9DE\uAC8C \uADF8
       \uAC80\uC5D0 \uB2FF\uB294 \uBAA8\uB4E0 \uAC83\uC744 \uD30C\uAD34\uD558\uB294
       \uAC15\uB825\uD55C \uD798\uC744\\n\uAC00\uC84C\uB2E4."
