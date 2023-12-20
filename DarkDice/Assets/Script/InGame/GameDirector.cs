@@ -80,6 +80,9 @@ public class GameDirector : MonoBehaviour
     public GameObject Revival_Part;
     public GameObject[] ItemChoice_Part;
 
+    //히트 이펙트 부분------------------------------------------------------------------------------
+    public GameObject[] Hit_Text_Effect; // 0번 Deal 1번 Miss 2번 Fail 3번 Def
+
     public Transform BackGround;
 
     AudioSource Sound_BGM;
@@ -181,12 +184,6 @@ public class GameDirector : MonoBehaviour
             Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
         }
 
-        /*        for (int i = 0; i < Item_Toggle.Length; i++)
-                {
-                    Item_BackGround[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage; //백그라운드와 이미지를 설정한다.
-                    Item_BackGround[i].GetComponent<Transform>().GetChild(0).GetComponent<Image>().sprite = playerData.item[i].ItemImage;
-                }*/
-
         Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
         Player_Def_Text.text = playerData.def.ToString();
         Monster_Atk_Text.text = monsterData.atk.ToString();
@@ -232,7 +229,6 @@ public class GameDirector : MonoBehaviour
                 RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
             }
         }
-        
 
         if (Item_Toggle[0].isOn) //아이템을 클릭 했을 때, 사용할 아이템 저장 및 파티클 구현
         {
@@ -507,6 +503,7 @@ public class GameDirector : MonoBehaviour
 
         if (atksum > monsterData.def) // 공격 성공했을 때
         {
+            Hit_Text_Effect[0].SetActive(true);
             if (AttakcRand == 0)
             {
                 Hit_Part[0].SetActive(true);
@@ -525,6 +522,7 @@ public class GameDirector : MonoBehaviour
         }
         else if (atksum == monsterData.def) // 공격 서로 맞았을 때
         {
+            Hit_Text_Effect[1].SetActive(true);
             Hit_Part[2].SetActive(true);
             Sound_SFX.MonsterAttack_SFX(monster[MonsterCount].name);
             monsterAni.state.SetAnimation(0, "Attack", false);
@@ -549,6 +547,7 @@ public class GameDirector : MonoBehaviour
         }
         else // 공격 실패할 때
         {
+            Hit_Text_Effect[2].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Sound_SFX.MonsterAttack_SFX(monster[MonsterCount].name);
             yield return new WaitForSeconds(0.4f);
@@ -591,6 +590,7 @@ public class GameDirector : MonoBehaviour
 
         if(defSum < monsterData.atk) // 방어 실패
         {
+            Hit_Text_Effect[2].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Sound_SFX.MonsterAttack_SFX(monster[MonsterCount].name);
             Hit_Part[3].SetActive(true);
@@ -601,6 +601,7 @@ public class GameDirector : MonoBehaviour
             playerData.hp -= 1;
         }
         else if(defSum == monsterData.atk) { // 서로 맞음
+            Hit_Text_Effect[1].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Sound_SFX.playerAttack_SFX(2);
             Sound_SFX.MonsterAttack_SFX(monster[MonsterCount].name);
@@ -614,6 +615,7 @@ public class GameDirector : MonoBehaviour
         }
         else // 방어 성공
         {
+            Hit_Text_Effect[3].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Sound_SFX.MonsterAttack_SFX(monster[MonsterCount].name);
             yield return new WaitForSeconds(0.4f);

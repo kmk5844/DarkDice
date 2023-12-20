@@ -99,6 +99,7 @@
     <Compile Include="Assets\Script\Start + Loading\Ani_Loading_Off.cs" />
     <Compile Include="Assets\Scritable\Excel\stageEntity.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\StatusDirector.cs" />
+    <Compile Include="Assets\Script\InGame\BattleText_Off.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\UiDirector.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\Entity\MstItemEntity.cs" />
     <Compile Include="Assets\Script\GameManager\GameManager.cs" />

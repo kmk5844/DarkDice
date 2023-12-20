@@ -2307,7 +2307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &114241545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9664,7 +9664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619671064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12153,8 +12153,8 @@ MonoBehaviour:
     \uBD88\uD0DC\uC6E0\uB2E4...\"\n\t\uAE30\uD68D \uBC0F \uC544\uD2B8 : \uC5E0\uBC84   
     \"\uB2E4\uC74C\uC5D4 \uAF2D \uC544\uD2B8\uC640 \uD568\uAED8...\u2606\"\n\n\uB3C4\uC6C0\uC744
     \uC900 \uC0AC\uB78C\uB4E4\n           \uC8FC\uC0AC\uC704 \uC544\uD2B8  : \uBCA0\uBE44   
-    \"\uB2E4\uB78C\uC950 \uCEE4\uC5FD\uB2E4~\u2665\"\n\t  \uCEF7\uC52C \uC544\uD2B8   
-    : \uB3D9\uC6B1    \"\uADF8 \uB2E4\uB78C\uC950 \uC81C\uAC00 \uADF8\uB838\uC2B5\uB2C8\uB2E4\uB9CC?\"\n\tCompany 
+    \"\uB791\uC774 \uCEE4\uC5FD\uB2E4~\u2665\"\n\t  \uCEF7\uC52C \uC544\uD2B8   
+    : \uB3D9\uC6B1    \"\uB791\uC774\uB294 \uC81C\uAC00 \uADF8\uB838\uC2B5\uB2C8\uB2E4\uB9CC?\"\n\tCompany 
     :  \uACF5\uAC10\uC624\uB798\uCF58\uD150\uCE20, \uB9C8\uC774\uBBF8 \uAE00\uB85C\uBC8C
     \uC13C\uD130\n\n\uC800\uC791\uAD8C\n\t       \uD3F0\uD2B8        : KBO \uB2E4\uC774\uC544\uACE0\uB515
     Bold\n\t\t       \t : KBO \uB2E4\uC774\uC544\uACE0\uB515 Medium\n\t   \uD50C\uB808\uC774\uC5B4   
@@ -17444,7 +17444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1049082919
 RectTransform:
   m_ObjectHideFlags: 0

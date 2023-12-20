@@ -60,10 +60,15 @@ public class StageDirector : MonoBehaviour {
             }
 
             StageButton[i].interactable = true;
-/*            if(i < lockOffStage - 1)
+        }
+        
+        for(int i = 0; i < Stage_Road.Length; i++)
+        {
+            if(i == lockOffStage - 1)
             {
-                Stage_Road[i].interactable = true;
-            }*/
+                break;
+            }
+            Stage_Road[i].interactable = true;
         }
 
         for (int i = 0; i < ItemLock.Length; i++)

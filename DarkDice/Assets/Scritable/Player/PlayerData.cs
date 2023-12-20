@@ -39,11 +39,11 @@ public class PlayerData : ScriptableObject
         }
         if (!PlayerPrefs.HasKey("Player_Atk"))
         {
-            PlayerPrefs.SetInt("Player_Atk", 10); // 기본 설정
+            PlayerPrefs.SetInt("Player_Atk", 8); // 기본 설정
         }
         if (!PlayerPrefs.HasKey("Player_Def"))
         {
-            PlayerPrefs.SetInt("Player_Def", 10); // 기본 설정
+            PlayerPrefs.SetInt("Player_Def", 8); // 기본 설정
         }
         if (!PlayerPrefs.HasKey("Player_Weapon"))
         {
@@ -123,9 +123,9 @@ public class PlayerData : ScriptableObject
 
     public void ItemUse_Init() //플레이어 전용 초기화
     {
-        status = (atk - 9) + (def - 9) + status;
-        atk = 9;
-        def = 9;
+        status = (atk - 8) + (def - 8) + status;
+        atk = 8;
+        def = 8;
         PlayerPrefs.SetInt("Player_Status", status);
         PlayerPrefs.SetInt("Player_Atk", atk);
         PlayerPrefs.SetInt("Player_Def", def);
