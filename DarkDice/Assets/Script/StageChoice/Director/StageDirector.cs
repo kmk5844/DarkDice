@@ -76,7 +76,7 @@ public class StageDirector : MonoBehaviour {
 
         for (int i = 2; i < lockOffStage; i++)
         {
-            if (i == StageButton.Length - 1) // 인덱스 초과 방지
+            if (i == StageButton.Length) // 인덱스 초과 방지
             {
                 break;
             }

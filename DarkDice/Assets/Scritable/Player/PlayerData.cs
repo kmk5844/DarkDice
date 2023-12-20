@@ -141,8 +141,8 @@ public class PlayerData : ScriptableObject
     public void Init() //개발자 전용 초기화
     {
         hp = 2;
-        atk = 9;
-        def = 9;
+        atk = 8;
+        def = 8;
         coin = 0;
         status = 0;
         PlayerPrefs.SetInt("Player_Hp", (int)hp);

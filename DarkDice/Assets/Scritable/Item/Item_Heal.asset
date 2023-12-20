@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Item_Heal
   m_EditorClassIdentifier: 
   itemName: Heal
-  pride: 40
+  pride: 60
   itemCount: 0
   itemImage: {fileID: 21300000, guid: bc323450f21c36945854af6636b48280, type: 3}

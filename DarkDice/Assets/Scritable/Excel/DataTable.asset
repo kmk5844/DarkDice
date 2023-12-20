@@ -126,37 +126,37 @@ MonoBehaviour:
     name_en: icegolem
     type: M
     state: 0
-    hp: 5
-    atk: 17
-    def: 17
+    hp: 6
+    atk: 15
+    def: 19
     image: monsterImage/monster_golem
     sound: 
-    enemy_info: "\\n\uC2A4\uD1A4\uD53C\uC2A4\uD2B8\uAC00 \uC5BC\uC74C\uC6D0\uC18C\uC640\\n\uACB0\uD569\uD574
-      \uD0C4\uC0DD\uD55C \uC815\uC608 \uBAAC\uC2A4\uD130. \\n\uC5BC\uC74C\uACFC \uBC14\uC704\uAC00
-      \uACB0\uD569\uD574 \uB354\uC6B1 \uB2E8\uB2E8\uD55C \uC8FC\uBA39\uACFC \uC678\uD53C\uB97C
-      \uAC00\uC9C4\uB2E4."
+    enemy_info: "\\n\uC2A4\uD1A4\uD53C\uC2A4\uD2B8\uAC00 \uC5BC\uC74C\uC6D0\uC18C\uC640
+      \uACB0\uD569\uD574\\n\uD0C4\uC0DD\uD55C \uC815\uC608 \uBAAC\uC2A4\uD130. \\n\uC5BC\uC74C\uACFC
+      \uBC14\uC704\uAC00 \uACB0\uD569\uD574 \uB354\uC6B1 \uB2E8\uB2E8\uD55C\\n\uC8FC\uBA39\uACFC
+      \uC678\uD53C\uB97C \uAC00\uC9C4\uB2E4."
   - id: 2213
     name: "\uADF8\uB9BC \uB9AC\uD37C"
     name_en: grime reaper
     type: M
     state: 0
-    hp: 5
+    hp: 6
     atk: 21
     def: 19
     image: monsterImage/monster_grime
     sound: 
     enemy_info: "\\n\uD06C\uACE0 \uB0A0\uCE74\uB85C\uC6B4 \uB0AB\uC744 \uC8FC\uBB34\uAE30\uB85C
       \uC0BC\uB294\\n\uC815\uC608 \uBAAC\uC2A4\uD130. \\n\uD2B9\uC720\uC758 \uB0A0\uB835\uD568\uC744
-      \uBC14\uD0D5\uC73C\uB85C\uD55C \uAC15\uD55C \uACF5\uACA9 \uB355\uBD84\uC5D0
-      \uBCF4\uC2A4 \uBC14\uB85C \uB2E4\uC74C\uC758 \uC9C0\uC704\uB97C \uAC00\uC9C4\uB2E4."
+      \uBC14\uD0D5\uC73C\uB85C\uD55C\\n\uAC15\uD55C \uACF5\uACA9 \uB355\uBD84\uC5D0
+      \uBCF4\uC2A4 \uBC14\uB85C \uB2E4\uC74C\uC758\\n\uC9C0\uC704\uB97C \uAC00\uC9C4\uB2E4."
   - id: 2314
     name: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
     name_en: destroyer moros
     type: M
     state: 0
-    hp: 7
-    atk: 24
-    def: 24
+    hp: 8
+    atk: 23
+    def: 20
     image: monsterImage/monster_boss
     sound: 
     enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294
@@ -168,9 +168,9 @@ MonoBehaviour:
     name_en: destroyer moros
     type: M
     state: 0
-    hp: 7
-    atk: 24
-    def: 24
+    hp: 8
+    atk: 23
+    def: 20
     image: monsterImage/monster_boss
     sound: 
     enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294

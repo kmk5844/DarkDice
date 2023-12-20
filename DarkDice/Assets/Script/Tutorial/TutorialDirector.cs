@@ -39,7 +39,7 @@ public class TutorialDirector : MonoBehaviour
             if (sub_count == 0)
             {
                 Step[0].SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "아까 들었다시피 난 주사위 정령인 \"랑이\"라고 해"));
+                StartCoroutine(Typing(Step_text[0], "아까 들었다시피 난 주사위 정령인 \"랑이\"라고 해."));
             }
             else if (sub_count == 1)
             {
@@ -69,7 +69,7 @@ public class TutorialDirector : MonoBehaviour
                 Dice_flag = false;
                 Step[0].SetActive(false);
                 Step[2].SetActive(true);
-                StartCoroutine(Typing(Step_text[2], "잘했어! 여기까지 잘 따라왔네!\n공격하기 전에 아이템을 한 번 눌러보자".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[2], "잘했어! 여기까지 잘 따라왔네!\n공격하기 전에 아이템을 한 번 눌러보자!".Replace("\\n", "\n")));
             }
             else if (sub_count == 6)
             {
@@ -108,14 +108,14 @@ public class TutorialDirector : MonoBehaviour
             }else if (sub_count == 1)
             {
                 part.SetActive(true);
-                StartCoroutine(Typing(Step_text[0], "먼저 위에 있는 플레이어 버튼을 눌러보자"));
+                StartCoroutine(Typing(Step_text[0], "먼저 위에 있는 플레이어 버튼을 눌러보자."));
                 Button_flag = true;
             }
             else if(sub_count == 2)
             {
                 part.SetActive(false);
                 Button_flag = false;
-                StartCoroutine(Typing(Step_text[0], "좋아, 잘 따라오고 있어!\n스테이지마다 최초 클리어하는 경우, 스탯 포인트를\n 받을 수 있어".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[0], "좋아, 잘 따라오고 있어!\n스테이지마다 최초 클리어하는 경우, 스탯 포인트를 받을 수 있어.".Replace("\\n", "\n")));
             }else if(sub_count == 3)
             {
                 StartCoroutine(Typing(Step_text[0], "너가 원하는대로 공격력과 방어력을 강화할 수 있어!".Replace("\\n", "\n")));
