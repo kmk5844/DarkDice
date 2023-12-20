@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00f2cf2ff30a949ad6be7537c95fbb, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  playerName: Test_Player
-  hp: 99
+  playerName: Player
+  hp: 4
   atk: 12
-  weapon: {fileID: 11400000, guid: a688a841fc3ca2c4db1b6415a4e1a875, type: 2}
-  def: 9
-  coin: 580
-  status: 12
+  weapon: {fileID: 11400000, guid: 18412146d52943d4ba734d8c132ec200, type: 2}
+  def: 13
+  coin: 230
+  status: 4
   item:
-  - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}
-  - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}
-  - {fileID: 11400000, guid: d7548bebf7ef6594999ac7f148e44767, type: 2}
+  - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
+  - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}
+  - {fileID: 11400000, guid: 0d4bf1a5377598946801bfa2931e2dc7, type: 2}

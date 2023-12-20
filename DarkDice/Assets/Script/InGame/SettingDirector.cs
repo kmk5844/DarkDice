@@ -34,12 +34,10 @@ public class SettingDirector : MonoBehaviour
         if (!SettingUI.activeSelf) // 설정 창을 클릭했을 경우
         {
             SettingUI.SetActive(true);
-            Time.timeScale = 0;
         }
         else
         {
             SettingUI.SetActive(false);
-            Time.timeScale = 1;
         }
     }
 
@@ -47,7 +45,7 @@ public class SettingDirector : MonoBehaviour
     {
         try
         {
-            gameManager.NextLevle("1-0.Toon");
+            gameManager.NextLevel("1-0.Toon");
         }
         catch
         {

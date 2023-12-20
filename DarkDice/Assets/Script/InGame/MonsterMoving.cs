@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class MonsterMoving : MonoBehaviour
 {
+    InGame_Sound SFX_Sound;
+
     public GameObject Player;
     public Transform monsterGroup;
     [SerializeField]
     private GameObject[] monster;
+    public GameObject BackGround;
 
     public GameObject GameDirector;
 
@@ -14,12 +17,11 @@ public class MonsterMoving : MonoBehaviour
     int monsterGroup_childCount;
     int Monster_DieCount;
 
-    InGame_Sound test_SFX;
-
     // Start is called before the first frame update
     void Start()
     {
-        test_SFX = GetComponent<InGame_Sound>();
+        SFX_Sound = GetComponent<InGame_Sound>();
+
         Monster_DieCount = 0;
         monsterGroup_childCount = monsterGroup.childCount;
         monster = new GameObject[monsterGroup_childCount];
@@ -35,7 +37,7 @@ public class MonsterMoving : MonoBehaviour
         {
             if (Monster_DieCount < monster.Length)
             {
-                if (Player.transform.position.x - monster[Monster_DieCount].transform.position.x <= -11.0f)
+                if (Player.transform.position.x - monster[Monster_DieCount].transform.position.x <= -11.0f)// 만날 때까지
                 {
                     monster[Monster_DieCount].SetActive(true);
                     Play_UI.SetActive(false);
@@ -46,10 +48,10 @@ public class MonsterMoving : MonoBehaviour
 
                     if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                     {
-                        test_SFX.PlayerWalk_SFX(0);
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
+                        SFX_Sound.PlayerWalk_SFX(0);
                     }
-
+                    BackGround.transform.Translate(10 * Time.deltaTime, 0 , 0);
                     monster[Monster_DieCount].transform.Translate(-10.0f * Time.deltaTime, 0, 0);
                     if (Monster_DieCount > 0)
                     {
@@ -65,7 +67,7 @@ public class MonsterMoving : MonoBehaviour
 
                     if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Idle")
                     {
-                        test_SFX.PlayerWalk_SFX(1);
+                        SFX_Sound.PlayerWalk_SFX(1);
                         Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Idle", true);
                     }
 
@@ -81,7 +83,7 @@ public class MonsterMoving : MonoBehaviour
             {
                 if (Player.GetComponentInChildren<SkeletonAnimation>().AnimationName != "Run DUELIST")
                 {
-                    test_SFX.PlayerWalk_SFX(0);
+                    SFX_Sound.PlayerWalk_SFX(0);
                     Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
                 }
 
@@ -90,9 +92,10 @@ public class MonsterMoving : MonoBehaviour
                     Player.transform.Translate(10.0f * Time.deltaTime, 0, 0);
                 }
                 else
-                { // 플레이어가 지나가는 애니메이션
-                    test_SFX.PlayerWalk_SFX(1);
-                }
+                {
+                    Player.SetActive(false);
+                    SFX_Sound.PlayerWalk_SFX(1);
+                } // 플레이어가 지나가는 애니메이션
             }
         }
     }

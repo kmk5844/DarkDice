@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "ce061716a0e1c50201",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 8292,
+        "processId": 1931,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -47,103 +47,91 @@
         {
             "deviceId": "R9PW30HTHXD",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 25629,
-            "exited": false
+            "processId": 4810,
+            "exited": true
         },
         {
             "deviceId": "R9PW30HTHXD",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 26275,
-            "exited": false
+            "processId": 5432,
+            "exited": true
         },
         {
             "deviceId": "R9PW30HTHXD",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 27060,
-            "exited": false
+            "processId": 5643,
+            "exited": true
         },
         {
             "deviceId": "R9PW30HTHXD",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 27225,
-            "exited": false
+            "processId": 6590,
+            "exited": true
         },
         {
             "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 27598,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 28165,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 14894,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 18398,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 27369,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 13522,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 13969,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 17013,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 18991,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 31763,
-            "exited": false
-        },
-        {
-            "deviceId": "R9PW30HTHXD",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 719,
+            "name": "com.sec.android.app.launcher",
+            "processId": 24960,
             "exited": false
         },
         {
             "deviceId": "ce061716a0e1c50201",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 5654,
+            "processId": 3036,
+            "exited": true
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 12632,
+            "exited": true
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 21999,
+            "exited": true
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 31612,
+            "exited": true
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.unity3d.mobileremote",
+            "processId": 32009,
             "exited": false
         },
         {
             "deviceId": "ce061716a0e1c50201",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 8292,
+            "processId": 463,
+            "exited": false
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 903,
+            "exited": false
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 1329,
+            "exited": false
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 1612,
+            "exited": false
+        },
+        {
+            "deviceId": "ce061716a0e1c50201",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 1931,
             "exited": false
         }
     ],

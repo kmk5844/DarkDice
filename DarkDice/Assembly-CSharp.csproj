@@ -68,6 +68,7 @@
     <Compile Include="Assets\Script\GameManager\AudioManager.cs" />
     <Compile Include="Assets\Scritable\MonsterData.cs" />
     <Compile Include="Assets\Scritable\Weapon\WeaponData.cs" />
+    <Compile Include="Assets\Script\CutScene\Start_CutScene.cs" />
     <Compile Include="Assets\Scritable\Stage\StageData.cs" />
     <Compile Include="Assets\Scritable\Excel\monsterEntity.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\StoreDirector.cs" />
@@ -78,10 +79,9 @@
     <Compile Include="Assets\Script\InGame\Dice.cs" />
     <Compile Include="Assets\Script\StageChoice\Director\ItemDirector_Stage.cs" />
     <Compile Include="Assets\Scritable\Player\Player_Scritable.cs" />
-    <Compile Include="Assets\InGame_Sound.cs" />
     <Compile Include="Assets\Scritable\Player\PlayerData.cs" />
-    <Compile Include="Assets\Test\ChangeTest.cs" />
     <Compile Include="Assets\Script\StageChoice\ButtonSFX.cs" />
+    <Compile Include="Assets\Script\CutScene\End_CutScene.cs" />
     <Compile Include="Assets\Script\InGame\Player_Costume.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\Example.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -92,6 +92,8 @@
     <Compile Include="Assets\Scritable\Item\ItemData.cs" />
     <Compile Include="Assets\Scritable\Excel\DataTable.cs" />
     <Compile Include="Assets\Script\StageChoice\ToggleONOFF.cs" />
+    <Compile Include="Assets\Script\Tutorial\TutorialDirector.cs" />
+    <Compile Include="Assets\Script\InGame\InGame_Sound.cs" />
     <Compile Include="Assets\Script\InGame\Title.cs" />
     <Compile Include="Assets\ExcelImporter\Example\Scripts\ExcelAsset\MstItems.cs" />
     <Compile Include="Assets\Script\Start + Loading\Ani_Loading_Off.cs" />

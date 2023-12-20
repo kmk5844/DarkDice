@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stage Data
   m_EditorClassIdentifier: 
   stageNum: 5
-  curretstageNum: 0
+  curretstageNum: 1

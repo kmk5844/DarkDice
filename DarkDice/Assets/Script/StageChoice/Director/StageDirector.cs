@@ -14,6 +14,7 @@ public class StageDirector : MonoBehaviour {
     public DataTable Data; // 스테이지 정보가 담긴 데이터테이블 불러오기
 
     public Button[] StageButton; // 로비 화면에 있는 스테이지 버튼
+    public Button[] Stage_Road; // 버튼 길
 
     public GameObject stageBar; //메인 스테이지 바
     public GameObject stageHideButton; //메인 스테이지 바 바깥을 눌렀을 때, 닫히는 버튼
@@ -21,6 +22,7 @@ public class StageDirector : MonoBehaviour {
 
     public TextMeshProUGUI stageName; // 스테이지 이름
     public TextMeshProUGUI stageStory; // 스테이지 스토리    
+    public TextMeshProUGUI roundText; // 라운드 텍스트   
     public Image[] item_Image;  //플레이어 장착된 아이템
     public Image[] reward_Image; // 스테이지 보상
     public TextMeshProUGUI reward_coin_text; //스테이지 보상 중, 코인 텍스트
@@ -30,6 +32,7 @@ public class StageDirector : MonoBehaviour {
 
     public Button[] Monster_inf_Button; //몬스터 정보 버튼
     public Transform[] Monster_inf_Group; // 몬스터 정보 창
+    AudioSource Sound_BGM;
 
     int stageNum; //버튼을 클릭했을 때 나오는 숫자
     int lockOffStage;// 최초 클리어하지 않은 스테이지
@@ -42,6 +45,7 @@ public class StageDirector : MonoBehaviour {
         lockOffStage = stageData.stageNum; // 최초 클리어하지 않은 스테이지
         player = playerObject.GetComponent<Player_Scritable>();
         Bar_ani = stageBar.GetComponent<Animator>();
+        Sound_BGM = GameObject.Find("Bgm").GetComponent<AudioSource>();
 
         for (int i = 0; i < item_Image.Length; i++)
         {
@@ -54,7 +58,12 @@ public class StageDirector : MonoBehaviour {
             {
                 break;
             }
+
             StageButton[i].interactable = true;
+/*            if(i < lockOffStage - 1)
+            {
+                Stage_Road[i].interactable = true;
+            }*/
         }
 
         for (int i = 0; i < ItemLock.Length; i++)
@@ -95,8 +104,17 @@ public class StageDirector : MonoBehaviour {
 
         // 스테이지 정보 갱신
         stageName.text = "STAGE" + Num + " : " + Data.stage_Data[Num-1].stage_fullname;
-        stageStory.text = Data.stage_Data[Num - 1].stage_info;
+        stageStory.text = Data.stage_Data[Num - 1].stage_info.Replace("\\n", "\n");
         reward_coin_text.text = Data.stage_Data[Num - 1].reward_coin.ToString() + "G";
+
+        if(Num == 5)
+        {
+            roundText.text = "15라운드";
+        }
+        else
+        {
+            roundText.text = "10라운드";
+        }
 
         // 몬스터 정보 갱신
         for (int i = 0; i < Monster_inf_Button.Length; i++)
@@ -184,13 +202,25 @@ public class StageDirector : MonoBehaviour {
 
     public void OnClickFight()
     {
-        SceneManager.LoadScene("Test_Stage" + stageNum);
-        stageData.ClickNum_Stage(stageNum);
+        SceneManager.LoadScene("Stage" + stageNum);
+        //-> 브금 변경
+        if(stageNum == 5)
+        {
+            Sound_BGM.clip = Resources.Load<AudioClip>("Sound/BGM/Boss_BGM");
+            Sound_BGM.Play();
+        }
+        else
+        {
+            Sound_BGM.clip = Resources.Load<AudioClip>("Sound/BGM/Battle_BGM");
+            Sound_BGM.Play();
+        }
+        stageData.ClickNum_Stage(stageNum); // 최초클리어 여부
     }
 
     public void OnInitButton()
     {
         stageData.Init_Stage();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //플레이어 초기화도 되어야 함.
+        PlayerPrefs.SetInt("Guide_Count", 0);
+        SceneManager.LoadScene("0.Start_Screen"); //플레이어 초기화도 되어야 함.
     }
 }

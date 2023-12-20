@@ -119,6 +119,11 @@ public class StoreDirector : MonoBehaviour
         YesButton.onClick.AddListener(() => OnWeaponBuy(i));
     }
 
+    public void OnClickCancel()
+    {
+        YesButton.onClick.RemoveAllListeners();
+    }
+
     public void OnItemBuy(int i)
     {
         YesButton.onClick.RemoveAllListeners();

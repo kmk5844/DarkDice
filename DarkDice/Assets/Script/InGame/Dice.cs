@@ -8,8 +8,8 @@ public class Dice : MonoBehaviour
 {
     [SerializeField]
     public float delay;
-    public GameObject test;
-    AudioSource audiotest;
+
+    AudioSource SFX_Audio;
     AudioClip dice_roll_SFX;
     AudioClip dice_end_SFX;
 
@@ -30,7 +30,7 @@ public class Dice : MonoBehaviour
 
     private void Start()
     {
-        audiotest = test.GetComponent<AudioSource>();
+        SFX_Audio = GameObject.Find("Sfx").GetComponent<AudioSource>();
         dice_roll_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_roll_loop_new");
         dice_end_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_random_new_new");
         rollingFlag = false;
@@ -47,9 +47,11 @@ public class Dice : MonoBehaviour
         int rand1 = 0;
         int rand2 = 0;
 
+        /*     int rand1 = 0;
+             int rand2 = 0;*/
         if (rollingFlag == false)
         {
-            delay += 0.059f;
+            delay += 0.062f;
 
             if (delay > 0.56f)
             {
@@ -84,9 +86,9 @@ public class Dice : MonoBehaviour
             rollingFlag = true;
             delay = 0.01f;
 
-            audiotest.loop = true;
-            audiotest.clip = dice_roll_SFX;
-            audiotest.Play();
+            SFX_Audio.loop = true;
+            SFX_Audio.clip = dice_roll_SFX;
+            SFX_Audio.Play();
 
             StartMethod();
             Dice_Button.GetComponent<Image>().sprite = PauseSprite;
@@ -95,9 +97,9 @@ public class Dice : MonoBehaviour
         {
             rollingFlag = false;
 
-            audiotest.loop = false;
-            audiotest.clip = dice_end_SFX;
-            audiotest.Play();
+            SFX_Audio.loop = false;
+            SFX_Audio.clip = dice_end_SFX;
+            SFX_Audio.Play();
 
             Dice_Button.GetComponent<Image>().sprite = PlaySprite;
             Dice_Button.interactable = false;

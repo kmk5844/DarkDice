@@ -44,10 +44,7 @@ public class ButtonSFX : MonoBehaviour
         {
             SFX_Source.PlayOneShot(armor);
         }
-        catch
-        {
-
-        }
+        catch { }
     }
 
     public void Button_AddComplete_SFX()
