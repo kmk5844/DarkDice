@@ -216,6 +216,7 @@ public class StageDirector : MonoBehaviour {
         }
         else
         {
+/**/
             Sound_BGM.clip = Resources.Load<AudioClip>("Sound/BGM/Battle_BGM");
             Sound_BGM.Play();
         }
