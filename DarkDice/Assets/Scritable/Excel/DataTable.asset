@@ -155,8 +155,8 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 8
-    atk: 23
-    def: 20
+    atk: 20
+    def: 23
     image: monsterImage/monster_boss
     sound: 
     enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294
@@ -169,8 +169,8 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 8
-    atk: 23
-    def: 20
+    atk: 20
+    def: 23
     image: monsterImage/monster_boss
     sound: 
     enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294
