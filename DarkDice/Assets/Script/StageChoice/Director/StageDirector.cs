@@ -205,7 +205,7 @@ public class StageDirector : MonoBehaviour {
         Bar_ani.SetBool("StageBar", false);
     }
 
-    public void OnClickFight()
+    public void OnClickFight() //여기서 변경 요망
     {
         SceneManager.LoadScene("Stage" + stageNum);
         //-> 브금 변경

@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Spine.Unity;
-using Unity.VisualScripting;
 
 public class GameDirector : MonoBehaviour
 {
@@ -136,7 +135,6 @@ public class GameDirector : MonoBehaviour
         playerData = PlayerObject.GetComponent<Player_Scritable>(); // 플레이어 데이터를 불러온다.
         monsterData = monster[MonsterCount].GetComponent<MonsterData>(); // 몬스터 데이터를 불러온다.
         stage = stage_Data.GetComponent<Stage_Scripter>(); // 스테이지 데이터를 불러온다.
-
 
         //스테이지마다 배경 변경
         if(stage.curretStageNum == 1 || stage.curretStageNum == 2)
@@ -482,7 +480,7 @@ public class GameDirector : MonoBehaviour
                 ItemUse();
                 BuffParticlePlay(0);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
-                playerData.hp += 1;
+                playerData.hp += 0.5f;
                 ItemCount++;
             }
             ItemFlag = false; // 사용 했으니 다시 false로 돌아감

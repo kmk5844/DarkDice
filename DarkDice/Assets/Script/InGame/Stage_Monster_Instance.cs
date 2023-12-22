@@ -12,7 +12,7 @@ public class Stage_Monster_Instance : MonoBehaviour
     int stage;
     void Awake()
     {
-        switch (SceneManager.GetActiveScene().name)
+        switch (SceneManager.GetActiveScene().name) // 스테이지 데이터를 불러와서 현재 진행중인 스테이지만 불러오면 됨
         {
             case "Stage1":
                 stage = 0;

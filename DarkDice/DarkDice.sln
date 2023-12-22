@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.UIParticle", "Coffee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelImporter.Editor", "ExcelImporter.Editor.csproj", "{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMobileAds.Editor", "GoogleMobileAds.Editor.csproj", "{7FE8C804-8C92-3639-D6A6-A16CC5C9DE99}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelImporter", "ExcelImporter.csproj", "{53B10563-2705-3375-565B-706B658B8912}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee.UIParticle.Editor", "Coffee.UIParticle.Editor.csproj", "{2574534E-A827-F5E9-ADEF-1B106423648C}"
@@ -43,6 +45,10 @@ Global
 		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45DCBADA-19CC-E233-0EE4-44A57C5BD33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE8C804-8C92-3639-D6A6-A16CC5C9DE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE8C804-8C92-3639-D6A6-A16CC5C9DE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE8C804-8C92-3639-D6A6-A16CC5C9DE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE8C804-8C92-3639-D6A6-A16CC5C9DE99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{53B10563-2705-3375-565B-706B658B8912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{53B10563-2705-3375-565B-706B658B8912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B10563-2705-3375-565B-706B658B8912}.Release|Any CPU.ActiveCfg = Release|Any CPU
