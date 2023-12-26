@@ -42,7 +42,7 @@ public class StageDirector : MonoBehaviour {
         stageNum = 0;
 
         stageData = StageObject.GetComponent<Stage_Scripter>();
-        lockOffStage = stageData.stageNum; // 최초 클리어하지 않은 스테이지
+        lockOffStage = stageData.final_stageNum; // 최초 클리어하지 않은 스테이지
         player = playerObject.GetComponent<Player_Scritable>();
         Bar_ani = stageBar.GetComponent<Animator>();
         Sound_BGM = GameObject.Find("Bgm").GetComponent<AudioSource>();
@@ -142,6 +142,7 @@ public class StageDirector : MonoBehaviour {
             {
                 break;
             }
+
             if (i == 0)
             {
                 str = Data.stage_Data[Num - 1].enemy_unit1;
@@ -205,22 +206,31 @@ public class StageDirector : MonoBehaviour {
         Bar_ani.SetBool("StageBar", false);
     }
 
-    public void OnClickFight() //여기서 변경 요망
+    public void OnClickFight()
     {
-        SceneManager.LoadScene("Stage" + stageNum);
-        //-> 브금 변경
-        if(stageNum == 5)
+        if(stageNum == 1)
+        {
+            SceneManager.LoadScene("Story_Stage");
+        }
+        else
+        {
+            SceneManager.LoadScene("Define_Stage");
+        }
+        Stage_Change_Bgm();
+        stageData.ClickNum_Stage(stageNum); // 최초클리어 여부
+    }
+
+    public void Stage_Change_Bgm()
+    {
+        if (stageNum == 5)
         {
             Sound_BGM.clip = Resources.Load<AudioClip>("Sound/BGM/Boss_BGM");
             Sound_BGM.Play();
         }
-        else
-        {
-/**/
+        else {
             Sound_BGM.clip = Resources.Load<AudioClip>("Sound/BGM/Battle_BGM");
             Sound_BGM.Play();
         }
-        stageData.ClickNum_Stage(stageNum); // 최초클리어 여부
     }
 
     public void OnInitButton()

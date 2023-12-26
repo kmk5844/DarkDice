@@ -667,6 +667,7 @@ namespace Coffee.UIExtensions
 
         private void UpdateTracker()
         {
+#pragma warning disable CS0618 // 형식 또는 멤버는 사용되지 않습니다.
             if (!enabled || !autoScaling || autoScalingMode != AutoScalingMode.Transform)
             {
                 _tracker.Clear();
@@ -675,6 +676,7 @@ namespace Coffee.UIExtensions
             {
                 _tracker.Add(this, rectTransform, DrivenTransformProperties.Scale);
             }
+#pragma warning restore CS0618 // 형식 또는 멤버는 사용되지 않습니다.
         }
     }
 }

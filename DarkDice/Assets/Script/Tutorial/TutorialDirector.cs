@@ -13,6 +13,7 @@ public class TutorialDirector : MonoBehaviour
     public GameObject Skip_Panel;
     public GameObject[] Dont_touch_Panel; //1스테이지에 0번은 DicePanel로 되어있다.
     public GameObject part;
+    public StageData stageData;
 
     int guide;
     int sub_count;
@@ -34,7 +35,7 @@ public class TutorialDirector : MonoBehaviour
 
     public void Tutorial_Talk()
     {
-        if (guide == 0 && SceneManager.GetActiveScene().name.Equals("Stage1"))
+        if (guide == 0 && SceneManager.GetActiveScene().name.Equals("Story_Stage") && stageData.CurretStageNum == 1)
         {
             if (sub_count == 0)
             {
@@ -100,7 +101,6 @@ public class TutorialDirector : MonoBehaviour
             }
         }else if(guide == 1 && SceneManager.GetActiveScene().name.Equals("1.StageChoice"))
         {
-           
             if (sub_count == 0)
             {
                 Step[0].SetActive(true);
@@ -216,8 +216,7 @@ public class TutorialDirector : MonoBehaviour
     public void Skip_Button()
     {
         guide++;
-        if(SceneManager.GetActiveScene().name.Equals("1.StageChoice") && part.activeSelf == true 
-            )
+        if(SceneManager.GetActiveScene().name.Equals("1.StageChoice") && part.activeSelf == true)
         {
             part.SetActive(false);
         }
