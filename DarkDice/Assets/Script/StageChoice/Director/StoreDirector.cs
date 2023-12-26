@@ -73,7 +73,7 @@ public class StoreDirector : MonoBehaviour
                 }
             }
 
-            if (player.coin < 500)
+            if (player.coin < 500) // 변경 예정
             {
                 Item_Button[4].interactable = false;
             }

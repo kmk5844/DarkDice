@@ -9,10 +9,12 @@ public class Stage_Monster_Instance : MonoBehaviour
 {
     public Transform monsterGroup;
     public DataTable Data;
-    int stage;
+    public StageData stageData;
     void Awake()
     {
-        switch (SceneManager.GetActiveScene().name) // 스테이지 데이터를 불러와서 현재 진행중인 스테이지만 불러오면 됨
+        FindEnemy(stageData.CurretStageNum - 1);
+
+/*        switch (SceneManager.GetActiveScene().name) // 스테이지 데이터를 불러와서 현재 진행중인 스테이지만 불러오면 됨
         {
             case "Stage1":
                 stage = 0;
@@ -34,7 +36,7 @@ public class Stage_Monster_Instance : MonoBehaviour
                 stage = 4;
                 FindEnemy(stage);
                 break;
-        }
+        }*/
     }
 
     public void FindEnemy(int stage) // 데이터 테이블에 있는 몬스터 정보를 가져오기 위해서

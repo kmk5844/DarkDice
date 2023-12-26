@@ -12,7 +12,6 @@ public class ItemDirector_Stage : MonoBehaviour
     public GameObject[] ItemObject; //아이템 데이터를 가지고 옴
     Item_Scritable[] itemData_Object;
 
-    public TextMeshProUGUI[] Inventory_Item_Count; //가방에 있는 아이템 갯수
     public TextMeshProUGUI[] Equip_Item_Count; //장착할 때 볼 수 있는 아이템 갯수
     public ItemData default_item;
 
@@ -30,7 +29,7 @@ public class ItemDirector_Stage : MonoBehaviour
         playerData = PlayerObject.GetComponent<Player_Scritable>();
         Sub_Count = new int[Equip_Item_Count.Length];
 
-        for (int i = 0; i < Inventory_Item_Count.Length; i++)
+        for (int i = 0; i < ItemObject.Length; i++)
         {
             itemData_Object[i] = ItemObject[i].GetComponent<Item_Scritable>();
         }
@@ -55,11 +54,6 @@ public class ItemDirector_Stage : MonoBehaviour
 
      private void Update()
     {
-        for (int i = 0; i < Inventory_Item_Count.Length; i++)
-        {
-            Inventory_Item_Count[i].text = itemData_Object[i].itemcount.ToString();
-        }
-
         for (int i = 0; i < ItemEquip.Length; i++)
         {
             ItemEquip[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
@@ -81,7 +75,7 @@ public class ItemDirector_Stage : MonoBehaviour
 
     public void OnUpdate()
     {
-        for(int i = 0; i < Inventory_Item_Count.Length; i++)
+        for(int i = 0; i < ItemObject.Length; i++)
         {
             Sub_Count[i] = itemData_Object[i].itemcount;
         }
@@ -110,6 +104,9 @@ public class ItemDirector_Stage : MonoBehaviour
         else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleDef")
         {
             Sub_Count[3]++;
+        }else if(ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "window_04")
+        {
+            Sub_Count[4]++;
         }
 
         if (Equip_Max_Count > 0)

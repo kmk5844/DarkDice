@@ -6,25 +6,25 @@ public class Stage_Scripter : MonoBehaviour
 {
     [SerializeField]
     public StageData stageData;
-    public int stageNum;
+    public int final_stageNum;
     public int curretStageNum;
 
     private void Awake()
     {
-        stageNum = stageData.StageNum;
+        final_stageNum = stageData.Final_StageNum;
         curretStageNum = stageData.CurretStageNum;
     }
 
     // Update is called once per frame
     void Update()
     {
-        stageNum = stageData.StageNum;
+        final_stageNum = stageData.Final_StageNum;
         curretStageNum = stageData.CurretStageNum;
     }
 
     public void WinStage_Stage()
     {
-        if (curretStageNum == stageNum)
+        if (curretStageNum == final_stageNum)
         {
             stageData.WinStage();
         }

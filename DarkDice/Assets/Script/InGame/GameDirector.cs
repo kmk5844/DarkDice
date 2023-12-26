@@ -8,13 +8,12 @@ using Spine.Unity;
 
 public class GameDirector : MonoBehaviour
 {
-
     public GameTurn gameTurn;
     Player_Scritable playerData; // 플레이어 정보 데이터를 불러온다.
     MonsterData monsterData;
 
     public GameObject[] ItemObject_Data; // 아이템 정보 데이터를 불러온다.
-    Item_Scritable[] item;
+    Item_Scritable[] item; // 1번_atk2배 2번_힐 3번_다시던지기 4번_def2배 5번_쇠약 6번_부활
 
     public GameObject stage_Data; // 스테이지 정보 데이터를 불러온다(최초 클리어와 관련)
     Stage_Scripter stage;
@@ -31,8 +30,10 @@ public class GameDirector : MonoBehaviour
 
     int RoundNum; //현재 라운드
     int DiceNum; //주사위를 던진 횟수 -> 찬스 아이템 사용할 경우에 이용함
-    int atksum; // 공격력
-    int defSum; // 방어력
+    int player_atksum; // 플레이어의 공격력
+    int player_defSum; // 플레이어의 방어력
+    int monster_atk; // 몬스터의 공격력
+    int monster_def; // 몬스터의 방어력
     int MonsterCount; // 해당 몬스터의 수가 딱 맞으면, 종료하는 카운트
     int ItemCount; // 아이템 횟수 -> 찬스 아이템을 굴린 후, 또 다른 아이템 허용하지 않도록 함
     int conditionsDefeat; //패배 조건
@@ -54,6 +55,7 @@ public class GameDirector : MonoBehaviour
     public GameObject Win_UI;  // 이겼을 때의 UI
     public TextMeshProUGUI Win_UI_Button_Text; // 스테이지 5인 경우에, 텍스트 변경
     public GameObject Lose_UI; // 졌을 때의 UI
+    public Button Revival_Button; // 부활 할 때의 버튼
     public GameObject PlayerObject; //플레이어 오브젝트
     public GameObject Hurt_Image; //맞았을 때의 UI
 
@@ -63,8 +65,6 @@ public class GameDirector : MonoBehaviour
 
     public Button AtkButton;
     public Button DiceButton;
-    public Button ItemGroup_Button; // 아이템 창을 여는 버튼
-    bool ItemButton_OpenFlag;
 
     public TextMeshProUGUI reward_Coin; // 보상 코인 텍스트 변경
     public Image[] reward_Image; // 보상 이미지 변경
@@ -98,21 +98,11 @@ public class GameDirector : MonoBehaviour
         MonsterCount = 0;
         ItemCount = 0;
 
-        if (SceneManager.GetActiveScene().name.Equals("Stage5"))
-        {
-            conditionsDefeat = 15;
-        }
-        else
-        {
-            conditionsDefeat = 10;
-        }
-
         playerAni = PlayerObject.GetComponentInChildren<SkeletonAnimation>();
         mosterChildCount = mosterGroup.childCount;
         monster = new GameObject[mosterChildCount];
         ItemFlag = false;
 
-        ItemButton_OpenFlag = false;
         Ani_ItemGroup = Item_Group.GetComponent<Animator>();
 
         gameTurn = GameTurn.BeforeFight;
@@ -135,9 +125,17 @@ public class GameDirector : MonoBehaviour
         playerData = PlayerObject.GetComponent<Player_Scritable>(); // 플레이어 데이터를 불러온다.
         monsterData = monster[MonsterCount].GetComponent<MonsterData>(); // 몬스터 데이터를 불러온다.
         stage = stage_Data.GetComponent<Stage_Scripter>(); // 스테이지 데이터를 불러온다.
+        if (stage.curretStageNum == 5)
+        {
+            conditionsDefeat = 15;
+        }
+        else
+        {
+            conditionsDefeat = 10;
+        }
 
         //스테이지마다 배경 변경
-        if(stage.curretStageNum == 1 || stage.curretStageNum == 2)
+        if (stage.curretStageNum == 1 || stage.curretStageNum == 2)
         {
             BackGround.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Background/Stage1&2");
         }else if(stage.curretStageNum == 3)
@@ -172,6 +170,15 @@ public class GameDirector : MonoBehaviour
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>(); // 아이템 데이터를 불러온다.
         }
 
+        if (item[5].itemcount == 0)
+        {
+            Revival_Button.interactable = false;
+        }
+        else
+        {
+            Revival_Button.interactable = true;
+        }
+
         for (int i = 0; i < Item_Toggle.Length; i++)
         {
             if (playerData.item[i].ItemName == "Default")
@@ -184,8 +191,10 @@ public class GameDirector : MonoBehaviour
 
         Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
         Player_Def_Text.text = playerData.def.ToString();
-        Monster_Atk_Text.text = monsterData.atk.ToString();
-        Monster_Def_Text.text = monsterData.def.ToString();
+        monster_atk = monsterData.atk;
+        monster_def = monsterData.def;
+        Monster_Atk_Text.text = monster_atk.ToString();
+        Monster_Def_Text.text = monster_def.ToString();
     }
     void LateUpdate()
     {
@@ -194,15 +203,25 @@ public class GameDirector : MonoBehaviour
             return; // 타임스케일이 0이라면 멈춘다.
         }
 
-        Monster_Atk_Text.text = monsterData.atk.ToString();
-        Monster_Def_Text.text = monsterData.def.ToString();
+        Monster_Atk_Text.text = monster_atk.ToString();
+        Monster_Def_Text.text = monster_def.ToString();
 
-        if (ItemCount == 1) // 아이템 사용 했을 경우, 닫는다.
+        if(gameTurn == GameTurn.Fighting || gameTurn == GameTurn.Waiting)
         {
-            ItemButton_OpenFlag = false;
-            ItemGroup_Button.interactable = false;
+            if (ItemCount == 0)
+            {
+                Ani_ItemGroup.SetBool("ItemOpenCloseFlag", true);
+            }
+            else if (ItemCount == 1) // 아이템 사용 했을 경우, 닫는다.
+            {
+                Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
+            }
+        }
+        else
+        {
             Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
         }
+        
 
         if (playerData.hp <= 0) // -0.5 상황이 나오지 않도록 조절
         {
@@ -214,20 +233,11 @@ public class GameDirector : MonoBehaviour
             monsterData.hp = 0;
         }
 
-        if (conditionsDefeat == 10)
+        if (RoundNum >= conditionsDefeat - 3)
         {
-            if (RoundNum >= 7)
-            {
-                RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
-            }
-        }else if(conditionsDefeat == 15)
-        {
-            if (RoundNum >= 12)
-            {
-                RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
-            }
+            RoundText.color = Color.red; // 7라운드 이상이 되면 색상 변경
         }
-
+        
         if (Item_Toggle[0].isOn) //아이템을 클릭 했을 때, 사용할 아이템 저장 및 파티클 구현
         {
             ItemName = Item_Toggle[0].GetComponentInChildren<Image>().sprite.name;
@@ -449,8 +459,8 @@ public class GameDirector : MonoBehaviour
         RoundText.text = RoundNum + " 라운드";
         DiceNum = 0;
         monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
-        atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
-        defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
+        player_atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
+        player_defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
         //주사위 다 굴린 후, 플레이어에 스텟 추가할 수 있도록 변수 저장
         StartCoroutine(playerTurn()); // 플레이어 턴 시작
     }
@@ -464,7 +474,7 @@ public class GameDirector : MonoBehaviour
                 ItemUse();
                 BuffParticlePlay(2);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
-                atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
+                player_atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum * 2;
                 ItemCount++;
             }
             else if (ItemName == "DoubleDef")
@@ -472,7 +482,7 @@ public class GameDirector : MonoBehaviour
                 ItemUse();
                 BuffParticlePlay(3);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
-                defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
+                player_defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
                 ItemCount++;
             }
             else if (ItemName == "Heal")
@@ -482,12 +492,20 @@ public class GameDirector : MonoBehaviour
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 playerData.hp += 0.5f;
                 ItemCount++;
+            }else if(ItemName == "window_04") // 쇠약
+            {
+                ItemUse();
+                //파티클 추가
+                yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
+                monster_atk -= 2;
+                monster_def -= 2;
+                ItemCount++;
             }
             ItemFlag = false; // 사용 했으니 다시 false로 돌아감
         }
 
-        Player_Atk_Text.text = atksum.ToString();
-        Player_Def_Text.text = defSum.ToString();
+        Player_Atk_Text.text = player_atksum.ToString();
+        Player_Def_Text.text = player_defSum.ToString();
 
         //이 구간에서 이동 후, 때리기
         playerPosition = PlayerObject.GetComponent<Transform>().position;
@@ -499,7 +517,7 @@ public class GameDirector : MonoBehaviour
 
         int AttakcRand = Random.Range(0, 2);
 
-        if (atksum > monsterData.def) // 공격 성공했을 때
+        if (player_atksum > monster_def) // 공격 성공했을 때
         {
             Hit_Text_Effect[0].SetActive(true);
             if (AttakcRand == 0)
@@ -518,7 +536,7 @@ public class GameDirector : MonoBehaviour
             }
             monsterData.hp -= 1;
         }
-        else if (atksum == monsterData.def) // 공격 서로 맞았을 때
+        else if (player_atksum == monster_def) // 공격 서로 맞았을 때
         {
             Hit_Text_Effect[1].SetActive(true);
             Hit_Part[2].SetActive(true);
@@ -586,7 +604,7 @@ public class GameDirector : MonoBehaviour
         gameTurn = GameTurn.MonsterTurn_StartMoving;
         yield return new WaitUntil(() => gameTurn == GameTurn.MonsterTurn_Attack);
 
-        if(defSum < monsterData.atk) // 방어 실패
+        if(player_defSum < monster_atk) // 방어 실패
         {
             Hit_Text_Effect[2].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
@@ -598,7 +616,7 @@ public class GameDirector : MonoBehaviour
             yield return new WaitForSeconds(0.8f);
             playerData.hp -= 1;
         }
-        else if(defSum == monsterData.atk) { // 서로 맞음
+        else if(player_defSum == monster_atk) { // 서로 맞음
             Hit_Text_Effect[1].SetActive(true);
             monsterAni.state.SetAnimation(0, "Attack", false);
             Sound_SFX.playerAttack_SFX(2);
@@ -655,9 +673,10 @@ public class GameDirector : MonoBehaviour
         {
             PlayDice_UI.SetActive(true);
             ItemCount = 0;
-            ItemGroup_Button.interactable = true;
             Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
             Player_Def_Text.text = playerData.def.ToString();
+            monster_atk = monsterData.atk;
+            monster_def = monsterData.def;
         }
     }
     
@@ -678,10 +697,6 @@ public class GameDirector : MonoBehaviour
         if (monster.Length == MonsterCount)
         {
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
-            if (SceneManager.GetActiveScene().name.Equals("Stage5"))
-            {
-                Win_UI_Button_Text.text = "해피엔딩";
-            }
             Play_UI.SetActive(false);
             Win_UI.SetActive(true);
             Change_Reward(); // 클리어에 따라 보상을 바꾼다.
@@ -693,18 +708,19 @@ public class GameDirector : MonoBehaviour
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
             Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
             Player_Def_Text.text = playerData.def.ToString();
+            monster_atk = monsterData.atk;
+            monster_def = monsterData.def;
             Play_Button.SetActive(true);
             ItemCount = 0;
-            ItemGroup_Button.interactable = true;
         }
     }
 
-    public void OnAD_Try() // 광고보기 버튼 클릭했을 경우
+    public void OnRevival_Try() // 부활 버튼 클릭했을 경우
     {
-        StartCoroutine(OnAD_Ani());
+        StartCoroutine(Revival_Director());
     }
 
-    IEnumerator OnAD_Ani() // 광고 다 본 후, 플레이어 부활
+    IEnumerator Revival_Director() //플레이어 부활
     {
         playerData.hp++;
         Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
@@ -715,6 +731,7 @@ public class GameDirector : MonoBehaviour
             RoundText.text = RoundNum + " 라운드";
         }
         Time.timeScale = 1;
+        item[5].Use_Item(); // 부활권 아이템 사용
         PlayDice_UI.SetActive(true);
         Play_UI.SetActive(true);
         Lose_UI.transform.GetChild(1).GetComponent<Transform>().gameObject.SetActive(false);
@@ -728,13 +745,14 @@ public class GameDirector : MonoBehaviour
         Sound_SFX.playerBuff_SFX();
         yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
         playerAni.state.SetAnimation(0, "Idle", true);
+        ItemCount = 0;
     }
 
     void Change_Reward() // 최초클리어에 따라 달라짐.
     {
         reward_Coin.text = Data.stage_Data[stage.curretStageNum - 1].reward_coin.ToString() + "G";
 
-        if (stage.curretStageNum == stage.stageNum)
+        if (stage.curretStageNum == stage.final_stageNum)
         {
             if (Data.stage_Data[stage.curretStageNum - 1].reward_point == 3)
             {
@@ -765,7 +783,7 @@ public class GameDirector : MonoBehaviour
     {
         stage.WinStage_Stage();
         playerData.RewardCoin_Player(Data.stage_Data[stage.curretStageNum-1].reward_coin);
-        if (stage.curretStageNum == stage.stageNum)
+        if (stage.curretStageNum == stage.final_stageNum)
         {
             playerData.RewardStatus_Player(Data.stage_Data[stage.curretStageNum - 1].reward_point);
             playerData.RewardHp_Player(Data.stage_Data[stage.curretStageNum - 1].reward_hp);
@@ -827,36 +845,9 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    public void OnClickItemButton()
-    {
-        if (!ItemButton_OpenFlag)
-        {
-            Ani_ItemGroup.SetBool("ItemOpenCloseFlag", true);
-            ItemButton_OpenFlag = true;
-        }
-        else
-        {
-            Ani_ItemGroup.SetBool("ItemOpenCloseFlag", false);
-            ItemButton_OpenFlag = false;
-        }
-    }
-
-    public void BuffParticlePlay(int num) // 버픝 파티클에 따라 달라짐
-    {//0번 힐, 1번 부활, 2번 atk, 3번 def
-        if (num == 0)
-        {
-            Buff_Part[0].SetActive(true);
-        }
-        else if(num == 1)
-        {
-            Buff_Part[1].SetActive(true);
-        }else if(num == 2)
-        {
-            Buff_Part[2].SetActive(true);
-        }else if(num == 3)
-        {
-            Buff_Part[3].SetActive(true);
-        }
+    public void BuffParticlePlay(int num) // 버프 파티클에 따라 달라짐
+    {//0번 힐, 1번 부활, 2번 atk, 3번 def, 4번 쇠약
+        Buff_Part[num].SetActive(true);
     }
 }
 

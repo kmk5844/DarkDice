@@ -6,8 +6,8 @@ using UnityEngine;
 public class StageData : ScriptableObject
 {
     [SerializeField]
-    private int stageNum;
-    public int StageNum { get { return stageNum; } }
+    private int Final_stageNum;
+    public int Final_StageNum { get { return Final_stageNum; } }
 
     [SerializeField]
     private int curretstageNum;
@@ -20,14 +20,14 @@ public class StageData : ScriptableObject
             PlayerPrefs.SetInt("stageNum", 1);
         }
 
-        stageNum = PlayerPrefs.GetInt("stageNum");
+        Final_stageNum = PlayerPrefs.GetInt("stageNum");
         curretstageNum = 0;
     }
 
     public void WinStage()
     {
-        stageNum++;
-        PlayerPrefs.SetInt("stageNum", stageNum);
+        Final_stageNum++;
+        PlayerPrefs.SetInt("Final_stageNum", Final_stageNum);
     }
 
     public void ClickNum(int num)
@@ -37,7 +37,7 @@ public class StageData : ScriptableObject
 
     public void init()
     {
-        stageNum = 1;
+        Final_stageNum = 1;
         curretstageNum = 0;
         PlayerPrefs.SetInt("stageNum", 1);
     }
