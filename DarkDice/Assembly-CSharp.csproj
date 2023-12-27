@@ -86,11 +86,13 @@
     <Compile Include="Assets\ExcelImporter\Example\Scripts\Example.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scritable\Weapon\Weapon_Scritable.cs" />
+    <Compile Include="Assets\Scritable\Shield\ShieldData.cs" />
     <Compile Include="Assets\FantaziaCharacterEditor\Scripts\InventoryIconsManager.cs" />
     <Compile Include="Assets\FantaziaCharacterEditor\Scripts\GearEquipper.cs" />
     <Compile Include="Assets\Script\InGame\MonsterMoving.cs" />
     <Compile Include="Assets\Scritable\Item\ItemData.cs" />
     <Compile Include="Assets\Scritable\Excel\DataTable.cs" />
+    <Compile Include="Assets\Scritable\Shield\Shield_Scritable.cs" />
     <Compile Include="Assets\Script\StageChoice\ToggleONOFF.cs" />
     <Compile Include="Assets\Script\Tutorial\TutorialDirector.cs" />
     <Compile Include="Assets\Script\InGame\InGame_Sound.cs" />

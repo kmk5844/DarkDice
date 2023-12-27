@@ -214,7 +214,7 @@ public class StageDirector : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("Define_Stage");
+            SceneManager.LoadScene("Default_Stage");
         }
         Stage_Change_Bgm();
         stageData.ClickNum_Stage(stageNum); // 최초클리어 여부

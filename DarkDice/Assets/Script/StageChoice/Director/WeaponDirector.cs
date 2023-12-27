@@ -12,8 +12,6 @@ public class WeaponDirector : MonoBehaviour
     WeaponData equipWeapon;
     Weapon_Scritable[] Weapon;
 
-    public Image equipWeaponImage; //현재 장착중인 웨폰 이미지
-
     public GameObject[] WeaponObject_Data; //웨폰의 정보를 가져온다.
     public Toggle[] Toggle_Weapon;
     public TextMeshProUGUI Status_Weapon_Atk_Text;
@@ -105,7 +103,6 @@ public class WeaponDirector : MonoBehaviour
         }
 
         playerData.ChangeWeapon_Player(equipWeapon);
-        equipWeaponImage.sprite = equipWeapon.WeaponImage;
         Status_Weapon_Atk_Text.text = "+ 무기 공격력 : " + equipWeapon.WeaponAtk.ToString();
     }
 }

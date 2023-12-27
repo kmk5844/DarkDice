@@ -42,7 +42,7 @@ public class StoreDirector : MonoBehaviour
         NoButton.onClick.AddListener(() => Dont_Click_Panel.SetActive(false));
 
         for (int i = 0; i < ItemObject_Data.Length; i++)
-        {
+        { 
             item[i] = ItemObject_Data[i].GetComponent<Item_Scritable>();
             Item_Pride[i].text = item[i].pride + "G";
         }
@@ -75,11 +75,11 @@ public class StoreDirector : MonoBehaviour
 
             if (player.coin < 500) // 변경 예정
             {
-                Item_Button[4].interactable = false;
+                Item_Button[6].interactable = false;
             }
             else
             {
-                Item_Button[4].interactable = true;
+                Item_Button[6].interactable = true;
             }
         }
         else // 무기 상점
@@ -127,7 +127,7 @@ public class StoreDirector : MonoBehaviour
     public void OnItemBuy(int i)
     {
         YesButton.onClick.RemoveAllListeners();
-        if(i == 4)
+        if(i == 6)
         {
             player.BuyCoin_Player(500);
             player.ItemUse_Init_Player();
