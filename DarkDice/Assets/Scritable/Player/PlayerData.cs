@@ -45,10 +45,10 @@ public class PlayerData : ScriptableObject
         {
             PlayerPrefs.SetInt("Player_Def", 8); // 기본 설정
         }
-        if (!PlayerPrefs.HasKey("Player_Weapon"))
+/*        if (!PlayerPrefs.HasKey("Player_Weapon"))
         {
             PlayerPrefs.SetInt("Player_Weapon", 0); // 기본 설정
-        }
+        }*/
         if (!PlayerPrefs.HasKey("Player_Coin"))
         {
             PlayerPrefs.SetInt("Player_Coin", 0); // 기본 설정

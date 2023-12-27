@@ -68,29 +68,25 @@ public class TutorialDirector : MonoBehaviour
             else if (sub_count == 5)
             {
                 Dice_flag = false;
+                Button_flag = false;
                 Step[0].SetActive(false);
                 Step[2].SetActive(true);
-                StartCoroutine(Typing(Step_text[2], "잘했어! 여기까지 잘 따라왔네!\n공격하기 전에 아이템을 한 번 눌러보자!".Replace("\\n", "\n")));
+                StartCoroutine(Typing(Step_text[2], "잘했어! 여기까지 잘 따라왔구나!\n공격하기 전에 라운드마다\n아이템을 한 번만 사용할 수 있어!".Replace("\\n", "\n")));
             }
             else if (sub_count == 6)
             {
-                StartCoroutine(Typing(Step_text[2], "짜잔!! 아이템은 턴마다 1회 사용이 가능해!\n아이템 버튼을 한 번 더 누르면 닫을 수 있어\n닫아보자!".Replace("\\n", "\n")));
-            }
-            else if (sub_count == 7)
-            {
-                Button_flag = false;
                 Step[2].SetActive(false);
                 Step[3].SetActive(true);
                 StartCoroutine(Typing(Step_text[3], "마지막으로 공격하기 전에, 참고사항을 꼼꼼히 읽어봐!!!\n이것만 잘 본다면 승리할 수 있을거야!".Replace("\\n", "\n")));
             }
-            else if (sub_count == 8)
+            else if (sub_count == 7)
             {
                 Button_flag = true;
                 Step[3].SetActive(false);
                 Step[1].SetActive(true);
                 StartCoroutine(Typing(Step_text[1], "이제 공격해보자!!".Replace("\\n", "\n")));
             }
-            else if (sub_count == 9)
+            else if (sub_count == 8)
             {
                 Button_flag = false;
                 sub_count = 0;
@@ -142,7 +138,7 @@ public class TutorialDirector : MonoBehaviour
         guide = PlayerPrefs.GetInt("Guide_Count", 0); // playerpref로 받아올 예정
         sub_count = 0;
         Dice_flag = false;
-        if (guide == 0 || guide == 1)
+        if (guide == 0 || guide == 1 || guide == 2)
         {
             if (guide == 0 && SceneManager.GetActiveScene().name.Equals("1.StageChoice"))
             {
