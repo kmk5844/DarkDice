@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class TutorialDirector : MonoBehaviour
 {
     public GameObject Tutorial_UI;
@@ -138,12 +137,9 @@ public class TutorialDirector : MonoBehaviour
         guide = PlayerPrefs.GetInt("Guide_Count", 0); // playerpref로 받아올 예정
         sub_count = 0;
         Dice_flag = false;
-        if (guide == 0 || guide == 1 || guide == 2)
+        if (guide == 0 || guide == 1)
         {
-            if (guide == 0 && SceneManager.GetActiveScene().name.Equals("1.StageChoice"))
-            {
-
-            }
+            if (guide == 0 && SceneManager.GetActiveScene().name.Equals("1.StageChoice")) { }
             else
             {
                 On_DontTouchPanel(true);

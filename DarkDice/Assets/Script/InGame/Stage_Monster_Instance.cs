@@ -54,7 +54,7 @@ public class Stage_Monster_Instance : MonoBehaviour
             {
                 str = Data.stage_Data[stage].enemy_unit3;
             }
-            var obj = Instantiate((GameObject)Resources.Load(Data.monster_Data[Enemy(str)].name, typeof(GameObject)), monsterGroup);
+            var obj = Instantiate((GameObject)Resources.Load("monster/"+Data.monster_Data[Enemy(str)].name, typeof(GameObject)), monsterGroup);
             obj.GetComponent<MonsterData>().hp = Data.monster_Data[Enemy(str)].hp;
             obj.GetComponent<MonsterData>().atk = Data.monster_Data[Enemy(str)].atk;
             obj.GetComponent<MonsterData>().def = Data.monster_Data[Enemy(str)].def;
