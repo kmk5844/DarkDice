@@ -33,6 +33,11 @@ public class Stage_Scripter : MonoBehaviour
     {
         stageData.ClickNum(button_NUM);
     }
+
+    public void test_MaxStage()
+    {
+        stageData.testStage();
+    }
     public void Init_Stage()
     {
         stageData.init();

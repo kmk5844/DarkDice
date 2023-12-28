@@ -35,6 +35,11 @@ public class StageData : ScriptableObject
         curretstageNum = num;
     }
 
+    public void testStage()
+    {
+        Final_stageNum = 20;
+        PlayerPrefs.SetInt("stageNum", 20);
+    }
     public void init()
     {
         Final_stageNum = 1;

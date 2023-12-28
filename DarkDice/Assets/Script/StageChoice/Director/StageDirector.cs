@@ -29,6 +29,7 @@ public class StageDirector : MonoBehaviour {
 
     public GameObject[] ItemLock; //스테이지에 따라 풀리는 잠금
     public GameObject[] WeaponLock;
+    /*public GameObject[] ShieldLock;*/
 
     public Button[] Monster_inf_Button; //몬스터 정보 버튼
     public Transform[] Monster_inf_Group; // 몬스터 정보 창
@@ -71,26 +72,8 @@ public class StageDirector : MonoBehaviour {
             Stage_Road[i].interactable = true;
         }
 
-        for (int i = 0; i < ItemLock.Length; i++)
-        {
-            if (lockOffStage >= 3) // 2스테이지 클리어 이후, 열림
-            {
-                ItemLock[i].SetActive(false);
-            }
-        }
-
-        for (int i = 2; i < lockOffStage; i++)
-        {
-            if (i == StageButton.Length) // 인덱스 초과 방지
-            {
-                break;
-            }
-
-            if (lockOffStage > i) // 2, 3, 4 스테이지 클리어 이후 열림
-            {
-                WeaponLock[i - 2].SetActive(false);
-            }
-        }
+        ItemLockOff();
+        WeaponLockOff();
     }
 
     void Update()
@@ -163,7 +146,7 @@ public class StageDirector : MonoBehaviour {
             Monster_inf_Group[i].transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "스토리 : " + Data.monster_Data[Enemy(str)].enemy_info.Replace("\\n", "\n");
         }
 
-        for(int i = 0; i < reward_Image.Length; i++) //두번째 칸과 세번째 칸만 이미지 바뀐다.
+        for(int i = 0; i < reward_Image.Length; i++) //두번째 보상칸과 세번째 보상칸만 이미지 바뀐다.
         {
             if (Num == lockOffStage) // 최초 클리어 하지 않을 경우
             {
@@ -201,6 +184,38 @@ public class StageDirector : MonoBehaviour {
         return index;
     }
 
+    public void ItemLockOff()
+    {
+        for (int i = 0; i < ItemLock.Length; i++)
+        {
+            if (lockOffStage >= 3) // 2스테이지 클리어 이후, 열림
+            {
+                ItemLock[i].SetActive(false);
+            }
+        }
+    }
+
+    public void WeaponLockOff()
+    {
+        if (lockOffStage >= 4)
+        {
+            WeaponLock[2].SetActive(false);
+        }
+        if (lockOffStage >= 3)
+        {
+            WeaponLock[1].SetActive(false);
+        }
+        if (lockOffStage >= 2)
+        {
+            WeaponLock[0].SetActive(false);
+        }
+    }
+
+/*    public void ShieldLockOff()
+    {
+
+    }*/
+
     public void OnClickHide()
     {
         Bar_ani.SetBool("StageBar", false);
@@ -233,6 +248,11 @@ public class StageDirector : MonoBehaviour {
         }
     }
 
+    public void OnTestMaxStage()
+    {
+        stageData.test_MaxStage();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public void OnInitButton()
     {
         stageData.Init_Stage();

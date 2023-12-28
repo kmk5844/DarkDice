@@ -13,12 +13,15 @@ public class Dice : MonoBehaviour
     AudioClip dice_roll_SFX;
     AudioClip dice_end_SFX;
 
+    
     public Sprite PlaySprite;
     public Sprite PauseSprite;
     public Sprite[] AtkPocket;
     public Sprite[] DefPocket;
-    public Image Dice1;
-    public Image Dice2;
+    public Image Dice1_Image;
+    public Image Dice2_Image;
+    Transform Dice1;
+    Transform Dice2;
 
     public int atkSum;
     public int defSum;
@@ -30,6 +33,8 @@ public class Dice : MonoBehaviour
 
     private void Start()
     {
+        Dice1 = Dice1_Image.GetComponent<Transform>();
+        Dice2 = Dice2_Image.GetComponent<Transform>();
         SFX_Audio = GameObject.Find("Sfx").GetComponent<AudioSource>();
         dice_roll_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_roll_loop_new");
         dice_end_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_random_new_new");
@@ -55,8 +60,14 @@ public class Dice : MonoBehaviour
                 Attack_Button.interactable = true;
             }
         }
+        int rand_Dice_X1 = Random.Range(-210, -230);
+        int rand_Dice_X2 = Random.Range(210, 230);
+        int rand_Dice_Y1 = Random.Range(40, 60);
+        int rand_Dice_Y2 = Random.Range(40, 60);
 
-        
+        Dice1.position = new Vector3(rand_Dice_X1 * 0.01f, rand_Dice_Y1 * 0.01f, 0);
+        Dice2.position = new Vector3(rand_Dice_X2 * 0.01f, rand_Dice_Y2 * 0.01f, 0);
+
         image1.sprite = AtkPocket[rand1];
         image2.sprite = DefPocket[rand2];
         yield return new WaitForSeconds(delay);
@@ -65,7 +76,7 @@ public class Dice : MonoBehaviour
 
     public void StartMethod()
     {
-        coroutine = DiceRolling(Dice1, Dice2);
+        coroutine = DiceRolling(Dice1_Image, Dice2_Image);
         StartCoroutine(coroutine);
     }
     public void OnPlayButton()
@@ -104,8 +115,8 @@ public class Dice : MonoBehaviour
 
     public void OnAttackButton()
     {
-        atkSum = AtkDiceToInt(Dice1);
-        defSum = DefDiceToInt(Dice2);
+        atkSum = AtkDiceToInt(Dice1_Image);
+        defSum = DefDiceToInt(Dice2_Image);
         Dice_Button.interactable = true;
         Attack_Button.interactable = false;
     }

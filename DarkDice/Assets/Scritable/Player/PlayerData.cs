@@ -22,6 +22,9 @@ public class PlayerData : ScriptableObject
     private int def;
     public int Def { get {  return def; } }
     [SerializeField]
+    private ShieldData shield;
+    public ShieldData Shield { get {  return shield; } }
+    [SerializeField]
     private int coin;
     public int Coin { get { return coin; } }
     [SerializeField]
@@ -45,10 +48,14 @@ public class PlayerData : ScriptableObject
         {
             PlayerPrefs.SetInt("Player_Def", 8); // 기본 설정
         }
-/*        if (!PlayerPrefs.HasKey("Player_Weapon"))
+        if (!PlayerPrefs.HasKey("Player_Weapon"))
         {
             PlayerPrefs.SetInt("Player_Weapon", 0); // 기본 설정
-        }*/
+        }
+        if (!PlayerPrefs.HasKey("Player_Shield"))
+        {
+            PlayerPrefs.SetInt("Player_Shield", 0);
+        }
         if (!PlayerPrefs.HasKey("Player_Coin"))
         {
             PlayerPrefs.SetInt("Player_Coin", 0); // 기본 설정
@@ -79,6 +86,10 @@ public class PlayerData : ScriptableObject
         weapon = C_Weapon;
     }
 
+    public void ChangeShield(ShieldData C_Shield)
+    {
+        shield = C_Shield;
+    }
     public void BuyCoin(int buyCoin)
     {
         coin -= buyCoin;
@@ -119,8 +130,6 @@ public class PlayerData : ScriptableObject
         item[ButtonNum] = itemData;
     }
 
-    
-
     public void ItemUse_Init() //플레이어 전용 초기화
     {
         status = (atk - 8) + (def - 8) + status;
@@ -134,7 +143,7 @@ public class PlayerData : ScriptableObject
     //개발자 전용
     public void testPlusCoin()
     {
-        coin += 100;
+        coin += 500;
         PlayerPrefs.SetInt("Player_Coin", coin);
     }
 
