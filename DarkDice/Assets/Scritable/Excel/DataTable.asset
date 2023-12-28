@@ -16,145 +16,274 @@ MonoBehaviour:
   - number: 1
     stage_name: stage1
     enemy_count: 1
-    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit1: "\uC2AC\uB77C\uC784"
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
-    reward_point: 3
+    reward_point: 2
     reward_coin: 100
     open_item: 
-    stage_fullname: "\uC131\uC744 \uD5A5\uD574"
-    stage_info: "\uC5BC\uB5A8\uACB0\uC5D0 \uC6A9\uC0AC\uC758 \uAE38\uC744 \uAC77\uAC8C\uB41C
-      \uB2F9\uC2E0.\\n\uB450\uB824\uC6B4 \uB9C8\uC74C\uC774 \uD06C\uC9C0\uB9CC \uC6A9\uAE30\uB97C
-      \uB0B4 \uC5EC\uC815\uC744 \uB5A0\uB098\uAE30\uB85C \uACB0\uC2EC\uD569\uB2C8\uB2E4.\\n\uACB0\uC2EC\uD55C\uC9C0
-      \uC5BC\uB9C8 \uC9C0\uB098\uC9C0 \uC54A\uC544 \uBAAC\uC2A4\uD130\uB97C \uB9C8\uC8FC\uCE58\uAC8C
-      \uB418\uB294\uB370.."
+    stage_fullname: "\uC2DC\uC791\uB41C \uD6C8\uB828"
+    stage_info: "\uB2E4\uAC00\uC62C \uBBF8\uB798\uC5D0 \uC655\uAD6D\uC744 \uAD6C\uD558\uAE30
+      \uC704\uD55C \uD6C8\uB828\uC774 \uBCF8\uACA9\uC801\uC73C\uB85C \uC2DC\uC791\uB418\uC5C8\uC2B5\uB2C8\uB2E4."
   - number: 2
     stage_name: stage2
     enemy_count: 2
-    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
+    enemy_unit1: "\uC2AC\uB77C\uC784"
+    enemy_unit2: "\uB2C8\uB4E4\uB798\uBE57"
     enemy_unit3: 
-    reward_hp: 2
-    reward_point: 3
-    reward_coin: 120
+    reward_hp: 1
+    reward_point: 2
+    reward_coin: 100
     open_item: (3417,3420,3521)
-    stage_fullname: "\uD798\uACA8\uC6B4 \uC804\uC9C4"
-    stage_info: "\uCCAB \uC804\uD22C\uC5D0\uC11C \uC2B9\uB9AC\uD558\uACE0 \uC131\uC744
-      \uD5A5\uD574 \uB2E4\uC2DC \uB098\uC544\uAC11\uB2C8\uB2E4.\\n\uD558\uC9C0\uB9CC
-      \uC131\uAE4C\uC9C0 \uAC00\uB294 \uAE38\uC5D0\uB294 \uC218\uB9CE\uC740 \uBAAC\uC2A4\uD130\uB4E4\uC774
-      \uB2F9\uC2E0\uC744 \uAE30\uB2E4\uB9AC\uACE0 \uC788\uC5C8\uC2B5\uB2C8\uB2E4. "
+    stage_fullname: "\uD3C9\uC6D0\uC5D0\uC11C"
+    stage_info: 
   - number: 3
     stage_name: stage3
-    enemy_count: 1
-    enemy_unit1: "\uC544\uC774\uC2A4\uACE8\uB818"
-    enemy_unit2: 
-    enemy_unit3: 
+    enemy_count: 3
+    enemy_unit1: "\uB291\uB300"
+    enemy_unit2: "\uB291\uB300"
+    enemy_unit3: "\uB291\uB300"
     reward_hp: 0
-    reward_point: 3
-    reward_coin: 140
+    reward_point: 2
+    reward_coin: 120
     open_item: (3418,3419,3522)
-    stage_fullname: "\uC131\uBB38\uC744 \uC5F4\uC5B4\uB77C"
-    stage_info: "\uACA8\uC6B0 \uB3C4\uCC29\uD55C \uBAA9\uC801\uC9C0\uC5D0 \uBCF4\uC774\uB294
-      \uAC83\uC740 \uAD73\uAC8C \uB2EB\uD78C \uBB38\uACFC \uC774\uB97C \uC9C0\uD0A4\uB294
-      \uAC15\uB825\uD55C \uBAAC\uC2A4\uD130\uC785\uB2C8\uB2E4.\\n\uC774\uC804\uACFC
-      \uB2E4\uB978 \uBD84\uC704\uAE30\uC5D0 \uAE34\uC7A5\uB418\uC9C0\uB9CC \uC660\uC9C0
-      \uC774\uAE38 \uC218 \uC788\uC744 \uAC83\uB9CC \uAC19\uB2E4\uB294 \uC0DD\uAC01\uC774
-      \uB4ED\uB2C8\uB2E4."
+    stage_fullname: "\uB291\uB300\uBB34\uB9AC"
+    stage_info: 
   - number: 4
     stage_name: stage4
-    enemy_count: 2
-    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uADF8\uB9BC \uB9AC\uD37C"
+    enemy_count: 1
+    enemy_unit1: "\uC2A4\uCEEC\uC0B4\uB77C\uBA58\uB354"
+    enemy_unit2: 
     enemy_unit3: 
-    reward_hp: 2
-    reward_point: 4
-    reward_coin: 160
+    reward_hp: 1
+    reward_point: 2
+    reward_coin: 120
     open_item: (3523)
-    stage_fullname: "\uBCF4\uC2A4\uB294 \uC5B4\uB514\uC5D0"
-    stage_info: "\uBB34\uC0AC\uD788 \uC131 \uC548\uC5D0 \uB4E4\uC5B4\uC628 \uB2F9\uC2E0.\\n\uC131
-      \uC548\uC740 \uC5B4\uB461\uACE0 \uC801\uB9C9\uB9CC\uC774 \uAC00\uB4DD\uD569\uB2C8\uB2E4.\\n\uBE68\uB9AC
-      \uC804\uC7C1\uC744 \uB05D\uB0B4\uAE30 \uC704\uD574 \uBCF4\uC2A4\uB97C \uCC3E\uC544\uBCF4\uC9C0\uB9CC
-      \uADF8 \uAE38\uBAA9\uC5D0\uC11C \uB9C8\uC8FC\uCE5C\uAC74 \uB610\uB2E4\uB978
-      \uBAAC\uC2A4\uD130 \uBB34\uB9AC\uC600\uC2B5\uB2C8\uB2E4."
+    stage_fullname: "\uAC15\uAC00\uC5D0\uC11C"
+    stage_info: 
   - number: 5
     stage_name: stage5
     enemy_count: 3
-    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
-    enemy_unit3: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    enemy_unit1: "\uB2C8\uB4E4\uB798\uBE57"
+    enemy_unit2: "\uB2C8\uB4E4\uB798\uBE57"
+    enemy_unit3: "\uB2AA\uC9C0\uB3C4\uB9C8\uBC40"
     reward_hp: 0
-    reward_point: 4
-    reward_coin: 200
+    reward_point: 3
+    reward_coin: 140
     open_item: 
-    stage_fullname: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
-    stage_info: "\uC774\uC81C\uB294 \uC815\uB9D0 \uBAA8\uB4E0 \uAC83\uC744 \uB05D\uB0BC
-      \uC2DC\uAC04\uC785\uB2C8\uB2E4.\\n\uC8FC\uC0AC\uC704\uC640 \uD568\uAED8 \uAC15\uD574\uC9C4
-      \uB2F9\uC2E0\uC740 \uBCF4\uC2A4\uB97C \uB9C8\uC8FC\uD574\uB3C4 \uB354 \uC774\uC0C1
-      \uB450\uB835\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. "
+    stage_fullname: "\uB178\uB825\uC758 \uC131\uACFC"
+    stage_info: 
   - number: 6
     stage_name: stage6
-    enemy_count: 0
-    enemy_unit1: 
-    enemy_unit2: 
-    enemy_unit3: 
-    reward_hp: 0
-    reward_point: 0
-    reward_coin: 0
+    enemy_count: 3
+    enemy_unit1: "\uBC15\uC950"
+    enemy_unit2: "\uBC15\uC950"
+    enemy_unit3: "\uBC15\uC950"
+    reward_hp: 1
+    reward_point: 3
+    reward_coin: 140
     open_item: 
-    stage_fullname: 
+    stage_fullname: "\uB3D9\uAD74\uC5D0\uC11C"
     stage_info: 
   - number: 7
     stage_name: stage7
-    enemy_count: 0
-    enemy_unit1: 
-    enemy_unit2: 
+    enemy_count: 2
+    enemy_unit1: "\uB3C5\uBC84\uC12F "
+    enemy_unit2: "\uB3C5\uBC84\uC12F"
     enemy_unit3: 
     reward_hp: 0
-    reward_point: 0
-    reward_coin: 0
+    reward_point: 3
+    reward_coin: 160
     open_item: 
     stage_fullname: 
     stage_info: 
   - number: 8
     stage_name: stage8
-    enemy_count: 0
-    enemy_unit1: 
+    enemy_count: 1
+    enemy_unit1: "\uD30C\uC774\uC5B4 \uC6B8\uD504"
     enemy_unit2: 
     enemy_unit3: 
-    reward_hp: 0
-    reward_point: 0
-    reward_coin: 0
+    reward_hp: 1
+    reward_point: 4
+    reward_coin: 160
     open_item: 
     stage_fullname: 
     stage_info: 
   - number: 9
     stage_name: stage9
-    enemy_count: 0
-    enemy_unit1: 
+    enemy_count: 1
+    enemy_unit1: "\uC544\uC774\uC5B8\uD63C"
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
-    reward_point: 0
-    reward_coin: 0
-    open_item: 
-    stage_fullname: 
+    reward_point: 4
+    reward_coin: 160
+    open_item: (7,11)
+    stage_fullname: "\uD6C8\uB828\uC758 \uB05D"
     stage_info: 
   - number: 10
     stage_name: stage10
-    enemy_count: 0
-    enemy_unit1: 
+    enemy_count: 1
+    enemy_unit1: "\uC0B0\uC758 \uC218\uD638\uC790"
+    enemy_unit2: 
+    enemy_unit3: 
+    reward_hp: 1
+    reward_point: 5
+    reward_coin: 180
+    open_item: 
+    stage_fullname: "\uC0B0\uC758 \uC218\uD638\uC790"
+    stage_info: "\uD6CC\uB96D\uD558\uAC8C \uD6C8\uB828\uC744 \uBAA8\uB450 \uB9C8\uCCE4\uC2B5\uB2C8\uB2E4.
+      \uCD5C\uC885 \uAD00\uBB38\uC740 \uC774 \uC0B0\uB9E5\uC758 \uBAAC\uC2A4\uD130\uB4E4\uC744
+      \uC218\uD638\uD558\uB294 \uC218\uD638\uC790\uB97C \uCC98\uCE58\uD558\uB294
+      \uAC83\uC785\uB2C8\uB2E4."
+  - number: 11
+    stage_name: stage11
+    enemy_count: 1
+    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit2: 
+    enemy_unit3: 
+    reward_hp: 0
+    reward_point: 5
+    reward_coin: 180
+    open_item: 
+    stage_fullname: "\uC131\uC744 \uD5A5\uD574"
+    stage_info: "\uC5BC\uB5A8\uACB0\uC5D0 \uC6A9\uC0AC\uC758 \uAE38\uC744 \uAC77\uAC8C\uB41C
+      \uB2F9\uC2E0. \uB450\uB824\uC6B4 \uB9C8\uC74C\uC774 \uD06C\uC9C0\uB9CC \uC6A9\uAE30\uB97C
+      \uB0B4 \uC5EC\uC815\uC744 \uB5A0\uB098\uAE30\uB85C \uACB0\uC2EC\uD569\uB2C8\uB2E4.
+      \uACB0\uC2EC\uD55C\uC9C0 \uC5BC\uB9C8 \uC9C0\uB098\uC9C0 \uC54A\uC544 \uBAAC\uC2A4\uD130\uB97C
+      \uB9C8\uC8FC\uCE58\uAC8C \uB418\uB294\uB370.."
+  - number: 12
+    stage_name: stage12
+    enemy_count: 2
+    enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
+    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
+    enemy_unit3: 
+    reward_hp: 1
+    reward_point: 5
+    reward_coin: 180
+    open_item: 
+    stage_fullname: "\uD798\uACA8\uC6B4 \uC804\uC9C4"
+    stage_info: "\uCCAB \uC804\uD22C\uC5D0\uC11C \uC2B9\uB9AC\uD558\uACE0 \uC131\uC744
+      \uD5A5\uD574 \uB2E4\uC2DC \uB098\uC544\uAC11\uB2C8\uB2E4. \uD558\uC9C0\uB9CC
+      \uC131\uAE4C\uC9C0 \uAC00\uB294 \uAE38\uC5D0\uB294 \uC218\uB9CE\uC740 \uBAAC\uC2A4\uD130\uB4E4\uC774
+      \uB2F9\uC2E0\uC744 \uAE30\uB2E4\uB9AC\uACE0 \uC788\uC5C8\uC2B5\uB2C8\uB2E4. "
+  - number: 13
+    stage_name: stage13
+    enemy_count: 1
+    enemy_unit1: "\uC544\uC774\uC2A4\uACE8\uB818"
+    enemy_unit2: 
+    enemy_unit3: 
+    reward_hp: 0
+    reward_point: 6
+    reward_coin: 180
+    open_item: 
+    stage_fullname: "\uAC15\uB825\uD55C \uC801"
+    stage_info: "\uBE44\uAD50\uC801 \uC57D\uD55C \uBAAC\uC2A4\uD130\uBCD1\uC0AC\uB4E4\uACFC
+      \uC2F8\uC6E0\uB358 \uB2F9\uC2E0. \uC774\uBC88\uC5D0 \uB9C8\uC8FC\uCE5C \uBAAC\uC2A4\uD130\uB294
+      \uC774\uC804\uAE4C\uC9C0\uC640 \uB2E4\uB974\uAC8C \uAC15\uB825\uD55C \uD798\uC744
+      \uAC00\uC9C4 \uBAAC\uC2A4\uD130\uC600\uC2B5\uB2C8\uB2E4."
+  - number: 14
+    stage_name: stage14
+    enemy_count: 2
+    enemy_unit1: "\uC2AC\uB77C\uC784"
+    enemy_unit2: "\uB2E4\uD06C\uC258"
+    enemy_unit3: 
+    reward_hp: 1
+    reward_point: 6
+    reward_coin: 200
+    open_item: (8,12)
+    stage_fullname: 
+    stage_info: 
+  - number: 15
+    stage_name: stage15
+    enemy_count: 3
+    enemy_unit1: "\uC2AC\uB77C\uC784"
+    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
+    enemy_unit3: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    reward_hp: 0
+    reward_point: 7
+    reward_coin: 240
+    open_item: 
+    stage_fullname: "\uBCF4\uC2A4\uC640\uC758 \uC870\uC6B0"
+    stage_info: "\uC774\uB807\uAC8C \uBE68\uB9AC \uBAAC\uC2A4\uD130\uB4E4\uC758 \uAD70\uC8FC\uB97C
+      \uB9CC\uB098\uAC8C \uB420\uC9C0 \uBAB0\uB790\uB358 \uB2F9\uC2E0. \uB2F9\uD669\uC2A4\uB7FD\uC9C0\uB9CC
+      \uC624\uD788\uB824 \uD63C\uB780\uC744 \uBE60\uB974\uAC8C \uC885\uACB0\uD560
+      \uC88B\uC740 \uAE30\uD68C\uB77C\uACE0 \uC0DD\uAC01\uD558\uACE0 \uB4DC\uB514\uC5B4
+      \uC655\uACFC\uC758 \uC804\uD22C\uC5D0 \uB3CC\uC785\uD569\uB2C8\uB2E4. "
+  - number: 16
+    stage_name: stage16
+    enemy_count: 3
+    enemy_unit1: "\uC6B0\uB4DC\uACE8\uB818"
+    enemy_unit2: "\uC6B0\uB4DC\uACE8\uB818"
+    enemy_unit3: "\uACE0\uC2A4\uD2B8"
+    reward_hp: 1
+    reward_point: 7
+    reward_coin: 240
+    open_item: 
+    stage_fullname: 
+    stage_info: "\uB3C4\uB9DD\uAC04 \uBAA8\uB85C\uC2A4\uB97C \uCAD3\uC544 \uB2E4\uC2DC
+      \uC131\uC744 \uD5A5\uD574 \uAE38\uC744 \uB5A0\uB0A9\uB2C8\uB2E4. "
+  - number: 17
+    stage_name: stage17
+    enemy_count: 2
+    enemy_unit1: "\uC250\uB3C4\uC6B0"
+    enemy_unit2: "\uC250\uB3C4\uC6B0"
+    enemy_unit3: 
+    reward_hp: 0
+    reward_point: 7
+    reward_coin: 240
+    open_item: 
+    stage_fullname: 
+    stage_info: 
+  - number: 18
+    stage_name: stage18
+    enemy_count: 1
+    enemy_unit1: "\uD22C\uD5E4\uB4DC\uC624\uD06C"
+    enemy_unit2: 
+    enemy_unit3: 
+    reward_hp: 1
+    reward_point: 8
+    reward_coin: 240
+    open_item: 
+    stage_fullname: "\uC131\uBB38\uC744 \uC5F4\uC5B4\uB77C"
+    stage_info: "\uACA8\uC6B0 \uB3C4\uCC29\uD55C \uBAA9\uC801\uC9C0\uC5D0 \uBCF4\uC774\uB294
+      \uAC83\uC740 \uAD73\uAC8C \uB2EB\uD78C \uBB38\uACFC \uC774\uB97C \uC9C0\uD0A4\uB294
+      \uAC15\uB825\uD55C \uBAAC\uC2A4\uD130\uC785\uB2C8\uB2E4. \uC774\uC804\uACFC
+      \uB2E4\uB978 \uBD84\uC704\uAE30\uC5D0 \uAE34\uC7A5\uB418\uC9C0\uB9CC \uC660\uC9C0
+      \uC774\uAE38 \uC218 \uC788\uC744 \uAC83\uB9CC \uAC19\uB2E4\uB294 \uC0DD\uAC01\uC774
+      \uB4ED\uB2C8\uB2E4."
+  - number: 19
+    stage_name: stage19
+    enemy_count: 3
+    enemy_unit1: "\uC250\uB3C4\uC6B0"
+    enemy_unit2: "\uC250\uB3C4\uC6B0"
+    enemy_unit3: "\uADF8\uB9BC \uB9AC\uD37C"
+    reward_hp: 0
+    reward_point: 8
+    reward_coin: 240
+    open_item: (9,13)
+    stage_fullname: "\uBCF4\uC2A4\uB294 \uC5B4\uB514\uC5D0"
+    stage_info: "\uBB34\uC0AC\uD788 \uC131 \uC548\uC5D0 \uB4E4\uC5B4\uC628 \uB2F9\uC2E0.
+      \uC131 \uC548\uC740 \uC5B4\uB461\uACE0 \uC801\uB9C9\uB9CC\uC774 \uAC00\uB4DD\uD569\uB2C8\uB2E4.
+      \uBE68\uB9AC \uC804\uC7C1\uC744 \uB05D\uB0B4\uAE30 \uC704\uD574 \uBCF4\uC2A4\uB97C
+      \uCC3E\uC544\uBCF4\uC9C0\uB9CC \uADF8 \uAE38\uBAA9\uC5D0\uC11C \uB9C8\uC8FC\uCE5C\uAC74
+      \uB610\uB2E4\uB978 \uBAAC\uC2A4\uD130 \uBB34\uB9AC\uC600\uC2B5\uB2C8\uB2E4."
+  - number: 20
+    stage_name: stage20
+    enemy_count: 1
+    enemy_unit1: "\uB3CC\uC544\uC628 \uBAA8\uB85C\uC2A4"
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
     reward_point: 0
-    reward_coin: 0
+    reward_coin: 280
     open_item: 
     stage_fullname: "\uCD5C\uD6C4\uC758 \uC804\uD22C"
     stage_info: "\uC774\uC81C\uB294 \uC815\uB9D0 \uBAA8\uB4E0 \uAC83\uC744 \uB05D\uB0BC
-      \uC2DC\uAC04\uC785\uB2C8\uB2E4.\\n\uC8FC\uC0AC\uC704\uC640 \uD568\uAED8 \uAC15\uD574\uC9C4
-      \uB2F9\uC2E0\uC740 \uBCF4\uC2A4\uB97C \uB9C8\uC8FC\uD574\uB3C4 \uB354 \uC774\uC0C1
-      \uB450\uB835\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. "
+      \uC2DC\uAC04\uC785\uB2C8\uB2E4. \uC8FC\uC0AC\uC704\uC640 \uD568\uAED8 \uAC15\uD574\uC9C4
+      \uB2F9\uC2E0\uC740 \uC774\uC81C \uBCF4\uC2A4\uB97C \uB9C8\uC8FC\uD574\uB3C4
+      \uB354 \uC774\uC0C1 \uB450\uB835\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. "
   monster_Data:
   - id: 1
     name: "\uC2A4\uCF08\uB808\uD1A4"
@@ -245,10 +374,10 @@ MonoBehaviour:
     name_en: slime
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 1
+    atk: 10
+    def: 10
+    image: monsterImage/monster_slime
     sound: 
     enemy_info: "\\n\uD3C9\uC6D0\uC5D0 \uC11C\uC2DD\uD558\uB294 \uC561\uCCB4\uD615
       \uBAAC\uC2A4\uD130.\\n\uC57D\uD558\uC9C0\uB9CC \uC798 \uBCA0\uC774\uC9C0 \uC54A\uB294\uB2E4."
@@ -257,10 +386,10 @@ MonoBehaviour:
     name_en: niddle rabbit
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 2
+    atk: 10
+    def: 13
+    image: monsterImage/monster_rabbit
     sound: 
     enemy_info: "\\n\uD1A0\uB07C\uB97C \uB2EE\uC740 \uADC0\uC5EC\uC6B4 \uC678\uD615\uC744
       \uC9C0\uB2CC \uBAAC\uC2A4\uD130. \uD138\uCC98\uB7FC \uBCF4\uC774\uB294 \uBD80\uBD84\uC740
@@ -271,10 +400,10 @@ MonoBehaviour:
     name_en: wolf
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 2
+    atk: 15
+    def: 19
+    image: monsterImage/monster_wolf
     sound: 
     enemy_info: "\\n\uC5B4\uB514\uC11C\uB098 \uD754\uD788 \uBCFC \uC218 \uC788\uB294
       \uAC08\uC0C9 \uB291\uB300.\\n\uD2B9\uC720\uC758 \uB0A0\uB835\uD568\uACFC \uC9D1\uC694\uD568\uC73C\uB85C
@@ -285,10 +414,10 @@ MonoBehaviour:
     name_en: salamander
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 4
+    atk: 21
+    def: 19
+    image: monsterImage/monster_salamander
     sound: 
     enemy_info: "\\n\uB2AA\uC5D0\uC11C \uC11C\uC2DD\uD558\uB294 \uC0B4\uB77C\uBA58\uB354.\\n\uC57D\uC810\uC778
       \uBA38\uB9AC\uB97C \uBCF4\uD638\uD558\uAE30 \uC704\uD574 \uBF08\uB85C\uB41C\\n\uB2E8\uB2E8\uD55C
@@ -298,10 +427,10 @@ MonoBehaviour:
     name_en: swamp lizard
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 4
+    atk: 20
+    def: 23
+    image: monsterImage/monster_lizard
     sound: 
     enemy_info: "\\n\uAC15\uB825\uD55C \uD131\uC73C\uB85C \uD55C \uBC88 \uBB38 \uBA39\uC787\uAC10\uC740
       \uC808\uB300\\n\uB193\uCE58\uC9C0 \uC54A\uB294 \uB3C4\uB9C8\uBC40\uD615 \uBAAC\uC2A4\uD130.\\n\uC77C\uBC18
@@ -312,10 +441,10 @@ MonoBehaviour:
     name_en: bat
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 5
+    atk: 20
+    def: 20
+    image: monsterImage/monster_bat
     sound: 
     enemy_info: "\\n\uC791\uC9C0\uB9CC \uC81C\uBE60\uB978 \uC0DD\uBA85\uCCB4.\\n\uB3D9\uAD74\uC5D0
       \uC11C\uC2DD\uD558\uBA70 \uC57C\uAC04\uC5D0\uB9CC \uD65C\uB3D9\uD55C\uB2E4. "
@@ -324,10 +453,10 @@ MonoBehaviour:
     name_en: poizion mushroom
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 5
+    atk: 22
+    def: 22
+    image: monsterImage/monster_mushroom
     sound: 
     enemy_info: "\\n\uD654\uB824\uD558\uACE0 \uADC0\uC5EC\uC6B4 \uC678\uD615\uC744
       \uC9C0\uB154\uC9C0\uB9CC\\n\uAC15\uB825\uD55C \uB9F9\uB3C5\uC744 \uD488\uACE0
@@ -338,10 +467,10 @@ MonoBehaviour:
     name_en: fire wolf
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 6
+    atk: 25
+    def: 25
+    image: monsterImage/monster_firewolf
     sound: 
     enemy_info: "\\n\uC77C\uBC18 \uB291\uB300\uAC00 \uC6A9\uC554\uC758 \uAE30\uC6B4\uACFC
       \uACB0\uD569\uD574\\n\uD0C4\uC0DD\uD55C \uB291\uB300\uD615 \uBAAC\uC2A4\uD130.\\n\uAF2C\uB9AC\uC5D0\uB294
@@ -352,10 +481,10 @@ MonoBehaviour:
     name_en: ironhorn
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 6
+    atk: 28
+    def: 26
+    image: monsterImage/monster_ironhorn
     sound: 
     enemy_info: "\\n\uC218\uD638\uC790 \uB2E4\uC74C\uC73C\uB85C \uAC15\uB825\uD55C
       \uBAAC\uC2A4\uD130.\\n\uAC15\uCCA0\uAC19\uC740 \uC554\uC11D\uC73C\uB85C \uB41C
@@ -367,10 +496,10 @@ MonoBehaviour:
     name_en: protector of forest
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 7
+    atk: 30
+    def: 30
+    image: monsterImage/monster_protector
     sound: 
     enemy_info: "\\n\uD070 \uC0B0\uB9E5\uC5D0\uB9CC \uAC70\uC8FC\uD558\uBA70 \uADF8
       \uC0B0\uC758 \uBAAC\uC2A4\uD130\uB4E4\uC744 \uC218\uD638\uD558\uB294 \uC218\uD638\uC790.\\n\uC21C\uC9C4\uD55C
@@ -382,10 +511,10 @@ MonoBehaviour:
     name_en: wood golem
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 9
+    atk: 48
+    def: 48
+    image: monsterImage/monster_woodgolem
     sound: 
     enemy_info: "\\n\uACE0\uBAA9\uC5D0\uC11C \uD0C4\uC0DD\uD558\uB294 \uB098\uBB34\uD615
       \uBAAC\uC2A4\uD130.\\n\uACE0\uBAA9\uC758 \uB2E8\uB2E8\uD568\uACFC \uBB35\uC9C1\uD568\uC744
@@ -396,10 +525,10 @@ MonoBehaviour:
     name_en: ghost
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 11
+    atk: 50
+    def: 50
+    image: monsterImage/monster_ghost
     sound: 
     enemy_info: "\\n\uC77C\uBC18 \uBAAC\uC2A4\uD130\uC5D0 \uBD88\uACFC\uD558\uC9C0\uB9CC
       \uC790\uC2E0\uBCF4\uB2E4\\n\uC57D\uD55C \uBAAC\uC2A4\uD130\uB4E4\uC744 \uC870\uC885\uD558\uC5EC
@@ -409,10 +538,10 @@ MonoBehaviour:
     name_en: shadow
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 11
+    atk: 53
+    def: 50
+    image: monsterImage/monster_shadow
     sound: 
     enemy_info: "\\n\uB0A0\uB835\uD55C \uC678\uD615\uCC98\uB7FC \uB0A0\uCE74\uB85C\uC6B4
       \uCD08\uC2B9\uB2EC\uBAA8\uC591\uC758 \uCE7C\uC744 \uC190 \uB300\uC2E0 \uC0AC\uC6A9\uD558\uB294
@@ -424,10 +553,10 @@ MonoBehaviour:
     name_en: twohead orc
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 9
+    atk: 37
+    def: 37
+    image: monsterImage/monster_orc
     sound: 
     enemy_info: "\\n\uC624\uD06C\uBCD1\uC0AC\uB4E4\uC758 \uB300\uC7A5\uC73C\uB85C,
       2\uAC1C\uC758 \uBA38\uB9AC\uB97C \uAC00\uC9C4 \uC624\uD06C.\\n\uC704\uD611\uC801\uC778
@@ -439,10 +568,10 @@ MonoBehaviour:
     name_en: dark shell
     type: M
     state: 0
-    hp: 0
-    atk: 0
-    def: 0
-    image: 
+    hp: 11
+    atk: 53
+    def: 50
+    image: monsterImage/monster_shadow
     sound: 
     enemy_info: "\\n\uC0AC\uB9C8\uADC0\uAC19\uC740 \uB0A0\uCE74\uB85C\uC6B4 \uC55E\uBC1C\uC744
       \uAC16\uACE0 \uC788\uB294 \uC545\uB9C8\uD615 \uBAAC\uC2A4\uD130. \uB054\uCC0D\uD55C
