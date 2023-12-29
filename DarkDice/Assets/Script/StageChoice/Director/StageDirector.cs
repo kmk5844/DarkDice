@@ -109,7 +109,7 @@ public class StageDirector : MonoBehaviour {
         {
             Monster_inf_Button[i].GetComponent<Image>().sprite = Resources.Load<Sprite>("monsterImage/default");
 
-            if (i < Data.stage_Data[Num -1].enemy_count)
+            if (i < Data.stage_Data[Num-1].enemy_count)
             {
                 Monster_inf_Button[i].interactable = true;
             }
@@ -117,7 +117,6 @@ public class StageDirector : MonoBehaviour {
                 Monster_inf_Button[i].interactable = false;
             }
         }
-
         string str = "";
         for (int i = 0; i < Monster_inf_Group.Length; i++)
         {
@@ -138,6 +137,7 @@ public class StageDirector : MonoBehaviour {
             {
                 str = Data.stage_Data[Num - 1].enemy_unit3;
             }
+            Debug.Log(Enemy(str));
             Monster_inf_Button[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(Data.monster_Data[Enemy(str)].image);
             Monster_inf_Group[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "이름 : " + Data.monster_Data[Enemy(str)].name;
             Monster_inf_Group[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "체력 : " + Data.monster_Data[Enemy(str)].hp.ToString();

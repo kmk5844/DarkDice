@@ -89,7 +89,7 @@ MonoBehaviour:
   - number: 7
     stage_name: stage7
     enemy_count: 2
-    enemy_unit1: "\uB3C5\uBC84\uC12F "
+    enemy_unit1: "\uB3C5\uBC84\uC12F"
     enemy_unit2: "\uB3C5\uBC84\uC12F"
     enemy_unit3: 
     reward_hp: 0
@@ -356,13 +356,13 @@ MonoBehaviour:
       \uAC80\uC5D0 \uB2FF\uB294 \uBAA8\uB4E0 \uAC83\uC744 \uD30C\uAD34\uD558\uB294
       \uAC15\uB825\uD55C \uD798\uC744\\n\uAC00\uC84C\uB2E4."
   - id: 6
-    name: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    name: "\uB3CC\uC544\uC628 \uBAA8\uB85C\uC2A4"
     name_en: destroyer moros
     type: M
     state: 0
-    hp: 8
-    atk: 20
-    def: 23
+    hp: 10
+    atk: 23
+    def: 24
     image: monsterImage/monster_boss
     sound: 
     enemy_info: "\\n\uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uB4E4\uC758 \uC704\uC5D0 \uAD70\uB9BC\uD558\uB294
