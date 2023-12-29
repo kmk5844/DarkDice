@@ -22,6 +22,8 @@ public class Dice : MonoBehaviour
     public Image Dice2_Image;
     Transform Dice1;
     Transform Dice2;
+    Animator Dice1_Ani;
+    Animator Dice2_Ani;
 
     public int atkSum;
     public int defSum;
@@ -35,6 +37,8 @@ public class Dice : MonoBehaviour
     {
         Dice1 = Dice1_Image.GetComponent<Transform>();
         Dice2 = Dice2_Image.GetComponent<Transform>();
+        Dice1_Ani = Dice1.GetComponent<Animator>();
+        Dice2_Ani = Dice2.GetComponent<Animator>();
         SFX_Audio = GameObject.Find("Sfx").GetComponent<AudioSource>();
         dice_roll_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_roll_loop_new");
         dice_end_SFX = Resources.Load<AudioClip>("Sound/SFX/dice_random_new_new");
@@ -52,12 +56,19 @@ public class Dice : MonoBehaviour
 
         if (rollingFlag == false)
         {
+            if(Dice1_Ani.GetBool("Effect") == false && Dice2_Ani.GetBool("Effect") == false)
+            {
+                Dice1_Ani.SetBool("Effect", true);
+                Dice2_Ani.SetBool("Effect", true);
+            }
             delay += 0.062f;
 
             if (delay > 0.56f)
             {
                 StopCoroutine(coroutine);
                 Attack_Button.interactable = true;
+                Dice1_Ani.SetBool("Effect", false);
+                Dice2_Ani.SetBool("Effect", false);
             }
         }
         int rand_Dice_X1 = Random.Range(-210, -230);
