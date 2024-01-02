@@ -15,7 +15,7 @@ D:/Unity_Project/DarkDice/DarkDice/DarkDice
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-54226
+54910
 Successfully changed project path to: D:/Unity_Project/DarkDice/DarkDice/DarkDice
 D:/Unity_Project/DarkDice/DarkDice/DarkDice
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Unity_Project/DarkDice/DarkDice/DarkDice
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14516] Host "[IP] 192.168.45.139 [Port] 0 [Flags] 2 [Guid] 193784173 [EditorId] 193784173 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-INHLPMS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [6112] Host "[IP] 192.168.45.139 [Port] 0 [Flags] 2 [Guid] 3959952680 [EditorId] 3959952680 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-INHLPMS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14516] Host "[IP] 192.168.45.139 [Port] 0 [Flags] 2 [Guid] 193784173 [EditorId] 193784173 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-INHLPMS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6112] Host "[IP] 192.168.45.139 [Port] 0 [Flags] 2 [Guid] 3959952680 [EditorId] 3959952680 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-INHLPMS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 3 workers.
-Refreshing native plugins compatible for Editor in 14.94 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 47.56 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.9f1 (ea401c316338)
 [Subsystems] Discovering subsystems at path D:/UN/Unity Hub/2022.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -70,47 +70,47 @@ Initialize mono
 Mono path[0] = 'D:/UN/Unity Hub/2022.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'D:/UN/Unity Hub/2022.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/UN/Unity Hub/2022.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56068
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/UN/Unity Hub/2022.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/UN/Unity Hub/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006448 seconds.
-- Loaded All Assemblies, in  0.425 seconds
+Registered in 0.010008 seconds.
+- Loaded All Assemblies, in  0.558 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 377 ms
+Android Extension - Scanning For ADB Devices 657 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.736 seconds
-Domain Reload Profiling: 1161ms
-	BeginReloadAssembly (140ms)
+- Finished resetting the current domain, in  1.258 seconds
+Domain Reload Profiling: 1817ms
+	BeginReloadAssembly (143ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (41ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (56ms)
-	LoadAllAssembliesAndSetupDomain (174ms)
-		LoadAssemblies (140ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (83ms)
+	LoadAllAssembliesAndSetupDomain (254ms)
+		LoadAssemblies (144ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (171ms)
-			TypeCache.Refresh (169ms)
-				TypeCache.ScanAssembly (155ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (737ms)
+		AnalyzeDomain (248ms)
+			TypeCache.Refresh (245ms)
+				TypeCache.ScanAssembly (220ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1260ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (675ms)
+		SetupLoadedEditorAssemblies (1159ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (496ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (875ms)
+			SetLoadedEditorAssemblies (11ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (106ms)
-			ProcessInitializeOnLoadMethodAttributes (66ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (164ms)
+			ProcessInitializeOnLoadMethodAttributes (104ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,8 +118,8 @@ Domain Reload Profiling: 1161ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.887 seconds
-Refreshing native plugins compatible for Editor in 4.84 ms, found 4 plugins.
+- Loaded All Assemblies, in  1.301 seconds
+Refreshing native plugins compatible for Editor in 7.91 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -127,47 +127,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.693 seconds
-Domain Reload Profiling: 1579ms
-	BeginReloadAssembly (180ms)
+- Finished resetting the current domain, in  1.178 seconds
+Domain Reload Profiling: 2478ms
+	BeginReloadAssembly (359ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (11ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (614ms)
-		LoadAssemblies (365ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (63ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (783ms)
+		LoadAssemblies (638ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (365ms)
-			TypeCache.Refresh (332ms)
-				TypeCache.ScanAssembly (311ms)
-			ScanForSourceGeneratedMonoScriptInfo (25ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (693ms)
+		AnalyzeDomain (390ms)
+			TypeCache.Refresh (331ms)
+				TypeCache.ScanAssembly (297ms)
+			ScanForSourceGeneratedMonoScriptInfo (47ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1179ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (485ms)
+		SetupLoadedEditorAssemblies (845ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (38ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (72ms)
-			ProcessInitializeOnLoadAttributes (338ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			BeforeProcessingInitializeOnLoad (156ms)
+			ProcessInitializeOnLoadAttributes (567ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (19ms)
+		AwakeInstancesAfterBackupRestoration (25ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 5.37 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 5.92 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4346 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 84 unused Assets / (1.4 MB). Loaded Objects now: 4793.
-Memory consumption went from 170.8 MB to 169.4 MB.
-Total: 4.089300 ms (FindLiveObjects: 0.306900 ms CreateObjectMapping: 0.282900 ms MarkObjects: 2.825500 ms  DeleteObjects: 0.673100 ms)
+Unloading 84 unused Assets / (1.4 MB). Loaded Objects now: 4797.
+Memory consumption went from 171.3 MB to 169.9 MB.
+Total: 5.191500 ms (FindLiveObjects: 0.401900 ms CreateObjectMapping: 0.389700 ms MarkObjects: 3.690300 ms  DeleteObjects: 0.708600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -185,87 +185,22 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1525492.453528 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_12_Glop Slime/monster_03_Atlas.asset
-  artifactKey: Guid(52ae24c92743a4d4694776d99c5bd9c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_12_Glop Slime/monster_03_Atlas.asset using Guid(52ae24c92743a4d4694776d99c5bd9c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e69e01895fe9daa644ed52976cd79439') in 0.046401 seconds
+  Time since last request: 1529043.324234 seconds.
+  path: Assets/Resources/monster/ì‚°ì˜ ìˆ˜í˜¸ìž.prefab
+  artifactKey: Guid(791d8f218bbe2654fb7acdd57d258378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/monster/ì‚°ì˜ ìˆ˜í˜¸ìž.prefab using Guid(791d8f218bbe2654fb7acdd57d258378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd19af0d4d13db58b8d745bc623d44fdf') in 0.656131 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 38
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_12_Glop Slime/monster_03_SkeletonData.asset
-  artifactKey: Guid(f155ab5fe00e7ce4ba511d462725d224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_12_Glop Slime/monster_03_SkeletonData.asset using Guid(f155ab5fe00e7ce4ba511d462725d224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '741c8a492aff0ed3febb612264318721') in 0.962406 seconds
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/monster/ì•„ì´ì–¸í˜¼.prefab
+  artifactKey: Guid(6972eff28a167d54c909934c3d6097cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/monster/ì•„ì´ì–¸í˜¼.prefab using Guid(6972eff28a167d54c909934c3d6097cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8f308d43abd8e529b1778878fee5e49') in 0.071689 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 97
-========================================================================
-Received Import Request.
-  Time since last request: 10.578859 seconds.
-  path: Assets/Resources/Background/Stage4.mat
-  artifactKey: Guid(3dad117c3036edb4e86a47d3a1c227b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Background/Stage4.mat using Guid(3dad117c3036edb4e86a47d3a1c227b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd69551a3c3ca9abbd1978feaacd09fce') in 0.144543 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 53.977461 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_13_14_15_Golem/monster_04_SkeletonData.asset
-  artifactKey: Guid(b2eaa243e0e548941a3c52c347acf75d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_13_14_15_Golem/monster_04_SkeletonData.asset using Guid(b2eaa243e0e548941a3c52c347acf75d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '569924076ce249b6f6e22ad1c4eb9d1c') in 0.019347 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_94_95_96_Lizard/monster_28_SkeletonData.asset
-  artifactKey: Guid(a3866a1470b035243a16ad6a9d3f760f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_94_95_96_Lizard/monster_28_SkeletonData.asset using Guid(a3866a1470b035243a16ad6a9d3f760f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e125ee4166fc61f60adfdb4f439722d') in 0.114936 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_2_Skulled Salamander/monster_small_SkeletonData.asset
-  artifactKey: Guid(db9bb13eb9b410549997b1090eed909b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_2_Skulled Salamander/monster_small_SkeletonData.asset using Guid(db9bb13eb9b410549997b1090eed909b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '450e111e26b02f010291c3ec5a36e2a8') in 0.020856 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_30_31_32_33_34_Rabbit/monster_09_SkeletonData.asset
-  artifactKey: Guid(2abe58e115d32214197544ea950279f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_30_31_32_33_34_Rabbit/monster_09_SkeletonData.asset using Guid(2abe58e115d32214197544ea950279f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7d3acf104fd4c153a12f266b08294a8') in 0.087515 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.003987 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_19_Crescent Shadow/monster_05_SkeletonData.asset
-  artifactKey: Guid(5cb326b8d5560314f94b75894695c761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_19_Crescent Shadow/monster_05_SkeletonData.asset using Guid(5cb326b8d5560314f94b75894695c761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e868e1ed5b525ec4970b896e1af32610') in 0.056178 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.001109 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_85_86_87_Orc/monster_25_SkeletonData.asset
-  artifactKey: Guid(9eae4f2f91691f44b8f45f5f0892a5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_85_86_87_Orc/monster_25_SkeletonData.asset using Guid(9eae4f2f91691f44b8f45f5f0892a5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8108759b52f7923c2151d17d3bf3b7b') in 0.072948 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_35_36_37_Tree/monster_10_SkeletonData.asset
-  artifactKey: Guid(b78a30fa0146fdf41b47d54de9079d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fantazia Animated 2D Monsters/Source_Animations/Monster_35_36_37_Tree/monster_10_SkeletonData.asset using Guid(b78a30fa0146fdf41b47d54de9079d07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96dad65ae092213a94d88707e51b3422') in 0.073823 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 36
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ½º·¹µå Á¾·á ¶Ç´Â ÀÀ¿ë ÇÁ·Î±×·¥ ¿äÃ» ¶§¹®¿¡ I/O ÀÛ¾÷ÀÌ Ãë¼ÒµÇ¾ú½À´Ï´Ù.
 AssetImportWorker is now disconnected from the server
 Process exiting
 Exiting without the bug reporter. Application will terminate with return code 0

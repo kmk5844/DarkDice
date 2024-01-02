@@ -12,7 +12,6 @@ public class Dice : MonoBehaviour
     AudioSource SFX_Audio;
     AudioClip dice_roll_SFX;
     AudioClip dice_end_SFX;
-
     
     public Sprite PlaySprite;
     public Sprite PauseSprite;
