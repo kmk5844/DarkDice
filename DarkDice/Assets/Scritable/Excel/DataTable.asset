@@ -40,10 +40,10 @@ MonoBehaviour:
     stage_info: 
   - number: 3
     stage_name: stage3
-    enemy_count: 3
+    enemy_count: 2
     enemy_unit1: "\uB291\uB300"
     enemy_unit2: "\uB291\uB300"
-    enemy_unit3: "\uB291\uB300"
+    enemy_unit3: 
     reward_hp: 0
     reward_point: 2
     reward_coin: 120
@@ -57,7 +57,7 @@ MonoBehaviour:
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 1
-    reward_point: 2
+    reward_point: 3
     reward_coin: 120
     open_item: (3523)
     stage_fullname: "\uAC15\uAC00\uC5D0\uC11C"
@@ -93,7 +93,7 @@ MonoBehaviour:
     enemy_unit2: "\uB3C5\uBC84\uC12F"
     enemy_unit3: 
     reward_hp: 0
-    reward_point: 3
+    reward_point: 4
     reward_coin: 160
     open_item: 
     stage_fullname: 
@@ -175,7 +175,7 @@ MonoBehaviour:
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 0
-    reward_point: 6
+    reward_point: 5
     reward_coin: 180
     open_item: 
     stage_fullname: "\uAC15\uB825\uD55C \uC801"
@@ -202,7 +202,7 @@ MonoBehaviour:
     enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
     enemy_unit3: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
     reward_hp: 0
-    reward_point: 7
+    reward_point: 6
     reward_coin: 240
     open_item: 
     stage_fullname: "\uBCF4\uC2A4\uC640\uC758 \uC870\uC6B0"
@@ -218,7 +218,7 @@ MonoBehaviour:
     enemy_unit2: "\uC6B0\uB4DC\uACE8\uB818"
     enemy_unit3: "\uACE0\uC2A4\uD2B8"
     reward_hp: 1
-    reward_point: 7
+    reward_point: 6
     reward_coin: 240
     open_item: 
     stage_fullname: 
@@ -231,7 +231,7 @@ MonoBehaviour:
     enemy_unit2: "\uC250\uB3C4\uC6B0"
     enemy_unit3: 
     reward_hp: 0
-    reward_point: 7
+    reward_point: 6
     reward_coin: 240
     open_item: 
     stage_fullname: 
@@ -243,7 +243,7 @@ MonoBehaviour:
     enemy_unit2: 
     enemy_unit3: 
     reward_hp: 1
-    reward_point: 8
+    reward_point: 7
     reward_coin: 240
     open_item: 
     stage_fullname: "\uC131\uBB38\uC744 \uC5F4\uC5B4\uB77C"
@@ -260,7 +260,7 @@ MonoBehaviour:
     enemy_unit2: "\uC250\uB3C4\uC6B0"
     enemy_unit3: "\uADF8\uB9BC \uB9AC\uD37C"
     reward_hp: 0
-    reward_point: 8
+    reward_point: 7
     reward_coin: 240
     open_item: (9,13)
     stage_fullname: "\uBCF4\uC2A4\uB294 \uC5B4\uB514\uC5D0"
@@ -402,7 +402,7 @@ MonoBehaviour:
     state: 0
     hp: 2
     atk: 15
-    def: 19
+    def: 14
     image: monsterImage/monster_wolf
     sound: 
     enemy_info: "\\n\uC5B4\uB514\uC11C\uB098 \uD754\uD788 \uBCFC \uC218 \uC788\uB294
@@ -415,8 +415,8 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 4
-    atk: 21
-    def: 19
+    atk: 17
+    def: 17
     image: monsterImage/monster_salamander
     sound: 
     enemy_info: "\\n\uB2AA\uC5D0\uC11C \uC11C\uC2DD\uD558\uB294 \uC0B4\uB77C\uBA58\uB354.\\n\uC57D\uC810\uC778
@@ -429,7 +429,7 @@ MonoBehaviour:
     state: 0
     hp: 4
     atk: 20
-    def: 23
+    def: 20
     image: monsterImage/monster_lizard
     sound: 
     enemy_info: "\\n\uAC15\uB825\uD55C \uD131\uC73C\uB85C \uD55C \uBC88 \uBB38 \uBA39\uC787\uAC10\uC740

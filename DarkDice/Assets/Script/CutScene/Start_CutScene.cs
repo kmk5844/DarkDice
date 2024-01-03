@@ -28,7 +28,7 @@ public class Start_CutScene : MonoBehaviour
             Toon[0].SetActive(false);
             Toon[1].SetActive(true);
             Next_Button.interactable = false;
-            StartCoroutine(Typing("그러나 평화는 그리 오래가지 못했으니...\n정체를 알 수 없는 몬스터 군단이 왕국을 공격해왔기 때문이죠.\n".Replace("\n\n", "\n")));
+            StartCoroutine(Typing("그러나 이 평화에도 위기가 찾아오는데...\n오래전부터 당신이 갖고있던 주사위에서 갑자기 나타난 정령 랑이!".Replace("\n\n", "\n")));
 
         }
         else if (count == 2)
@@ -36,14 +36,14 @@ public class Start_CutScene : MonoBehaviour
             Toon[1].SetActive(false);
             Toon[2].SetActive(true);
             Next_Button.interactable = false;
-            StartCoroutine(Typing("이때 평범한 점원인 당신에게도 새로운 바람이 불어오는데..\n주머니 속 주사위에서 나타난 주사위 정령 \"랑이\"!!\n랑이는 당신이 바로 이 혼돈으로부터 왕국을 구할 용사라고 말합니다.\n".Replace("\n\n", "\n")));
+            StartCoroutine(Typing("정령은 곧 왕국에 닥칠 암울한 미래를 보여주며,\n오직 당신만이 다가올 미래를 바꿀 수 있는 용사라고 말합니다.".Replace("\n\n", "\n")));
         }
         else if (count == 3)
         {
             Toon[2].SetActive(false);
             Toon[3].SetActive(true);
             Next_Button.interactable = false;
-            StartCoroutine(Typing("뜬끔없이 주사위 정령 랑이의 선택을 받은 당신!\n이제 본업은 잠시 접어두고 용사로서 세상을 구할 시간입니다.".Replace("\n\n", "\n")));
+            StartCoroutine(Typing("갑작스레 주사위 정령의 선택을 받은 당신!\n이제 본업은 잠시 접어두고 용사로서 세상을 구할 시간입니다.".Replace("\n\n", "\n")));
         } else if (count == 4)
         {
             try
