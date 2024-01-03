@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: DoubleAtk
   pride: 45
   itemCount: 0
-  itemImage: {fileID: 21300000, guid: 35be7e023766b904abd25a504e9db1ec, type: 3}
+  itemImage: {fileID: 21300000, guid: 26e64a77bb872634e832156145a3265d, type: 3}

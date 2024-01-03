@@ -492,7 +492,7 @@ public class GameDirector : MonoBehaviour
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 playerData.hp += 0.5f;
                 ItemCount++;
-            }else if(ItemName == "window_04") // ¼è¾à
+            }else if(ItemName == "Weak") // ¼è¾à
             {
                 ItemUse();
                 //ÆÄÆ¼Å¬ Ãß°¡
