@@ -415,7 +415,7 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 4
-    atk: 17
+    atk: 16
     def: 17
     image: monsterImage/monster_salamander
     sound: 
@@ -427,9 +427,9 @@ MonoBehaviour:
     name_en: swamp lizard
     type: M
     state: 0
-    hp: 4
+    hp: 5
     atk: 20
-    def: 20
+    def: 22
     image: monsterImage/monster_lizard
     sound: 
     enemy_info: "\\n\uAC15\uB825\uD55C \uD131\uC73C\uB85C \uD55C \uBC88 \uBB38 \uBA39\uC787\uAC10\uC740
@@ -441,9 +441,9 @@ MonoBehaviour:
     name_en: bat
     type: M
     state: 0
-    hp: 5
-    atk: 20
-    def: 20
+    hp: 3
+    atk: 21
+    def: 21
     image: monsterImage/monster_bat
     sound: 
     enemy_info: "\\n\uC791\uC9C0\uB9CC \uC81C\uBE60\uB978 \uC0DD\uBA85\uCCB4.\\n\uB3D9\uAD74\uC5D0
@@ -454,8 +454,8 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 5
-    atk: 22
-    def: 22
+    atk: 25
+    def: 23
     image: monsterImage/monster_mushroom
     sound: 
     enemy_info: "\\n\uD654\uB824\uD558\uACE0 \uADC0\uC5EC\uC6B4 \uC678\uD615\uC744
