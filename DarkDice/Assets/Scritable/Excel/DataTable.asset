@@ -35,7 +35,7 @@ MonoBehaviour:
     reward_hp: 1
     reward_point: 2
     reward_coin: 100
-    open_item: (3417,3420,3521)
+    open_item: 
     stage_fullname: "\uD3C9\uC6D0\uC5D0\uC11C"
     stage_info: 
   - number: 3
@@ -47,7 +47,7 @@ MonoBehaviour:
     reward_hp: 0
     reward_point: 2
     reward_coin: 120
-    open_item: (3418,3419,3522)
+    open_item: 
     stage_fullname: "\uB291\uB300\uBB34\uB9AC"
     stage_info: 
   - number: 4
@@ -59,7 +59,7 @@ MonoBehaviour:
     reward_hp: 1
     reward_point: 3
     reward_coin: 120
-    open_item: (3523)
+    open_item: (6,10)
     stage_fullname: "\uAC15\uAC00\uC5D0\uC11C"
     stage_info: 
   - number: 5
@@ -131,7 +131,7 @@ MonoBehaviour:
     reward_hp: 1
     reward_point: 5
     reward_coin: 180
-    open_item: 
+    open_item: (15)
     stage_fullname: "\uC0B0\uC758 \uC218\uD638\uC790"
     stage_info: "\uD6CC\uB96D\uD558\uAC8C \uD6C8\uB828\uC744 \uBAA8\uB450 \uB9C8\uCCE4\uC2B5\uB2C8\uB2E4.
       \uCD5C\uC885 \uAD00\uBB38\uC740 \uC774 \uC0B0\uB9E5\uC758 \uBAAC\uC2A4\uD130\uB4E4\uC744
@@ -185,22 +185,22 @@ MonoBehaviour:
       \uAC00\uC9C4 \uBAAC\uC2A4\uD130\uC600\uC2B5\uB2C8\uB2E4."
   - number: 14
     stage_name: stage14
-    enemy_count: 2
-    enemy_unit1: "\uC2AC\uB77C\uC784"
-    enemy_unit2: "\uB2E4\uD06C\uC258"
+    enemy_count: 1
+    enemy_unit1: "\uB2E4\uD06C\uC258"
+    enemy_unit2: 
     enemy_unit3: 
     reward_hp: 1
     reward_point: 6
     reward_coin: 200
-    open_item: (8,12)
+    open_item: (5,8,12)
     stage_fullname: 
     stage_info: 
   - number: 15
     stage_name: stage15
-    enemy_count: 3
-    enemy_unit1: "\uC2AC\uB77C\uC784"
-    enemy_unit2: "\uC2A4\uD1A4\uD53C\uC2A4\uD2B8"
-    enemy_unit3: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    enemy_count: 1
+    enemy_unit1: "\uD30C\uAD34\uC790 \uBAA8\uB85C\uC2A4"
+    enemy_unit2: 
+    enemy_unit3: 
     reward_hp: 0
     reward_point: 6
     reward_coin: 240
@@ -290,9 +290,9 @@ MonoBehaviour:
     name_en: skeleton
     type: M
     state: 0
-    hp: 1
-    atk: 10
-    def: 10
+    hp: 4
+    atk: 35
+    def: 35
     image: monsterImage/monster_skelleton
     sound: 
     enemy_info: "\\n\uC8FC\uC220\uC0AC\uC5D0 \uC758\uD574 \uC601\uC6D0\uD55C \uC548\uC2DD\uC5D0
@@ -304,9 +304,9 @@ MonoBehaviour:
     name_en: stonefist
     type: M
     state: 0
-    hp: 2
-    atk: 10
-    def: 13
+    hp: 5
+    atk: 36
+    def: 38
     image: monsterImage/monster_stonefeast
     sound: 
     enemy_info: "\\n\uC720\uB09C\uD788 \uB2E8\uB2E8\uD55C \uBC14\uC704\uC5D0\uC11C
@@ -318,9 +318,9 @@ MonoBehaviour:
     name_en: icegolem
     type: M
     state: 0
-    hp: 6
-    atk: 15
-    def: 19
+    hp: 8
+    atk: 41
+    def: 41
     image: monsterImage/monster_golem
     sound: 
     enemy_info: "\\n\uC2A4\uD1A4\uD53C\uC2A4\uD2B8\uAC00 \uC5BC\uC74C\uC6D0\uC18C\uC640
@@ -332,7 +332,7 @@ MonoBehaviour:
     name_en: grime reaper
     type: M
     state: 0
-    hp: 6
+    hp: 9
     atk: 21
     def: 19
     image: monsterImage/monster_grime
