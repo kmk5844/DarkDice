@@ -16,18 +16,23 @@ public class ItemDirector_Stage : MonoBehaviour
     public ItemData default_item;
 
     int[] Sub_Count; // 아이템 데이터를 받아 임시로 저장하는 갯수
+    int[] Equip_Count;
     int Equip_Max_Count; //장착 갯수 -> 3개까지 셀 수 있도록
 
     //아이템 장착 버튼
     public Button[] ItemStock; // 소지하고 있는 아이템 버튼
     public Button[] ItemEquip; // 전투 들어가기 전의 아이템 버튼
 
+    bool EquipFlag;
+
     void Start()
     {
+        EquipFlag = false;
         itemData_Object = new Item_Scritable[ItemObject.Length];
         Equip_Max_Count = 0;
         playerData = PlayerObject.GetComponent<Player_Scritable>();
         Sub_Count = new int[Equip_Item_Count.Length];
+        Equip_Count = new int[Equip_Item_Count.Length];
 
         for (int i = 0; i < ItemObject.Length; i++)
         {
@@ -54,6 +59,15 @@ public class ItemDirector_Stage : MonoBehaviour
 
      private void Update()
     {
+        if(Equip_Max_Count == 0)
+        {
+            EquipFlag = false;
+        }
+        else
+        {
+            EquipFlag = true;
+        }
+
         for (int i = 0; i < ItemEquip.Length; i++)
         {
             ItemEquip[i].GetComponent<Image>().sprite = playerData.item[i].ItemImage;
@@ -62,6 +76,7 @@ public class ItemDirector_Stage : MonoBehaviour
         for (int i = 0; i < Equip_Item_Count.Length; i++)
         {
             Equip_Item_Count[i].text = Sub_Count[i].ToString();
+
             if (Sub_Count[i] == 0 || Equip_Max_Count == 3)
             {
                 ItemStock[i].interactable = false;
@@ -75,9 +90,22 @@ public class ItemDirector_Stage : MonoBehaviour
 
     public void OnUpdate()
     {
-        for(int i = 0; i < ItemObject.Length; i++)
+        if (!EquipFlag)
         {
-            Sub_Count[i] = itemData_Object[i].itemcount;
+            for (int i = 0; i < ItemObject.Length; i++)
+            {
+                Sub_Count[i] = itemData_Object[i].itemcount;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < ItemObject.Length; i++)
+            {
+                if (itemData_Object[i].itemcount != Sub_Count[i] + Equip_Count[i])
+                {
+                    Sub_Count[i] = itemData_Object[i].itemcount - Equip_Count[i];
+                }
+            }
         }
     }
     public void OnEquipItem(int i)
@@ -85,6 +113,7 @@ public class ItemDirector_Stage : MonoBehaviour
         playerData.EquipItem_Player(itemData_Object[i].itemData);
         Equip_Max_Count++;
         Sub_Count[i]--;
+        Equip_Count[i]++;
     }
 
     public void OnDeleteItem(int i)
@@ -92,21 +121,27 @@ public class ItemDirector_Stage : MonoBehaviour
         if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Chance")
         {
             Sub_Count[0]++;
+            Equip_Count[0]--;
         }
         else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Heal")
         {
             Sub_Count[1]++;
+            Equip_Count[1]--;
         }
         else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleAtk")
         {
             Sub_Count[2]++;
+            Equip_Count[2]--;
         }
         else if (ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "DoubleDef")
         {
             Sub_Count[3]++;
-        }else if(ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "window_04")
+            Equip_Count[3]--;
+        }
+        else if(ItemEquip[i].GetComponentInChildren<Image>().sprite.name == "Weak")
         {
             Sub_Count[4]++;
+            Equip_Count[4]--;
         }
 
         if (Equip_Max_Count > 0)

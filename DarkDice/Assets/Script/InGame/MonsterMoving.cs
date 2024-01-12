@@ -37,7 +37,7 @@ public class MonsterMoving : MonoBehaviour
         {
             if (Monster_DieCount < monster.Length)
             {
-                if (Player.transform.position.x - monster[Monster_DieCount].transform.position.x <= -11.0f)// 만날 때까지
+                if (Player.transform.position.x - monster[Monster_DieCount].transform.position.x <= -11f)// 만날 때까지
                 {
                     monster[Monster_DieCount].SetActive(true);
                     Play_UI.SetActive(false);
@@ -87,7 +87,7 @@ public class MonsterMoving : MonoBehaviour
                     Player.GetComponentInChildren<SkeletonAnimation>().state.SetAnimation(0, "Run DUELIST", true);
                 }
 
-                if (monster[Monster_DieCount - 1].transform.position.x - Player.transform.position.x >= -11.0f)
+                if (monster[Monster_DieCount - 1].transform.position.x - Player.transform.position.x >= -11f)
                 {
                     Player.transform.Translate(10.0f * Time.deltaTime, 0, 0);
                 }
