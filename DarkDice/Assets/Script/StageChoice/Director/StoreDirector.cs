@@ -15,17 +15,22 @@ public class StoreDirector : MonoBehaviour
     public GameObject[] WeaponObject_Data; // 무기 오브젝트 데이터를 가져온다.
     Weapon_Scritable[] weapon;
 
+    public GameObject[] D_WeaponObject_Data;
+    D_Weapon_Scritable[] d_weapon;
+
     public TextMeshProUGUI CoinCount; // 현재 가지고 있는 코인
 
     public TextMeshProUGUI[] Item_Count; // 아이템 갯수
     public TextMeshProUGUI[] Item_Pride; // 아이템 가격
     public TextMeshProUGUI[] Weapon_Pride; // 무기 가격
+    public TextMeshProUGUI[] D_Weapon_Pride; //방어구 가격
 
     public Toggle[] Title_Toggle; // 아이템 상점과 무기 상점을 바꿀 수 있는 토글
     public GameObject[] Window_Toggle;
 
     public Button[] Item_Button;
     public Button[] Weapon_Button;
+    public Button[] D_Weapon_Button;
     public GameObject Buy_Window; // 마지막 확인
     public GameObject Dont_Click_Panel;
     Button YesButton;
@@ -36,6 +41,7 @@ public class StoreDirector : MonoBehaviour
         player = playerObject.GetComponent<Player_Scritable>();
         item = new Item_Scritable[ItemObject_Data.Length];
         weapon = new Weapon_Scritable[WeaponObject_Data.Length];
+        d_weapon = new D_Weapon_Scritable[D_WeaponObject_Data.Length];
         YesButton = Buy_Window.transform.GetChild(0).GetComponent<Button>();
         NoButton = Buy_Window.transform.GetChild(1).GetComponent<Button>();
         NoButton.onClick.AddListener(() => Buy_Window.SetActive(false));
@@ -51,6 +57,12 @@ public class StoreDirector : MonoBehaviour
         {
             weapon[i] = WeaponObject_Data[i].GetComponent<Weapon_Scritable>();
             Weapon_Pride[i].text = weapon[i].weapon_pride + "G";
+        }
+        
+        for(int i = 0; i < D_WeaponObject_Data.Length; i++)
+        {
+            d_weapon[i] = D_WeaponObject_Data[i].GetComponent<D_Weapon_Scritable>();
+            D_Weapon_Pride[i].text = d_weapon[i].weapon_pride + "G";
         }
     }
 
@@ -97,11 +109,30 @@ public class StoreDirector : MonoBehaviour
                     {
                         Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = weapon[i].weapon_pride + "G";
                     }
-                   
                 }
                 else
                 {
                     Weapon_Button[i].interactable = true;
+                }
+            }
+
+            for (int i = 0; i < d_weapon.Length; i++)
+            {
+                if (player.coin < d_weapon[i].weapon_pride || d_weapon[i].storeflag == 1)
+                {
+                    D_Weapon_Button[i].interactable = false;
+                    if (d_weapon[i].storeflag == 1)
+                    {
+                        D_Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = "<color=white>보유 중</color>";
+                    }
+                    else
+                    {
+                        D_Weapon_Button[i].GetComponentInChildren<TextMeshProUGUI>().text = d_weapon[i].weapon_pride + "G";
+                    }
+                }
+                else
+                {
+                    D_Weapon_Button[i].interactable = true;
                 }
             }
         }
@@ -117,6 +148,13 @@ public class StoreDirector : MonoBehaviour
         Dont_Click_Panel.SetActive(true);
         Buy_Window.SetActive(true);
         YesButton.onClick.AddListener(() => OnWeaponBuy(i));
+    }
+
+    public void OnD_WeaponBuyWindow(int i)
+    {
+        Dont_Click_Panel.SetActive(true);
+        Buy_Window.SetActive(true);
+        YesButton.onClick.AddListener(() => OnD_WeaponBuy(i));
     }
 
     public void OnClickCancel()
@@ -149,6 +187,15 @@ public class StoreDirector : MonoBehaviour
         Dont_Click_Panel.SetActive(false);
     }
 
+    public void OnD_WeaponBuy(int i)
+    {
+        YesButton.onClick.RemoveAllListeners();
+        d_weapon[i].BuyWeapon_Weapon();
+        player.BuyCoin_Player(d_weapon[i].weapon_pride);
+        Buy_Window.SetActive(false);
+        Dont_Click_Panel.SetActive(false);
+    }
+
     public void OnTestCoinButton()
     {
         player.TestPlusCoinData();
@@ -165,6 +212,11 @@ public class StoreDirector : MonoBehaviour
         for(int i = 0; i < item.Length; i++)
         {
             item[i].itemData.Init();
+        }
+
+        for(int i = 0; i < d_weapon.Length; i++)
+        {
+            d_weapon[i].weaponData.InitWeapon();
         }
     }
 }

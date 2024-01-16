@@ -27,10 +27,6 @@ public class StageDirector : MonoBehaviour {
     public Image[] reward_Image; // 스테이지 보상
     public TextMeshProUGUI reward_coin_text; //스테이지 보상 중, 코인 텍스트
 
-    public GameObject[] ItemLock; //스테이지에 따라 풀리는 잠금
-    public GameObject[] WeaponLock;
-    /*public GameObject[] ShieldLock;*/
-
     public Button[] Monster_inf_Button; //몬스터 정보 버튼
     public Transform[] Monster_inf_Group; // 몬스터 정보 창
     AudioSource Sound_BGM;
@@ -71,9 +67,6 @@ public class StageDirector : MonoBehaviour {
             }
             Stage_Road[i].interactable = true;
         }
-
-        ItemLockOff();
-        WeaponLockOff();
     }
 
     void Update()
@@ -182,38 +175,6 @@ public class StageDirector : MonoBehaviour {
         int index = Data.monster_Data.FindIndex(x => x.name.Equals(str));
         return index;
     }
-
-    public void ItemLockOff()
-    {
-        for (int i = 0; i < ItemLock.Length; i++)
-        {
-            if (lockOffStage >= 3) // 2스테이지 클리어 이후, 열림
-            {
-                ItemLock[i].SetActive(false);
-            }
-        }
-    }
-
-    public void WeaponLockOff()
-    {
-        if (lockOffStage >= 4)
-        {
-            WeaponLock[2].SetActive(false);
-        }
-        if (lockOffStage >= 3)
-        {
-            WeaponLock[1].SetActive(false);
-        }
-        if (lockOffStage >= 2)
-        {
-            WeaponLock[0].SetActive(false);
-        }
-    }
-
-/*    public void ShieldLockOff()
-    {
-
-    }*/
 
     public void OnClickHide()
     {

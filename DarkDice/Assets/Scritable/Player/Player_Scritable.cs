@@ -10,7 +10,7 @@ public class Player_Scritable : MonoBehaviour
     public int atk;
     public WeaponData weapon;
     public int def;
-    public ShieldData shield;
+    public D_WeaponData d_weapon;
     public int coin;
     public int status;
     public ItemData[] item;
@@ -23,7 +23,7 @@ public class Player_Scritable : MonoBehaviour
         atk = playerData.Atk;
         weapon = playerData.Weapon;
         def = playerData.Def;
-        shield = playerData.Shield;
+        d_weapon = playerData.D_Weapon;
         coin = playerData.Coin;
         item = playerData.Item;
         status = playerData.Status;
@@ -40,7 +40,7 @@ public class Player_Scritable : MonoBehaviour
         }
         status = playerData.Status;
         weapon = playerData.Weapon;
-        shield = playerData.Shield;
+        d_weapon = playerData.D_Weapon;
         coin = playerData.Coin;
         item = playerData.Item;
     }
@@ -56,9 +56,9 @@ public class Player_Scritable : MonoBehaviour
         playerData.ChangeWeapon(C_Weapon);
     }
 
-    public void ChangeShield_Player(ShieldData C_Shield)
+    public void ChangeShield_Player(D_WeaponData C_D_Weapon)
     {
-        playerData.ChangeShield(C_Shield);
+        playerData.ChangeD_Weapon(C_D_Weapon);
     }
 
     public void BuyCoin_Player(int buyCoin)

@@ -190,7 +190,7 @@ public class GameDirector : MonoBehaviour
         }
 
         Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
-        Player_Def_Text.text = playerData.def.ToString();
+        Player_Def_Text.text = (playerData.def + playerData.d_weapon.WeaponDef).ToString();
         monster_atk = monsterData.atk;
         monster_def = monsterData.def;
         Monster_Atk_Text.text = monster_atk.ToString();
@@ -460,7 +460,7 @@ public class GameDirector : MonoBehaviour
         DiceNum = 0;
         monsterAni = monster[MonsterCount].GetComponent<SkeletonAnimation>();
         player_atksum = playerData.atk + playerData.weapon.WeaponAtk + GameObject.Find("DiceDirector").GetComponent<Dice>().atkSum;
-        player_defSum = playerData.def +  GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
+        player_defSum = playerData.def + playerData.d_weapon.WeaponDef + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum;
         //주사위 다 굴린 후, 플레이어에 스텟 추가할 수 있도록 변수 저장
         StartCoroutine(playerTurn()); // 플레이어 턴 시작
     }
@@ -482,7 +482,7 @@ public class GameDirector : MonoBehaviour
                 ItemUse();
                 BuffParticlePlay(3);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
-                player_defSum = playerData.def + GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
+                player_defSum = playerData.def + playerData.d_weapon.WeaponDef +GameObject.Find("DiceDirector").GetComponent<Dice>().defSum * 2;
                 ItemCount++;
             }
             else if (ItemName == "Heal")
@@ -674,7 +674,7 @@ public class GameDirector : MonoBehaviour
             PlayDice_UI.SetActive(true);
             ItemCount = 0;
             Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
-            Player_Def_Text.text = playerData.def.ToString();
+            Player_Def_Text.text = (playerData.def + playerData.d_weapon.WeaponDef).ToString();
             monster_atk = monsterData.atk;
             monster_def = monsterData.def;
         }
@@ -707,7 +707,7 @@ public class GameDirector : MonoBehaviour
             monsterData = monster[MonsterCount].GetComponent<MonsterData>();
             Monster_Director.GetComponent<MonsterMoving>().monsterDie();
             Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
-            Player_Def_Text.text = playerData.def.ToString();
+            Player_Def_Text.text = (playerData.def + playerData.d_weapon.WeaponDef).ToString();
             monster_atk = monsterData.atk;
             monster_def = monsterData.def;
             Play_Button.SetActive(true);
@@ -724,7 +724,7 @@ public class GameDirector : MonoBehaviour
     {
         playerData.hp++;
         Player_Atk_Text.text = (playerData.atk + playerData.weapon.WeaponAtk).ToString();
-        Player_Def_Text.text = playerData.def.ToString();
+        Player_Def_Text.text = (playerData.def + playerData.d_weapon.WeaponDef).ToString();
         if (RoundNum == conditionsDefeat)
         {
             RoundNum--;

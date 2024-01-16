@@ -22,8 +22,8 @@ public class PlayerData : ScriptableObject
     private int def;
     public int Def { get {  return def; } }
     [SerializeField]
-    private ShieldData shield;
-    public ShieldData Shield { get {  return shield; } }
+    private D_WeaponData d_weapon;
+    public D_WeaponData D_Weapon { get {  return d_weapon; } }
     [SerializeField]
     private int coin;
     public int Coin { get { return coin; } }
@@ -86,9 +86,9 @@ public class PlayerData : ScriptableObject
         weapon = C_Weapon;
     }
 
-    public void ChangeShield(ShieldData C_Shield)
+    public void ChangeD_Weapon(D_WeaponData C_D_Weapon)
     {
-        shield = C_Shield;
+        d_weapon = C_D_Weapon;
     }
     public void BuyCoin(int buyCoin)
     {
