@@ -35,7 +35,7 @@ MonoBehaviour:
     reward_hp: 1
     reward_point: 2
     reward_coin: 100
-    open_item: 
+    open_item: (3,4)
     stage_fullname: "\uD3C9\uC6D0\uC5D0\uC11C"
     stage_info: 
   - number: 3
@@ -139,9 +139,9 @@ MonoBehaviour:
       \uAC83\uC785\uB2C8\uB2E4."
   - number: 11
     stage_name: stage11
-    enemy_count: 1
+    enemy_count: 2
     enemy_unit1: "\uC2A4\uCF08\uB808\uD1A4"
-    enemy_unit2: 
+    enemy_unit2: "\uC2A4\uCF08\uB808\uD1A4"
     enemy_unit3: 
     reward_hp: 0
     reward_point: 5
@@ -497,8 +497,8 @@ MonoBehaviour:
     type: M
     state: 0
     hp: 7
-    atk: 33
-    def: 32
+    atk: 32
+    def: 33
     image: monsterImage/monster_protector
     sound: 
     enemy_info: "\\n\uD070 \uC0B0\uB9E5\uC5D0\uB9CC \uAC70\uC8FC\uD558\uBA70 \uADF8
@@ -568,9 +568,9 @@ MonoBehaviour:
     name_en: dark shell
     type: M
     state: 0
-    hp: 11
-    atk: 53
-    def: 50
+    hp: 9
+    atk: 44
+    def: 43
     image: monsterImage/monster_darkshell
     sound: 
     enemy_info: "\\n\uC0AC\uB9C8\uADC0\uAC19\uC740 \uB0A0\uCE74\uB85C\uC6B4 \uC55E\uBC1C\uC744
