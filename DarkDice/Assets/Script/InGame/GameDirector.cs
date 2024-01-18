@@ -125,7 +125,7 @@ public class GameDirector : MonoBehaviour
         playerData = PlayerObject.GetComponent<Player_Scritable>(); // 플레이어 데이터를 불러온다.
         monsterData = monster[MonsterCount].GetComponent<MonsterData>(); // 몬스터 데이터를 불러온다.
         stage = stage_Data.GetComponent<Stage_Scripter>(); // 스테이지 데이터를 불러온다.
-        if (stage.curretStageNum == 5)
+        if (stage.curretStageNum >= 11)
         {
             conditionsDefeat = 15;
         }
