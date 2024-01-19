@@ -26,6 +26,7 @@ public class StageDirector : MonoBehaviour {
     public Image[] item_Image;  //플레이어 장착된 아이템
     public Image[] reward_Image; // 스테이지 보상
     public TextMeshProUGUI reward_coin_text; //스테이지 보상 중, 코인 텍스트
+    public TextMeshProUGUI reward_stat_text;
 
     public Button[] Monster_inf_Button; //몬스터 정보 버튼
     public Transform[] Monster_inf_Group; // 몬스터 정보 창
@@ -142,14 +143,8 @@ public class StageDirector : MonoBehaviour {
         {
             if (Num == lockOffStage) // 최초 클리어 하지 않을 경우
             {
-                if (Data.stage_Data[Num - 1].reward_point == 3)
-                {
-                    reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat3");
-                }
-                else if (Data.stage_Data[Num - 1].reward_point == 4)
-                {
-                    reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat4");
-                }
+                reward_stat_text.text = Data.stage_Data[Num - 1].reward_point + "Point";
+                reward_Image[0].sprite = Resources.Load<Sprite>("Reward/statuspt_icon");
 
                 if (Data.stage_Data[Num - 1].reward_hp == 0)
                 {
@@ -157,11 +152,12 @@ public class StageDirector : MonoBehaviour {
                 }
                 else
                 {
-                    reward_Image[1].sprite = Resources.Load<Sprite>("Reward/icon_hp");
+                    reward_Image[1].sprite = Resources.Load<Sprite>("Reward/hp_icon");
                 }
             }
             else // 아닐 경우
             {
+                reward_stat_text.text = "";
                 reward_Image[0].sprite = Resources.Load<Sprite>("Reward/default");
                 reward_Image[1].sprite = Resources.Load<Sprite>("Reward/default");
             }
