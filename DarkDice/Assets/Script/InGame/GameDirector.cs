@@ -67,6 +67,7 @@ public class GameDirector : MonoBehaviour
     public Button DiceButton;
 
     public TextMeshProUGUI reward_Coin; // 보상 코인 텍스트 변경
+    public TextMeshProUGUI reward_Point; // 보상 코인 텍스트 변경
     public Image[] reward_Image; // 보상 이미지 변경
 
     public GameObject Item_Group; // 아이템 그룹에 있는 애니메이션을 구하기 위함
@@ -754,14 +755,8 @@ public class GameDirector : MonoBehaviour
 
         if (stage.curretStageNum == stage.final_stageNum)
         {
-            if (Data.stage_Data[stage.curretStageNum - 1].reward_point == 3)
-            {
-                reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat3");
-            }
-            else if (Data.stage_Data[stage.curretStageNum - 1].reward_point == 4)
-            {
-                reward_Image[0].sprite = Resources.Load<Sprite>("Reward/icon_stat4");
-            }
+            reward_Image[0].sprite = Resources.Load<Sprite>("Reward/statuspt_icon");
+            reward_Point.text = Data.stage_Data[stage.curretStageNum - 1].reward_point + "Point";
 
             if (Data.stage_Data[stage.curretStageNum - 1].reward_hp == 0)
             {
@@ -769,11 +764,12 @@ public class GameDirector : MonoBehaviour
             }
             else
             {
-                reward_Image[1].sprite = Resources.Load<Sprite>("Reward/icon_hp");
+                reward_Image[1].sprite = Resources.Load<Sprite>("Reward/hp_icon");
             }
         }
         else
         {
+            reward_Point.text = "";
             reward_Image[0].sprite = Resources.Load<Sprite>("Reward/default");
             reward_Image[1].sprite = Resources.Load<Sprite>("Reward/default");
         }

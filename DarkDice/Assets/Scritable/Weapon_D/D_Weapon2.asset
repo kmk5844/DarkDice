@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76560e9857a02fe4fb5a30b5735b1581, type: 3}
   m_Name: D_Weapon2
   m_EditorClassIdentifier: 
-  weaponName: D_Weapon0
+  weaponName: D_Weapon2
   weaponDef: 6
   weaponPride: 60
-  storeFlag: 1
+  storeFlag: 0
   weaponImage: {fileID: 21300000, guid: 68ff92dd9bd4d434da1f14f576d0934b, type: 3}

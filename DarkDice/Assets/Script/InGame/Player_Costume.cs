@@ -6,42 +6,65 @@ using UnityEngine;
 public class Player_Costume : MonoBehaviour
 {
     Player_Scritable playerData;
-
+    int atk;
+    int def;
     void Start()
     {
         playerData = GetComponent<Player_Scritable>();
-        switch (playerData.weapon.name)
+        if(playerData.weapon.name == "Weapon0")
         {
-            case "Weapon0":
-                break;
-            case "Weapon1":
-                this.GetComponent<GearEquipper>().Melee = 50;
-                this.GetComponent<GearEquipper>().Armor = 14;
-                this.GetComponent<GearEquipper>().Helmet = 14;
-                this.GetComponent<GearEquipper>().Shoulder = 14;
-                this.GetComponent<GearEquipper>().Arm = 14;
-                this.GetComponent<GearEquipper>().Feet = 14;
-                this.GetComponent<GearEquipper>().ApplySkinChanges();
-                break;
-            case "Weapon2":
-                this.GetComponent<GearEquipper>().Melee = 5;
-                this.GetComponent<GearEquipper>().Armor = 5;
-                this.GetComponent<GearEquipper>().Helmet = 5;
-                this.GetComponent<GearEquipper>().Shoulder = 5;
-                this.GetComponent<GearEquipper>().Arm = 5;
-                this.GetComponent<GearEquipper>().Feet = 5;
-                this.GetComponent<GearEquipper>().ApplySkinChanges();
-                break;
-            case "Weapon3":
-                this.GetComponent<GearEquipper>().Melee = 49;
-                this.GetComponent<GearEquipper>().Armor = 29;
-                this.GetComponent<GearEquipper>().Helmet = 29;
-                this.GetComponent<GearEquipper>().Shoulder = 29;
-                this.GetComponent<GearEquipper>().Arm = 29;
-                this.GetComponent<GearEquipper>().Feet = 29;
-                this.GetComponent<GearEquipper>().ApplySkinChanges();
-                break;
         }
+        else if(playerData.weapon.name == "Weapon1")
+        {
+            this.GetComponent<GearEquipper>().Melee = 50;
+            Change(14);
+        }
+        else if (playerData.weapon.name == "Weapon2")
+        {
+            this.GetComponent<GearEquipper>().Melee = 5;
+            Change(5);
+        }
+        else if (playerData.weapon.name == "Weapon3")
+        {
+            this.GetComponent<GearEquipper>().Melee = 49;
+            Change(29);
+        }
+        else if (playerData.weapon.name == "Weapon4")
+        {
+            this.GetComponent<GearEquipper>().Melee = 24;
+            Change(31);
+        }
+
+        if (playerData.d_weapon.name == "D_Weapon0")
+        {
+
+        }
+        else if (playerData.d_weapon.name == "D_Weapon1")
+        {
+            this.GetComponent<GearEquipper>().Shield = 7;
+        }
+        else if (playerData.d_weapon.name == "D_Weapon2")
+        {
+            this.GetComponent<GearEquipper>().Shield = 6;
+        }
+        else if (playerData.d_weapon.name == "D_Weapon3")
+        {
+            this.GetComponent<GearEquipper>().Shield = 3;
+        }
+        else if (playerData.d_weapon.name == "D_Weapon4")
+        {
+            this.GetComponent<GearEquipper>().Shield = 17;
+        }
+
+        this.GetComponent<GearEquipper>().ApplySkinChanges();
     }
 
+    void Change(int num)
+    {
+        this.GetComponent<GearEquipper>().Armor = num;
+        this.GetComponent<GearEquipper>().Helmet = num;
+        this.GetComponent<GearEquipper>().Shoulder = num;
+        this.GetComponent<GearEquipper>().Arm = num;
+        this.GetComponent<GearEquipper>().Feet = num;
+    }
 }
