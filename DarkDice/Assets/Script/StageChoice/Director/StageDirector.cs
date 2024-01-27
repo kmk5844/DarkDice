@@ -89,7 +89,7 @@ public class StageDirector : MonoBehaviour {
         stageStory.text = Data.stage_Data[Num - 1].stage_info.Replace("\\n", "\n");
         reward_coin_text.text = Data.stage_Data[Num - 1].reward_coin.ToString() + "G";
 
-        if(Num == 5)
+        if(Num >= 11)
         {
             roundText.text = "15¶ó¿îµå";
         }

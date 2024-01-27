@@ -126,6 +126,7 @@ public class GameDirector : MonoBehaviour
         playerData = PlayerObject.GetComponent<Player_Scritable>(); // 플레이어 데이터를 불러온다.
         monsterData = monster[MonsterCount].GetComponent<MonsterData>(); // 몬스터 데이터를 불러온다.
         stage = stage_Data.GetComponent<Stage_Scripter>(); // 스테이지 데이터를 불러온다.
+
         if (stage.curretStageNum >= 11)
         {
             conditionsDefeat = 15;
@@ -753,6 +754,11 @@ public class GameDirector : MonoBehaviour
     {
         reward_Coin.text = Data.stage_Data[stage.curretStageNum - 1].reward_coin.ToString() + "G";
 
+        if(stage.final_stageNum == 20)
+        {
+            Win_UI_Button_Text.text = "엔딩으로";
+        }
+
         if (stage.curretStageNum == stage.final_stageNum)
         {
             reward_Image[0].sprite = Resources.Load<Sprite>("Reward/statuspt_icon");
@@ -790,7 +796,7 @@ public class GameDirector : MonoBehaviour
     {
         try
         {
-            if (SceneManager.GetActiveScene().name.Equals("Stage5"))
+            if (stage.final_stageNum == 21)
             {
                 Sound_BGM.clip = Resources.Load<AudioClip>("Sound/BGM/End_BGM");
                 Sound_BGM.Play();
@@ -805,7 +811,7 @@ public class GameDirector : MonoBehaviour
         }
         catch
         {
-            if (SceneManager.GetActiveScene().name.Equals("Stage5"))
+            if (stage.final_stageNum == 21)
             {
                 SceneManager.LoadScene("1-1.Toon");
             }

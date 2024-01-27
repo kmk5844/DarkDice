@@ -13,47 +13,114 @@ public class Player_Costume : MonoBehaviour
         playerData = GetComponent<Player_Scritable>();
         if(playerData.weapon.name == "Weapon0")
         {
+            atk = 0;
         }
         else if(playerData.weapon.name == "Weapon1")
         {
+            atk = 1;
             this.GetComponent<GearEquipper>().Melee = 50;
-            Change(14);
         }
         else if (playerData.weapon.name == "Weapon2")
         {
+            atk = 2;
             this.GetComponent<GearEquipper>().Melee = 5;
-            Change(5);
         }
         else if (playerData.weapon.name == "Weapon3")
         {
+            atk = 3;
             this.GetComponent<GearEquipper>().Melee = 49;
-            Change(29);
         }
         else if (playerData.weapon.name == "Weapon4")
         {
+            atk = 4;
             this.GetComponent<GearEquipper>().Melee = 24;
-            Change(31);
         }
 
         if (playerData.d_weapon.name == "D_Weapon0")
         {
-
+            def = 0;
         }
         else if (playerData.d_weapon.name == "D_Weapon1")
         {
+            def = 1;
             this.GetComponent<GearEquipper>().Shield = 7;
         }
         else if (playerData.d_weapon.name == "D_Weapon2")
         {
+            def = 2;
             this.GetComponent<GearEquipper>().Shield = 6;
         }
         else if (playerData.d_weapon.name == "D_Weapon3")
         {
+            def = 3;
             this.GetComponent<GearEquipper>().Shield = 3;
         }
         else if (playerData.d_weapon.name == "D_Weapon4")
         {
+            def = 4;
             this.GetComponent<GearEquipper>().Shield = 17;
+        }
+
+        if(atk > def)
+        {
+            if(def == 3)
+            {
+                Change(29);
+            }
+            else if(def == 2)
+            {
+                Change(5);
+            }
+            else if(def == 1)
+            {
+                Change(14);
+            }
+            else if(def == 0)
+            {
+
+            }
+        }else if(atk < def)
+        {
+            if (atk == 3)
+            {
+                Change(29);
+            }
+            else if (atk == 2)
+            {
+                Change(5);
+            }
+            else if (atk == 1)
+            {
+                Change(14);
+            }
+            else if (atk == 0)
+            {
+
+            }
+        }
+        else if(atk == def)
+        {
+            if(atk == 4)
+            {
+                Change(31);
+            }
+            else if(atk == 3)
+            {
+                Change(29);
+            }
+            else if(atk == 2)
+            {
+                Change(5);
+
+            }
+            else if(atk == 1)
+            {
+                Change(14);
+            }
+            else if (atk == 0)
+            {
+
+            }
         }
 
         this.GetComponent<GearEquipper>().ApplySkinChanges();
@@ -67,4 +134,8 @@ public class Player_Costume : MonoBehaviour
         this.GetComponent<GearEquipper>().Arm = num;
         this.GetComponent<GearEquipper>().Feet = num;
     }
+    //weapon1 = 14;
+    //weapon2 = 5;
+    //weapon3 = 29;
+    //weapon4 = 31; // юс╫ц
 }
