@@ -102,7 +102,7 @@ public class Player_Costume : MonoBehaviour
         {
             if(atk == 4)
             {
-                Change(31);
+                Change(15);
             }
             else if(atk == 3)
             {
@@ -137,5 +137,5 @@ public class Player_Costume : MonoBehaviour
     //weapon1 = 14;
     //weapon2 = 5;
     //weapon3 = 29;
-    //weapon4 = 31; // 임시
+    //weapon4 = 15; // 임시
 }
