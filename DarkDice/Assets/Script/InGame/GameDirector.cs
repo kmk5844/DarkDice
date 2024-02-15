@@ -75,7 +75,7 @@ public class GameDirector : MonoBehaviour
 
     //파티클 부분-----------------------------------------------------------------------------------
     public GameObject[] Hit_Part; //0, 1번 플레이어 히트, 2번 동시 히트, 3번 몬스터 히트 4번 디펜스
-    public GameObject[] Buff_Part; //0번 힐, 1번 부활, 2번 atk, 3번 def
+    public GameObject[] Buff_Part; //0번 힐, 1번 부활, 2번 atk, 3번 def, 4번 weak
     public GameObject Heal_Part;
     public GameObject Revival_Part;
     public GameObject[] ItemChoice_Part;
@@ -497,7 +497,7 @@ public class GameDirector : MonoBehaviour
             }else if(ItemName == "Weak") // 쇠약
             {
                 ItemUse();
-                //파티클 추가
+                BuffParticlePlay(4);
                 yield return new WaitForSpineAnimationComplete(playerAni.state.SetAnimation(0, "Buff", false));
                 monster_atk -= 2;
                 monster_def -= 2;
